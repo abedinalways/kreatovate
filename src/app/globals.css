@@ -120,3 +120,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-jakarta {
+  font-family: var(--font-jakarta);
+}
