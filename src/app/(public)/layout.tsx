@@ -1,3 +1,4 @@
+import Navbar from "@/components/shared/navbar/Navbar";
 import { ReactNode } from "react";
 
 const PublicLayout = ({
@@ -7,6 +8,7 @@ const PublicLayout = ({
 }>) => {
   return (
     <>
+      <Navbar />
       <main className="min-h-dvh">{children}</main>
     </>
   );
