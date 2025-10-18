@@ -120,3 +120,6 @@
     @apply bg-background text-foreground;
   }
 }
+.text-gradient{
+  @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
+}

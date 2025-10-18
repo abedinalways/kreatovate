@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import { ReactNode } from "react";
 
 const PublicLayout = ({
@@ -7,7 +8,10 @@ const PublicLayout = ({
 }>) => {
   return (
     <>
-      <main className="min-h-dvh">{children}</main>
+      <main className="min-h-screen flex flex-col bg-black px-[140px] ">
+        {children}
+      </main>
+        <Footer />
     </>
   );
 };
