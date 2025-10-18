@@ -1,3 +1,9 @@
+import Banner from "@/components/modules/Banner";
+
 export default function Home() {
-  return <div>home page</div>;
+  return (
+    <div className="absolute top-0 w-full">
+      <Banner />
+    </div>
+  );
 }

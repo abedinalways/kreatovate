@@ -128,3 +128,11 @@
 .font-jakarta {
   font-family: var(--font-jakarta);
 }
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-[#E93D3D] to-[#4E30FE];
+}
+
+.text-color-gradient {
+  @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
+}
