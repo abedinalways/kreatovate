@@ -10,9 +10,7 @@ const PublicLayout = ({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen flex flex-col bg-black px-[140px] ">
-        {children}
-      </main>
+      <main className="min-h-screen flex flex-col bg-black">{children}</main>
       <Footer />
     </>
   );
