@@ -1,9 +1,7 @@
-// components/Footer.tsx
-import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import Image from 'next/image';
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import Logo from "../Logo";
 
-// X (Twitter) icon component since it's not in lucide-react
 const XIcon = () => (
   <svg
     viewBox="0 0 24 24"
@@ -22,9 +20,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-1">
-            <Link href="/" className="inline-block">
-              <Image src="/images/footer.png" alt="" width={200} height={200} />
-            </Link>
+            <Logo />
+
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Our AI-Driven Marketing Platform gives you an affordable
               enterprise digital marketing and advertising solution that does
