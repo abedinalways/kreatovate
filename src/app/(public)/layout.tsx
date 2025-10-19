@@ -1,5 +1,5 @@
 import Navbar from "@/components/shared/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/shared/footer/Footer";
 import { ReactNode } from "react";
 
 const PublicLayout = ({
