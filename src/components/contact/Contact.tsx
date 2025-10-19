@@ -5,7 +5,7 @@ import { Calendar } from "../ui/calendar";
 const Contact = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <div className="md:flex gap-10 py-8">
+    <div id="contact_us" className="md:flex gap-10 py-8">
       <div className="flex flex-col gap-2 items-start">
         <p className="text-gradient">[ Book an appointment ]</p>
         <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
