@@ -139,3 +139,7 @@
 .text-gradient {
   @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
 }
+
+.heading-btn-bg {
+  @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
+}

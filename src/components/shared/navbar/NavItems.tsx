@@ -1,14 +1,19 @@
 "use client";
 
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Link from "next/link";
-import { useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 type Props = {
   variant?: "desktop" | "mobile";
+  headerSelector?: string;
 };
 
-const NavItems = ({ variant = "desktop" }: Props) => {
-  const [active, setActive] = useState("home");
+gsap.registerPlugin(ScrollToPlugin);
+
+const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
+  const [active, setActive] = useState("#home");
 
   const items = [
     { id: "#home", label: "home" },
@@ -17,6 +22,40 @@ const NavItems = ({ variant = "desktop" }: Props) => {
     { id: "#testimonial", label: "testimonial" },
     { id: "#contact_us", label: "contact us" },
   ];
+
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (!id.startsWith("#")) return;
+
+    const target = document.querySelector(id) as HTMLElement | null;
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    const header = document.querySelector(headerSelector) as HTMLElement | null;
+
+    const offsetY = (header?.offsetHeight ?? 0) + 8;
+
+    gsap.to(window, {
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTo: { y: target, offsetY, autoKill: true },
+      onComplete: () => {
+        history.replaceState(null, "", id);
+        setActive(id);
+      },
+    });
+  };
+
+  useEffect(() => {
+    const applyFromHash = () => setActive(window.location.hash || "#home");
+
+    applyFromHash();
+
+    window.addEventListener("hashchange", applyFromHash);
+
+    return () => window.removeEventListener("hashchange", applyFromHash);
+  }, []);
 
   if (variant === "mobile") {
     return (
@@ -28,9 +67,7 @@ const NavItems = ({ variant = "desktop" }: Props) => {
               <li key={item.id}>
                 <Link
                   href={item.id}
-                  onClick={() => {
-                    setActive(item.id);
-                  }}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className={[
                     "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap",
                     isActive
@@ -54,14 +91,17 @@ const NavItems = ({ variant = "desktop" }: Props) => {
         {items?.map((item) => (
           <li
             key={item.id}
-            onClick={() => setActive(item.id)}
             className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
               active === item.id
                 ? "bg-[#ED1C2433] font-semibold"
                 : "hover:bg-[#ED1C2433]/40"
             }`}
           >
-            <Link href={`${item.id}`} className="whitespace-nowrap">
+            <Link
+              href={`${item.id}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+              className="whitespace-nowrap"
+            >
               {item.label}
             </Link>
           </li>
