@@ -1,5 +1,5 @@
-import React from 'react';
-import ButtonAll from '../shared/ButtonAll';
+import React from "react";
+import ButtonAll from "../shared/ButtonAll";
 
 const Explore = () => {
   return (
@@ -11,7 +11,7 @@ const Explore = () => {
         bg-[linear-gradient(90deg,rgba(226,23,23,0.10)_0%,rgba(55,0,255,0.10)_100%)]
       "
       >
-        <h2 className="text-2xl md:text-3xl font-semibold leading-snug text-white">
+        <h2 className="text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
           Continue Your Journey with <br />
           <span className="text-gradient">Kreatovate</span>
         </h2>
