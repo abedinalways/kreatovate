@@ -155,3 +155,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.text-color-gradient-tab {
+  @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+}
