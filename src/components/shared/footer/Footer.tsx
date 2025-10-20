@@ -177,7 +177,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-[rgba(237,28,36,0.2)]">
         <div className="container mx-auto px-6 py-6">
           <p className="text-center text-gray-500 text-sm">
             © 2025 - Kreatovate _ All rights reserved
