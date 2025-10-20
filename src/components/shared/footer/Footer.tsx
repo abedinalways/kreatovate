@@ -16,7 +16,7 @@ const XIcon = () => (
 export default function Footer() {
   return (
     <footer className="bg-[#0F1016] text-white">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto  py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-1">
