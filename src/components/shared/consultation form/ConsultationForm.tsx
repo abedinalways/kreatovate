@@ -23,7 +23,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
+
+import ButtonAll from '../ButtonAll';
 
 // Field Configuration Types
 export interface FormFieldConfig {
@@ -50,7 +51,9 @@ export interface ConsultationFormProps {
   apiEndpoint?: string;
   successMessage?: string;
   errorMessage?: string;
-}
+};
+
+
 
 // Default Fields Configuration
 const defaultFields: FormFieldConfig[] = [
@@ -286,14 +289,50 @@ export function ConsultationForm({
     >
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-white text-center mb-2">
+        <h2 className="text-xl font-bold text-white text-center mb-2">
           {title}
         </h2>
         {subtitle && (
           <p className="text-gray-400 text-center text-sm mt-2">{subtitle}</p>
         )}
         {showDecorator && (
-          <div className="relative h-px bg-gradient-to-r from-transparent via-red-500 to-transparent mt-4"></div>
+          <div className="flex items-center justify-center w-full my-6">
+            {/* Left line */}
+            <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
+
+            {/* SVG in the middle */}
+            <div className="mx-3 flex-shrink-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21"
+                height="24"
+                viewBox="0 0 21 24"
+                fill="none"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
+              >
+                <path
+                  d="M19.889 2.28427C20.403 2.08232 20.656 1.5019 20.4541 0.987863C20.2521 0.473823 19.6717 0.22082 19.1577 0.422764L19.5233 1.35352L19.889 2.28427ZM8.48934 23.199C8.9563 23.4939 9.57391 23.3545 9.86883 22.8875L14.6748 15.2781C14.9697 14.8112 14.8302 14.1935 14.3633 13.8986C13.8963 13.6037 13.2787 13.7432 12.9838 14.2101L8.71184 20.974L1.94793 16.7021C1.48098 16.4072 0.863365 16.5466 0.568449 17.0136C0.273533 17.4805 0.412994 18.0982 0.879945 18.3931L8.48934 23.199ZM19.5233 1.35352L19.1577 0.422764C16.6639 1.40246 13.1689 3.66802 10.6499 7.32361C8.1079 11.0126 6.58337 16.088 8.0479 22.5738L9.02334 22.3535L9.99878 22.1333C8.66331 16.219 10.0554 11.7111 12.2968 8.45843C14.5611 5.17235 17.7161 3.13791 19.889 2.28427L19.5233 1.35352Z"
+                  fill="url(#paint0_linear_6334_30867)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_6334_30867"
+                    x1="8.47656"
+                    y1="11.8535"
+                    x2="19.5233"
+                    y2="11.8535"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#E21717" />
+                    <stop offset="1" stopColor="#3700FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            {/* Right line */}
+            <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
+          </div>
         )}
       </div>
 
@@ -311,16 +350,17 @@ export function ConsultationForm({
             </div>
           ))}
 
-          <Button
+          <ButtonAll
             type="submit"
+            btnText="Book a Consultation"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white"
+            className="w-full "
           >
             {isSubmitting ? 'Submitting...' : buttonText}
             {showButtonIcon && !isSubmitting && (
               <ArrowRight className="w-5 h-5 ml-2" />
             )}
-          </Button>
+          </ButtonAll>
         </form>
       </Form>
     </div>

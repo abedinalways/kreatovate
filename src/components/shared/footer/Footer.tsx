@@ -15,8 +15,8 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F1016] text-white">
-      <div className="container mx-auto px-6 py-12">
+    <footer className=" text-white custom-container px-4 sm:px-36 md:px-5">
+      <div className="container mx-auto  py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-1">
@@ -177,7 +177,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-[rgba(237,28,36,0.2)]">
         <div className="container mx-auto px-6 py-6">
           <p className="text-center text-gray-500 text-sm">
             © 2025 - Kreatovate _ All rights reserved
