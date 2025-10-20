@@ -1,3 +1,5 @@
+import Navbar from "@/components/shared/navbar/Navbar";
+import Footer from "@/components/shared/footer/Footer";
 import { ReactNode } from "react";
 
 const PublicLayout = ({
@@ -7,7 +9,9 @@ const PublicLayout = ({
 }>) => {
   return (
     <>
-      <main className="min-h-dvh">{children}</main>
+      <Navbar />
+      <main className="min-h-screen flex flex-col bg-black">{children}</main>
+      <Footer />
     </>
   );
 };
