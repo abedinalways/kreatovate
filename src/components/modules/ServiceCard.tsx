@@ -29,8 +29,8 @@ const ServiceCard = () => {
         />
 
         <div className="w-full flex flex-col gap-4">
-          <h1 className="text-2xl font-semibold">
-            Comprehensive A.I Powered <br /> Digital Marketing Solutions
+          <h1 className="text-lg lg:text-2xl font-semibold">
+            Comprehensive A.I Powered Digital Marketing Solutions
           </h1>
           <p className="text-sm text-gray-600">
             A.I. Powered Digital Marketing Solutions: Enhance your online

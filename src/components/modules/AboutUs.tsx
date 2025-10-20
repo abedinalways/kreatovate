@@ -6,9 +6,9 @@ const AboutUs = () => {
   return (
     <div
       id="about_us"
-      className="text-white px-4 sm:px-36 md:px-36 py-36 mx-auto relative isolate"
+      className="text-white px-4 sm:px-36 md:px-36 pt-28 mx-auto relative isolate"
     >
-      <div className="py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+      <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
         <div className="w-full lg:w-1/2">
           <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
