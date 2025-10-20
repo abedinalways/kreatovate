@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { ConsultationForm } from "../consultation form/ConsultationForm";
+import { ConsultationForm } from "../shared/consultation form/ConsultationForm";
 import { Calendar } from "../ui/calendar";
 const Contact = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <div id="contact_us" className="md:flex gap-10 py-8">
+    <div id="contact_us" className="md:flex gap-30 md:px-[140px] md:py-[100px] mx-w-[1320px] justify-center items-center">
       <div className="flex flex-col gap-2 items-start">
         <p className="text-gradient">[ Book an appointment ]</p>
         <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
@@ -14,7 +14,7 @@ const Contact = () => {
         </h2>
 
         <ConsultationForm
-          title="Get in Touch"
+          title="Schedule Your Free Consultation"
           subtitle="We'd love to hear from you"
           buttonText="Book A Consultation"
           showButtonIcon={false}
@@ -22,18 +22,18 @@ const Contact = () => {
       </div>
       {/* date picker */}
       <div className="text-white">
-        <p className="text-gray-200 text-end">
+        <p className="text-gray-200 text-end mt-10 mb-4">
           Get a free consultation and discover Wow we can <br />
           optimize your operations
         </p>
-        <h2 className="text-xl font-bold text-center">
+        <h2 className="text-xl font-bold text-center my-10">
           Let’s Talk – Pick a Time That <br /> Works for You
         </h2>
         <Calendar
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="rounded-md border shadow-sm bg-gradient-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419]  border-purple-500/30"
+          
           captionLayout="dropdown"
         />
       </div>
