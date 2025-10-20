@@ -3,7 +3,7 @@ import ButtonAll from '../shared/ButtonAll';
 
 const Explore = () => {
   return (
-    <div className="px-[140px] py-10">
+    <div className="custom-container px-4 sm:px-36 md:px-5">
       <div
         className="
         flex flex-col justify-center items-center gap-4 text-center py-12

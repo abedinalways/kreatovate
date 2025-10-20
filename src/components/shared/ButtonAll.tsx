@@ -30,10 +30,10 @@ const ButtonAll: React.FC<ButtonAllProps> = ({
       size={size}
       disabled={disabled}
       className={cn(
-        // ✨ Default gradient + layout
+        
         'flex items-center justify-center gap-2 px-6 py-3.5 capitalize text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl transition-all duration-300',
         'btn-gradient hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)]',
-        className // 🧩 custom styles from outside
+        className 
       )}
     >
       {leftIcon && <span className="flex items-center">{leftIcon}</span>}

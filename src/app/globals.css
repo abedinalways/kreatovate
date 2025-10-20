@@ -134,7 +134,7 @@
 }
 
 .text-color-gradient {
-  @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
+  @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
 .text-gradient {
   @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
@@ -147,4 +147,11 @@
 .custom-container {
   max-width: 1320px;
   margin: 0 auto;
+}
+
+.banner-bg {
+  background-image: url("/images/banner1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
