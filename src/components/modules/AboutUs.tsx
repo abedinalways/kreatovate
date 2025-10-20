@@ -1,12 +1,59 @@
+"use client";
+
 import Image from "next/image";
 import ButtonAll from "../shared/ButtonAll";
 import HeadingButton from "../shared/HeadingButton";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Image: slide in from left
+      gsap.fromTo(
+        ".about-image",
+        { opacity: 0, x: -80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".about-image",
+            start: "top 85%",
+            toggleActions: "play none none reset",
+          },
+        }
+      );
+
+      // Text: slide in from right
+      gsap.fromTo(
+        ".about-text",
+        { opacity: 0, x: 80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".about-text",
+            start: "top 85%",
+            toggleActions: "play none none reset",
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div id="about_us" className="text-white pt-28 mx-auto relative isolate">
       <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-36 md:px-5 custom-container">
-        <div className="w-full lg:w-1/2">
+        <div className="about-image w-full lg:w-1/2">
           <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
               src="/images/about_us.png"
@@ -18,7 +65,7 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className="w-full lg:w-1/2 space-y-6">
+        <div className="about-text w-full lg:w-1/2 space-y-6">
           <HeadingButton btnText="about us" />
           <h1 className="text-2xl sm:text-5xl md:text-6xl font-semibold max-w-2xl">
             Explore Our Tailored{" "}
