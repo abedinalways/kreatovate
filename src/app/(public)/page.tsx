@@ -5,12 +5,12 @@ import Service from "@/components/modules/Service";
 
 export default function Home() {
   return (
-    <div className="w-screen">
+    <div className="overflow-hidden">
       <Banner />
 
       <AboutUs />
       <Service />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 }
