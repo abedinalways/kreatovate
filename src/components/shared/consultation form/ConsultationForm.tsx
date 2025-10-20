@@ -298,7 +298,7 @@ export function ConsultationForm({
         {showDecorator && (
           <div className="flex items-center justify-center w-full my-6">
             {/* Left line */}
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/40" />
+            <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
 
             {/* SVG in the middle */}
             <div className="mx-3 flex-shrink-0">
@@ -331,7 +331,7 @@ export function ConsultationForm({
             </div>
 
             {/* Right line */}
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/40" />
+            <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
           </div>
         )}
       </div>
@@ -352,9 +352,10 @@ export function ConsultationForm({
 
           <ButtonAll
             type="submit"
-            btnText='Book a Consultation'
+            btnText="Book a Consultation"
             disabled={isSubmitting}
-            className="w-full ">
+            className="w-full "
+          >
             {isSubmitting ? 'Submitting...' : buttonText}
             {showButtonIcon && !isSubmitting && (
               <ArrowRight className="w-5 h-5 ml-2" />
