@@ -1,32 +1,43 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
+import React from 'react';
+import { Button } from '../ui/button';
+import { cn } from '@/lib/utils'; // ✅ utility for conditional class merging
 
-type Btn = {
+type ButtonAllProps = {
   btnText?: string;
-  href?: string;
+  variant?: 'default' | 'outline' | 'ghost' | 'secondary' | 'destructive';
+  size?: 'sm' | 'default' | 'lg' | 'icon';
+  className?: string;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
 };
 
-const ButtonAll = ({ btnText, href }: Btn) => {
-  if (href) {
-    return (
-      <Button
-        asChild
-        variant="default"
-        className="px-6 py-3.5 capitalize btn-gradient text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl cursor-pointer"
-      >
-        <Link href={href} className="block w-full text-center">
-          {btnText}
-        </Link>
-      </Button>
-    );
-  }
+const ButtonAll: React.FC<ButtonAllProps> = ({
+  btnText = 'Click Me',
+  variant = 'default',
+  size = 'default',
+  className,
+  leftIcon,
+  rightIcon,
+  onClick,
+  disabled = false,
+}) => {
   return (
     <Button
-      type="button"
-      variant="default"
-      className="px-6 py-3.5 capitalize btn-gradient text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl cursor-pointer"
+      onClick={onClick}
+      variant={variant}
+      size={size}
+      disabled={disabled}
+      className={cn(
+        'flex items-center justify-center gap-2 px-6 py-3.5 capitalize text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl transition-all duration-300',
+        'btn-gradient hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)]',
+        className
+      )}
     >
+      {leftIcon && <span className="flex items-center">{leftIcon}</span>}
       {btnText}
+      {rightIcon && <span className="flex items-center">{rightIcon}</span>}
     </Button>
   );
 };
