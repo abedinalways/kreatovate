@@ -34,7 +34,7 @@ const Banner = () => {
           className="absolute bottom-0 right-0 w-full h-48 z-30"
         />
 
-        <div className="text-white max-w-4xl space-y-6 z-50 text-center sm:text-center md:text-center lg:text-left">
+        <div className="text-white max-w-4xl space-y-6 z-50 text-center sm:text-center md:text-center lg:text-left custom-container">
           <h1 className="text-2xl sm:text-5xl md:text-6xl font-bold leading-tight">
             Unleash Potential with Kreatovate&apos;s{" "}
             <span className="text-color-gradient">Expert Marketing</span>{" "}
@@ -52,7 +52,7 @@ const Banner = () => {
           </button>
         </div>
 
-        <div className="hidden sm:hidden md:hidden lg:flex">
+        <div className="hidden sm:hidden md:hidden lg:flex custom-container">
           <Image
             src="/images/robo.png"
             alt="AI robot"

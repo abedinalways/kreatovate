@@ -143,3 +143,8 @@
 .heading-btn-bg {
   @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
 }
+
+.custom-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
