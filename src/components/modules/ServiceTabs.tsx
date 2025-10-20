@@ -1,7 +1,68 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+"use client";
+
+import { useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import ServiceCard, { ServiceItem } from "./ServiceCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 const ServiceTabs = () => {
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = useState("marketing_service");
+
+  // helper: animate grid in with mask + pop
+  const animateGridIn = (value: string) => {
+    const grid = rootRef.current?.querySelector(
+      `[data-tab="${value}"]`
+    ) as HTMLElement | null;
+    if (!grid) return;
+
+    // mark visible
+    gsap.set(grid, { opacity: 1 });
+
+    // card pop: random order
+    const cards = gsap.utils.toArray<HTMLElement>(
+      grid.querySelectorAll(".svc-card")
+    );
+    gsap.set(cards, { opacity: 1 });
+
+    gsap.fromTo(
+      cards,
+      { y: 18, scale: 0.96, filter: "blur(8px)" },
+      {
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: { each: 0.06, from: "random" },
+      }
+    );
+  };
+
+  // helper: fade/slide out previous visible grids
+  const animatePrevOut = (value: string) => {
+    const others = rootRef.current?.querySelectorAll(
+      `.service-grid:not([data-tab="${value}"])`
+    );
+    if (!others) return;
+
+    others.forEach((el) => {
+      gsap.to(el, {
+        opacity: 0,
+        y: 10,
+        duration: 0.25,
+        ease: "power1.out",
+      });
+    });
+  };
+
+  useLayoutEffect(() => {
+    // initial in
+    animateGridIn(active);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // DATA (unchanged)
   const marketingData: ServiceItem[] = [
     {
       id: "m1",
@@ -138,101 +199,74 @@ const ServiceTabs = () => {
   ];
 
   return (
-    <div className="w-full">
-      <Tabs defaultValue="marketing_service" className="flex flex-col gap-6">
+    <div ref={rootRef} className="w-full">
+      <Tabs
+        defaultValue="marketing_service"
+        className="flex flex-col gap-6"
+        onValueChange={(v) => {
+          animatePrevOut(v);
+          setActive(v);
+          // slight delay to ensure new content is mounted
+          setTimeout(() => animateGridIn(v), 40);
+        }}
+      >
         <TabsList className="px-8 py-10 bg-[#161721] flex items-center justify-between gap-8 w-full overflow-auto overflow-y-hidden">
+          {/* Your triggers unchanged */}
           <TabsTrigger
             value="marketing_service"
-            className="
-              group
-              py-6 px-7 border border-gray-500 flex items-center
-              bg-gradient-to-t from-[#FFFFFF00] to-[#777980]
-              data-[state=active]:bg-gradient-to-r
-              data-[state=active]:from-[#E93D3D]
-              data-[state=active]:to-[#4E30FE]
-              transition-all duration-300 cursor-pointer
-            "
+            className="group py-6 px-7 border border-gray-500 flex items-center bg-gradient-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p
-              className="
-                text-lg font-semibold leading-none
-                text-transparent bg-clip-text
-                bg-gradient-to-r from-[#9767e4] to-[#47cfeb]
-                group-data-[state=active]:!text-white
-                group-data-[state=active]:!bg-none
-              "
-            >
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:!text-white group-data-[state=active]:!bg-none">
               Marketing Services
             </p>
           </TabsTrigger>
 
           <TabsTrigger
             value="business_consultant"
-            className="
-              group
-              py-6 px-7 border border-gray-500 flex items-center
-              bg-gradient-to-t from-[#FFFFFF00] to-[#777980]
-              data-[state=active]:bg-gradient-to-r
-              data-[state=active]:from-[#E93D3D]
-              data-[state=active]:to-[#4E30FE]
-              transition-all duration-300 cursor-pointer
-            "
+            className="group py-6 px-7 border border-gray-500 flex items-center bg-gradient-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p
-              className="
-                text-lg font-semibold leading-none
-                text-transparent bg-clip-text
-                bg-gradient-to-r from-[#9767e4] to-[#47cfeb]
-                group-data-[state=active]:!text-white
-                group-data-[state=active]:!bg-none
-              "
-            >
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:!text-white group-data-[state=active]:!bg-none">
               Business Consulting
             </p>
           </TabsTrigger>
 
           <TabsTrigger
             value="business_automation"
-            className="
-              group
-              py-6 px-7 border border-gray-500 flex items-center
-              bg-gradient-to-t from-[#FFFFFF00] to-[#777980]
-              data-[state=active]:bg-gradient-to-r
-              data-[state=active]:from-[#E93D3D]
-              data-[state=active]:to-[#4E30FE]
-              transition-all duration-300 cursor-pointer
-            "
+            className="group py-6 px-7 border border-gray-500 flex items-center bg-gradient-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p
-              className="
-                text-lg font-semibold leading-none
-                text-transparent bg-clip-text
-                bg-gradient-to-r from-[#9767e4] to-[#47cfeb]
-                group-data-[state=active]:!text-white
-                group-data-[state=active]:!bg-none
-              "
-            >
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:!text-white group-data-[state=active]:!bg-none">
               Business Automation
             </p>
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="marketing_service">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            data-tab="marketing_service"
+            className="service-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-0"
+          >
             {marketingData.map((item) => (
               <ServiceCard key={item.id} {...item} />
             ))}
           </div>
         </TabsContent>
+
         <TabsContent value="business_consultant">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            data-tab="business_consultant"
+            className="service-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-0"
+          >
             {consultingData.map((item) => (
               <ServiceCard key={item.id} {...item} />
             ))}
           </div>
         </TabsContent>
+
         <TabsContent value="business_automation">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            data-tab="business_automation"
+            className="service-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-0"
+          >
             {automationData.map((item) => (
               <ServiceCard key={item.id} {...item} />
             ))}
