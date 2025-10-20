@@ -14,6 +14,7 @@ import { Menu } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ButtonAll from "../ButtonAll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,12 +68,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Button
-            variant="default"
-            className="px-6 py-3.5 capitalize btn-gradient text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl"
-          >
-            book consultation now
-          </Button>
+          <ButtonAll btnText="book consultation now"></ButtonAll>
         </div>
 
         <div className="lg:hidden">
@@ -94,7 +90,7 @@ const Navbar = () => {
 
                 <Button
                   variant="default"
-                  className="px-6 py-3.5 capitalize btn-gradient text-sm font-medium leading-8 h-10 rounded-xl"
+                  className="px-6 py-3.5 capitalize btn-gradient text-sm font-medium leading-8 h-10 rounded-xl cursor-pointer"
                 >
                   book consultation now
                 </Button>
