@@ -155,3 +155,27 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.text-color-gradient-tab {
+  @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+/* base states to avoid flash */
+.svc-head .mask,
+.svc-card {
+  opacity: 0;
+  will-change: transform, opacity, filter, clip-path;
+}
+
+/* mask block for heading sweep reveal */
+.mask {
+  display: inline-block;
+  clip-path: inset(0 0 100% 0);
+  filter: blur(6px);
+}

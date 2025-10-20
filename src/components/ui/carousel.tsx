@@ -5,9 +5,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-
 import { cn } from '@/lib/utils';
-
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -50,7 +48,7 @@ function Carousel({
   ...props
 }: React.ComponentProps<'div'> & CarouselProps) {
   const autoplay = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false }) 
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   const [carouselRef, api] = useEmblaCarousel(
     { ...opts, axis: orientation === 'horizontal' ? 'x' : 'y', loop: true },
@@ -147,13 +145,29 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
-  const { orientation } = useCarousel();
+function CarouselItem({
+  className,
+  index,
+  activeBg = 'bg-[rgba(56,83,255,0.1)]',
+  inactiveBg = 'bg-[rgba(56,83,255,0.04)]',
+  ...props
+}: React.ComponentProps<'div'> & {
+  index: number;
+  activeBg?: string;
+  inactiveBg?: string;
+}) {
+  const { orientation, selectedIndex } = useCarousel();
+
+  // Check if this slide is currently active
+  const isActive = selectedIndex === index;
+
   return (
     <div
       className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full',
+        'min-w-0 shrink-0 grow-0 basis-full px-4 transition-all duration-300 rounded-xl',
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        isActive ? activeBg : inactiveBg,
+        isActive ? 'scale-[1.02] shadow-md' : 'scale-100 opacity-80',
         className
       )}
       {...props}
@@ -161,8 +175,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
-
-// --- Pagination Dots + Page Number ---
+// --- Pagination Dots ---
 function CarouselPagination() {
   const { api, selectedIndex, slidesCount } = useCarousel();
 
@@ -179,8 +192,8 @@ function CarouselPagination() {
             className={cn(
               'w-3 h-3 rounded-full transition-all duration-300',
               index === selectedIndex
-                ? 'bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-160'
-                : 'bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-100'
+                ? 'bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-125'
+                : 'bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70'
             )}
           />
         ))}
@@ -194,6 +207,5 @@ export {
   Carousel,
   CarouselContent,
   CarouselItem,
-  
   CarouselPagination,
 };
