@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav
       //   ref={navRef}
-      className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b border-white/50"
+      className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-1500 border-b border-white/50 "
     >
       <div className="custom-container flex flex-row items-center justify-between">
         <Logo />
