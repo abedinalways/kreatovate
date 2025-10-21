@@ -112,19 +112,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-:root {
-  --font-jakarta: "Plus Jakarta Sans", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
-}
-
-.font-jakarta {
-  font-family: var(--font-jakarta);
-}
-
-.font-roboto {
-  font-family: var(--font-roboto);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -134,6 +121,61 @@
   }
 }
 
-.btnOne-text-gradient {
-  @apply bg-gradient-to-r from-[#4E30FE] to-[#E93D3D];
+:root {
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-jakarta {
+  font-family: var(--font-jakarta);
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-[#E93D3D] to-[#4E30FE];
+}
+
+.text-color-gradient {
+  @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+}
+.text-gradient {
+  @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
+}
+
+.heading-btn-bg {
+  @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
+}
+
+.custom-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.banner-bg {
+  background-image: url("/images/banner1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-color-gradient-tab {
+  @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+/* base states to avoid flash */
+.svc-head .mask,
+.svc-card {
+  opacity: 0;
+  will-change: transform, opacity, filter, clip-path;
+}
+
+/* mask block for heading sweep reveal */
+.mask {
+  display: inline-block;
+  clip-path: inset(0 0 100% 0);
+  filter: blur(6px);
 }
