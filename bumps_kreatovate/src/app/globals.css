@@ -133,3 +133,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.btnOne-text-gradient {
+  @apply bg-gradient-to-r from-[#4E30FE] to-[#E93D3D];
+}
