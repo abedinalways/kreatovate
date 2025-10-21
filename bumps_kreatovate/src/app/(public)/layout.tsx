@@ -6,10 +6,8 @@ const PublicLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <>
       <Navbar />
-      <main className="grow min-h-screen bg-black px-[140px] text-white">
-        {children}
-      </main>
-      <Footer/>
+      {/* px-[140px] */}
+      <main className="grow min-h-screen bg-black text-white">{children}</main>
     </>
   );
 };
