@@ -69,8 +69,8 @@ const AboutUs = () => {
           <HeadingButton btnText="about us" />
           <h1 className="text-2xl sm:text-5xl md:text-6xl font-semibold max-w-2xl">
             Explore Our Tailored{" "}
-            <span className="text-color-gradient">Marketing</span> & Consulting{" "}
-            <span className="text-color-gradient">Solutions</span>
+            <span className="text-color-gradient">AI Automation</span> &{" "}
+            <span className="text-color-gradient">Workforce Solutions</span>
           </h1>
           <p className="text-base leading-relaxed font-normal">
             Discover high-impact A.I. Powered marketing solutions that elevate
@@ -79,7 +79,7 @@ const AboutUs = () => {
             and operational needs.
           </p>
 
-          <ButtonAll btnText="Start Your Success Journey!" />
+          <ButtonAll btnText="Try Demo" />
         </div>
       </div>
       <Image

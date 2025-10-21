@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import Image from "next/image";
 import { useLayoutEffect } from "react";
+import ButtonAll from "../shared/ButtonAll";
 
 const RoboBg = () => {
   useLayoutEffect(() => {
@@ -34,11 +35,18 @@ const RoboBg = () => {
             <span className="text-color-gradient">Expert Marketing</span>{" "}
             <span className="text-color-gradient">& Consulting</span>
           </h1>
-          <p className="fade-up text-xs lg:text-[1rem] font-normal max-w-md lg:max-w-xl">
+          <p className="fade-up text-xs lg:text-[1rem] font-normal max-w-md lg:max-w-xl mb-5 md:mb-12">
             Unlock Your Brand&apos;s Potential with Kreatovate Marketing &
             Consulting Where Innovation Meets Strategic Excellence to Propel
             Your Business Forward.
           </p>
+
+          <div>
+            <ButtonAll
+              btnText="Get Started Today"
+              className="text-sm md:text-lg"
+            />
+          </div>
         </div>
       </div>
       <div className="absolute right-0 -bottom-36 md:bottom-0">
