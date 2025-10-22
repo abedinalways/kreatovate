@@ -184,7 +184,6 @@
 .text-gradient-special {
   @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
-/* mask block for heading sweep reveal */
 .mask {
   display: inline-block;
   clip-path: inset(0 0 100% 0);
