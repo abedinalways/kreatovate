@@ -1,8 +1,9 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import HeadingButton from '../shared/buttons/HeadingButton';
-import { BsFacebook } from 'react-icons/bs';
-import { gsap } from 'gsap';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import HeadingButton from "../shared/buttons/HeadingButton";
+import { BsFacebook } from "react-icons/bs";
+import { gsap } from "gsap";
+import Image from "next/image";
 
 const Team = () => {
   const [showAll, setShowAll] = useState(false);
@@ -11,10 +12,10 @@ const Team = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    fetch('/profiles.json')
-      .then(res => res.json())
-      .then(data => setProfiles(data))
-      .catch(err => console.error('Failed to load profiles:', err));
+    fetch("/profiles.json")
+      .then((res) => res.json())
+      .then((data) => setProfiles(data))
+      .catch((err) => console.error("Failed to load profiles:", err));
   }, []);
 
   const visible = showAll ? profiles : profiles.slice(0, 4);
@@ -33,7 +34,7 @@ const Team = () => {
         scale: 1,
         duration: 0.6,
         stagger: 0.1,
-        ease: 'power3.out',
+        ease: "power3.out",
       }
     );
   }, [visible]);
@@ -43,35 +44,52 @@ const Team = () => {
     if (!buttonRef.current) return;
     const btn = buttonRef.current;
 
-    btn.addEventListener('mouseenter', () => {
+    btn.addEventListener("mouseenter", () => {
       gsap.to(btn, { scale: 1.05, duration: 0.2 });
     });
-    btn.addEventListener('mouseleave', () => {
+    btn.addEventListener("mouseleave", () => {
       gsap.to(btn, { scale: 1, duration: 0.2 });
     });
-    btn.addEventListener('mousedown', () => {
+    btn.addEventListener("mousedown", () => {
       gsap.to(btn, { scale: 0.95, duration: 0.1 });
     });
-    btn.addEventListener('mouseup', () => {
+    btn.addEventListener("mouseup", () => {
       gsap.to(btn, { scale: 1.05, duration: 0.1 });
     });
 
     return () => {
-      btn.removeEventListener('mouseenter', () => {});
-      btn.removeEventListener('mouseleave', () => {});
-      btn.removeEventListener('mousedown', () => {});
-      btn.removeEventListener('mouseup', () => {});
+      btn.removeEventListener("mouseenter", () => {});
+      btn.removeEventListener("mouseleave", () => {});
+      btn.removeEventListener("mousedown", () => {});
+      btn.removeEventListener("mouseup", () => {});
     };
   }, []);
 
   return (
-    <div className="custom-container px-2  md:px-5 py-20 flex-col gap-4 justify-center items-center">
+    <div className="relative px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center">
+      <div className="absolute top-0 left-0 w-full h-full z-10">
+        <Image
+          src="/images/team-ellipse1.png"
+          alt="team bg 1"
+          width={1000}
+          height={1000}
+          className="object-cover absolute -top-40 right-0 w-[600px] h-[600px]"
+        />
+
+        <Image
+          src="/images/team-ellipse-2.png"
+          alt="team bg 1"
+          width={1000}
+          height={1000}
+          className="object-cover absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px]"
+        />
+      </div>
       <div className="flex justify-center items-center mb-4 mt-6">
         <HeadingButton btnText="Our Team" />
       </div>
 
       <h2 className="md:text-5xl text-center font-bold">
-        The People Behind{' '}
+        The People Behind{" "}
         <span className="text-color-gradient">Kreatovate</span>
       </h2>
 
@@ -82,16 +100,16 @@ const Team = () => {
             ref={cardsRef}
             className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
           >
-            {visible.map(p => (
+            {visible.map((p) => (
               <div
                 key={p.id}
                 className="relative rounded-2xl px-2 py-2 shadow-2xl group transition-all duration-500"
               >
                 <div className="relative rounded-2xl overflow-hidden w-full h-full border border-red-500 group-hover:scale-[1.02] transition-transform duration-500">
                   <div className="relative h-90 w-60">
-                    <img
+                    <Image
                       src={p.img}
-                      alt={p.name || 'Team member image'}
+                      alt={p.name || "Team member image"}
                       className="object-cover w-full h-full mx-auto transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
@@ -101,7 +119,7 @@ const Team = () => {
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out p-6 flex flex-col justify-between text-white"
                     style={{
                       background:
-                        'linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)',
+                        "linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)",
                     }}
                   >
                     <div className="flex justify-around">
@@ -109,7 +127,7 @@ const Team = () => {
                         <div className="rounded-full w-1/4">
                           <img
                             src={p.img}
-                            alt={p.name || 'Team member image'}
+                            alt={p.name || "Team member image"}
                             className="rounded-full w-[30px] h-[30px] border-1 border-[#D1C8C8] bg-[#D1C8C8]"
                           />
                         </div>
@@ -129,13 +147,13 @@ const Team = () => {
                       <p className="mt-2">
                         <span className="font-bold text-gray-200">
                           Superpower:
-                        </span>{' '}
+                        </span>{" "}
                         {p.superpower}
                       </p>
                       <p>
                         <span className="font-bold text-gray-200">
                           Weakness:
-                        </span>{' '}
+                        </span>{" "}
                         {p.weakness}
                       </p>
                     </div>
@@ -165,10 +183,10 @@ const Team = () => {
             <div className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto">
               <button
                 ref={buttonRef}
-                onClick={() => setShowAll(s => !s)}
+                onClick={() => setShowAll((s) => !s)}
                 className="px-8 py-1 rounded-[10px] bg-black text-white transition-all duration-300"
               >
-                {showAll ? 'Show Less' : 'See All'}
+                {showAll ? "Show Less" : "See All"}
               </button>
             </div>
           </div>
