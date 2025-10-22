@@ -4,7 +4,7 @@ import ButtonOne from '../shared/buttons/ButtonOne';
 
 const Solution = () => {
   return (
-    <div className="custom-container pt-24 relative w-full overflow-hidden">
+    <div className="custom-container pt-24 relative w-full overflow-hidden px-2">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-between gap-6 mb-8">
         <div className="lg:w-1/2">
@@ -25,19 +25,19 @@ const Solution = () => {
       {/* Content Section */}
       <div className="bg-[#1A1A1A] p-6 md:p-8 mt-4 flex flex-col md:flex-row gap-6 md:gap-10 rounded-2xl">
         {/* Image */}
-        <div className="w-full h-[350px] md:w-1/2 flex justify-center md:justify-start">
+        <div className="w-full sm:h-[150px] md:h-[350px] md:w-1/2 flex justify-center md:justify-start">
           <Image
             src="/images/solution.jpg"
             alt="Solution Image"
             width={574}
             height={400}
-            className="object-cover rounded-2xl h-"
+            className="object-cover rounded-2xl"
           />
         </div>
 
         {/* Text Content */}
         <div className="w-full md:w-1/2 mx-auto flex justify-center items-center ">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-3">
             <small className="uppercase text-color-gradient font-roboto font-normal text-sm">
               /02 SaaS Marketing
             </small>
@@ -54,7 +54,7 @@ const Solution = () => {
               <ButtonOne
                 btnText="View Details"
                 width="w-full md:w-auto"
-                padding="py-3 px-6"
+                padding="py-2 px-4"
                 fontSize="text-lg md:text-xl"
               />
             </div>
