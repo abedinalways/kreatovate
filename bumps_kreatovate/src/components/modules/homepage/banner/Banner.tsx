@@ -1,15 +1,66 @@
-import React from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
 import MainBg from "./MainBg";
 import Image from "next/image";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
+import gsap from "gsap";
 
 const Banner = () => {
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline for smooth sequence
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(".banner-tagline", {
+        y: -30,
+        opacity: 0,
+        duration: 0.8,
+      })
+        .from(
+          ".banner-heading",
+          {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+          },
+          "-=0.3"
+        )
+        .from(
+          ".banner-subtext",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.4"
+        )
+        .from(
+          ".banner-button",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+          },
+          "-=0.3"
+        );
+    }, bannerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="relative min-h-svh md:min-h-screen overflow-hidden">
+    <div
+      ref={bannerRef}
+      className="relative min-h-svh md:min-h-screen overflow-hidden"
+    >
       <MainBg />
 
       <div className="absolute top-36 inset-x-0 z-40 flex flex-col items-center justify-center text-center px-4">
-        <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto">
+        <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline">
           <Image
             src="/images/hrline1.png"
             alt="heading line vector 1"
@@ -28,17 +79,17 @@ const Banner = () => {
           />
         </div>
 
-        <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl">
+        <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
           Transform Ideas with{" "}
           <span className="text-gradient-special">Kreatovate’s Strategy</span>
         </h1>
 
-        <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl">
+        <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl banner-subtext">
           Turn concepts into measurable growth with strategies that scale your
           impact, increase revenue, and deepen customer loyalty.
         </p>
 
-        <div className="mt-5">
+        <div className="mt-5 banner-button">
           <ButtonTwo btnText="Get Started" />
         </div>
       </div>
