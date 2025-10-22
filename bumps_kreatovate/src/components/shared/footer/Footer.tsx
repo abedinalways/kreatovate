@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import Logo from '../logo/Logo';
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import Logo from "../logo/Logo";
+import Image from "next/image";
 
 const XIcon = () => (
   <svg
@@ -15,11 +16,23 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className=" text-white custom-container px-4 sm:px-36 md:px-5">
-      <div className="container mx-auto  py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="relative w-full text-white overflow-hidden bg-[#0b1121]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-10">
+        <Image
+          src="/images/footer-bg.png"
+          alt="footer background"
+          width={1600}
+          height={461}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
-          <div className="space-y-1">
+          <div className="space-y-4">
             <Logo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -27,12 +40,13 @@ export default function Footer() {
               enterprise digital marketing and advertising solution that does
               all the heavy lifting.
             </p>
+
             <div className="flex gap-3 pt-2">
               <Link
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#1a1a1a] hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </Link>
@@ -40,7 +54,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#1a1a1a] hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </Link>
@@ -48,7 +62,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#1a1a1a] hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <XIcon />
               </Link>
@@ -56,7 +70,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#1a1a1a] hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
@@ -68,25 +82,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
+                <Link href="/" className="text-gray-400 hover:text-white">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
+                <Link href="/about" className="text-gray-400 hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
                   href="/solutions"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
                 </Link>
@@ -94,7 +102,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/testimonial"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Testimonial
                 </Link>
@@ -102,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Contact Us
                 </Link>
@@ -118,7 +126,7 @@ export default function Footer() {
                 <p className="text-gray-500 text-sm mb-1">Email:</p>
                 <Link
                   href="mailto:consulting@kreatovate.com"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   consulting@kreatovate.com
                 </Link>
@@ -127,9 +135,9 @@ export default function Footer() {
                 <p className="text-gray-500 text-sm mb-1">Phone:</p>
                 <Link
                   href="tel:+18668792929"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
-                  +1(866)879-2929
+                  +1 (866) 879-2929
                 </Link>
               </div>
             </div>
@@ -142,7 +150,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy-policy"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Privacy Policy
                 </Link>
@@ -150,7 +158,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms-of-services"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Terms of Services
                 </Link>
@@ -158,7 +166,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Conditions
                 </Link>
@@ -166,7 +174,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white"
                 >
                   Cookies
                 </Link>
@@ -174,13 +182,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="border-t border-[rgba(237,28,36,0.2)]">
-        <div className="container mx-auto px-6 py-6">
+        {/* Copyright */}
+        <div className="border-t border-[rgba(237,28,36,0.2)] mt-10 pt-6">
           <p className="text-center text-gray-500 text-sm">
-            © 2025 - Kreatovate _ All rights reserved
+            © 2025 — Kreatovate. All rights reserved.
           </p>
         </div>
       </div>
