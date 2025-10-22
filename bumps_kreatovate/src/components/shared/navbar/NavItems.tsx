@@ -71,8 +71,8 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
                   className={[
                     "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap",
                     isActive
-                      ? "bg-[#ED1C2433] font-semibold"
-                      : "hover:bg-[#ED1C2433]/40",
+                      ? "bg-[#ED1C24] font-semibold"
+                      : "hover:bg-[#ED1C24]/40",
                   ].join(" ")}
                 >
                   {item.label}
@@ -93,8 +93,8 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
             key={item.id}
             className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
               active === item.id
-                ? "bg-[#ED1C2433] font-semibold"
-                : "hover:bg-[#ED1C2433]/40"
+                ? "bg-[#ED1C24] font-semibold"
+                : "hover:bg-[#ED1C24]/40"
             }`}
           >
             <Link
