@@ -1,22 +1,25 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface BtnProps {
   btnText: string;
-  bgColor?: string;
+  width?: string; // e.g., "w-full", "w-40"
+  padding?: string; // e.g., "py-3 px-6"
+  fontSize?: string; // e.g., "text-lg", "text-sm"
 }
 
-const ButtonOne = ({ btnText, bgColor }: BtnProps) => {
+const ButtonOne = ({
+  btnText,
+  width = 'w-full',
+  padding = 'py-3',
+  fontSize = 'text-lg',
+}: BtnProps) => {
   return (
-    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
+    <div className="p-px rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
       <Button
         asChild
         variant="ghost"
-        className={`w-full rounded-[10px] ${
-          bgColor
-            ? "bg-[#0f1016] hover:bg-[#0f1016]/90"
-            : "bg-black hover:bg-black/90"
-        } text-white hover:text-white py-3 text-lg font-medium`}
+        className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white ${padding} ${fontSize} font-medium`}
       >
         <Link href="#" className="block w-full text-center capitalize">
           {btnText}
