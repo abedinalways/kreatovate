@@ -184,9 +184,51 @@
 .text-gradient-special {
   @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
-
 .mask {
   display: inline-block;
   clip-path: inset(0 0 100% 0);
   filter: blur(6px);
 }
+
+/* embla carousel */
+
+.embla {
+  max-width: 48rem;
+  margin: auto;
+  --slide-spacing: 1rem;
+  --slide-size: 70%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+  transition: transform 0.6s ease-in-out; /* smooth slide motion */
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  opacity: 0.7;
+  transition: opacity 0.4s ease; /* subtle fade only */
+}
+
+.embla__slide.is-selected {
+  opacity: 1; /* slightly highlight current slide */
+}
+
+.embla__slide__img {
+  border-radius: 1rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
