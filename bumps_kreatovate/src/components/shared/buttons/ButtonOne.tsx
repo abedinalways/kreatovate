@@ -1,13 +1,26 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const ButtonOne = ({ btnText }) => {
+interface BtnProps {
+  btnText: string;
+  bgColor?: string;
+}
+
+const ButtonOne = ({ btnText, bgColor }: BtnProps) => {
   return (
-    <div className="btnOne-text-gradient p-px rounded-xl">
+    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
       <Button
-        variant="outline"
-        className="py-2.5 px-4 rounded-[1px] font-roboto font-normal text-lg capitalize bg-transparent"
+        asChild
+        variant="ghost"
+        className={`w-full rounded-[10px] ${
+          bgColor
+            ? "bg-[#0f1016] hover:bg-[#0f1016]/90"
+            : "bg-black hover:bg-black/90"
+        } text-white hover:text-white py-3 text-lg font-medium`}
       >
-        {btnText}
+        <Link href="#" className="block w-full text-center capitalize">
+          {btnText}
+        </Link>
       </Button>
     </div>
   );
