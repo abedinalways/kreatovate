@@ -16,7 +16,7 @@ const Strategy = () => {
           alt="robot hand"
           width={286}
           height={554}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-30 blur-xs"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-30 lg:opacity-100 blur-xs lg:blur-none"
         />
         <Image
           src="/images/strategy-ellipse1.png"
@@ -27,7 +27,7 @@ const Strategy = () => {
         />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full z-20 py-24 flex flex-col justify-between">
+      <div className="absolute top-0 left-0 w-full h-full z-20 py-24 px-4 md:px-0 flex flex-col justify-between">
         <div className="flex flex-col items-start gap-2 self-start">
           <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
             [ The Kreatovate commitment to excellence ]
