@@ -4,7 +4,7 @@ import React, { useLayoutEffect } from 'react';
 import { Calendar } from '../ui/calendar';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ConsultationForm } from '../shared/consultation form/consultationForm';
+import { ConsultationForm } from '../shared/consultationForm/consultationForm';
 
 gsap.registerPlugin(ScrollTrigger);
 
