@@ -94,16 +94,16 @@ const Team = () => {
       </h2>
 
       <div className="flex justify-center">
-        <section className="w-full max-w-6xl mx-auto py-12 px-4">
+        <section className="w-full mx-auto py-12 md:px-2">
           {/* Grid */}
           <div
             ref={cardsRef}
-            className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+            className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
           >
             {visible.map((p) => (
               <div
                 key={p.id}
-                className="relative rounded-2xl px-4 py-2 shadow-2xl group transition-all duration-500"
+                className="relative rounded-2xl px-2 py-2 shadow-2xl group transition-all duration-500"
               >
                 <div className="relative rounded-2xl overflow-hidden w-full h-full border border-red-500 group-hover:scale-[1.02] transition-transform duration-500">
                   <div className="relative h-90 w-60">
@@ -137,7 +137,7 @@ const Team = () => {
                         </div>
                       </div>
                       <div className="w-12 h-8 rounded-md bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
-                        <BsFacebook />
+                        <BsFacebook  className='cursor-pointer'/>
                       </div>
                     </div>
 
