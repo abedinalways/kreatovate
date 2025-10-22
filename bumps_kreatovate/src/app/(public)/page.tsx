@@ -10,13 +10,17 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <Banner />
-      <Strategy />
+      <div className="bg-[#0F0F0F]">
+        <Strategy />
+      </div>
       <TrustedGrowth />
 
       <Team />
       <Service />
-      <Explore />
-      <Contact />
+      <div className="bg-[#0F0F0F]">
+        <Explore />
+        <Contact />
+      </div>
     </div>
   );
 }
