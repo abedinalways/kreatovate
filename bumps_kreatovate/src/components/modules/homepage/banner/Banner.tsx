@@ -5,7 +5,7 @@ import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 
 const Banner = () => {
   return (
-    <div className="relative min-h-[700px] md:min-h-screen overflow-hidden">
+    <div className="relative min-h-svh md:min-h-screen overflow-hidden">
       <MainBg />
 
       <div className="absolute top-36 inset-x-0 z-40 flex flex-col items-center justify-center text-center px-4">
