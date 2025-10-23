@@ -66,34 +66,27 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="relative w-full border ">
+    <div className="relative w-full" id='team'>
       {/* Background Image 1 */}
-      <div className="absolute top-10 left-0 w-full h-full z-0">
+      <div className="absolute -top-40 md:left-370 w-full h-full z-0">
         <Image
           src="/images/team-ellipse1.png"
           alt="team bg 1"
           width={500}
           height={500}
-          className="object-cover w-[600px] h-[600px] rounded-full opacity-80"
+          className="object-cover w-[400px] h-[400px] rounded-full opacity-80"
         />
       </div>
 
       {/* Background Image 2 */}
-      <div className="absolute top-0 -right-10 ">
-        <div className="w-[600px] h-[600px]">
-          <Image
-            src="/images/team-ellipse-2.png"
-            alt="team bg 2"
-            width={500}
-            height={500}
-            className="object-cover w-full h-full rounded-full opacity-80"
-          />
-        </div>
-      </div>
-
-      {/* background ellipses */}
-      {/* <div className="relative w-full h-0">
-       
+      {/* <div className="absolute top-10 right-10 w-full h-full z-0">
+        <Image
+          src="/images/team-ellipse-2.png"
+          alt="team bg 2"
+          width={500}
+          height={500}
+          className="object-cover w-[400px] h-[400px] rounded-full opacity-80"
+        />
       </div> */}
 
       {/* Team Section */}
@@ -102,7 +95,7 @@ const Team = () => {
           <HeadingButton btnText="Our Team" />
         </div>
 
-        <h2 className="md:text-5xl text-center font-bold">
+        <h2 className=" text-3xl md:text-5xl text-center font-bold">
           The People Behind{' '}
           <span className="text-color-gradient">Kreatovate</span>
         </h2>
@@ -204,7 +197,7 @@ const Team = () => {
 
             {/* Show All Button */}
             <div className="flex justify-center mt-10">
-              <div className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto z-100">
+              <div className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto z-5">
                 <button
                   ref={buttonRef}
                   onClick={() => setShowAll(s => !s)}
