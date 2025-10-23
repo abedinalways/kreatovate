@@ -79,7 +79,7 @@ const Team = () => {
       </div>
 
       {/* Background Image 2 */}
-      {/* <div className="absolute top-10 right-10 w-full h-full z-0">
+      <div className="absolute top-10 right-10 w-full h-full z-0">
         <Image
           src="/images/team-ellipse-2.png"
           alt="team bg 2"
@@ -87,7 +87,7 @@ const Team = () => {
           height={500}
           className="object-cover w-[400px] h-[400px] rounded-full opacity-80"
         />
-      </div> */}
+      </div>
 
       {/* Team Section */}
       <div className="custom-container px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center">
