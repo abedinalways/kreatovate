@@ -68,7 +68,7 @@ const ServiceCard = ({ title, desc, image, href }: ServiceItem) => {
 
   return (
     <div className="svc-card p-[1px] rounded-xl bg-gradient-to-r from-[#E93D3D] to-[#4E30FE]">
-      <div ref={cardRef} className="rounded-[10px]">
+      <div className="rounded-[10px]">
         <div className="bg-black h-full relative flex flex-col items-center gap-5 p-6 rounded-xl">
           {/* decorative lights (no animation class reused) */}
           <Image

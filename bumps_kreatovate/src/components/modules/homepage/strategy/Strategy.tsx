@@ -89,6 +89,7 @@ const Strategy = () => {
 
   return (
     <div
+      id="about_us"
       ref={containerRef}
       className="strategy-section custom-container pt-24 h-[75vh] relative w-full overflow-hidden"
     >
@@ -116,7 +117,7 @@ const Strategy = () => {
         />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full z-20 py-24 px-4 md:px-0 flex flex-col justify-between">
+      <div className="absolute top-0 left-0 w-full h-full z-20 py-24 px-4 flex flex-col justify-between">
         <div className="flex flex-col items-start gap-2 self-start">
           <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
             [ The Kreatovate commitment to excellence ]

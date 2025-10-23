@@ -51,18 +51,30 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div id="about_us" className="text-white pt-28 mx-auto relative isolate">
+    <div
+      id="about_us"
+      className="text-white pt-5 md:pt-10 lg:pt-16 mx-auto relative isolate"
+    >
       <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-36 md:px-5 custom-container">
         <div className="about-image w-full lg:w-1/2">
-          <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden">
-            <Image
+          <div className="relative w-full aspect-[16/17] sm:aspect-[16/10] md:aspect-[16/16] lg:aspect-[4/4] rounded-2xl overflow-hidden scale-x-[-1]">
+            {/* <Image
               src="/images/about_us.png"
               alt="about us image"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-center"
+            >
+              <source src="/videos/about_us1.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className="about-text w-full lg:w-1/2 space-y-6">
