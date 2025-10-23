@@ -150,7 +150,7 @@
 }
 
 .banner-bg {
-  background-image: url("/images/banner1.png");
+  background-image: url("/videos/banner.MOV");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -178,4 +178,11 @@
   display: inline-block;
   clip-path: inset(0 0 100% 0);
   filter: blur(6px);
+}
+
+@media (max-width: 425px) {
+  .robo-img {
+    width: 90%;
+    height: 55%;
+  }
 }
