@@ -23,10 +23,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Calendar } from '@/components/ui/calendar';
 import ButtonAll from '../ButtonAll';
-import { Calendar } from '@/components/ui/calendar'; // your custom Calendar
 
-// Field configuration interface
+
 export interface FormFieldConfig {
   name: string;
   label: string;
@@ -39,14 +39,13 @@ export interface FormFieldConfig {
   validation?: z.ZodType<any, any>;
 }
 
-// Props for the form
 export interface ConsultationFormProps {
   title?: string;
   subtitle?: string;
   fields?: FormFieldConfig[];
   buttonText?: string;
   showButtonIcon?: boolean;
-  showDecorator?: boolean; // ✅ Added this prop
+  showDecorator?: boolean;
   onSubmit?: (data: Record<string, any>) => Promise<void>;
   className?: string;
   apiEndpoint?: string;
@@ -54,7 +53,6 @@ export interface ConsultationFormProps {
   errorMessage?: string;
 }
 
-// Default fields
 const defaultFields: FormFieldConfig[] = [
   {
     name: 'firstName',
@@ -120,7 +118,7 @@ export function ConsultationForm({
   fields = defaultFields,
   buttonText = 'Book a consultation',
   showButtonIcon = true,
-  showDecorator = true, // ✅ Default value
+  showDecorator = true,
   onSubmit,
   className = 'text-white',
   apiEndpoint = '/api/consultation',
@@ -129,7 +127,6 @@ export function ConsultationForm({
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  // Create validation schema dynamically
   const createSchema = () => {
     const schemaFields: Record<string, z.ZodType<any, any>> = {};
     fields.forEach(field => {
@@ -150,10 +147,14 @@ export function ConsultationForm({
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: fields.reduce(
-      (acc, f) => ({ ...acc, [f.name]: f.name === 'selectedDates' ? [] : '' }),
-      {} as Record<string, any>
-    ),
+    defaultValues: {
+      ...fields.reduce(
+        (acc, f) => ({ ...acc, [f.name]: '' }),
+        {} as Record<string, any>
+      ),
+      selectedDates: [],
+      timeZone: 'CET',
+    },
   });
 
   const handleSubmit = async (data: FormValues) => {
@@ -198,7 +199,7 @@ export function ConsultationForm({
                 onValueChange={formField.onChange}
                 value={formField.value}
               >
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue
                     placeholder={field.placeholder || 'Select Option'}
                   />
@@ -237,7 +238,7 @@ export function ConsultationForm({
   return (
     <div
       className={cn(
-        'w-full max-w-md mx-auto p-8 bg-gradient-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl',
+        'w-full max-w-md mx-auto p-8 bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl',
         className
       )}
     >
@@ -249,11 +250,11 @@ export function ConsultationForm({
           <p className="text-gray-400 text-center text-sm mt-2">{subtitle}</p>
         )}
 
-        {/* ✅ Fixed: Only render when showDecorator is true */}
         {showDecorator && (
           <div className="flex items-center justify-center w-full my-6">
             <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
-            <div className="mx-3 flex-shrink-0">
+            <div className="mx-3 shrink-0">
+              {/* SVG Decorator */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -288,7 +289,7 @@ export function ConsultationForm({
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
-          {fields.map(field => renderField(field))}
+          {fields.map(renderField)}
           <ButtonAll
             type="submit"
             btnText={buttonText}
