@@ -11,7 +11,7 @@ const Feedback = () => {
       <div className="flex justify-center items-center mb-4">
         <HeadingButton btnText="Testimonial" />
       </div>
-      <h2 className="md:text-5xl text-center font-bold">
+      <h2 className="md:text-5xl text-3xl text-center font-bold">
         What our <span className="text-color-gradient">Customer Say</span>
       </h2>
       <div className="flex justify-center">
