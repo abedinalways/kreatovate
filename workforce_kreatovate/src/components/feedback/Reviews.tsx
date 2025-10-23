@@ -1,59 +1,59 @@
-'use client';
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Star } from 'lucide-react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 const reviews = [
   {
-    name: 'Judith Lowe',
-    company: 'Agency Nova',
-    image: '/images/user01.png',
+    name: "Judith Lowe",
+    company: "Agency Nova",
+    image: "/Images/user01.png",
     text: "Quotex-WordPress allows us to offer premium technical services under our brand, without dealing with WordPress complexities. It's a game-changer for our agency!",
   },
   {
-    name: 'Richa Shankar',
-    company: 'Marketing Plus',
-    image: '/images/user02.png',
-    text: 'Their white-label approach helped us strengthen client trust while benefiting from expert technical support. An essential solution!',
+    name: "Richa Shankar",
+    company: "Marketing Plus",
+    image: "/Images/user02.png",
+    text: "Their white-label approach helped us strengthen client trust while benefiting from expert technical support. An essential solution!",
   },
   {
-    name: 'David Miller',
-    company: 'TechVision',
-    image: '/images/user03.png',
-    text: 'Superb service and seamless integration! We expanded our offerings without hiring extra developers.',
+    name: "David Miller",
+    company: "TechVision",
+    image: "/Images/user03.png",
+    text: "Superb service and seamless integration! We expanded our offerings without hiring extra developers.",
   },
   {
-    name: 'Amira Khan',
-    company: 'Creative Loop',
-    image: '/images/user03.png',
-    text: 'The support team is incredibly responsive and knowledgeable. My clients love the fast turnaround.',
+    name: "Amira Khan",
+    company: "Creative Loop",
+    image: "/Images/user03.png",
+    text: "The support team is incredibly responsive and knowledgeable. My clients love the fast turnaround.",
   },
   {
-    name: 'Liam Carter',
-    company: 'BrightPixel',
-    image: '/images/user02.png',
-    text: 'A fantastic platform that saves us time and cost. Their backend support is unmatched.',
+    name: "Liam Carter",
+    company: "BrightPixel",
+    image: "/Images/user02.png",
+    text: "A fantastic platform that saves us time and cost. Their backend support is unmatched.",
   },
   {
-    name: 'Sophia Nguyen',
-    company: 'NextGen Agency',
-    image: '/images/user01.png',
-    text: 'Our projects now run smoother than ever. The UI and experience are top-notch!',
+    name: "Sophia Nguyen",
+    company: "NextGen Agency",
+    image: "/Images/user01.png",
+    text: "Our projects now run smoother than ever. The UI and experience are top-notch!",
   },
   {
-    name: 'Noah Patel',
-    company: 'Visionary Tech',
-    image: '/images/user02.png',
-    text: 'Reliable, professional, and innovative — the perfect combo for agencies looking to scale.',
+    name: "Noah Patel",
+    company: "Visionary Tech",
+    image: "/Images/user02.png",
+    text: "Reliable, professional, and innovative — the perfect combo for agencies looking to scale.",
   },
   {
-    name: 'Isabella Rossi',
-    company: 'DigitalCraft',
-    image: '/images/user02.png',
-    text: 'Quotex-WordPress exceeded all our expectations. Our workflow efficiency improved dramatically.',
+    name: "Isabella Rossi",
+    company: "DigitalCraft",
+    image: "/Images/user02.png",
+    text: "Quotex-WordPress exceeded all our expectations. Our workflow efficiency improved dramatically.",
   },
 ];
 
@@ -79,12 +79,12 @@ const Reviews = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
 
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
 
     return () => {
-      emblaApi.off('select', onSelect);
-      emblaApi.off('reInit', onSelect);
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi]);
 
@@ -105,19 +105,19 @@ const Reviews = () => {
                     <Card
                       className={`border-1 border-[#E21717] text-white shadow-lg rounded-2xl  md:h-82 transition-all duration-300 ${
                         isActive
-                          ? 'bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]'
-                          : 'bg-[#121218] text-gray-400 scale-95 opacity-70'
+                          ? "bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]"
+                          : "bg-[#121218] text-gray-400 scale-95 opacity-70"
                       }`}
                       style={{
                         border: isActive
-                          ? '1px solid transparent'
-                          : '1px solid #1f1f25',
+                          ? "1px solid transparent"
+                          : "1px solid #1f1f25",
                         backgroundImage: isActive
                           ? `linear-gradient(to bottom right, rgba(226,23,23,0.85), rgba(55,0,255,0.85), rgba(11,11,15,0.9)), url('/images/testimonioal02.png')`
                           : `url('/images/testimonioal02.png')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
                       }}
                     >
                       <CardContent className="p-6 flex flex-col justify-between">
@@ -195,8 +195,8 @@ const Reviews = () => {
                   onClick={() => emblaApi?.scrollTo(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === selectedIndex
-                      ? 'bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-150'
-                      : 'bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70'
+                      ? "bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-150"
+                      : "bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70"
                   }`}
                 />
               ))}

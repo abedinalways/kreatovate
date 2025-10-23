@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
-import Image from 'next/image';
-import Logo from '../Logo';
+import Image from "next/image";
+import Logo from "../Logo";
 
 const XIcon = () => (
   <svg
@@ -21,7 +21,7 @@ export default function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0 z-10">
         <Image
-          src="/images/footer-bg.png"
+          src="/Images/footer-bg.png"
           alt="footer background"
           width={1600}
           height={461}

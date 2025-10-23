@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { cn } from "@/lib/utils"; // ✅ utility for conditional class merging
+import { cn } from "@/lib/utils";
 
 type ButtonAllProps = {
   btnText?: string;
@@ -11,6 +11,7 @@ type ButtonAllProps = {
   rightIcon?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
+  children?: React.ReactNode;
 };
 
 const ButtonAll: React.FC<ButtonAllProps> = ({
@@ -22,6 +23,7 @@ const ButtonAll: React.FC<ButtonAllProps> = ({
   rightIcon,
   onClick,
   disabled = false,
+  children,
 }) => {
   return (
     <Button
@@ -36,7 +38,7 @@ const ButtonAll: React.FC<ButtonAllProps> = ({
       )}
     >
       {leftIcon && <span className="flex items-center">{leftIcon}</span>}
-      {btnText}
+      {children ?? btnText}
       {rightIcon && <span className="flex items-center">{rightIcon}</span>}
     </Button>
   );
