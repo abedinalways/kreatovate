@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ReactNode } from "react";
+import LenisProvider from "@/providers/LenisProvider";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body
         className={`${jakarta.variable} antialiased bg-[#000] font-jakarta text-white`}
       >
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );
