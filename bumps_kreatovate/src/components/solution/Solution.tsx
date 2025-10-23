@@ -37,7 +37,7 @@ const Solution = () => {
 
         {/* Text Content */}
         <div className="w-full md:w-1/2 mx-auto flex justify-center items-center ">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-6">
             <small className="uppercase text-color-gradient font-roboto font-normal text-sm">
               /02 SaaS Marketing
             </small>

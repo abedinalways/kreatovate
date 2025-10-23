@@ -3,9 +3,7 @@ import ButtonAll from '../shared/buttons/ButtonAll';
 
 const Explore = () => {
   return (
-    <div
-      className="bg-gray-800 py-10"
-    >
+    <div className="bg-[#0F1016] py-10">
       <div
         className="custom-container bg-[url('/images/explore.png')] 
         bg-cover bg-center bg-no-repeat 

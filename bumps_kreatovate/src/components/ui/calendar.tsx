@@ -39,25 +39,27 @@ export function Calendar({ onDatesChange }: CalendarProps) {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto md:p-6 sm:p-2 bg-gradient-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
-      <h2 className="text-lg font-semibold mb-4 text-center">Select Date(s)</h2>
+    <div className="bg-gradient-to-br w-full max-w-md mx-auto md:p-6 p-4  from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
+      <h2 className="text-lg font-semibold mb-4 text-center">Select Date & Time</h2>
 
-      <DayPicker
-        mode="multiple"
-        selected={selectedDates}
-        onSelect={handleSelect}
-        footer={
-          selectedDates.length > 0
-            ? `${selectedDates.length} date(s) selected`
-            : undefined
-        }
-        className="rdp bg-transparent text-white mx-auto"
-        modifiersClassNames={{
-          selected:
-            'bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full',
-          today: 'bg-purple-700 text-white rounded-full',
-        }}
-      />
+      <div className="overflow-hidden rounded-2xl">
+        <DayPicker
+          mode="multiple"
+          selected={selectedDates}
+          onSelect={handleSelect}
+          footer={
+            selectedDates.length > 0
+              ? `${selectedDates.length} date(s) selected`
+              : undefined
+          }
+          className="mx-auto"
+          modifiersClassNames={{
+            selected:
+              'bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full',
+            today: 'bg-purple-700 text-white rounded-full',
+          }}
+        />
+      </div>
 
       {/* Time Zone Selector */}
       <div className="mt-4">
@@ -89,7 +91,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
           {selectedDates.map(date => (
             <span
               key={date.toISOString()}
-              className="px-2 py-1 bg-purple-600/50 rounded-full text-xs"
+              className="px-1 py-1 bg-purple-600/50 rounded-full text-xs"
             >
               {date.toDateString()}
             </span>
