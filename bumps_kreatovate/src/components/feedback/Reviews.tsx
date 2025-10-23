@@ -9,49 +9,49 @@ const reviews = [
   {
     name: 'John Doe',
     location: 'Los Angeles, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter01.png',
     text: 'Investly has completely transformed how I manage my investments. The portfolio tracker is intuitive and helps me see my diversification at a glance.',
   },
   {
     name: 'Michael Brown',
     location: 'New York, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter02.png',
     text: 'The dividend tracker is a game-changer. I can easily monitor my passive income and plan better for the future.',
   },
   {
     name: 'Sarah Johnson',
     location: 'Miami, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter03.png',
     text: 'I love the community feature! It’s great to see what other investors are tracking and learn from their strategies.',
   },
   {
     name: 'Lily Carter',
     location: 'Chicago, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter01.png',
     text: 'I found Investly’s educational tools and preset portfolio templates so helpful. I feel more confident in my investment decisions now.',
   },
   {
     name: 'Lily Carter',
     location: 'Chicago, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter01.png',
     text: 'I found Investly’s educational tools and preset portfolio templates so helpful. I feel more confident in my investment decisions now.',
   },
   {
     name: 'Lily Carter',
     location: 'Chicago, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter02.png',
     text: 'I found Investly’s educational tools and preset portfolio templates so helpful. I feel more confident in my investment decisions now.',
   },
   {
     name: 'Lily Carter',
     location: 'Chicago, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter03.png',
     text: 'I found Investly’s educational tools and preset portfolio templates so helpful. I feel more confident in my investment decisions now.',
   },
   {
     name: 'Emma Wilson',
     location: 'Austin, USA',
-    image: '/images/img01.png',
+    image: '/images/Avter02.png',
     text: 'The analytics dashboard helps me make smarter investment decisions every week!',
   },
 ];
@@ -129,8 +129,8 @@ const Reviews = () => {
                     <Image
                       src={review.image}
                       alt={review.name}
-                      width={64}
-                      height={64}
+                      width={44}
+                      height={44}
                       className="rounded-full bg-gray-300 object-cover"
                     />
                     <div>
