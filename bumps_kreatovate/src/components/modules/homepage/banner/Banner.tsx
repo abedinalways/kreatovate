@@ -54,6 +54,7 @@ const Banner = () => {
 
   return (
     <div
+      id="home"
       ref={bannerRef}
       className="relative min-h-svh md:min-h-screen overflow-hidden"
     >
@@ -94,14 +95,23 @@ const Banner = () => {
         </div>
       </div>
 
-      <Image
+      {/* <Image
         src="/images/banner-over.png"
         alt="banner over image"
         width={800}
         height={700}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-40 w-[90%] md:w-[70%] lg:w-[40%] h-auto px-2 md:px-0"
+        className=""
         priority
-      />
+      /> */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="object-cover object-center absolute bottom-5 left-1/2 -translate-x-1/2 z-40 w-[90%] md:w-[70%] lg:w-[40%] h-auto px-2 md:px-0"
+      >
+        <source src="/videos/banner.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
