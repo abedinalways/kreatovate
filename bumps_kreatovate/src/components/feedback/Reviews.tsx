@@ -119,7 +119,7 @@ const Reviews = () => {
   }`}
   style={
     isActive
-      ? { border: '1px solid transparent' }
+      ? { border: '2px solid transparent' }
       : { border: '2px solid #1f1f25' }
   }
 >
