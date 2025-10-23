@@ -5,7 +5,7 @@ const Explore = () => {
   return (
     <div className="bg-[#0F1016] py-10">
       <div
-        className="custom-container bg-[url('/Images/explore.png')] 
+        className="custom-container bg-[url('/images/explore.png')] 
             bg-cover bg-center bg-no-repeat 
             relative z-10 px-4 sm:px-36 md:px-5 py-20 rounded-[20px] h-[350px]"
       >

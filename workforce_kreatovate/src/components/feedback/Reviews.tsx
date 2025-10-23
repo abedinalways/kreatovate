@@ -10,49 +10,49 @@ const reviews = [
   {
     name: "Judith Lowe",
     company: "Agency Nova",
-    image: "/Images/user01.png",
+    image: "/images/user01.png",
     text: "Quotex-WordPress allows us to offer premium technical services under our brand, without dealing with WordPress complexities. It's a game-changer for our agency!",
   },
   {
     name: "Richa Shankar",
     company: "Marketing Plus",
-    image: "/Images/user02.png",
+    image: "/images/user02.png",
     text: "Their white-label approach helped us strengthen client trust while benefiting from expert technical support. An essential solution!",
   },
   {
     name: "David Miller",
     company: "TechVision",
-    image: "/Images/user03.png",
+    image: "/images/user03.png",
     text: "Superb service and seamless integration! We expanded our offerings without hiring extra developers.",
   },
   {
     name: "Amira Khan",
     company: "Creative Loop",
-    image: "/Images/user03.png",
+    image: "/images/user03.png",
     text: "The support team is incredibly responsive and knowledgeable. My clients love the fast turnaround.",
   },
   {
     name: "Liam Carter",
     company: "BrightPixel",
-    image: "/Images/user02.png",
+    image: "/images/user02.png",
     text: "A fantastic platform that saves us time and cost. Their backend support is unmatched.",
   },
   {
     name: "Sophia Nguyen",
     company: "NextGen Agency",
-    image: "/Images/user01.png",
+    image: "/images/user01.png",
     text: "Our projects now run smoother than ever. The UI and experience are top-notch!",
   },
   {
     name: "Noah Patel",
     company: "Visionary Tech",
-    image: "/Images/user02.png",
+    image: "/images/user02.png",
     text: "Reliable, professional, and innovative — the perfect combo for agencies looking to scale.",
   },
   {
     name: "Isabella Rossi",
     company: "DigitalCraft",
-    image: "/Images/user02.png",
+    image: "/images/user02.png",
     text: "Quotex-WordPress exceeded all our expectations. Our workflow efficiency improved dramatically.",
   },
 ];
@@ -62,7 +62,7 @@ const Reviews = () => {
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center' },
+    { loop: true, align: "center" },
     [autoplay.current]
   );
 
@@ -87,7 +87,6 @@ const Reviews = () => {
       emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi]);
-
 
   return (
     <div className="w-full max-w-6xl mx-auto py-10">
