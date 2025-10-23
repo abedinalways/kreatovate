@@ -62,7 +62,7 @@ const Reviews = () => {
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'start' },
+    { loop: true, align: 'center' },
     [autoplay.current]
   );
 
@@ -88,6 +88,7 @@ const Reviews = () => {
     };
   }, [emblaApi]);
 
+
   return (
     <div className="w-full max-w-6xl mx-auto py-10">
       <div className="w-full relative">
@@ -98,11 +99,11 @@ const Reviews = () => {
               return (
                 <div
                   key={index}
-                  className="pl-2 min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3"
+                  className="pl-2 min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[70%] md:basis-[50%] lg:basis-[33%]"
                 >
                   <div className="p-4">
                     <Card
-                      className={`border-1 border-[#E21717] text-white shadow-lg rounded-2xl h-82 transition-all duration-300 ${
+                      className={`border-1 border-[#E21717] text-white shadow-lg rounded-2xl  md:h-82 transition-all duration-300 ${
                         isActive
                           ? 'bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]'
                           : 'bg-[#121218] text-gray-400 scale-95 opacity-70'
