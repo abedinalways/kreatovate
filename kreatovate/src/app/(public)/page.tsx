@@ -1,6 +1,7 @@
 
 import Contact from "@/components/modules/contact/Contact";
 import Banner from "@/components/modules/homepage/Banner";
+import OurSolution from "@/components/modules/homepage/OurSolution";
 import WhoWeAre from "@/components/modules/homepage/WhoWeAre";
 import Partners from "@/components/shared/partners/Partners";
 
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Banner />
       <Contact />
       <WhoWeAre />
+      <OurSolution />
       <Partners />
     </div>
   );
