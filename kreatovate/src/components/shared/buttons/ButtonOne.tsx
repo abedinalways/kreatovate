@@ -19,7 +19,7 @@ const ButtonOne = ({
       <Button
         asChild
         variant="ghost"
-        className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white ${padding} ${fontSize} font-medium`}
+        className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white ${padding} ${fontSize} font-thin font-roboto leading-8`}
       >
         <Link href="#" className="block w-full text-center capitalize">
           {btnText}
