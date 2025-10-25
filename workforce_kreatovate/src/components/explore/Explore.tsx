@@ -4,27 +4,29 @@ import ButtonAll from "../shared/ButtonAll";
 const Explore = () => {
   return (
     <div className="bg-[#0F1016] py-10">
-      <div
-        className="custom-container bg-[url('/images/explore.png')] 
-            bg-cover bg-center bg-no-repeat 
-            relative z-10 px-4 sm:px-36 md:px-5 py-20 rounded-[20px] h-[350px]"
-      >
+      <div className="mx-4">
         <div
-          className="
+          className="custom-container bg-[url('/images/explore.png')] 
+            bg-cover bg-center bg-no-repeat 
+            relative z-10 px-4 md:px-8 py-20 rounded-[20px] h-[350px]"
+        >
+          <div
+            className="
                 flex flex-col justify-center items-center gap-4 text-center
                 rounded-[20px]"
-        >
-          <h2 className="text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
-            Continue Your Journey with <br />
-            <span className="text-gradient">Kreatovate</span>
-          </h2>
+          >
+            <h2 className="text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
+              Continue Your Journey with <br />
+              <span className="text-gradient">Kreatovate</span>
+            </h2>
 
-          <p className="text-gray-300 max-w-xl text-sm md:text-base">
-            Experience how we’re transforming the workforce with AI-powered
-            innovation. Dive deeper into our ecosystem.
-          </p>
+            <p className="text-gray-300 max-w-xl text-sm md:text-base">
+              Experience how we’re transforming the workforce with AI-powered
+              innovation. Dive deeper into our ecosystem.
+            </p>
 
-          <ButtonAll btnText="Explore Kreatovate.com" />
+            <ButtonAll btnText="Explore Kreatovate.com" />
+          </div>
         </div>
       </div>
     </div>
