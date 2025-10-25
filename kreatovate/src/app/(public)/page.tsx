@@ -1,3 +1,7 @@
+import Contact from "@/components/modules/contact/Contact";
+
 export default function HomePage() {
-  return <>Home Page</>;
+  return <div className="overflow-hidden">
+    <Contact />
+  </div>;
 }
