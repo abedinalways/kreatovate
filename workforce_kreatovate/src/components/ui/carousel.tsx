@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
-} from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { cn } from '@/lib/utils';
+} from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { cn } from "@/lib/utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -15,7 +15,7 @@ type CarouselPlugin = UseCarouselParameters[1];
 type CarouselProps = {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin[];
-  orientation?: 'horizontal' | 'vertical';
+  orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
 };
 
@@ -35,23 +35,23 @@ const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 function useCarousel() {
   const context = React.useContext(CarouselContext);
   if (!context)
-    throw new Error('useCarousel must be used within a <Carousel />');
+    throw new Error("useCarousel must be used within a <Carousel />");
   return context;
 }
 
 function Carousel({
-  orientation = 'horizontal',
+  orientation = "horizontal",
   opts,
   setApi,
   className,
   children,
   ...props
-}: React.ComponentProps<'div'> & CarouselProps) {
+}: React.ComponentProps<"div"> & CarouselProps) {
   const autoplay = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   const [carouselRef, api] = useEmblaCarousel(
-    { ...opts, axis: orientation === 'horizontal' ? 'x' : 'y', loop: true },
+    { ...opts, axis: orientation === "horizontal" ? "x" : "y", loop: true },
     [autoplay.current]
   );
 
@@ -72,10 +72,10 @@ function Carousel({
 
   const handleKeyDown = React.useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === 'ArrowLeft') {
+      if (event.key === "ArrowLeft") {
         event.preventDefault();
         scrollPrev();
-      } else if (event.key === 'ArrowRight') {
+      } else if (event.key === "ArrowRight") {
         event.preventDefault();
         scrollNext();
       }
@@ -85,14 +85,26 @@ function Carousel({
 
   React.useEffect(() => {
     if (!api) return;
+
+    // run once on mount/when api becomes ready
     onSelect(api);
     setSlidesCount(api.scrollSnapList().length);
-    api.on('reInit', () => {
+
+    // explicit handlers so TS knows cleanup returns void
+    const handleSelect = () => onSelect(api);
+    const handleReInit = () => {
       onSelect(api);
       setSlidesCount(api.scrollSnapList().length);
-    });
-    api.on('select', onSelect);
-    return () => api?.off('select', onSelect);
+    };
+
+    api.on("select", handleSelect);
+    api.on("reInit", handleReInit);
+
+    // proper cleanup
+    return () => {
+      api.off("select", handleSelect);
+      api.off("reInit", handleReInit);
+    };
   }, [api, onSelect]);
 
   React.useEffect(() => {
@@ -116,7 +128,7 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={cn('relative w-full', className)}
+        className={cn("relative w-full", className)}
         role="region"
         aria-roledescription="carousel"
         {...props}
@@ -129,14 +141,14 @@ function Carousel({
 
 // --- Carousel subcomponents ---
 
-function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel();
   return (
     <div ref={carouselRef} className="overflow-hidden">
       <div
         className={cn(
-          'flex',
-          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          "flex",
+          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
           className
         )}
         {...props}
@@ -148,10 +160,10 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
 function CarouselItem({
   className,
   index,
-  activeBg = 'bg-[rgba(56,83,255,0.1)]',
-  inactiveBg = 'bg-[rgba(56,83,255,0.04)]',
+  activeBg = "bg-[rgba(56,83,255,0.1)]",
+  inactiveBg = "bg-[rgba(56,83,255,0.04)]",
   ...props
-}: React.ComponentProps<'div'> & {
+}: React.ComponentProps<"div"> & {
   index: number;
   activeBg?: string;
   inactiveBg?: string;
@@ -164,10 +176,10 @@ function CarouselItem({
   return (
     <div
       className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full px-4 transition-all duration-300 rounded-xl',
-        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        "min-w-0 shrink-0 grow-0 basis-full px-4 transition-all duration-300 rounded-xl",
+        orientation === "horizontal" ? "pl-4" : "pt-4",
         isActive ? activeBg : inactiveBg,
-        isActive ? 'scale-[1.02] shadow-md' : 'scale-100 opacity-80',
+        isActive ? "scale-[1.02] shadow-md" : "scale-100 opacity-80",
         className
       )}
       {...props}
@@ -190,10 +202,10 @@ function CarouselPagination() {
             key={index}
             onClick={() => api?.scrollTo(index)}
             className={cn(
-              'w-3 h-3 rounded-full transition-all duration-300',
+              "w-3 h-3 rounded-full transition-all duration-300",
               index === selectedIndex
-                ? 'bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-125'
-                : 'bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70'
+                ? "bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-125"
+                : "bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70"
             )}
           />
         ))}
