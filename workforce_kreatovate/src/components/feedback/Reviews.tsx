@@ -193,7 +193,7 @@ const Reviews = () => {
                 <button
                   key={index}
                   onClick={() => emblaApi?.scrollTo(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 cursor-pointer rounded-full transition-all duration-300 ${
                     index === selectedIndex
                       ? 'bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)] scale-150'
                       : 'bg-[linear-gradient(245deg,#E20F12_0.72%,#3853FF_59.79%)] scale-100 opacity-70'
