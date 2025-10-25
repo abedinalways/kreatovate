@@ -33,7 +33,7 @@ const Banner = () => {
       <div className="custom-container w-full h-full flex flex-col items-start justify-center gap-4 md:gap-16 z-50 px-2 md:px-6">
         <div className="flex flex-col items-start gap-7 z-50">
           <div className="w-fit">
-            <SectionHead />
+            <SectionHead title="Top consulting platform" />
           </div>
           <h1 className="text-2xl md:text-5xl lg:text-[3.5rem] font-bold leading-7 md:leading-12 lg:leading-16">
             KREATOVATE <br />
