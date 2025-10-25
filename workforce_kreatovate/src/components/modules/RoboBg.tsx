@@ -49,7 +49,7 @@ const RoboBg = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-0 -bottom-36 md:bottom-0">
+      <div className="absolute right-0 -bottom-36 md:bottom-0 z-20">
         <Image
           src="/images/robo.png"
           alt="AI robot"

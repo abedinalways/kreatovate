@@ -39,7 +39,7 @@ const TrustedGrowth = () => {
   return (
     <div
       ref={sectionRef}
-      className="custom-container pt-24 flex flex-col gap-12 px-4 md:px-0"
+      className="custom-container pt-24 flex flex-col gap-12 px-4"
     >
       <div className="space-y-2 trusted-title ">
         <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
@@ -57,17 +57,17 @@ const TrustedGrowth = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-5">
-        <div className="trust-card w-full lg:w-1/4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="trust-card w-full">
           <TrustCard />
         </div>
-        <div className="trust-card w-full lg:w-1/4">
+        <div className="trust-card w-full">
           <TrustCard />
         </div>
-        <div className="trust-card w-full lg:w-1/4">
+        <div className="trust-card w-full">
           <TrustCard />
         </div>
-        <div className="trust-card w-full lg:w-1/4">
+        <div className="trust-card w-full">
           <TrustCard />
         </div>
       </div>
