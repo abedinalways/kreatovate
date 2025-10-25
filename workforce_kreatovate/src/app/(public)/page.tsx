@@ -1,5 +1,6 @@
 import Contact from "@/components/contact/Contact";
 import Explore from "@/components/explore/Explore";
+import FAQ from "@/components/FAQ/FAQ";
 import Feedback from "@/components/feedback/Feedback";
 import AboutUs from "@/components/modules/AboutUs";
 import Banner from "@/components/modules/Banner";
@@ -15,6 +16,7 @@ export default function Home() {
       <Explore />
       <Feedback/>
       <Contact />
+      <FAQ />
     </div>
   );
 }

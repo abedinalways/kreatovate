@@ -7,6 +7,7 @@ import TrustedGrowth from "@/components/modules/homepage/trusted-growth/TrustedG
 import Strategy from "@/components/modules/homepage/strategy/Strategy";
 import Solution from "@/components/solution/Solution";
 import Team from "@/components/team/Team";
+import FAQ from "@/components/FAQ/FAQ";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <div className="bg-[#0F0F0F]">
         <Explore />
         <Contact />
+        <FAQ />
       </div>
     </div>
   );
