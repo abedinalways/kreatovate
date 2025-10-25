@@ -69,7 +69,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
                   href={item.id}
                   onClick={(e) => handleNavClick(e, item.id)}
                   className={[
-                    "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap",
+                    "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap text-white",
                     isActive
                       ? "bg-[#ED1C24] font-semibold"
                       : "hover:bg-[#ED1C24]/40",
@@ -100,7 +100,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
             <Link
               href={`${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className="whitespace-nowrap"
+              className="whitespace-nowrap text-white"
             >
               {item.label}
             </Link>
