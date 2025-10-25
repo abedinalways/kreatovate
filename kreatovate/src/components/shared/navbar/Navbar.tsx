@@ -74,10 +74,10 @@ const Navbar = () => {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon-lg" aria-label="Open menu">
-                <Menu />
+                <Menu className="text-white" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-white/10 backdrop-blur-2xl border-0">
+            <SheetContent className="bg-white/20 backdrop-blur-2xl border-0">
               <SheetHeader>
                 <SheetTitle>
                   <Logo />
@@ -86,8 +86,6 @@ const Navbar = () => {
                 <div className="mt-2">
                   <NavItems variant="mobile" />
                 </div>
-
-                {/* <ButtonOne btnText="contact us" /> */}
               </SheetHeader>
             </SheetContent>
           </Sheet>
