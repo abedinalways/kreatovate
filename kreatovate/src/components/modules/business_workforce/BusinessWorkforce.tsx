@@ -134,7 +134,7 @@ const BusinessWorkForce = () => {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {businessData?.map(data => (
             <BusinessCard key={data.id} data={data} />
           ))}

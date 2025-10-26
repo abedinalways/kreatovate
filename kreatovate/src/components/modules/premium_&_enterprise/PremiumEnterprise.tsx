@@ -2,14 +2,12 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
-
-
 import { BusinessItem } from '../../../../types';
-import BusinessCardTwo from '@/components/shared/cards/BusinessCardTwo';
+import BusinessCard from '@/components/shared/cards/BusinessCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BusinessWorkForceV2 = () => {
+const PremiumEnterprise = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -49,27 +47,60 @@ const BusinessWorkForceV2 = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Closer (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'SDeplo',
+      title: 'Quality Assurance Employee',
+      price: 997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
     },
     {
       id: 2,
-      title: 'Closer (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deplo',
+      title: 'Property Security',
+      price: 1997,
+      description:
+        'Create your own A1 likeness for video avatars, voice cloning, and personalized content.',
+      button: 'Subscribe',
     },
     {
       id: 3,
-      title: 'Closer (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deploe',
+      title: 'Ticket Arbitrage Agent',
+      price: 1497,
+      description: 'ATS-safe, A1-powered resume builder..',
+      button: 'Subscribe',
     },
     {
       id: 4,
-      title: 'Closer (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deploy',
+      title: 'Retail Clothing Arbitrage Agent',
+      price: 997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
+    {
+      id: 5,
+      title: 'Expert Trader',
+      price: 2997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
+    {
+      id: 6,
+      title: 'Expert Investigator',
+      price: 2997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
+    {
+      id: 7,
+      title: 'CFO',
+      price: 3997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
+    {
+      id: 8,
+      title: 'Executive Assistant',
+      price: 4997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
     },
   ];
 
@@ -85,16 +116,16 @@ const BusinessWorkForceV2 = () => {
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
           <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
-            Business Workforce v2
+            Premium & Enterprise
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">
-            Standard / Trilingual Support
+            Advanced Al Solutions
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {businessData?.map(data => (
-            <BusinessCardTwo key={data.id} data={data} />
+            <BusinessCard key={data.id} data={data} />
           ))}
         </div>
       </div>
@@ -102,4 +133,4 @@ const BusinessWorkForceV2 = () => {
   );
 };
 
-export default BusinessWorkForceV2;
+export default PremiumEnterprise;
