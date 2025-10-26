@@ -1,16 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper/types";
 import "swiper/css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import SectionHead from "@/components/shared/SectionHead";
 import SolutionProtectedModal from "@/components/shared/modals/SolutionProtectedModal";
+import VideoModal from "@/components/shared/modals/VideoModal";
 import { getUnlocked, saveToken, setUnlocked } from "@/utils/unlockState";
 import { authenticate } from "@/utils/authClient";
-import VideoModal from "@/components/shared/modals/VideoModal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type SlideItem = {
   logo: string;
@@ -52,36 +57,6 @@ const slides: SlideItem[] = [
     ],
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
-  {
-    logo: "/images/kopper-logo.png",
-    videoBg: "/images/kopper_video_bg.png",
-    title: "KOPPER communities Net-\nZero SMART Properties",
-    subtitle: "Waste / Water / Energy / Mining / Private 5G + Rentals & Leases",
-    bullets: [
-      "Mixed-Use Resort Style Blockchain Backed Intelligent Microcities",
-      "Smart meters + ESG dashboards",
-      "Tokenized leases & rentals",
-      "Private 5G connectivity",
-      "Circular waste-to-energy",
-      "Water capture & reuse",
-    ],
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    logo: "/images/kopper-logo.png",
-    videoBg: "/images/kopper_video_bg.png",
-    title: "KOPPER Industrial\nNet-Zero Campuses",
-    subtitle: "Energy / Water / Security / Logistics",
-    bullets: [
-      "Industrial parks with on-site renewables",
-      "AI-driven resource optimization",
-      "Secure access & private network",
-      "Real-time sustainability reporting",
-      "Green financing ready",
-      "Modular growth",
-    ],
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
 ];
 
 const OurSolution = () => {
@@ -93,18 +68,38 @@ const OurSolution = () => {
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [videoTitle, setVideoTitle] = useState<string>("");
 
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
-    (async () => {
-      const unlockedValue = getUnlocked();
-      setUnlockedState(unlockedValue);
-    })();
+    const unlockedValue = getUnlocked();
+    setUnlockedState(unlockedValue);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Animate title, subtitle, and paragraph
+      gsap.from(".js-solution-text", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   const handleSubmit = async (email: string, password: string) => {
     const res = await authenticate(email, password);
-    if (!res.ok) {
-      throw new Error(res.error);
-    }
+    if (!res.ok) throw new Error(res.error);
     setUnlockedState(true);
     setUnlocked(true);
     if (res.token) saveToken(res.token);
@@ -118,7 +113,10 @@ const OurSolution = () => {
   };
 
   return (
-    <div className="relative bg-[#0F1016] py-24 overflow-hidden">
+    <div
+      ref={sectionRef}
+      className="relative bg-[#0F1016] py-24 overflow-hidden"
+    >
       {/* background ellipse */}
       <Image
         src="/images/solution_ellipse.png"
@@ -129,30 +127,32 @@ const OurSolution = () => {
       />
 
       <div className="custom-container space-y-24 lg:space-y-12">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-fit">
+        {/* Text Section */}
+        <div className="flex flex-col items-center gap-4 text-center">
+          <div className="w-fit js-solution-text">
             <SectionHead title="Our Solutions" />
           </div>
-          <h1 className="text-3xl lg:text-5xl font-bold text-center leading-tight">
+
+          <h1 className="js-solution-text text-3xl lg:text-5xl font-bold leading-tight">
             Our solution:{" "}
             <span className="block text-color-gradient">
               Protect Data, Unlock Growth
             </span>
           </h1>
 
-          <p className="text-sm lg:text-lg font-normal font-roboto text-center">
+          <p className="js-solution-text text-sm lg:text-lg font-normal font-roboto">
             Turn private data into protected value faster settlements, compliant
             by design
           </p>
         </div>
-        {/* Custom nav buttons (manual control) */}
+
+        {/* Swiper Section */}
         <div className="relative">
           <div className="flex items-center gap-4 absolute -top-20 lg:top-0 right-0 z-20">
             <button
               type="button"
               onClick={() => swiperRef.current?.slidePrev()}
               className="w-14 h-14 border border-gray-800 flex items-center justify-center rounded-full cursor-pointer hover:bg-white/5"
-              aria-label="Previous slide"
             >
               <ChevronLeft className="text-gray-300" />
             </button>
@@ -161,7 +161,6 @@ const OurSolution = () => {
               type="button"
               onClick={() => swiperRef.current?.slideNext()}
               className="w-14 h-14 bg-color-gradient flex items-center justify-center rounded-full cursor-pointer"
-              aria-label="Next slide"
             >
               <ChevronRight className="text-white" />
             </button>
@@ -203,7 +202,6 @@ const OurSolution = () => {
                       height={60}
                       className="h-auto w-40 sm:w-[200px] md:w-[220px]"
                     />
-
                     <div className="bg-color-gradient pb-px">
                       <div className="bg-[#0F1016] pb-6 flex flex-col gap-3">
                         <h4 className="text-2xl md:text-3xl font-medium leading-snug whitespace-pre-line">
@@ -214,7 +212,6 @@ const OurSolution = () => {
                         </p>
                       </div>
                     </div>
-
                     <ul className="flex flex-col gap-3">
                       {s.bullets.map((b, i) => (
                         <li key={i}>
@@ -241,6 +238,7 @@ const OurSolution = () => {
         </div>
       </div>
 
+      {/* Locked overlay */}
       {!unlocked && (
         <div className="bg-white/20 h-full w-full absolute top-0 left-0 z-30 backdrop-blur-sm">
           <Image
@@ -254,6 +252,7 @@ const OurSolution = () => {
         </div>
       )}
 
+      {/* Modals */}
       <SolutionProtectedModal
         open={open}
         onOpenChange={setOpen}
@@ -264,9 +263,7 @@ const OurSolution = () => {
         open={videoOpen}
         onOpenChange={(v) => {
           setVideoOpen(v);
-          if (!v) {
-            setVideoSrc(null);
-          }
+          if (!v) setVideoSrc(null);
         }}
         title={videoTitle}
         src={videoSrc}

@@ -21,7 +21,6 @@ const WwaCard = ({ data, className }: WwaCardProps) => {
         <h5 className="text-xl md:text-2xl font-semibold leading-9 mt-3">
           {title}
         </h5>
-        {/* flex-1 pushes the content to fill height evenly */}
         <p className="font-roboto text-sm md:text-lg font-normal leading-6 md:leading-9 text-[#A5A5AB] mt-2 flex-1">
           {description}
         </p>
