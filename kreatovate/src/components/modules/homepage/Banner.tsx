@@ -30,8 +30,8 @@ const Banner = () => {
           className="absolute right-0 top-1/2 -translate-y-[50%] aspect-147/130 z-10 blur-xs xl:blur-none opacity-50 lg:opacity-15"
         />
       </div>
-      <div className="custom-container w-full h-full flex flex-col items-start justify-center gap-4 md:gap-16 z-50 px-2 md:px-6">
-        <div className="flex flex-col items-start gap-7 z-50">
+      <div className="custom-container w-full h-full flex flex-col items-start justify-center gap-4 md:gap-16 z-40 px-2 md:px-6">
+        <div className="flex flex-col items-start gap-7 z-40">
           <div className="w-fit">
             <SectionHead title="Top consulting platform" />
           </div>
@@ -45,7 +45,7 @@ const Banner = () => {
             your family and businesses can enjoy peace of mind.
           </p>
         </div>
-        <div className="w-fit z-50">
+        <div className="w-fit z-40">
           <ButtonTwo btnText="Get Started Today " />
         </div>
       </div>
