@@ -1,28 +1,56 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const BookAppointment = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // 🌀 Fade-up অ্যানিমেশন শুধুমাত্র টেক্সট অংশে
+      gsap.from(".js-book-text", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }, sectionRef);
+
+    ScrollTrigger.refresh();
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="bg-[#0F1016] pb-24">
+    <div ref={sectionRef} className="bg-[#0F1016] pb-24">
       <div className="mx-4">
         <div
-          className="custom-container bg-[url('/images/explore.png')] 
-            bg-cover bg-center bg-no-repeat 
-            relative z-10 px-4 md:px-8 py-20 rounded-[20px] h-[350px]"
+          className="custom-container bg-[url('/images/explore.png')]
+          bg-cover bg-center bg-no-repeat 
+          relative z-10 px-4 md:px-8 py-20 rounded-[20px] h-[350px] flex flex-col justify-center items-center text-center gap-4"
         >
-          <div
-            className="
-                flex flex-col justify-center items-center gap-4 text-center
-                rounded-[20px]"
-          >
-            <h2 className="text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
-              Book Appointment NOW!
-            </h2>
+          <h2 className="js-book-text text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
+            Book Appointment NOW!
+          </h2>
 
-            <p className="text-gray-300 max-w-xl text-sm md:text-base">
-              Experience how we’re transforming the workforce with AI-powered
-              innovation. Dive deeper into our ecosystem.
-            </p>
+          <p className="js-book-text text-gray-300 max-w-xl text-sm md:text-base">
+            Experience how we’re transforming the workforce with AI-powered
+            innovation. Dive deeper into our ecosystem.
+          </p>
 
+          <div className="js-book-text">
             <ButtonTwo btnText="Book Now" />
           </div>
         </div>

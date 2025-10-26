@@ -1,28 +1,24 @@
-'use client';
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+"use client";
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const Card = () => {
   return (
-    <div className="relative max-w-sm rounded-2xl backdrop-opacity-40  border bg-white/20   border-white/60 p-6 text-white shadow-lg">
+    <div className="relative max-w-md rounded-2xl backdrop-opacity-40 border bg-white/20   border-white/60 p-8 text-white shadow-lg">
       {/* Title */}
-      <h2 className="text-2xl  mb-3 font-bold">
-        Business{' '}
-        <span className="text-color-gradient">
-          Marketing & 
-        </span> <br />
-        <span className="text-color-gradient">
-          Consulting
-        </span>
+      <h2 className="text-xl lg:text-3xl mb-3 font-bold">
+        Business <span className="text-color-gradient">Marketing &</span> <br />
+        <span className="text-color-gradient">Consulting</span>
       </h2>
 
       {/* Description */}
-      <p className="text-gray-400 text-sm leading-relaxed mb-6">
-        We have a strong team of professionals <br />including{' '}
-        real estate developers <br />
-        , Architecture & Engineering (A&E), legal/ <br />compliance, blockchain
-        engineers,<br /> programmers, marketers/advertising,<br /> writers, public
-        relations, and much more.
+      <p className="text-gray-400 text-base lg:text-lg lg:leading-8 mb-6">
+        We have a strong team of professionals <br />
+        including real estate developers <br />
+        , Architecture & Engineering (A&E), legal/ <br />
+        compliance, blockchain engineers,
+        <br /> programmers, marketers/advertising,
+        <br /> writers, public relations, and much more.
       </p>
 
       {/* Button */}
