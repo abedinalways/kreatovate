@@ -1,20 +1,24 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper/types";
 import "swiper/css";
 import SectionHead from "@/components/shared/SectionHead";
+import SolutionProtectedModal from "@/components/shared/modals/SolutionProtectedModal";
+import { getUnlocked, saveToken, setUnlocked } from "@/utils/unlockState";
+import { authenticate } from "@/utils/authClient";
+import VideoModal from "@/components/shared/modals/VideoModal";
 
-// JSON/dynamic data (use your own or import from a .json file)
 type SlideItem = {
   logo: string;
   videoBg: string;
-  title: string; // use \n for line breaks
+  title: string;
   subtitle: string;
   bullets: string[];
+  videoUrl?: string;
 };
 
 const slides: SlideItem[] = [
@@ -31,6 +35,7 @@ const slides: SlideItem[] = [
       "Circular waste-to-energy",
       "Water capture & reuse",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     logo: "/images/kopper-logo.png",
@@ -45,6 +50,7 @@ const slides: SlideItem[] = [
       "Green financing ready",
       "Modular growth",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     logo: "/images/kopper-logo.png",
@@ -59,6 +65,7 @@ const slides: SlideItem[] = [
       "Circular waste-to-energy",
       "Water capture & reuse",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     logo: "/images/kopper-logo.png",
@@ -73,11 +80,42 @@ const slides: SlideItem[] = [
       "Green financing ready",
       "Modular growth",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
 ];
 
 const OurSolution = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const [open, setOpen] = useState(false);
+  const [unlocked, setUnlockedState] = useState(false);
+
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [videoTitle, setVideoTitle] = useState<string>("");
+
+  useEffect(() => {
+    (async () => {
+      const unlockedValue = getUnlocked();
+      setUnlockedState(unlockedValue);
+    })();
+  }, []);
+
+  const handleSubmit = async (email: string, password: string) => {
+    const res = await authenticate(email, password);
+    if (!res.ok) {
+      throw new Error(res.error);
+    }
+    setUnlockedState(true);
+    setUnlocked(true);
+    if (res.token) saveToken(res.token);
+  };
+
+  const openVideo = (src?: string, title?: string) => {
+    if (!src) return;
+    setVideoSrc(src);
+    setVideoTitle(title || "Video");
+    setVideoOpen(true);
+  };
 
   return (
     <div className="relative bg-[#0F1016] py-24 overflow-hidden">
@@ -90,7 +128,7 @@ const OurSolution = () => {
         className="pointer-events-none select-none absolute bottom-0 left-1/2 -translate-x-1/2"
       />
 
-      <div className="custom-container space-y-24 lg:space-y-12 blur-sm">
+      <div className="custom-container space-y-24 lg:space-y-12">
         <div className="flex flex-col items-center gap-4">
           <div className="w-fit">
             <SectionHead title="Our Solutions" />
@@ -152,6 +190,7 @@ const OurSolution = () => {
                       width={141}
                       height={141}
                       className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 cursor-pointer"
+                      onClick={() => openVideo(s.videoUrl, s.title)}
                     />
                   </div>
 
@@ -202,15 +241,38 @@ const OurSolution = () => {
         </div>
       </div>
 
-      <div className="bg-white/20 h-full w-full absolute top-0 left-0 z-30">
-        <Image
-          src="/images/lock.png"
-          alt="lock image"
-          width={300}
-          height={300}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-        />
-      </div>
+      {!unlocked && (
+        <div className="bg-white/20 h-full w-full absolute top-0 left-0 z-30 backdrop-blur-sm">
+          <Image
+            src="/images/lock.png"
+            alt="lock image"
+            width={300}
+            height={300}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            onClick={() => setOpen(true)}
+          />
+        </div>
+      )}
+
+      <SolutionProtectedModal
+        open={open}
+        onOpenChange={setOpen}
+        onSubmit={handleSubmit}
+      />
+
+      <VideoModal
+        open={videoOpen}
+        onOpenChange={(v) => {
+          setVideoOpen(v);
+          if (!v) {
+            setVideoSrc(null);
+          }
+        }}
+        title={videoTitle}
+        src={videoSrc}
+        autoPlay
+        controls
+      />
     </div>
   );
 };
