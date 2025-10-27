@@ -33,7 +33,7 @@ const AddOnsCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="h-full business-card relative border border-[#27272A] p-[2px] rounded-2xl ">
+    <div className="h-full business-card relative border border-[#27272A] p-[1px] rounded-2xl ">
       <div className=" absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"

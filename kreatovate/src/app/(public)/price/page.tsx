@@ -11,6 +11,7 @@ import FeatureComparisonTable from '@/components/modules/feature_comparison/Feat
 import PersonalPricelist from '@/components/modules/personal_pricelist/PersonalPricelist';
 import PremiumEnterprise from '@/components/modules/premium_&_enterprise/PremiumEnterprise';
 import PriceBanner from '@/components/modules/price-page/price_banner/PriceBanner';
+import SaaSA1EmployeeLicensing from '@/components/modules/saas_ a1_employee_licensing/SaaSA1EmployeeLicensing';
 import ValueVsCost from '@/components/modules/value_vs_cost/ValueVsCost';
 import React from 'react';
 
@@ -24,8 +25,8 @@ const PricePage = () => {
       <BusinessWorkForceV3 />
       <BusinessWorkForceV4 />
       <PremiumEnterprise />
+      <SaaSA1EmployeeLicensing/>
       <Explore />
-      
       <FeatureComparisonTable />
       <ValueVsCost />
       <AddOnsUpgrades />
