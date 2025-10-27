@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { Globe } from 'lucide-react';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
+import * as React from "react";
+import { Globe } from "lucide-react";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
 
 import {
   Select,
@@ -11,7 +11,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 interface CalendarProps {
   onDatesChange?: (dates: Date[]) => void; // callback for selected dates
@@ -19,28 +19,30 @@ interface CalendarProps {
 
 export function Calendar({ onDatesChange }: CalendarProps) {
   const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone, setSelectedZone] = React.useState('CET');
+  const [selectedZone, setSelectedZone] = React.useState("CET");
 
   const timeZones = [
-    { code: 'CET', label: 'Central European Time (GMT+1)' },
-    { code: 'BST', label: 'British Summer Time (GMT+1)' },
-    { code: 'UTC', label: 'Coordinated Universal Time (GMT+0)' },
-    { code: 'EST', label: 'Eastern Standard Time (GMT-5)' },
-    { code: 'PST', label: 'Pacific Standard Time (GMT-8)' },
-    { code: 'IST', label: 'India Standard Time (GMT+5:30)' },
-    { code: 'JST', label: 'Japan Standard Time (GMT+9)' },
+    { code: "CET", label: "Central European Time (GMT+1)" },
+    { code: "BST", label: "British Summer Time (GMT+1)" },
+    { code: "UTC", label: "Coordinated Universal Time (GMT+0)" },
+    { code: "EST", label: "Eastern Standard Time (GMT-5)" },
+    { code: "PST", label: "Pacific Standard Time (GMT-8)" },
+    { code: "IST", label: "India Standard Time (GMT+5:30)" },
+    { code: "JST", label: "Japan Standard Time (GMT+9)" },
   ];
 
   const handleSelect = (dates: Date[] | Date | undefined) => {
     if (!dates) return;
-    let updatedDates: Date[] = Array.isArray(dates) ? dates : [dates];
+    const updatedDates: Date[] = Array.isArray(dates) ? dates : [dates];
     setSelectedDates(updatedDates);
     onDatesChange?.(updatedDates);
   };
 
   return (
     <div className="bg-gradient-to-br w-full max-w-md mx-auto md:p-6 p-4  from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
-      <h2 className="text-lg font-semibold mb-4 text-center">Select Date & Time</h2>
+      <h2 className="text-lg font-semibold mb-4 text-center">
+        Select Date & Time
+      </h2>
 
       <div className="overflow-hidden rounded-2xl">
         <DayPicker
@@ -55,8 +57,8 @@ export function Calendar({ onDatesChange }: CalendarProps) {
           className="mx-auto"
           modifiersClassNames={{
             selected:
-              'bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full',
-            today: 'bg-purple-700 text-white rounded-full',
+              "bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full",
+            today: "bg-purple-700 text-white rounded-full",
           }}
         />
       </div>
@@ -72,7 +74,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
             </div>
           </SelectTrigger>
           <SelectContent className="bg-[#0f1419]/95 border border-purple-600/40 text-white rounded-lg shadow-lg max-h-[60vh] overflow-y-auto">
-            {timeZones.map(zone => (
+            {timeZones.map((zone) => (
               <SelectItem
                 key={zone.code}
                 value={zone.code}
@@ -88,7 +90,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
       {/* Selected Dates Preview */}
       {selectedDates.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
-          {selectedDates.map(date => (
+          {selectedDates.map((date) => (
             <span
               key={date.toISOString()}
               className="px-1 py-1 bg-purple-600/50 rounded-full text-xs"

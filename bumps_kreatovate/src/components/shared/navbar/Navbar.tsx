@@ -67,7 +67,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonOne btnText="contact us" bgColor="#0f1016" />
+          <ButtonOne btnText="contact us" />
         </div>
 
         <div className="lg:hidden">
