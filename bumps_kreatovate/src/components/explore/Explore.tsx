@@ -1,5 +1,4 @@
-import React from 'react';
-import ButtonAll from '../shared/buttons/ButtonAll';
+import ButtonAll from "../shared/buttons/ButtonAll";
 
 const Explore = () => {
   return (

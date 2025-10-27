@@ -4,11 +4,14 @@ import Link from "next/link";
 
 interface BtnProps {
   btnText: string;
+  className?: string;
 }
 
-const ButtonTwo = ({ btnText }: BtnProps) => {
+const ButtonTwo = ({ btnText, className }: BtnProps) => {
   return (
-    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer hover:bg-transparent">
+    <div
+      className={`p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer hover:bg-transparent ${className}`}
+    >
       <Button
         asChild
         variant="ghost"

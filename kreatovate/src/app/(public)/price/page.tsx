@@ -16,6 +16,7 @@ import React from 'react';
 const PricePage = () => {
   return (
     <div>
+      <PriceBanner />
       <PersonalPricelist />
       <BusinessWorkForce />
       <BusinessWorkForceV2 />
