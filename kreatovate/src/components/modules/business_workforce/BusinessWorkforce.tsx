@@ -51,7 +51,7 @@ const BusinessWorkForce = () => {
       price: 497,
       description:
         'Generates posts, captions, hashtags, and schedules content.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 2,
@@ -59,14 +59,14 @@ const BusinessWorkForce = () => {
       price: 497,
       description:
         'Creates branded avatars for outreach, training, or marketing.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 3,
       title: 'Investigator (Lite)',
       price: 597,
       description: 'Basic background checks and internet scrubbing.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 4,
@@ -74,42 +74,42 @@ const BusinessWorkForce = () => {
       price: 997,
       description:
         'AI prospector that finds, qualifies, and routes high-quality leads.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 5,
       title: 'Order Taker Employee',
       price: 997,
       description: 'Captures and confirms orders via voice or chat support.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 6,
       title: 'Closer (Voice)',
       price: 1497,
       description: 'Outbound sales employee that calls and closes deals.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 7,
       title: 'Appointment Setter',
       price: 1497,
       description: 'Schedules and confirms client calls seamlessly.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 8,
       title: 'Lead Nurturer',
       price: 1497,
       description: 'Warms leads with education and timely follow-ups.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
     {
       id: 9,
       title: 'Support Employee',
       price: 1497,
       description: 'Handles FAQs, service issues, and retention.',
-      button: 'Subscribe',
+      button: 'Subscribe'
     },
   ];
 
@@ -118,8 +118,6 @@ const BusinessWorkForce = () => {
       ref={rootRef}
       className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden"
     >
-      
-
       {/* ✅ Dark overlay for better readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
 
@@ -134,7 +132,10 @@ const BusinessWorkForce = () => {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch business-card"
+        >
           {businessData?.map(data => (
             <BusinessCard key={data.id} data={data} />
           ))}
