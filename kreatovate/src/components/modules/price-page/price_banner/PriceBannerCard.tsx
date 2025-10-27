@@ -64,12 +64,7 @@ const PriceBannerCard = ({ plan }: { plan: PricePlan }) => {
           </button>
         </div>
 
-        <div className="flex justify-center">
-          <ButtonTwo
-            btnText={plan.buttonText}
-            className="rounded-lg border border-white/60 bg-linear-to-r from-[#E21717] to-[#3700FF] px-8 py-2.5 font-semibold text-white"
-          />
-        </div>
+        <ButtonTwo btnText={plan.buttonText} className="border border-white" />
 
         <ul className="self-end space-y-3 sm:space-y-4">
           {plan.features.map((f) => (
