@@ -56,62 +56,56 @@ const Banner = () => {
     <div
       id="home"
       ref={bannerRef}
-      className="relative min-h-svh md:min-h-screen overflow-hidden"
+      className="relative min-h-svh md:min-h-screen overflow-hidden pt-14"
     >
       <MainBg />
 
-      <div className="absolute top-36 inset-x-0 z-40 flex flex-col items-center justify-center text-center px-4">
-        <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline">
-          <Image
-            src="/images/hrline1.png"
-            alt="heading line vector 1"
-            width={80}
-            height={16}
-          />
-          <p className="font-roboto text-sm md:text-lg font-light text-gradient uppercase">
-            Top consulting platform
+      <div className="absolute z-40 flex flex-col items-center justify-center gap-2 h-full w-full">
+        <div className="flex flex-col items-center gap-2 text-center">
+          <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline">
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={80}
+              height={16}
+            />
+            <p className="font-roboto text-sm md:text-lg font-light text-gradient uppercase">
+              Top consulting platform
+            </p>
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={80}
+              height={16}
+              className="scale-x-[-1]"
+            />
+          </div>
+
+          <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
+            Transform Ideas with{" "}
+            <span className="text-gradient-special">Kreatovate’s Strategy</span>
+          </h1>
+
+          <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl banner-subtext">
+            Turn concepts into measurable growth with strategies that scale your
+            impact, increase revenue, and deepen customer loyalty.
           </p>
-          <Image
-            src="/images/hrline1.png"
-            alt="heading line vector 1"
-            width={80}
-            height={16}
-            className="scale-x-[-1]"
-          />
+
+          <div className="mt-5 banner-button">
+            <ButtonTwo btnText="Get Started" />
+          </div>
         </div>
 
-        <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
-          Transform Ideas with{" "}
-          <span className="text-gradient-special">Kreatovate’s Strategy</span>
-        </h1>
-
-        <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl banner-subtext">
-          Turn concepts into measurable growth with strategies that scale your
-          impact, increase revenue, and deepen customer loyalty.
-        </p>
-
-        <div className="mt-5 banner-button">
-          <ButtonTwo btnText="Get Started" />
-        </div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full max-w-[800px] h-[40%] px-4 md:px-0 object-contain rounded-lg"
+        >
+          <source src="/videos/banner.mp4" type="video/mp4" />
+        </video>
       </div>
-
-      {/* <Image
-        src="/images/banner-over.png"
-        alt="banner over image"
-        width={800}
-        height={700}
-        className=""
-        priority
-      /> */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="object-cover object-center absolute bottom-5 left-1/2 -translate-x-1/2 z-40 w-[90%] md:w-[70%] lg:w-[40%] h-auto px-2 md:px-0"
-      >
-        <source src="/videos/banner.mp4" type="video/mp4" />
-      </video>
     </div>
   );
 };
