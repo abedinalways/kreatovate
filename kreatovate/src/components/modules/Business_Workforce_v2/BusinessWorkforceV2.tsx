@@ -80,14 +80,14 @@ const BusinessWorkForceV2 = () => {
       className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden"
     >
       {/* ✅ Background Image */}
-            <Image
+      <Image
         src="/images/personal_pricelist_bg.png"
         alt="Background"
         fill
         className="object-cover w-full h-1/2"
         priority
       />
-          
+
       {/* ✅ Dark overlay for better readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
 
@@ -102,7 +102,10 @@ const BusinessWorkForceV2 = () => {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6 business-card"
+        >
           {businessData?.map(data => (
             <BusinessCardTwo key={data.id} data={data} />
           ))}

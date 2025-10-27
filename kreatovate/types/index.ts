@@ -5,4 +5,5 @@ export interface BusinessItem {
   monthlyPrice?: string;
   description: string;
   button?: string;
+  duration: string;
 }
