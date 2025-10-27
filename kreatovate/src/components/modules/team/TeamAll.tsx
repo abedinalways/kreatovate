@@ -1,14 +1,16 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { BsFacebook } from 'react-icons/bs';
+
+import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import HeadingButton from '@/components/shared/buttons/HeadingButton';
-import SectionHead from '@/components/shared/SectionHead';
 
 const TeamAll = () => {
+  const [showAll, setShowAll] = useState(false);
   const [profiles, setProfiles] = useState<any[]>([]);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     fetch('/profiles.json')
@@ -17,7 +19,9 @@ const TeamAll = () => {
       .catch(err => console.error('Failed to load profiles:', err));
   }, []);
 
-  // Animate cards on mount
+  const visible = showAll ? profiles : profiles.slice(0, 3);
+
+  // Animate cards on visible change
   useEffect(() => {
     if (!cardsRef.current) return;
     const cards = Array.from(cardsRef.current.children) as HTMLElement[];
@@ -34,7 +38,33 @@ const TeamAll = () => {
         ease: 'power3.out',
       }
     );
-  }, [profiles]);
+  }, [visible]);
+
+  // Animate button hover
+  useEffect(() => {
+    if (!buttonRef.current) return;
+    const btn = buttonRef.current;
+
+    btn.addEventListener('mouseenter', () => {
+      gsap.to(btn, { scale: 1.05, duration: 0.2 });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { scale: 1, duration: 0.2 });
+    });
+    btn.addEventListener('mousedown', () => {
+      gsap.to(btn, { scale: 0.95, duration: 0.1 });
+    });
+    btn.addEventListener('mouseup', () => {
+      gsap.to(btn, { scale: 1.05, duration: 0.1 });
+    });
+
+    return () => {
+      btn.removeEventListener('mouseenter', () => {});
+      btn.removeEventListener('mouseleave', () => {});
+      btn.removeEventListener('mousedown', () => {});
+      btn.removeEventListener('mouseup', () => {});
+    };
+  }, []);
 
   return (
     <div className="relative w-full" id="team">
@@ -62,30 +92,30 @@ const TeamAll = () => {
 
       {/* Team Section */}
       <div className="custom-container px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center">
-        <div className="w-fit mx-auto">
-          <SectionHead title="OUR TEAM" />
+        <div className="flex justify-center items-center mb-4 mt-6">
+          <HeadingButton btnText="OUR AI WORKFORCE TEAM" />
         </div>
 
         <h2 className=" text-3xl md:text-5xl text-center font-bold">
-          The People Behind{' '}
-          <span className="text-color-gradient">Kreatovate</span>
+          Kreatovate
+          <span className="text-color-gradient">Team</span>
         </h2>
 
         <div className="flex justify-center">
-          <section className="w-full max-w-6xl mx-auto py-12 px-4">
+          <section className="max-w-6xl mx-auto py-12 px-4">
             {/* Grid */}
             <div
               ref={cardsRef}
-              className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch"
+              className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch"
             >
-              {profiles.map(p => (
+              {visible.map(p => (
                 <div
                   key={p.id}
-                  className="relative rounded-2xl px-2 py-2 shadow-2xl group transition-all duration-500"
+                  className="relative rounded-2xl px-4 py-2 shadow-2xl group transition-all duration-500"
                 >
                   <div className="relative w-full rounded-xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
                     <div className="relative rounded-2xl overflow-hidden w-full h-full bg-[#1A1A1A]  group-hover:scale-[1.02] transition-transform duration-500">
-                      <div className="relative h-90 w-60">
+                      <div className="relative h-98 w-74">
                         <Image
                           width={500}
                           height={500}
@@ -148,22 +178,43 @@ const TeamAll = () => {
                     </div>
 
                     {/* Bottom Info */}
-                    <div className="absolute left-4 right-4 bottom-4 opacity-100 group-hover:opacity-0 transition-all duration-500">
-                      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-3 shadow-lg flex items-center justify-between">
+                    <div className="absolute  bottom-4 opacity-100 group-hover:opacity-0 transition-all duration-500 w-[274px] mx-4">
+                      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-2 shadow-lg flex items-center">
                         <div>
                           <div className="text-white font-semibold text-sm">
                             {p.name}
                           </div>
                           <div className="text-white/70 text-xs">{p.title}</div>
                         </div>
-                        <div className="w-12 h-8 rounded-md bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
+                        <div className="w-6 h-6rounded-full bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
                           <BsFacebook />
                         </div>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
+                          <BsTwitter />
+                        </div>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
+                           <BsInstagram />
+                        </div>
+
+                       
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Show All Button */}
+            <div className="flex justify-center mt-10">
+              <div className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto z-5">
+                <button
+                  ref={buttonRef}
+                  onClick={() => setShowAll(s => !s)}
+                  className="px-8 py-1 rounded-[10px] bg-black text-white transition-all duration-300"
+                >
+                  {showAll ? 'Show Less' : 'See All'}
+                </button>
+              </div>
             </div>
           </section>
         </div>
