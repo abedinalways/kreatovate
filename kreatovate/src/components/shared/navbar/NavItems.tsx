@@ -16,11 +16,11 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
   const [active, setActive] = useState("#home");
 
   const items = [
-    { id: "#home", label: "home" },
+    { id: "/", label: "home" },
     { id: "#about_us", label: "about us" },
     { id: "#our_solutions", label: "our solutions" },
     { id: "#testimonial", label: "testimonial" },
-    { id: "#contact_us", label: "contact us" },
+    { id: "/contact-us", label: "contact us" },
   ];
 
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
