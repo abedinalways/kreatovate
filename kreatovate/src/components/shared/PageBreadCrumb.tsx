@@ -18,6 +18,13 @@ const PageBreadCrumb = () => {
   const buildHref = (index: number) =>
     "/" + segments.slice(0, index + 1).join("/");
 
+  const formatLabel = (segment: string) =>
+    segment
+      .replace(/[-_]/g, " ")
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
   return (
     <Breadcrumb>
       <BreadcrumbList className="font-roboto font-normal text-base text-gray-300">
@@ -36,9 +43,7 @@ const PageBreadCrumb = () => {
         {segments.map((segment, index) => {
           const isLast = index === segments.length - 1;
           const href = buildHref(index);
-          const label =
-            segment.charAt(0).toUpperCase() +
-            segment.slice(1).replace(/-/g, " ");
+          const label = formatLabel(segment);
 
           return (
             <BreadcrumbItem key={href}>
