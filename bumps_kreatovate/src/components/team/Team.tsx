@@ -1,9 +1,9 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import HeadingButton from '../shared/buttons/HeadingButton';
-import { BsFacebook } from 'react-icons/bs';
-import { gsap } from 'gsap';
-import Image from 'next/image';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { BsFacebook } from "react-icons/bs";
+import { gsap } from "gsap";
+import Image from "next/image";
 
 const Team = () => {
   const [showAll, setShowAll] = useState(false);
@@ -12,10 +12,10 @@ const Team = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    fetch('/profiles.json')
-      .then(res => res.json())
-      .then(data => setProfiles(data))
-      .catch(err => console.error('Failed to load profiles:', err));
+    fetch("/profiles.json")
+      .then((res) => res.json())
+      .then((data) => setProfiles(data))
+      .catch((err) => console.error("Failed to load profiles:", err));
   }, []);
 
   const visible = showAll ? profiles : profiles.slice(0, 4);
@@ -34,7 +34,7 @@ const Team = () => {
         scale: 1,
         duration: 0.6,
         stagger: 0.1,
-        ease: 'power3.out',
+        ease: "power3.out",
       }
     );
   }, [visible]);
@@ -44,29 +44,29 @@ const Team = () => {
     if (!buttonRef.current) return;
     const btn = buttonRef.current;
 
-    btn.addEventListener('mouseenter', () => {
+    btn.addEventListener("mouseenter", () => {
       gsap.to(btn, { scale: 1.05, duration: 0.2 });
     });
-    btn.addEventListener('mouseleave', () => {
+    btn.addEventListener("mouseleave", () => {
       gsap.to(btn, { scale: 1, duration: 0.2 });
     });
-    btn.addEventListener('mousedown', () => {
+    btn.addEventListener("mousedown", () => {
       gsap.to(btn, { scale: 0.95, duration: 0.1 });
     });
-    btn.addEventListener('mouseup', () => {
+    btn.addEventListener("mouseup", () => {
       gsap.to(btn, { scale: 1.05, duration: 0.1 });
     });
 
     return () => {
-      btn.removeEventListener('mouseenter', () => {});
-      btn.removeEventListener('mouseleave', () => {});
-      btn.removeEventListener('mousedown', () => {});
-      btn.removeEventListener('mouseup', () => {});
+      btn.removeEventListener("mouseenter", () => {});
+      btn.removeEventListener("mouseleave", () => {});
+      btn.removeEventListener("mousedown", () => {});
+      btn.removeEventListener("mouseup", () => {});
     };
   }, []);
 
   return (
-    <div className="relative w-full" id='team'>
+    <div className="relative w-full" id="team">
       {/* Background Image 1 */}
       <div className="absolute -top-40 md:left-370 w-full h-full z-0">
         <Image
@@ -91,12 +91,26 @@ const Team = () => {
 
       {/* Team Section */}
       <div className="custom-container px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center">
-        <div className="flex justify-center items-center mb-4 mt-6">
-          <HeadingButton btnText="Our Team" />
+        <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline mb-6">
+          <Image
+            src="/images/hrline1.png"
+            alt="heading line vector 1"
+            width={80}
+            height={16}
+          />
+          <p className="font-roboto text-sm md:text-lg font-light text-gradient uppercase">
+            Our AI Workforce Team
+          </p>
+          <Image
+            src="/images/hrline1.png"
+            alt="heading line vector 1"
+            width={80}
+            height={16}
+            className="scale-x-[-1]"
+          />
         </div>
-
         <h2 className=" text-3xl md:text-5xl text-center font-bold">
-          The People Behind{' '}
+          The People Behind{" "}
           <span className="text-color-gradient">Kreatovate</span>
         </h2>
 
@@ -107,7 +121,7 @@ const Team = () => {
               ref={cardsRef}
               className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch"
             >
-              {visible.map(p => (
+              {visible.map((p) => (
                 <div
                   key={p.id}
                   className="relative rounded-2xl px-2 py-2 shadow-2xl group transition-all duration-500"
@@ -119,7 +133,7 @@ const Team = () => {
                           width={500}
                           height={500}
                           src={p.img}
-                          alt={p.name || 'Team member image'}
+                          alt={p.name || "Team member image"}
                           className="object-cover w-full h-full mx-auto transition-transform duration-700 group-hover:scale-110"
                         />
                       </div>
@@ -129,7 +143,7 @@ const Team = () => {
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out p-6 flex flex-col justify-between text-white"
                         style={{
                           background:
-                            'linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)',
+                            "linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)",
                         }}
                       >
                         <div className="flex justify-around">
@@ -139,8 +153,8 @@ const Team = () => {
                                 width={30}
                                 height={30}
                                 src={p.img}
-                                alt={p.name || 'Team member image'}
-                                className="rounded-full  border-1 border-[#D1C8C8] bg-[#D1C8C8]"
+                                alt={p.name || "Team member image"}
+                                className="rounded-full  border border-[#D1C8C8] bg-[#D1C8C8]"
                               />
                             </div>
                             <div>
@@ -150,7 +164,7 @@ const Team = () => {
                               <p className="text-xs text-gray-300">{p.title}</p>
                             </div>
                           </div>
-                          <div className="w-12 h-8 rounded-md bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
+                          <div className="w-12 h-8 rounded-md bg-linear-to-r from-white/10 to-white/5 flex items-center justify-center">
                             <BsFacebook />
                           </div>
                         </div>
@@ -163,13 +177,13 @@ const Team = () => {
                           <p className="mt-2">
                             <span className="font-bold text-gray-200">
                               Superpower:
-                            </span>{' '}
+                            </span>{" "}
                             {p.superpower}
                           </p>
                           <p>
                             <span className="font-bold text-gray-200">
                               Weakness:
-                            </span>{' '}
+                            </span>{" "}
                             {p.weakness}
                           </p>
                         </div>
@@ -185,7 +199,7 @@ const Team = () => {
                           </div>
                           <div className="text-white/70 text-xs">{p.title}</div>
                         </div>
-                        <div className="w-12 h-8 rounded-md bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center">
+                        <div className="w-12 h-8 rounded-md bg-linear-to-r from-white/10 to-white/5 flex items-center justify-center">
                           <BsFacebook />
                         </div>
                       </div>
@@ -197,13 +211,13 @@ const Team = () => {
 
             {/* Show All Button */}
             <div className="flex justify-center mt-10">
-              <div className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto z-5">
+              <div className="rounded-[12px] p-0.5 bg-linear-to-r from-[#E21717] to-[#3700FF] inline-block mx-auto z-5">
                 <button
                   ref={buttonRef}
-                  onClick={() => setShowAll(s => !s)}
+                  onClick={() => setShowAll((s) => !s)}
                   className="px-8 py-1 rounded-[10px] bg-black text-white transition-all duration-300"
                 >
-                  {showAll ? 'Show Less' : 'See All'}
+                  {showAll ? "Show Less" : "See All"}
                 </button>
               </div>
             </div>
