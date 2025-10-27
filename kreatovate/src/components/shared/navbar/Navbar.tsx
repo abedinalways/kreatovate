@@ -26,6 +26,18 @@ const Navbar = () => {
     if (!navRef.current) return;
 
     const el = navRef.current;
+
+    // ✅ set dynamic navbar height as a CSS variable
+    const updateNavHeight = () =>
+      document.documentElement.style.setProperty(
+        "--nav-height",
+        `${el.offsetHeight}px`
+      );
+
+    updateNavHeight(); // run once
+    window.addEventListener("resize", updateNavHeight);
+
+    // your existing GSAP animation stays untouched below
     el.style.willChange = "backdrop-filter, background-color";
     el.style.backdropFilter = "blur(0px)";
     el.style.backgroundColor = "rgba(0,0,0,0)";
@@ -50,10 +62,12 @@ const Navbar = () => {
     );
 
     return () => {
+      window.removeEventListener("resize", updateNavHeight);
       tween?.scrollTrigger?.kill();
       tween?.kill();
     };
   }, []);
+
   return (
     <nav
       ref={navRef}

@@ -26,7 +26,6 @@ const SolutionProtectedModal = ({
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // SolutionProtectedModal.tsx
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
@@ -37,19 +36,14 @@ const SolutionProtectedModal = ({
     const password = String(fd.get("password") || "");
 
     try {
-      await onSubmit?.(email, password); // ✅ await this
-      onOpenChange(false); // close only after success
+      await onSubmit?.(email, password);
+      onOpenChange(false);
     } catch (err: any) {
       setError(err?.message || "Failed to open.");
     } finally {
       setSubmitting(false);
     }
   };
-
-  console.log("INLINE at build:", {
-    email: process.env.NEXT_PUBLIC_UNLOCK_EMAIL,
-    hashRaw: JSON.stringify(process.env.NEXT_PUBLIC_UNLOCK_PASSWORD_HASH_B64),
-  });
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
