@@ -71,7 +71,7 @@ const Service = () => {
                 AI&nbsp;Powered&nbsp;
               </span>
               <span className="mask text-color-gradient inline-block">
-                Workforce&nbsp;Solutions
+                Business&nbsp;Solutions
               </span>
             </h1>
 
