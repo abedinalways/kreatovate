@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
-import Image from 'next/image';
-import Logo from '../Logo';
+import Image from "next/image";
+import Logo from "../Logo";
 
 const XIcon = () => (
   <svg

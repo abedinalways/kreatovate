@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ/FAQ";
 import Feedback from "@/components/feedback/Feedback";
 import AboutUs from "@/components/modules/AboutUs";
 import Banner from "@/components/modules/Banner";
+import Business from "@/components/modules/Business";
 import Service from "@/components/modules/Service";
 
 export default function Home() {
@@ -12,9 +13,10 @@ export default function Home() {
       <Banner />
 
       <AboutUs />
-      <Service />
+      <Business />
+      {/* <Service /> */}
       <Explore />
-      <Feedback/>
+      <Feedback />
       <Contact />
       <FAQ />
     </div>
