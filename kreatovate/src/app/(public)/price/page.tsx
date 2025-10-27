@@ -10,6 +10,7 @@ import Explore from '@/components/modules/explore/Explore';
 import FeatureComparisonTable from '@/components/modules/feature_comparison/FeatureComparisonTable';
 import PersonalPricelist from '@/components/modules/personal_pricelist/PersonalPricelist';
 import PremiumEnterprise from '@/components/modules/premium_&_enterprise/PremiumEnterprise';
+import PriceBanner from '@/components/modules/price-page/price_banner/PriceBanner';
 import ValueVsCost from '@/components/modules/value_vs_cost/ValueVsCost';
 import React from 'react';
 
@@ -24,6 +25,7 @@ const PricePage = () => {
       <BusinessWorkForceV4 />
       <PremiumEnterprise />
       <Explore />
+      
       <FeatureComparisonTable />
       <ValueVsCost />
       <AddOnsUpgrades />
