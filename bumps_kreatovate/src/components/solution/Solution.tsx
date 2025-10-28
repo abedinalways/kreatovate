@@ -39,7 +39,7 @@ const Solution = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 mx-auto flex justify-center items-center ">
           <div className="flex flex-col gap-6">
-            <small className="uppercase text-color-gradient font-roboto font-normal text-sm">
+            <small className="uppercase text-gradient-special font-roboto font-normal text-md">
               /02 SaaS Marketing
             </small>
             <h2 className="text-2xl md:text-3xl font-bold">
