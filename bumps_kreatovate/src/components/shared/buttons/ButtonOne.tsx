@@ -19,7 +19,7 @@ const ButtonOne = ({
   bgColor,
 }: BtnProps) => {
   return (
-    <div className="p-px rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
+    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
       <Button
         asChild
         variant="ghost"

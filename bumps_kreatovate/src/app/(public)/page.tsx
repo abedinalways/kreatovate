@@ -8,17 +8,19 @@ import Strategy from "@/components/modules/homepage/strategy/Strategy";
 import Solution from "@/components/solution/Solution";
 import Team from "@/components/team/Team";
 import FAQ from "@/components/FAQ/FAQ";
+import Counter from "@/components/modules/homepage/counter/Counter";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <Banner />
+      <Counter />
       <div className="bg-[#0F0F0F]">
         <Strategy />
       </div>
-        <Solution/>
+      <Solution />
       <TrustedGrowth />
-        <Feedback/>
+      <Feedback />
       <Team />
       <Service />
       <div className="bg-[#0F0F0F]">
