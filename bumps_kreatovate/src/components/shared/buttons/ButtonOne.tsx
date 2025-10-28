@@ -1,18 +1,22 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface BtnProps {
   btnText: string;
   width?: string;
   padding?: string;
   fontSize?: string;
+  href?: string;
+  bgColor?: string;
 }
 
 const ButtonOne = ({
   btnText,
-  width = "w-full",
-  padding = "py-3",
-  fontSize = "text-lg",
+  width = 'w-full',
+  href = '#',
+  padding = 'py-3',
+  fontSize = 'text-lg',
+  bgColor,
 }: BtnProps) => {
   return (
     <div className="p-px rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
@@ -21,7 +25,11 @@ const ButtonOne = ({
         variant="ghost"
         className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white ${padding} ${fontSize} font-medium`}
       >
-        <Link href="#" className="block w-full text-center capitalize">
+        <Link
+          href={href}
+          className="block w-full text-center capitalize"
+          style={bgColor ? { backgroundColor: bgColor } : undefined}
+        >
           {btnText}
         </Link>
       </Button>

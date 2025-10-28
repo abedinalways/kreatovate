@@ -7,7 +7,7 @@ const Feedback = () => {
   return (
     <div
       id="testimonial"
-      className="custom-container px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center"
+      className="custom-container px-4 sm:px-6 md:px-5 py-20 flex-col gap-8 justify-center items-center"
     >
       <div className="flex justify-center items-center mb-4">
         <HeadingButton btnText="Testimonial" />

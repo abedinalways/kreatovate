@@ -39,7 +39,7 @@ const TrustedGrowth = () => {
   return (
     <div
       ref={sectionRef}
-      className="custom-container pt-24 flex flex-col gap-12 px-4"
+      className="custom-container pt-24 flex flex-col gap-12 px-4 py-12"
     >
       <div className="space-y-2 trusted-title ">
         <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
