@@ -53,7 +53,7 @@ const BusinessCard = ({ data }: CardProps) => {
           {description}
         </p>
 
-        <div className="mt-auto">
+        <div className="mt-auto z-40">
           <GradientBorderButton btnText="Subscribe" />
         </div>
       </div>
