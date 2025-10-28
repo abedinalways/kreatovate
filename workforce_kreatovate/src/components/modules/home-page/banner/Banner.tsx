@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import ButtonAll from "../../shared/ButtonAll";
+import ButtonAll from "../../../shared/ButtonAll";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import styles from "./banner.module.css";
 
 const Banner = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,7 @@ const Banner = () => {
       ref={containerRef}
       className="relative h-[40rem] md:h-[50rem] xl:h-screen"
     >
+      {/* background */}
       <div className="absolute top-0 left-0 w-full h-full">
         <video
           autoPlay
@@ -89,19 +91,18 @@ const Banner = () => {
       </div>
 
       <div className="relative custom-container w-full h-full z-30">
-        <div className="px-4 sm:px-36 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
+        <div className="px-4 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
           <h1
             ref={headingRef}
-            className=" text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-xl lg:max-w-4xl leading-7 md:leading-10 lg:leading-16"
+            className=" text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-xl lg:max-w-4xl leading-9 md:leading-10 lg:leading-16"
           >
-            Unleash Potential with <br />
-            Kreatovate&apos;s{" "}
+            Unleash Potential with Kreatovate&apos;s{" "}
             <span className="text-color-gradient">Expert Marketing</span>{" "}
             <span className="text-color-gradient">& Consulting</span>
           </h1>
           <p
             ref={textRef}
-            className="relative text-xs lg:text-[1rem] font-normal max-w-md lg:max-w-xl mb-5 md:mb-12 z-40"
+            className="relative text-sm lg:text-[1rem] font-normal max-w-md lg:max-w-xl mb-5 md:mb-12 z-40"
           >
             Unlock Your Brand&apos;s Potential with Kreatovate Marketing &
             Consulting Where Innovation Meets Strategic Excellence to Propel
@@ -111,17 +112,18 @@ const Banner = () => {
           <div ref={buttonRef} className="cursor-pointer w-fit">
             <ButtonAll
               btnText="Get Started Today"
-              className="text-sm md:text-lg"
+              className="text-sm md:text-lg py-5"
             />
           </div>
         </div>
+
         <Image
           ref={robotRef}
           src="/images/robo.png"
           alt="AI robot"
           width={900}
           height={900}
-          className="absolute right-0 bottom-0 z-10 robo-img md:w-[70%] md:h-[80%] lg:w-[70%] lg:h-[70%] xl:w-[55%] xl:h-[80%]"
+          className={`absolute right-0 bottom-0 z-10 ${styles.roboImg}`}
         />
       </div>
       <Image
