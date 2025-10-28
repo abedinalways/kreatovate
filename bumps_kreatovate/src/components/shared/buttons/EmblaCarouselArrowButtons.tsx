@@ -1,7 +1,15 @@
 'use client';
 import React, { useCallback, useEffect, useState } from 'react';
 
-export const usePrevNextButtons = emblaApi => {
+export type EmblaApi = {
+  scrollPrev: () => void;
+  scrollNext: () => void;
+  canScrollPrev: () => boolean;
+  canScrollNext: () => boolean;
+  on: (event: string, callback: () => void) => unknown;
+};
+
+export const usePrevNextButtons = (emblaApi?: EmblaApi | null) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
@@ -15,16 +23,18 @@ export const usePrevNextButtons = emblaApi => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
-  const onSelect = useCallback(emblaApi => {
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect).on('select', onSelect);
+    onSelect();
+    emblaApi.on('reInit', onSelect);
+    emblaApi.on('select', onSelect);
   }, [emblaApi, onSelect]);
 
   return {
@@ -35,8 +45,13 @@ export const usePrevNextButtons = emblaApi => {
   };
 };
 
-export const PrevButton = props => {
-  const { children, ...restProps } = props;
+export const PrevButton: React.FC<
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+> = props => {
+  const { children, ...restProps } =
+    props as React.ButtonHTMLAttributes<HTMLButtonElement> & {
+      children?: React.ReactNode;
+    };
 
   return (
     <button
@@ -55,8 +70,13 @@ export const PrevButton = props => {
   );
 };
 
-export const NextButton = props => {
-  const { children, ...restProps } = props;
+export const NextButton: React.FC<
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+> = props => {
+  const { children, ...restProps } =
+    props as React.ButtonHTMLAttributes<HTMLButtonElement> & {
+      children?: React.ReactNode;
+    };
 
   return (
     <button

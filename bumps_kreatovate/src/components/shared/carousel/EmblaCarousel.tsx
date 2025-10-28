@@ -6,8 +6,14 @@ import {
 } from '../buttons/EmblaCarouselArrowButtons';
 import useEmblaCarousel from 'embla-carousel-react';
 import './EmblaCarousel.css';
+import Image from 'next/image';
 
-const EmblaCarousel = ({ slides, options }) => {
+type EmblaCarouselProps = {
+  slides: string[];
+  options?: string[];
+};
+
+const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     duration: 20, // controls scroll smoothness
@@ -46,7 +52,7 @@ const EmblaCarousel = ({ slides, options }) => {
         <div className="embla__container">
           {slides.map((_, index) => (
             <div className="embla__slide" key={index}>
-              <img
+              <Image
                 className="embla__slide__img"
                 src={`https://picsum.photos/800/400?random=${index}`}
                 alt={`Slide ${index + 1}`}

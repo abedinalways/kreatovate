@@ -91,7 +91,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
         {items?.map((item) => (
           <li
             key={item.id}
-            className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
+            className={`px-4 md:px-2 md:py-1 rounded-full transition-all duration-200 ${
               active === item.id
                 ? "bg-[#ED1C24] font-semibold"
                 : "hover:bg-[#ED1C24]/40"
