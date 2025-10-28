@@ -4,11 +4,12 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <Link href="/">
-      <div className="relative w-[180px] sm:w-[251px] md:w-[170px] h-[60px]">
+      <div className="relative">
         <Image
-          src="/images/logo.png"
+          src="/images/logo2.png"
           alt="logo"
-          fill
+          width={60}
+          height={60}
           className="object-contain"
         />
       </div>

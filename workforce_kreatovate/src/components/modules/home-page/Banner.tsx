@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ButtonAll from "../shared/ButtonAll";
+import ButtonAll from "../../shared/ButtonAll";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -89,7 +89,7 @@ const Banner = () => {
       </div>
 
       <div className="relative custom-container w-full h-full z-30">
-        <div className="px-4 sm:px-36 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0">
+        <div className="px-4 sm:px-36 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
           <h1
             ref={headingRef}
             className=" text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-xl lg:max-w-4xl leading-7 md:leading-10 lg:leading-16"
@@ -108,7 +108,7 @@ const Banner = () => {
             Your Business Forward.
           </p>
 
-          <div ref={buttonRef}>
+          <div ref={buttonRef} className="cursor-pointer w-fit">
             <ButtonAll
               btnText="Get Started Today"
               className="text-sm md:text-lg"
