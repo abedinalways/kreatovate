@@ -119,7 +119,7 @@ const Reviews = () => {
                         backgroundRepeat: 'no-repeat',
                       }}
                     >
-                      <CardContent className="p-6 flex flex-col justify-between">
+                      <CardContent className="p-4 flex flex-col justify-between">
                         <div className="flex items-center gap-3 mb-4">
                           <Image
                             width={500}

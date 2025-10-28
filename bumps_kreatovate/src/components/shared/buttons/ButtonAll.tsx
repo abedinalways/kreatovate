@@ -1,43 +1,43 @@
-"use client";
+import React from 'react';
 
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'; // ✅ utility for conditional class merging
+import { Button } from '@/components/ui/button';
 
-export type ButtonAllProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonAllProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   btnText?: string;
+  variant?: 'default' | 'outline' | 'ghost' | 'secondary' | 'destructive';
+  size?: 'sm' | 'default' | 'lg' | 'icon';
+  className?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  loading?: boolean;
-  className?: string;
-  children?: React.ReactNode;
 };
 
 const ButtonAll: React.FC<ButtonAllProps> = ({
-  btnText,
+  btnText = 'Click Me',
+  variant = 'default',
+  size = 'default',
+  className,
   leftIcon,
   rightIcon,
-  loading = false,
-  className,
+  onClick,
+  disabled = false,
   children,
-  disabled,
-  ...rest
 }) => {
   return (
     <Button
-      disabled={disabled || loading}
-      className={cn("inline-flex items-center justify-center gap-2", className)}
-      {...rest}
-    >
-      {loading ? (
-        <span>Submitting...</span>
-      ) : (
-        <>
-          {leftIcon}
-          <span>{children ?? btnText}</span>
-          {rightIcon}
-        </>
+      onClick={onClick}
+      variant={variant}
+      size={size}
+      disabled={disabled}
+      className={cn(
+        'flex items-center justify-center gap-2 px-6 py-3.5 capitalize text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl transition-all cursor-pointer duration-300',
+        'btn-gradient hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)]',
+        className
       )}
+    >
+      {leftIcon && <span className="flex items-center">{leftIcon}</span>}
+      {children ?? btnText}
+      {rightIcon && <span className="flex items-center">{rightIcon}</span>}
     </Button>
   );
 };

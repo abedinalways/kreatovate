@@ -6,15 +6,14 @@ import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
-} from "../buttons/EmblaCarouselArrowButtons";
-import useEmblaCarousel from "embla-carousel-react";
-import "./EmblaCarousel.css";
-import { EmblaOptionsType } from "embla-carousel";
+} from '../buttons/EmblaCarouselArrowButtons';
+import useEmblaCarousel from 'embla-carousel-react';
+import './EmblaCarousel.css';
+import Image from 'next/image';
 
-// ✅ Add prop types
 type EmblaCarouselProps = {
-  slides: string[]; // You can change to number[] or custom objects if needed
-  options?: EmblaOptionsType;
+  slides: string[];
+  options?: string[];
 };
 
 const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
@@ -56,7 +55,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
         <div className="embla__container">
           {slides.map((_, index) => (
             <div className="embla__slide" key={index}>
-              <img
+              <Image
                 className="embla__slide__img"
                 src={`https://picsum.photos/800/400?random=${index}`}
                 alt={`Slide ${index + 1}`}
