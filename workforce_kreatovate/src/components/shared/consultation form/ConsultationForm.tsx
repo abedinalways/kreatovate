@@ -292,7 +292,7 @@ export function ConsultationForm({
           <ButtonAll
             btnText={buttonText}
             disabled={isSubmitting}
-            className="w-full"
+            className="w-full py-5! text-sm"
           >
             {isSubmitting ? "Submitting..." : buttonText}
             {showButtonIcon && !isSubmitting && (
