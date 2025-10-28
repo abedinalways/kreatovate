@@ -39,7 +39,7 @@ const ButtonAll: React.FC<ButtonAllProps> = ({
   );
 
   const commonClasses = cn(
-    "inline-flex items-center justify-center gap-2 px-6 py-3.5 text-white text-[18px] font-[Plus_Jakarta_Sans] font-medium leading-[180%] rounded-[12px] border border-white text-center capitalize",
+    "inline-flex items-center justify-center gap-2 px-6 py-3.5 text-white text-[18px] font-[Plus_Jakarta_Sans] font-medium leading-[180%] rounded-[12px] border border-white/50 text-center capitalize",
     "btn-gradient",
     "hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)] transition-all duration-300 cursor-pointer",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",

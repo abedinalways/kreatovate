@@ -78,11 +78,11 @@ const Contact = () => {
 
   return (
     <div className="bg-[#0F1016]" id="contact_us">
-      <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
+      <div className="md:flex gap-30 py-[100px] custom-container px-4 md:px-5 justify-center items-start pb-20">
         {/* Left side: Form */}
         <div className="flex flex-col gap-2 items-start about-image">
           <p className="text-gradient">[ Book an appointment ]</p>
-          <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-white text-3xl md:text-5xl font-bold leading-14 mb-12">
             Ready to Transform <br /> Your{" "}
             <span className="text-gradient">Business</span>?
           </h2>
