@@ -151,13 +151,6 @@
   .is-scrolled {
     @apply backdrop-blur-lg bg-black/40;
   }
-
-  @media (max-width: 425px) {
-    .robo-img {
-      width: 90%;
-      height: 55%;
-    }
-  }
 }
 
 @layer utilities {

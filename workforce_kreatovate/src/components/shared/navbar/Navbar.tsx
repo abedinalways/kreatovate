@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/50 px-4 sm:px-36 md:px-5 py-5 backdrop-blur-0 bg-black/0"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/50 px-4 md:px-5 py-5 backdrop-blur-0 bg-black/0"
     >
       <div className="custom-container flex items-center justify-between">
         <Logo />
