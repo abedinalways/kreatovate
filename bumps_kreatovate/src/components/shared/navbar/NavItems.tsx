@@ -27,23 +27,22 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
     if (!id.startsWith("#")) return;
 
     const target = document.querySelector(id) as HTMLElement | null;
-
     if (!target) return;
 
     e.preventDefault();
 
-    const header = document.querySelector(headerSelector) as HTMLElement | null;
+    setActive(id);
+    history.replaceState(null, "", id);
 
+    const header = document.querySelector(headerSelector) as HTMLElement | null;
     const offsetY = (header?.offsetHeight ?? 0) + 8;
+
+    gsap.killTweensOf(window);
 
     gsap.to(window, {
       duration: 0.8,
       ease: "power2.out",
       scrollTo: { y: target, offsetY, autoKill: true },
-      onComplete: () => {
-        history.replaceState(null, "", id);
-        setActive(id);
-      },
     });
   };
 
