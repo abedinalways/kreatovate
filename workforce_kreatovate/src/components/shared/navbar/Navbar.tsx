@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -7,60 +8,54 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Logo from "../Logo";
-import NavItems from "./NavItems";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Logo from "../Logo";
+import NavItems from "./NavItems";
 import ButtonAll from "../ButtonAll";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!navRef.current) return;
+    let st: any;
 
-    const el = navRef.current;
-    el.style.willChange = "backdrop-filter, background-color";
-    el.style.backdropFilter = "blur(0px)";
-    el.style.backgroundColor = "rgba(0,0,0,0)";
+    (async () => {
+      const el = navRef.current;
+      if (!el) return;
 
-    const tween = gsap.fromTo(
-      el,
-      {
-        backdropFilter: "blur(0px)",
-        backgroundColor: "rgba(0,0,0,0)",
-      },
-      {
-        backdropFilter: "blur(16px)",
-        backgroundColor: "rgba(0,0,0,0.40)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: "top top",
-          end: "+=150",
-          scrub: true,
+      el.classList.add(
+        "transition-[backdrop-filter,background-color]",
+        "duration-300"
+      );
+
+      const { default: gsap } = await import("gsap");
+      const { default: ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      st = ScrollTrigger.create({
+        trigger: document.documentElement,
+        start: "top top",
+        end: "+=150",
+        onUpdate(self) {
+          if (self.progress > 0) el.classList.add("is-scrolled");
+          else el.classList.remove("is-scrolled");
         },
-      }
-    );
+      });
+    })();
 
     return () => {
-      tween?.scrollTrigger?.kill();
-      tween?.kill();
+      st?.kill?.();
     };
   }, []);
 
   return (
     <nav
       ref={navRef}
-      className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b border-white/50"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/50 px-4 md:px-5 py-5 backdrop-blur-0 bg-black/0"
     >
-      <div className="custom-container flex flex-row items-center justify-between">
+      <div className="custom-container flex items-center justify-between">
         <Logo />
 
         <div className="hidden lg:block">
@@ -68,7 +63,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonAll btnText="book consultation now"></ButtonAll>
+          <ButtonAll
+            btnText="book consultation now"
+            href="/#contact_us"
+            className="text-sm py-5"
+          />
         </div>
 
         <div className="lg:hidden">
@@ -78,6 +77,7 @@ const Navbar = () => {
                 <Menu />
               </Button>
             </SheetTrigger>
+
             <SheetContent className="bg-white/10 backdrop-blur-2xl border-0">
               <SheetHeader>
                 <SheetTitle>
@@ -88,12 +88,11 @@ const Navbar = () => {
                   <NavItems variant="mobile" />
                 </div>
 
-                <Button
-                  variant="default"
-                  className="px-6 py-3.5 capitalize btn-gradient text-sm font-medium leading-8 h-10 rounded-xl cursor-pointer"
-                >
-                  book consultation now
-                </Button>
+                <ButtonAll
+                  btnText="book consultation now"
+                  className="w-fit text-sm font-normal py-6!"
+                  href="/#contact_us"
+                />
               </SheetHeader>
             </SheetContent>
           </Sheet>

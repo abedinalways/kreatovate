@@ -32,7 +32,7 @@ const BusinessCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl ">
+    <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl">
       <div className="w-64 h-48 absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
@@ -42,7 +42,7 @@ const BusinessCard = ({ data }: CardProps) => {
           className="object-cover rounded-tr-2xl"
         />
       </div>
-      <div className="bg-[#0B111F] w-full p-6 rounded-2xl flex flex-col gap-[1.125rem]">
+      <div className="bg-[#0B111F] w-full h-full p-6 rounded-2xl flex flex-col gap-[1.125rem]">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-semibold leading-8">{title}</h1>
           <p className="text-[#E21717] text-[2rem] font-bold leading-10">
@@ -53,7 +53,9 @@ const BusinessCard = ({ data }: CardProps) => {
           {description}
         </p>
 
-        <GradientBorderButton btnText="Subscribe" />
+        <div className="mt-auto z-40">
+          <GradientBorderButton btnText="Subscribe" />
+        </div>
       </div>
     </div>
   );

@@ -225,7 +225,7 @@ const ServiceTabs = () => {
             value="business_consultant"
             className="group py-6 px-7 border border-gray-500 flex items-center bg-linear-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-linear-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] pb-0.5 group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
               Business Consulting
             </p>
           </TabsTrigger>
@@ -234,7 +234,7 @@ const ServiceTabs = () => {
             value="business_automation"
             className="group py-6 px-7 border border-gray-500 flex items-center bg-linear-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-linear-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] pb-0.5 group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
               Business Automation
             </p>
           </TabsTrigger>

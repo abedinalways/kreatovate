@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import React, { useEffect } from "react";
 import {
   PrevButton,
   NextButton,
@@ -16,8 +19,8 @@ type EmblaCarouselProps = {
 const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    duration: 20, // controls scroll smoothness
-    align: 'center',
+    duration: 20,
+    align: "center",
     ...options,
   });
 
@@ -32,16 +35,16 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
     if (!emblaApi) return;
 
     const updateSlideClasses = () => {
-      const slides = emblaApi.slideNodes();
-      slides.forEach((slide, index) => {
+      const slideNodes = emblaApi.slideNodes();
+      slideNodes.forEach((slide, index) => {
         slide.classList.toggle(
-          'is-selected',
+          "is-selected",
           index === emblaApi.selectedScrollSnap()
         );
       });
     };
 
-    emblaApi.on('select', updateSlideClasses);
+    emblaApi.on("select", updateSlideClasses);
     updateSlideClasses();
   }, [emblaApi]);
 
