@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { Globe } from 'lucide-react';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
+import * as React from "react";
+import { Globe } from "lucide-react";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
 
 import {
   Select,
@@ -11,7 +11,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 interface CalendarProps {
   onDatesChange?: (dates: Date[]) => void; // callback for selected dates
@@ -19,7 +19,7 @@ interface CalendarProps {
 
 export function Calendar({ onDatesChange }: CalendarProps) {
   const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone, setSelectedZone] = React.useState('CET');
+  const [selectedZone, setSelectedZone] = React.useState("CET");
 
   const timeZones = [
     { code: 'UTC', label: 'Coordinated Universal Time (GMT+0)' },
@@ -101,7 +101,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
             </div>
           </SelectTrigger>
           <SelectContent className="bg-[#0f1419]/95 border border-purple-600/40 text-white rounded-lg shadow-lg max-h-[60vh] overflow-y-auto">
-            {timeZones.map(zone => (
+            {timeZones.map((zone) => (
               <SelectItem
                 key={zone.code}
                 value={zone.code}
@@ -117,7 +117,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
       {/* Selected Dates Preview */}
       {selectedDates.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
-          {selectedDates.map(date => (
+          {selectedDates.map((date) => (
             <span
               key={date.toISOString()}
               className="px-2 py-2 bg-purple-600/50 rounded-full text-xs"

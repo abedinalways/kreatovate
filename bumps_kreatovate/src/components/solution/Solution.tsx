@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import ButtonOne from '../shared/buttons/ButtonOne';
+import Image from "next/image";
+import React from "react";
+import ButtonOne from "../shared/buttons/ButtonOne";
+import ButtonTwo from "../shared/buttons/ButtonTwo";
 
 const Solution = () => {
   return (
@@ -59,6 +60,16 @@ const Solution = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-12 flex items-center justify-center w-full">
+        <div className="w-fit">
+          <ButtonTwo
+            btnText="workforce.kreatovate.com"
+            isIcon={false}
+            className="lowercase!"
+          />
         </div>
       </div>
     </div>

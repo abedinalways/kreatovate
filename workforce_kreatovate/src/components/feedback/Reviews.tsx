@@ -189,7 +189,7 @@ const Reviews = () => {
           <div className="flex flex-col items-center mt-4 gap-2">
             <div className="flex justify-center gap-2">
               {Array.from({ length: slidesCount }).map((_, index) => (
-                <button
+                <div
                   key={index}
                   onClick={() => emblaApi?.scrollTo(index)}
                   className={`w-3 h-3 cursor-pointer rounded-full transition-all duration-300 ${

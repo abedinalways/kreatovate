@@ -55,7 +55,7 @@ const AboutUs = () => {
       id="about_us"
       className="text-white pt-5 md:pt-10 lg:pt-16 mx-auto relative isolate"
     >
-      <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-36 md:px-5 custom-container">
+      <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 md:px-5 custom-container">
         <div className="about-image w-full lg:w-1/2">
           <div className="relative w-full aspect-[16/17] sm:aspect-[16/10] md:aspect-[16/16] lg:aspect-[4/4] rounded-2xl overflow-hidden scale-x-[-1]">
             {/* <Image
@@ -91,7 +91,7 @@ const AboutUs = () => {
             and operational needs.
           </p>
 
-          <ButtonAll btnText="Try Demo" />
+          <ButtonAll btnText="Try Demo" className="py-6" />
         </div>
       </div>
       <Image
