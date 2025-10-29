@@ -67,6 +67,7 @@ const Solution = () => {
         <div className="w-fit">
           <ButtonTwo
             btnText="workforce.kreatovate.com"
+            link="https://workforce-kreatovate.vercel.app"
             isIcon={false}
             className="lowercase!"
           />

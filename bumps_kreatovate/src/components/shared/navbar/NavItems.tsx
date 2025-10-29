@@ -99,7 +99,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
             <Link
               href={`${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className="whitespace-nowrap"
+              className="whitespace-nowrap py-1"
             >
               {item.label}
             </Link>
