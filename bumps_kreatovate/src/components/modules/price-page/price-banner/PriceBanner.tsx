@@ -94,36 +94,103 @@ const PRICES: PricePlan[] = [
 const PriceBanner = () => {
   const decoRef = useRef<HTMLDivElement>(null);
 
-  // shooting lines + twinkling dots
   useEffect(() => {
     const ctx = gsap.context(() => {
       const lines = gsap.utils.toArray<HTMLElement>(".line");
-      lines.forEach((el, i) => {
-        const shoot = () => {
-          const fromLeft = i % 2 === 0;
-          gsap.set(el, {
-            opacity: 0,
-            x: fromLeft ? -200 : 200,
-            y: fromLeft ? -100 : 100,
-            rotate: fromLeft ? 20 : -20,
-            scale: 0.8,
-          });
-          gsap.to(el, {
-            opacity: 1,
-            x: fromLeft ? 600 : -600,
-            y: fromLeft ? 300 : -300,
-            duration: 1.5,
-            scale: 1,
-            ease: "power4.out",
-            onComplete: () => {
-              gsap.to(el, { opacity: 0, duration: 0.5, ease: "power2.inOut" });
-              gsap.delayedCall(gsap.utils.random(3, 7), shoot);
-            },
-          });
-        };
-        gsap.delayedCall(gsap.utils.random(1, 4), shoot);
+
+      const PAD = 120; // offscreen padding so lines enter/exit cleanly
+
+      const bounds = () => ({
+        w: window.innerWidth,
+        h: window.innerHeight,
       });
 
+      const rand = gsap.utils.random;
+      const pick = <T,>(arr: T[]) =>
+        arr[Math.floor(Math.random() * arr.length)];
+
+      const shoot = (el: HTMLElement) => {
+        const { w, h } = bounds();
+
+        // Random side to start from
+        const side = pick(["left", "right", "top", "bottom"]) as
+          | "left"
+          | "right"
+          | "top"
+          | "bottom";
+
+        // Random path endpoints
+        const from = { x: 0, y: 0 };
+        const to = { x: 0, y: 0 };
+
+        if (side === "left") {
+          from.x = -PAD;
+          from.y = rand(-PAD, h + PAD);
+          to.x = w + PAD;
+          to.y = from.y + rand(-200, 200);
+        } else if (side === "right") {
+          from.x = w + PAD;
+          from.y = rand(-PAD, h + PAD);
+          to.x = -PAD;
+          to.y = from.y + rand(-200, 200);
+        } else if (side === "top") {
+          from.x = rand(-PAD, w + PAD);
+          from.y = -PAD;
+          to.x = from.x + rand(-250, 250);
+          to.y = h + PAD;
+        } else {
+          // bottom
+          from.x = rand(-PAD, w + PAD);
+          from.y = h + PAD;
+          to.x = from.x + rand(-250, 250);
+          to.y = -PAD;
+        }
+
+        // Random look
+        const rot = rand(-25, 25);
+        const scl = rand(0.8, 1.2);
+        const flyDur = rand(1.2, 2.0);
+        const introDur = 0.18;
+
+        // Reset & place
+        gsap.set(el, {
+          x: from.x,
+          y: from.y,
+          rotate: rot,
+          scale: scl,
+          opacity: 0,
+          willChange: "transform, opacity",
+          zIndex: 10,
+        });
+
+        // tiny pop in + fly across
+        const tl = gsap.timeline({
+          onComplete: () => {
+            // random cooldown then shoot again
+            gsap.delayedCall(rand(1.2, 4.0), () => shoot(el));
+          },
+        });
+
+        tl.to(el, { opacity: 1, duration: introDur, ease: "power1.out" })
+          .to(el, {
+            x: to.x,
+            y: to.y,
+            duration: flyDur,
+            ease: "power3.out",
+          })
+          .to(el, {
+            opacity: 0,
+            duration: 0.25,
+            ease: "power2.inOut",
+          });
+      };
+
+      // Start each line at a slightly different time
+      lines.forEach((el) => {
+        gsap.delayedCall(rand(0.1, 1.0), () => shoot(el as HTMLElement));
+      });
+
+      // twinkling dots (kept from your code)
       gsap.to(".dot", {
         opacity: "random(0.2, 1)",
         duration: "random(0.8, 2)",
@@ -137,7 +204,6 @@ const PriceBanner = () => {
     return () => ctx.revert();
   }, []);
 
-  // refresh-only intro animation
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
     tl.from(".banner-title", { y: 24, opacity: 0, duration: 0.6 })

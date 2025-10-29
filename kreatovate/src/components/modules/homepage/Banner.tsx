@@ -57,6 +57,7 @@ const Banner = () => {
 
   return (
     <div
+      id="home"
       ref={rootRef}
       className="relative h-180 lg:h-screen w-full overflow-hidden"
     >

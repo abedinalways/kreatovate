@@ -95,21 +95,6 @@ export default function Error({
             </Button>
           </div>
         </div>
-
-        {/* footer info */}
-        <div className="mt-8 text-sm text-white/60 flex flex-wrap items-center justify-center gap-6">
-          <Link href="/services" className="hover:text-white transition">
-            Services
-          </Link>
-          <span className="opacity-40 hidden sm:inline">•</span>
-          <Link href="/work" className="hover:text-white transition">
-            Work
-          </Link>
-          <span className="opacity-40 hidden sm:inline">•</span>
-          <Link href="/contact" className="hover:text-white transition">
-            Contact
-          </Link>
-        </div>
       </section>
 
       {/* soft glows */}
