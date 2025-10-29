@@ -72,11 +72,3 @@ Each project is **independent** and deployable on **Vercel**, sharing a common d
 - Uses GSAP for subtle animations and Shadcn/UI for consistent styling across projects.
 
 ---
-
-## 👤 Author
-
-**Developed by:** [Your Name]  
-**Role:** Front-End Developer, UI Designer  
-**Contact:** [your.email@example.com]
-
----
