@@ -16,7 +16,6 @@ const Contact = () => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // ✅ পেজ লোড/রিফ্রেশে: শিরোনাম + প্যারাগ্রাফ (দূর থেকে কাছে - scale + fade)
       gsap.from(".js-contact-intro", {
         opacity: 0,
         y: 18,
@@ -27,7 +26,6 @@ const Contact = () => {
         stagger: 0.12,
       });
 
-      // ✅ স্ক্রলে: বাম কলাম (টেক্সট) বাম দিক থেকে আসবে
       gsap.from(".js-col-left", {
         x: -60,
         opacity: 0,
@@ -41,7 +39,6 @@ const Contact = () => {
         },
       });
 
-      // ✅ স্ক্রলে: ডান কলাম (ফর্ম) ডান দিক থেকে আসবে
       gsap.from(".js-col-right", {
         x: 60,
         opacity: 0,
@@ -56,25 +53,22 @@ const Contact = () => {
       });
     }, sectionRef);
 
-    // লে-আউট শিফট হলে পজিশন রিফ্রেশ
     ScrollTrigger.refresh();
     return () => ctx.revert();
   }, []);
 
   return (
     <div ref={sectionRef} className="relative py-40 overflow-hidden">
-      {/* ✅ Background Image Layer */}
       <Image
         src="/images/Contact.png"
         alt="contact background"
         fill
-        className="w-[1600px] h-[438px] object-cover"
+        className="w-screen h-[438px] object-cover"
         priority
       />
-      {/* পড়ার সুবিধার জন্য সামান্য ডার্ক ওভারলে (ইচ্ছেমতো) */}
+
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* ✅ Content Layer */}
       <div className="custom-container grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center relative z-10 px-4">
         {/* Left Section */}
         <div className="js-col-left flex flex-col justify-start gap-6">
