@@ -1,46 +1,46 @@
-import React from 'react';
+import React, { forwardRef } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import type { ComponentProps, ReactNode } from "react";
 
-import { cn } from '@/lib/utils'; 
-import { Button } from '@/components/ui/button';
+type BaseButtonProps = ComponentProps<typeof Button>;
 
-type ButtonAllProps = {
+type ButtonAllProps = BaseButtonProps & {
+  /** Optional text label. Ignored if you pass children. */
   btnText?: string;
-  variant?: 'default' | 'outline' | 'ghost' | 'secondary' | 'destructive';
-  size?: 'sm' | 'default' | 'lg' | 'icon';
-  className?: string;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
 };
 
-const ButtonAll: React.FC<ButtonAllProps> = ({
-  btnText = 'Click Me',
-  variant = 'default',
-  size = 'default',
-  className,
-  leftIcon,
-  rightIcon,
-  onClick,
-  disabled = false,
-}) => {
-  return (
-    <Button
-      onClick={onClick}
-      variant={variant}
-      size={size}
-      disabled={disabled}
-      className={cn(
-        'flex items-center justify-center gap-2 px-6 py-3.5 capitalize text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl transition-all cursor-pointer duration-300',
-        'btn-gradient hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)]',
-        className
-      )}
-    >
-      {leftIcon && <span className="flex items-center">{leftIcon}</span>}
-      {btnText}
-      {rightIcon && <span className="flex items-center">{rightIcon}</span>}
-    </Button>
-  );
-};
+const ButtonAll = forwardRef<HTMLButtonElement, ButtonAllProps>(
+  (
+    {
+      btnText = "Click Me",
+      leftIcon,
+      rightIcon,
+      className,
+      children, // ✅ now supported
+      ...rest // ✅ includes type="submit", onClick, disabled, variant, size, etc.
+    },
+    ref
+  ) => {
+    return (
+      <Button
+        ref={ref}
+        className={cn(
+          "flex items-center justify-center gap-2 px-6 py-3.5 capitalize text-lg lg:text-sm font-medium leading-8 h-10 rounded-xl transition-all duration-300 cursor-pointer",
+          "btn-gradient hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,0,255,0.2)]",
+          className
+        )}
+        {...rest}
+      >
+        {leftIcon && <span className="flex items-center">{leftIcon}</span>}
+        {children ?? btnText}
+        {rightIcon && <span className="flex items-center">{rightIcon}</span>}
+      </Button>
+    );
+  }
+);
 
+ButtonAll.displayName = "ButtonAll";
 export default ButtonAll;

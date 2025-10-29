@@ -1,10 +1,19 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import PriceBannerCard, { PricePlan } from "./PriceBannerCard";
 
-const DECOR = [
+type DecorPos = {
+  t?: string;
+  b?: string;
+  l?: string;
+  r?: string;
+  w: number;
+  h: number;
+};
+
+const DECOR: DecorPos[] = [
   { t: "10%", l: "15%", w: 8, h: 8 },
   { t: "20%", r: "25%", w: 4, h: 4 },
   { b: "15%", l: "10%", w: 3, h: 3 },
@@ -183,23 +192,27 @@ const PriceBanner = () => {
         />
 
         {/* dots */}
-        {DECOR.map((d, i) => (
-          <Image
-            key={i}
-            src="/images/price/dot.png"
-            alt={`dot ${i + 1}`}
-            width={d.w}
-            height={d.h}
-            className="absolute dot"
-            style={{
-              top: d.t as any,
-              bottom: d.b as any,
-              left: d.l as any,
-              right: d.r as any,
-              zIndex: 10,
-            }}
-          />
-        ))}
+        {DECOR.map((d, i) => {
+          const posStyle: CSSProperties = {
+            zIndex: 10,
+            ...(d.t ? { top: d.t } : {}),
+            ...(d.b ? { bottom: d.b } : {}),
+            ...(d.l ? { left: d.l } : {}),
+            ...(d.r ? { right: d.r } : {}),
+          };
+
+          return (
+            <Image
+              key={i}
+              src="/images/price/dot.png"
+              alt={`dot ${i + 1}`}
+              width={d.w}
+              height={d.h}
+              className="absolute dot"
+              style={posStyle}
+            />
+          );
+        })}
       </div>
 
       {/* CONTENT */}

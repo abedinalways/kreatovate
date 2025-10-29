@@ -86,7 +86,11 @@ const Business = () => {
   ];
 
   return (
-    <div ref={rootRef} className="py-[6.25rem] bg-[#0F1016] px-4 md:px-0">
+    <div
+      id="our_solutions"
+      ref={rootRef}
+      className="py-[6.25rem] bg-[#0F1016] px-4 md:px-0"
+    >
       <div className="custom-container flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
           <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold">
