@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Sheet,
@@ -6,17 +6,16 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import Logo from '../logo/Logo';
-import NavItems from './NavItems';
-import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
-import ButtonOne from '../buttons/ButtonOne';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+} from "@/components/ui/sheet";
+import Logo from "../logo/Logo";
+import NavItems from "./NavItems";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import ButtonOne from "../buttons/ButtonOne";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -25,9 +24,9 @@ const Navbar = () => {
   const navRef = useRef<HTMLElement | null>(null);
 
   // One handler to smoothly scroll to #contact_us
-  const onCTA: React.MouseEventHandler<HTMLAnchorElement> = e => {
+  const onCTA: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
-    const hash = '#contact_us';
+    const hash = "#contact_us";
     const target = document.querySelector(hash) as HTMLElement | null;
     if (!target) return;
 
@@ -36,10 +35,10 @@ const Navbar = () => {
 
     gsap.to(window, {
       duration: 0.8,
-      ease: 'power2.out',
+      ease: "power2.out",
       scrollTo: { y: target, offsetY, autoKill: true },
       onComplete: () => {
-        history.replaceState(null, '', hash);
+        history.replaceState(null, "", hash);
         setOpen(false); // close mobile sheet if open
       },
     });
@@ -48,21 +47,21 @@ const Navbar = () => {
   useEffect(() => {
     if (!navRef.current) return;
     const el = navRef.current;
-    el.style.willChange = 'backdrop-filter, background-color';
-    el.style.backdropFilter = 'blur(0px)';
-    el.style.backgroundColor = 'rgba(0,0,0,0)';
+    el.style.willChange = "backdrop-filter, background-color";
+    el.style.backdropFilter = "blur(0px)";
+    el.style.backgroundColor = "rgba(0,0,0,0)";
 
     const tween = gsap.fromTo(
       el,
-      { backdropFilter: 'blur(0px)', backgroundColor: 'rgba(0,0,0,0)' },
+      { backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" },
       {
-        backdropFilter: 'blur(16px)',
-        backgroundColor: 'rgba(0,0,0,0.40)',
-        ease: 'none',
+        backdropFilter: "blur(16px)",
+        backgroundColor: "rgba(0,0,0,0.40)",
+        ease: "none",
         scrollTrigger: {
           trigger: document.documentElement,
-          start: 'top top',
-          end: '+=150',
+          start: "top top",
+          end: "+=150",
           scrub: true,
         },
       }
