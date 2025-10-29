@@ -14,7 +14,6 @@ const BookAppointment = () => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 🌀 Fade-up অ্যানিমেশন শুধুমাত্র টেক্সট অংশে
       gsap.from(".js-book-text", {
         y: 40,
         opacity: 0,
@@ -51,7 +50,7 @@ const BookAppointment = () => {
           </p>
 
           <div className="js-book-text">
-            <ButtonTwo btnText="Book Now" />
+            <ButtonTwo link="#contact_us" btnText="Book Now" />
           </div>
         </div>
       </div>

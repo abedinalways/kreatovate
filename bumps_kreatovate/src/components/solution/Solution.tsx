@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import ButtonOne from '../shared/buttons/ButtonOne';
+import Image from "next/image";
+import React from "react";
+import ButtonOne from "../shared/buttons/ButtonOne";
+import ButtonTwo from "../shared/buttons/ButtonTwo";
 
 const Solution = () => {
   return (
@@ -38,7 +39,7 @@ const Solution = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 mx-auto flex justify-center items-center ">
           <div className="flex flex-col gap-6">
-            <small className="uppercase text-color-gradient font-roboto font-normal text-sm">
+            <small className="uppercase text-gradient-special font-roboto font-normal text-md">
               /02 SaaS Marketing
             </small>
             <h2 className="text-2xl md:text-3xl font-bold">
@@ -59,6 +60,17 @@ const Solution = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-12 flex items-center justify-center w-full">
+        <div className="w-fit">
+          <ButtonTwo
+            btnText="workforce.kreatovate.com"
+            link="https://workforce-kreatovate.vercel.app"
+            isIcon={false}
+            className="lowercase!"
+          />
         </div>
       </div>
     </div>

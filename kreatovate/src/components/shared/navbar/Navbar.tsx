@@ -1,3 +1,4 @@
+// components/shared/navbar/Navbar.tsx
 "use client";
 
 import {
@@ -27,27 +28,24 @@ const Navbar = () => {
 
     const el = navRef.current;
 
-    // ✅ set dynamic navbar height as a CSS variable
+    // set dynamic navbar height as a CSS variable for offset
     const updateNavHeight = () =>
       document.documentElement.style.setProperty(
         "--nav-height",
         `${el.offsetHeight}px`
       );
 
-    updateNavHeight(); // run once
+    updateNavHeight();
     window.addEventListener("resize", updateNavHeight);
 
-    // your existing GSAP animation stays untouched below
+    // blur + bg on scroll
     el.style.willChange = "backdrop-filter, background-color";
     el.style.backdropFilter = "blur(0px)";
     el.style.backgroundColor = "rgba(0,0,0,0)";
 
     const tween = gsap.fromTo(
       el,
-      {
-        backdropFilter: "blur(0px)",
-        backgroundColor: "rgba(0,0,0,0)",
-      },
+      { backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" },
       {
         backdropFilter: "blur(16px)",
         backgroundColor: "rgba(0,0,0,0.40)",
@@ -96,8 +94,8 @@ const Navbar = () => {
                 <SheetTitle>
                   <Logo />
                 </SheetTitle>
-
                 <div className="mt-2">
+                  {/* Mobile menu */}
                   <NavItems variant="mobile" />
                 </div>
               </SheetHeader>

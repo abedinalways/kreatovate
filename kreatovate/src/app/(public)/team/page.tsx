@@ -1,6 +1,7 @@
 import Contact from "@/components/modules/contact/Contact";
 
 import TeamAll from "@/components/modules/team/TeamAll";
+
 import DynamicBanner from "@/components/shared/banner/DynamicBanner";
 import React from "react";
 
@@ -12,7 +13,7 @@ const TeamPage = () => {
         title="The People Behind"
         titleGradient="Our Success"
       />
-      <TeamAll />
+      <TeamAll/>
       <Contact />
     </div>
   );

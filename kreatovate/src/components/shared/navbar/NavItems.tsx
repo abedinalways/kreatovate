@@ -2,8 +2,9 @@
 
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import Link from "next/link";
-import { MouseEvent, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import TransitionLink from "../TransitionLink";
 
 type Props = {
   variant?: "desktop" | "mobile";
@@ -12,103 +13,101 @@ type Props = {
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
-  const [active, setActive] = useState("#home");
+const normalizeHash = (id: string) => {
+  if (!id) return id;
+  const idx = id.indexOf("#");
+  return idx >= 0 ? id.slice(idx) : id;
+};
 
+const NavItems = ({ variant = "desktop" }: Props) => {
+  const [activeHash, setActiveHash] = useState<string>("#home");
+  const pathname = usePathname();
+
+  // Am I currently on the homepage?
+  const isHome = pathname === "/" || pathname === ""; // add more logic if you use locales/basePath
+
+  // Helper: turn a section hash into either "#hash" (on home) or "/#hash" (from any other page)
+  const toHomeSection = (hash: string) => (isHome ? hash : `/${hash}`);
+
+  // Build items once per route change — no need to hardcode /contact-us anymore
   const items = [
-    { id: "/", label: "home" },
-    { id: "#about_us", label: "about us" },
-    { id: "#our_solutions", label: "our solutions" },
-    { id: "#testimonial", label: "testimonial" },
-    { id: "/contact-us", label: "contact us" },
+    { id: isHome ? "#home" : "/", label: "home" }, // home anchor vs go to /
+    { id: toHomeSection("#about_us"), label: "about us" },
+    { id: toHomeSection("#our_solutions"), label: "our solutions" },
+    { id: toHomeSection("#testimonial"), label: "testimonial" },
+    { id: "/contact-us", label: "contact us" }, // normal route
   ];
 
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    if (!id.startsWith("#")) return;
-
-    const target = document.querySelector(id) as HTMLElement | null;
-
-    if (!target) return;
-
-    e.preventDefault();
-
-    const header = document.querySelector(headerSelector) as HTMLElement | null;
-
-    const offsetY = (header?.offsetHeight ?? 0) + 8;
-
-    gsap.to(window, {
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTo: { y: target, offsetY, autoKill: true },
-      onComplete: () => {
-        history.replaceState(null, "", id);
-        setActive(id);
-      },
-    });
+  // Instantly mark active on click; TransitionLink handles scroll/route animation
+  const handleInstantActive = (id: string) => {
+    if (id.startsWith("#")) setActiveHash(id);
+    else setActiveHash("");
   };
 
   useEffect(() => {
-    const applyFromHash = () => setActive(window.location.hash || "#home");
-
+    const applyFromHash = () => setActiveHash(window.location.hash || "#home");
     applyFromHash();
-
     window.addEventListener("hashchange", applyFromHash);
-
     return () => window.removeEventListener("hashchange", applyFromHash);
   }, []);
 
-  if (variant === "mobile") {
-    return (
-      <div>
-        <ul className="flex flex-col gap-1 capitalize">
-          {items.map((item) => {
-            const isActive = active === item.id;
-            return (
-              <li key={item.id}>
-                <Link
-                  href={item.id}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  className={[
-                    "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap text-white",
-                    isActive
-                      ? "bg-[#ED1C24] font-semibold"
-                      : "hover:bg-[#ED1C24]/40",
-                  ].join(" ")}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+  const isItemActive = (itemId: string) => {
+    const isHash = itemId.startsWith("#") || itemId.includes("/#");
+    if (isHash) return normalizeHash(activeHash) === normalizeHash(itemId);
+    return itemId === pathname;
+  };
 
-  return (
-    <div>
-      <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
-        {items?.map((item) => (
+  const DesktopList = (
+    <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
+      {items.map((item) => {
+        const active = isItemActive(item.id);
+        return (
           <li
             key={item.id}
             className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
-              active === item.id
-                ? "bg-[#ED1C24] font-semibold"
-                : "hover:bg-[#ED1C24]/40"
+              active ? "bg-[#ED1C24] font-semibold" : "hover:bg-[#ED1C24]/40"
             }`}
           >
-            <Link
-              href={`${item.id}`}
-              onClick={(e) => handleNavClick(e, item.id)}
-              className="whitespace-nowrap text-white"
+            <TransitionLink
+              href={item.id}
+              onClick={() => handleInstantActive(item.id)}
+              className="whitespace-nowrap text-white py-2"
             >
               {item.label}
-            </Link>
+            </TransitionLink>
           </li>
-        ))}
-      </ul>
-    </div>
+        );
+      })}
+    </ul>
   );
+
+  if (variant === "mobile") {
+    return (
+      <ul className="flex flex-col gap-1 capitalize">
+        {items.map((item) => {
+          const active = isItemActive(item.id);
+          return (
+            <li key={item.id}>
+              <TransitionLink
+                href={item.id}
+                onClick={() => handleInstantActive(item.id)}
+                className={[
+                  "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap text-white",
+                  active
+                    ? "bg-[#ED1C24] font-semibold"
+                    : "hover:bg-[#ED1C24]/40",
+                ].join(" ")}
+              >
+                {item.label}
+              </TransitionLink>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  return <div>{DesktopList}</div>;
 };
 
 export default NavItems;

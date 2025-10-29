@@ -17,7 +17,10 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative w-full text-white overflow-hidden bg-[#0b1121]">
+    <footer
+      id="footer"
+      className="relative w-full text-white overflow-hidden bg-[#0b1121]"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-10">
         <Image

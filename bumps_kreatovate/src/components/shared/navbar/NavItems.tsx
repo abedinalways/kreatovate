@@ -27,23 +27,22 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
     if (!id.startsWith("#")) return;
 
     const target = document.querySelector(id) as HTMLElement | null;
-
     if (!target) return;
 
     e.preventDefault();
 
-    const header = document.querySelector(headerSelector) as HTMLElement | null;
+    setActive(id);
+    history.replaceState(null, "", id);
 
+    const header = document.querySelector(headerSelector) as HTMLElement | null;
     const offsetY = (header?.offsetHeight ?? 0) + 8;
+
+    gsap.killTweensOf(window);
 
     gsap.to(window, {
       duration: 0.8,
       ease: "power2.out",
       scrollTo: { y: target, offsetY, autoKill: true },
-      onComplete: () => {
-        history.replaceState(null, "", id);
-        setActive(id);
-      },
     });
   };
 
@@ -91,7 +90,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
         {items?.map((item) => (
           <li
             key={item.id}
-            className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
+            className={`px-4 md:px-2 md:py-1 rounded-full transition-all duration-200 ${
               active === item.id
                 ? "bg-[#ED1C24] font-semibold"
                 : "hover:bg-[#ED1C24]/40"
@@ -100,7 +99,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
             <Link
               href={`${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className="whitespace-nowrap"
+              className="whitespace-nowrap py-1"
             >
               {item.label}
             </Link>

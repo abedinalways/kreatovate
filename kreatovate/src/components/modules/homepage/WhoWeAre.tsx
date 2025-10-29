@@ -46,14 +46,12 @@ const WhoWeAre = () => {
           trigger: sectionRef.current,
           start: "top 70%",
           end: "bottom 40%",
-          // once: true, // ❌ বাদ
-          toggleActions: "play none none reverse", // ✅ স্ক্রলে প্লে, উপরে গেলে রিভার্স
-          invalidateOnRefresh: true, // ✅ রিফ্রেশে পজিশন রিক্যাল্ক
-          // markers: true, // ডিবাগ দরকার হলে খুলে দাও
+
+          toggleActions: "play none none reverse",
+          invalidateOnRefresh: true,
         },
       });
 
-      // 🎞️ Heading
       tl.from(".js-wwa-heading", {
         y: 30,
         opacity: 0,
@@ -61,7 +59,6 @@ const WhoWeAre = () => {
         ease: "power2.out",
       });
 
-      // sub
       tl.from(
         ".js-wwa-sub",
         {
@@ -73,7 +70,6 @@ const WhoWeAre = () => {
         "-=0.3"
       );
 
-      // 🌬️🎯 cards (stagger)
       tl.from(
         ".js-wwa-card",
         {
@@ -87,10 +83,9 @@ const WhoWeAre = () => {
       );
     }, sectionRef);
 
-    // ✅ সেটআপের পর রিফ্রেশ
+    
     ScrollTrigger.refresh();
 
-    // ✅ ইমেজ/ফন্ট লোডের পর আবারও রিফ্রেশ (layout shift ঢাকতে)
     const onLoad = () => ScrollTrigger.refresh();
     window.addEventListener("load", onLoad);
 

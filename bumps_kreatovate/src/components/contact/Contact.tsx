@@ -5,11 +5,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ConsultationForm } from '../shared/consultationForm/consultationForm';
 import { Calendar } from '../ui/calendar';
 
+interface ConsultationFormData {
+  name?: string;
+  email?: string;
+  message?: string;
+  [key: string]: string | undefined;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone, setSelectedZone] = React.useState('CET');
+  const [selectedZone] = React.useState('CET');
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,7 +57,7 @@ const Contact = () => {
   }, []);
 
   // Form submission handler
-  const handleFormSubmit = async (formData: Record<string, any>) => {
+  const handleFormSubmit = async (formData: ConsultationFormData) => {
     const payload = {
       ...formData,
       selectedDates: selectedDates.map(d => d.toISOString()),

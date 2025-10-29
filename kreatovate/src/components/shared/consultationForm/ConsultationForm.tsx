@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import {
   Form,
   FormControl,
@@ -13,29 +13,30 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Calendar } from '@/components/ui/calendar';
-import ButtonAll from '../buttons/ButtonAll';
+} from "@/components/ui/select";
+import { Calendar } from "@/components/ui/calendar";
+import ButtonAll from "../buttons/ButtonAll";
+import { Textarea } from "@/components/ui/textarea";
 
 export interface FormFieldConfig {
   name: string;
   label: string;
-  type: 'text' | 'email' | 'tel' | 'select' | 'textarea';
+  type: "text" | "email" | "tel" | "select" | "textarea";
   placeholder?: string;
   required?: boolean;
   options?: { value: string; label: string }[];
   rows?: number;
   gridCol?: 1 | 2;
-  validation?: z.ZodType<any, any>;
+  validation?: z.ZodTypeAny; // ✅ no explicit any
 }
 
 export interface ConsultationFormProps {
@@ -45,7 +46,7 @@ export interface ConsultationFormProps {
   buttonText?: string;
   showButtonIcon?: boolean;
   showDecorator?: boolean;
-  onSubmit?: (data: Record<string, any>) => Promise<void>;
+  onSubmit?: (data: Record<string, unknown>) => Promise<void>; // ✅ no any
   className?: string;
   apiEndpoint?: string;
   successMessage?: string;
@@ -54,57 +55,57 @@ export interface ConsultationFormProps {
 
 const defaultFields: FormFieldConfig[] = [
   {
-    name: 'firstName',
-    label: 'First name',
-    type: 'text',
+    name: "firstName",
+    label: "First name",
+    type: "text",
     required: true,
     gridCol: 2,
     validation: z.string().min(2),
   },
   {
-    name: 'lastName',
-    label: 'Last name',
-    type: 'text',
+    name: "lastName",
+    label: "Last name",
+    type: "text",
     required: true,
     gridCol: 2,
     validation: z.string().min(2),
   },
   {
-    name: 'company',
-    label: 'Company / Organization',
-    type: 'text',
+    name: "company",
+    label: "Company / Organization",
+    type: "text",
     required: true,
     gridCol: 1,
     validation: z.string().min(2),
   },
   {
-    name: 'email',
-    label: 'Company email',
-    type: 'email',
+    name: "email",
+    label: "Company email",
+    type: "email",
     required: true,
     gridCol: 1,
     validation: z.string().email(),
   },
   {
-    name: 'service',
-    label: 'Which service you want?',
-    type: 'select',
+    name: "service",
+    label: "Which service you want?",
+    type: "select",
     required: true,
     gridCol: 1,
     validation: z.string().min(1),
     options: [
-      { value: 'digital-marketing', label: 'Digital Marketing' },
-      { value: 'seo', label: 'SEO Services' },
-      { value: 'social-media', label: 'Social Media Marketing' },
-      { value: 'content-creation', label: 'Content Creation' },
-      { value: 'web-development', label: 'Web Development' },
-      { value: 'consulting', label: 'Business Consulting' },
+      { value: "digital-marketing", label: "Digital Marketing" },
+      { value: "seo", label: "SEO Services" },
+      { value: "social-media", label: "Social Media Marketing" },
+      { value: "content-creation", label: "Content Creation" },
+      { value: "web-development", label: "Web Development" },
+      { value: "consulting", label: "Business Consulting" },
     ],
   },
   {
-    name: 'message',
-    label: 'Message',
-    type: 'textarea',
+    name: "message",
+    label: "Message",
+    type: "textarea",
     rows: 4,
     gridCol: 1,
     validation: z.string().optional(),
@@ -112,31 +113,34 @@ const defaultFields: FormFieldConfig[] = [
 ];
 
 export function ConsultationForm({
-  title = 'Schedule a Free Consultation',
+  title = "Schedule a Free Consultation",
   subtitle,
   fields = defaultFields,
-  buttonText = 'Book a consultation',
+  buttonText = "Book a consultation",
   showButtonIcon = true,
   showDecorator = true,
   onSubmit,
-  className = 'text-white',
-  apiEndpoint = '/api/consultation',
-  successMessage = 'Form submitted successfully!',
-  errorMessage = 'Something went wrong. Please try again.',
+  className = "text-white",
+  apiEndpoint = "/api/consultation",
+  successMessage = "Form submitted successfully!",
+  errorMessage = "Something went wrong. Please try again.",
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const createSchema = () => {
-    const schemaFields: Record<string, z.ZodType<any, any>> = {};
-    fields.forEach(field => {
-      if (field.name === 'selectedDates')
+    const schemaFields: Record<string, z.ZodTypeAny> = {}; // ✅ no any
+    fields.forEach((field) => {
+      if (field.name === "selectedDates") {
         schemaFields[field.name] = z.array(z.string());
-      else if (field.validation) schemaFields[field.name] = field.validation;
-      else if (field.required)
+      } else if (field.validation) {
+        schemaFields[field.name] = field.validation;
+      } else if (field.required) {
         schemaFields[field.name] = z
           .string()
           .min(1, `${field.label} is required`);
-      else schemaFields[field.name] = z.string().optional();
+      } else {
+        schemaFields[field.name] = z.string().optional();
+      }
     });
     return z.object(schemaFields);
   };
@@ -147,26 +151,29 @@ export function ConsultationForm({
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      ...fields.reduce(
-        (acc, f) => ({ ...acc, [f.name]: '' }),
-        {} as Record<string, any>
-      ),
+      ...fields.reduce<Record<string, string>>((acc, f) => {
+        acc[f.name] = "";
+        return acc;
+      }, {}),
+
       selectedDates: [],
-      timeZone: 'CET',
+
+      timeZone: "CET",
     },
   });
 
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      if (onSubmit) await onSubmit(data);
-      else {
+      if (onSubmit) {
+        await onSubmit(data as unknown as Record<string, unknown>);
+      } else {
         const response = await fetch(apiEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
-        if (!response.ok) throw new Error('Failed to submit form');
+        if (!response.ok) throw new Error("Failed to submit form");
       }
       alert(successMessage);
       form.reset();
@@ -182,41 +189,52 @@ export function ConsultationForm({
     <FormField
       key={field.name}
       control={form.control}
-      name={field.name}
+      name={field.name as keyof FormValues}
       render={({ field: formField }) => (
         <FormItem>
           <FormLabel>{field.label}</FormLabel>
           <FormControl>
-            {field.type === 'textarea' ? (
+            {field.type === "textarea" ? (
               <Textarea
                 rows={field.rows}
                 placeholder={field.placeholder}
-                {...formField}
+                name={formField.name}
+                onBlur={formField.onBlur}
+                onChange={formField.onChange}
+                ref={formField.ref}
+                value={
+                  typeof formField.value === "string"
+                    ? formField.value
+                    : formField.value == null
+                    ? ""
+                    : String(formField.value)
+                }
               />
-            ) : field.type === 'select' ? (
+            ) : field.type === "select" ? (
               <Select
                 onValueChange={formField.onChange}
-                value={formField.value}
+                value={String(formField.value ?? "")}
               >
                 <SelectTrigger className="w-full">
                   <SelectValue
-                    placeholder={field.placeholder || 'Select Option'}
+                    placeholder={field.placeholder || "Select Option"}
                   />
                 </SelectTrigger>
                 <SelectContent>
-                  {field.options?.map(opt => (
+                  {field.options?.map((opt) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       {opt.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-            ) : field.name === 'selectedDates' ? (
+            ) : field.name === "selectedDates" ? (
               <Calendar
-                onDatesChange={dates =>
+                onDatesChange={(dates: Date[]) =>
                   form.setValue(
-                    'selectedDates',
-                    dates.map(d => d.toISOString())
+                    "selectedDates" as keyof FormValues,
+
+                    dates.map((d) => d.toISOString())
                   )
                 }
               />
@@ -224,7 +242,17 @@ export function ConsultationForm({
               <Input
                 type={field.type}
                 placeholder={field.placeholder}
-                {...formField}
+                name={formField.name}
+                onBlur={formField.onBlur}
+                onChange={formField.onChange}
+                ref={formField.ref}
+                value={
+                  typeof formField.value === "string"
+                    ? formField.value
+                    : formField.value == null
+                    ? ""
+                    : String(formField.value)
+                }
               />
             )}
           </FormControl>
@@ -237,7 +265,7 @@ export function ConsultationForm({
   return (
     <div
       className={cn(
-        'w-full max-w-md mx-auto p-8 bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl',
+        "w-full max-w-md mx-auto p-8 bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl",
         className
       )}
     >
@@ -253,7 +281,6 @@ export function ConsultationForm({
           <div className="flex items-center justify-center w-full my-6">
             <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
             <div className="mx-3 shrink-0">
-              {/* SVG Decorator */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -295,7 +322,7 @@ export function ConsultationForm({
             disabled={isSubmitting}
             className="w-full"
           >
-            {isSubmitting ? 'Submitting...' : buttonText}
+            {isSubmitting ? "Submitting..." : buttonText}
             {showButtonIcon && !isSubmitting && (
               <ArrowRight className="w-5 h-5 ml-2" />
             )}

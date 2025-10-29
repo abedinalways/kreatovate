@@ -1,0 +1,61 @@
+/* ===== Default (Desktop & Large Screens ≥ 1024px) ===== */
+.roboImg {
+  width: 55%;
+  height: 80%;
+}
+
+/* ===== Laptops & Small Desktops (≤ 1024px) ===== */
+@media (max-width: 1024px) {
+  .roboImg {
+    width: 65%;
+    height: 70%;
+  }
+}
+
+/* ===== Tablets (iPad Mini / Foldable Portrait 600–768px) ===== */
+@media (max-width: 768px) {
+  .roboImg {
+    width: 75%;
+    height: 60%;
+  }
+}
+
+/* ===== Foldables / Small Tablets (~650–720px) ===== */
+@media (max-width: 720px) {
+  .roboImg {
+    width: 80%;
+    height: 55%;
+  }
+}
+
+/* ===== Large Phones (Galaxy S22 Ultra / iPhone 15 Pro Max, 428–450px) ===== */
+@media (max-width: 450px) {
+  .roboImg {
+    width: 82%;
+    height: 45%;
+  }
+}
+
+/* ===== Mid Phones (iPhone 11–14 / Pixel / OnePlus 9–11 Pro, 390–430px) ===== */
+@media (max-width: 430px) {
+  .roboImg {
+    width: 85%;
+    height: 43%;
+  }
+}
+
+/* ===== Small Phones (iPhone 8 / SE, ≤ 380px) ===== */
+@media (max-width: 380px) {
+  .roboImg {
+    width: 90%;
+    height: 40%;
+  }
+}
+
+/* ===== Extra Small (≤ 340px) ===== */
+@media (max-width: 340px) {
+  .roboImg {
+    width: 95%;
+    height: 38%;
+  }
+}
