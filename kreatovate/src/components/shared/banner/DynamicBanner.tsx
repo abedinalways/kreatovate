@@ -55,7 +55,7 @@ const DynamicBanner = ({
   }, []);
 
   return (
-    <div ref={rootRef} className="relative w-full h-[75vh] mt-(--nav-height)">
+    <div ref={rootRef} className="relative w-full h-[75vh] mt-(--nav-height) ">
       <Image
         src={imageUrl}
         alt="page banner image"
@@ -71,7 +71,7 @@ const DynamicBanner = ({
         }}
       />
       <div className="absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center gap-4">
-        <h1 className="js-db-heading text-5xl font-bold">
+        <h1 className="js-db-heading text-5xl font-bold text-center">
           {title} <span className="text-gradient pb-2!">{titleGradient}</span>
         </h1>
 
