@@ -84,7 +84,7 @@ const Support = () => {
         ref={headingRef}
         className="text-center text-3xl md:text-5xl font-bold mb-12 leading-snug"
       >
-        Need a hand?{" "}
+        Need a hand?{' '}
         <span className="text-color-gradient bg-clip-text ">Get in touch</span>
         <br />
         <span className="text-color-gradient bg-clip-text ">with us</span>
@@ -96,25 +96,22 @@ const Support = () => {
         className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full custom-container px-4 lg:px-0"
       >
         {contactItems.map((item, idx) => (
-          <div
+          <Card
             key={idx}
-            className=" bg-linear-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl"
+            className="bg-color-gradient p-px rounded-xl h-full border border-white/10 hover:border-[#4E30FE]/80 
+                       transition-all duration-500  shadow-lg"
           >
-            <Card
-              key={idx}
-              className="bg-[#07080B] rounded-2xl shadow-lg p-0 border-0"
-            >
-              <CardContent className="flex flex-col gap-3 py-8">
-                <div className="w-12 h-12 rounded-full bg-linear-to-r from-[#E21717] to-[#3700FF] flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-300">{item.detail}</p>
-              </CardContent>
-            </Card>
-          </div>
+            <div className="bg-black rounded-xl p-6 h-full flex flex-col">
+
+            <CardContent className="flex flex-col  gap-3 py-8">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#E21717] to-[#3700FF] flex items-center justify-center">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              <p className="text-sm text-gray-300">{item.detail}</p>
+            </CardContent>
+            </div>
+          </Card>
         ))}
       </div>
     </section>
