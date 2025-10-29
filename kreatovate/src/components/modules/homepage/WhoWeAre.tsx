@@ -83,6 +83,7 @@ const WhoWeAre = () => {
       );
     }, sectionRef);
 
+    
     ScrollTrigger.refresh();
 
     const onLoad = () => ScrollTrigger.refresh();
