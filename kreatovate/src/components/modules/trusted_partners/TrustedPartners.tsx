@@ -50,10 +50,10 @@ const TrustedPartners = () => {
       <div className="custom-container grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Section */}
         <div className="js-trusted-left flex flex-col justify-center gap-4">
-          <h2 className="text-3xl md:text-5xl font-bold">
+          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-start">
             Your Trusted <span className="text-color-gradient">Partners</span>
           </h2>
-          <p className="text-gray-200 text-sm leading-7">
+          <p className="text-gray-200 text-sm leading-7 px-4 md:px-0">
             We leverage our partnerships to cover what we can’t in house. The
             rapport <br />
             we have built with our relationships is everything to us, which only
@@ -64,13 +64,13 @@ const TrustedPartners = () => {
             many solutions to ensure you and your businesses flourish just as
             you <br /> have envisioned it.
           </p>
-          <div className="w-33">
+          <div className="w-33 px-4 md:px-0">
             <ButtonOne btnText="Contact Us" />
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="js-trusted-right flex justify-center">
+        <div className="js-trusted-right flex justify-center px-4 md:px-0">
           <Image
             src="/images/partners.png"
             alt="Partners"
