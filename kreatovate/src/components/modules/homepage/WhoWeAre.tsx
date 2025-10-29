@@ -87,10 +87,9 @@ const WhoWeAre = () => {
       );
     }, sectionRef);
 
-    // ✅ সেটআপের পর রিফ্রেশ
+    
     ScrollTrigger.refresh();
 
-    // ✅ ইমেজ/ফন্ট লোডের পর আবারও রিফ্রেশ (layout shift ঢাকতে)
     const onLoad = () => ScrollTrigger.refresh();
     window.addEventListener("load", onLoad);
 
