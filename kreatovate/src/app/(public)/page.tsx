@@ -18,12 +18,11 @@ export default function HomePage() {
       <WhoWeAre />
       <BookAppointment />
       <Service />
-        <Team/>
+      <Team />
       <OurSolution />
       <Partners />
-        <Feedback/>
+      <Feedback />
       <Contact />
-
     </div>
   );
 }
