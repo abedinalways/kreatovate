@@ -1,0 +1,304 @@
+{
+  "title": "Detailed Feature Comparison",
+  "subtitle": "Compare all features across our plans",
+  "columns": [
+    "A1 Employee Agent",
+    "Consumer / Personal",
+    "Starter (V1 voice)",
+    "Standard (V2 Trilingual)",
+    "Expert (V3Memory)",
+    "Elite (V4 Trilingual + Memory)",
+    "Premium",
+    "Oracle / Enterprise"
+  ],
+  "features": [
+    {
+      "name": "Resume Builder Agent",
+      "availability": [
+        "available",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable"
+      ]
+    },
+    {
+      "name": "Avatar Builder (Personal)",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable"
+      ]
+    },
+    {
+      "name": "Credit Repair Agent",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable"
+      ]
+    },
+    {
+      "name": "Personal Assistant",
+      "availability": [
+        "comingSoon",
+        "comingSoon",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable"
+      ]
+    },
+    {
+      "name": "Trader (Lite)",
+      "availability": [
+        "comingSoon",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable"
+      ]
+    },
+    {
+      "name": "Content Manager",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Avatar Builder (Business)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Investigator (Lite)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Lead Generate-on Employee",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Order Taker Employee",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Technical Support Employee",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Quality Assurance Employee",
+      "availability": [
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Closer (Voice)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Appointment Setter (Voice)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Lead Nurturer (Voice)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Support Employee (Voice)",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Administrative Assistant",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Property Security",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Ticket Arbitrage Agent",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Retail Clothing Arbitrage Agent",
+      "availability": [
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Expert Trader",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "Expert Investigator",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "CFO",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "available",
+        "available",
+        "available",
+        "available"
+      ]
+    },
+    {
+      "name": "A.D.O.N.I.S. Aloracle",
+      "availability": [
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "unavailable",
+        "available"
+      ]
+    }
+  ]
+}
