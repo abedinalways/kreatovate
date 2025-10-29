@@ -58,12 +58,16 @@ const Contact = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative py-40 overflow-hidden">
+    <div
+      id="contact_us"
+      ref={sectionRef}
+      className="relative py-28 overflow-hidden bg-[lightgray]/10"
+    >
       <Image
-        src="/images/Contact.png"
+        src="/images/contact2.jpg"
         alt="contact background"
         fill
-        className="w-screen h-[438px] object-cover"
+        className="w-screen h-[438px] object-cover object-center mix-blend-luminosity opacity-25"
         priority
       />
 
