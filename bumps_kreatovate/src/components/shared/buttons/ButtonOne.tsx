@@ -15,15 +15,15 @@ const ButtonOne = ({
   width = 'w-full',
   href = '#',
   padding = 'py-3',
-  fontSize = 'text-lg',
+  fontSize = 'text-md',
   bgColor,
 }: BtnProps) => {
   return (
-    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
+    <div className="p-px rounded-[10px] btnOne-bg-gradient cursor-pointer">
       <Button
         asChild
         variant="ghost"
-        className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white ${padding} ${fontSize} font-medium`}
+        className={`${width} rounded-[10px] bg-black hover:bg-black/90 text-white  hover:text-white ${padding} ${fontSize} font-medium`}
       >
         <Link
           href={href}

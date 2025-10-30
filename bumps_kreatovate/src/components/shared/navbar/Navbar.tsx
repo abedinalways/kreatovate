@@ -86,7 +86,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block ">
           <ButtonOne btnText="contact us" href="#contact_us" />
         </div>
 
@@ -109,12 +109,8 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile CTA */}
-                <div className="mt-4">
-                  <ButtonOne
-                    btnText="contact us"
-                    bgColor="#0f1016"
-                    href="#contact_us"
-                  />
+                <div className="mt-4 ">
+                  <ButtonOne btnText="contact us" href="#contact_us" />
                 </div>
               </SheetHeader>
             </SheetContent>

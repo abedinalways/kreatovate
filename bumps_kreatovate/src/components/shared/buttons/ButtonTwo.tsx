@@ -15,7 +15,7 @@ const ButtonTwo = ({ btnText, className, isIcon = true, link }: BtnProps) => {
       <Button
         asChild
         variant="ghost"
-        className={` ${className} w-full rounded-[10px] py-6 px-5 text-base md:text-lg font-medium text-white hover:text-white hover:bg-transparent`}
+        className={` ${className} w-full rounded-[10px] py-5 px-6 text-sm md:text-lg font-medium text-white hover:text-white hover:bg-transparent`}
       >
         <Link
           href={link ? link : "/"}

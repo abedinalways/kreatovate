@@ -136,7 +136,7 @@
 .text-color-gradient {
   @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
-.text-gradient {
+.text-gradient{
   @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
 }
 
@@ -177,8 +177,9 @@
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
 }
 
-.text-gradient {
-  @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none;
+.text-gradient{
+  @apply  text-transparent bg-clip-text;
+  background-image: linear-gradient(to right, #E21717 0%, #3700FF 100%);
 }
 
 .text-gradient-special {
