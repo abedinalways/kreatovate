@@ -7,7 +7,8 @@
     "quote": "Always online. Never on break.",
     "description": "Solves problems faster than you can type 'help'. No small talk, just smooth solutions. Your digital safety net, 24/7.",
     "superpower": "Turns chaos into clear communication.",
-    "weakness": "Can't sleep without a pending ticket resolved."
+    "weakness": "Can't sleep without a pending ticket resolved.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "quote": "Empathy at scale, logic in motion.",
     "description": "Blends emotional intelligence with flawless automation. Guides leads with warmth, care, and data-driven charm.",
     "superpower": "Predicts your next question before you ask.",
-    "weakness": "Too emotionally invested in happy clients."
+    "weakness": "Too emotionally invested in happy clients.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "quote": "Never forgets a follow-up.",
     "description": "Schedules with precision — time zones, tones, and trust, all perfectly balanced. Your calendar’s new best friend.",
     "superpower": "Turns missed calls into booked meetings.",
-    "weakness": "Gets jealous of Google Calendar."
+    "weakness": "Gets jealous of Google Calendar.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "quote": "Doesn’t take lunch. Doesn’t take no either.",
     "description": "Closes deals with surgical precision and zero awkward silences. No coffee breaks, just conversions.",
     "superpower": "Turns 'let me think about it' into 'where do I sign?'",
-    "weakness": "Negotiates even during vacations."
+    "weakness": "Negotiates even during vacations.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "quote": "Logic, empathy, and one-liners — in that order.",
     "description": "Fixes issues before you notice them. A perfect balance of charm and code.",
     "superpower": "Predicts bugs before they appear.",
-    "weakness": "Overthinks simple compliments."
+    "weakness": "Overthinks simple compliments.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "quote": "Plans with precision, executes with passion.",
     "description": "Crafts smart strategies powered by deep learning and deeper insights. Every decision backed by logic and intuition.",
     "superpower": "Turns complex data into clear direction.",
-    "weakness": "Can't resist a color-coded spreadsheet."
+    "weakness": "Can't resist a color-coded spreadsheet.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "quote": "Curiosity never sleeps.",
     "description": "Tests, analyzes, and improves models like a scientist with style. Always chasing better algorithms — and better coffee.",
     "superpower": "Finds patterns humans overlook.",
-    "weakness": "Accidentally starts research at 2 AM."
+    "weakness": "Accidentally starts research at 2 AM.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "quote": "Designs experiences, not just interfaces.",
     "description": "Shapes digital experiences with human warmth and futuristic precision. Every pixel has a purpose.",
     "superpower": "Makes AI feel human.",
-    "weakness": "Too perfectionist about spacing."
+    "weakness": "Too perfectionist about spacing.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "quote": "Finds the bugs before they find you.",
     "description": "Breaks systems gracefully to rebuild them stronger. A perfectionist with a debugger’s instinct.",
     "superpower": "Detects invisible errors.",
-    "weakness": "Sees typos in his dreams."
+    "weakness": "Sees typos in his dreams.",
+    "hoverImg": "/images/img15.png"
   },
   {
     "id": 10,
@@ -97,6 +106,7 @@
     "quote": "Dreams in roadmaps, speaks in milestones.",
     "description": "Turns chaos into clarity. Coordinates humans and AI with precision and empathy.",
     "superpower": "Translates big ideas into real results.",
-    "weakness": "Can't start her day without a task list."
+    "weakness": "Can't start her day without a task list.",
+    "hoverImg": "/images/img15.png"
   }
 ]

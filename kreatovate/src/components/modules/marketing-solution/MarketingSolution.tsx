@@ -1,11 +1,10 @@
-'use client';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import { BusinessItem } from '../../../../../kreatovate/types';
-import BusinessCard from '@/components/shared/cards/BusinessCard';
-import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import BusinessCard from "@/components/shared/cards/BusinessCard";
+import Image from "next/image";
+import { BusinessItem } from "../../../../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,30 +14,30 @@ const MarketingSolution = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -46,46 +45,46 @@ const MarketingSolution = () => {
     return () => ctx.revert();
   }, []);
 
- const businessData: BusinessItem[] = [
-   {
-     id: 1,
-     title: 'Avatar Builder',
-     price: 297,
-     description: 'Generates posts, captions, hashtags, and schedules content.',
-   },
-   {
-     id: 2,
-     title: 'Content Management',
-     price: 297,
-     description:
-       'Creates branded avatars for outreach, training, or marketing.',
-   },
-   {
-     id: 3,
-     title: 'Lead Generation',
-     price: 197,
-     description: 'Performs background checks and internet data scrubbing.',
-   },
-   {
-     id: 4,
-     title: 'Lead Nurturing',
-     price: 197,
-     description: 'Warms leads with education and timely follow-ups.',
-   },
-   {
-     id: 5,
-     title: 'SEO & GEO',
-     price: 297,
-     description: 'Schedules and confirms client calls seamlessly.',
-   },
-   {
-     id: 6,
-     title: 'Website Builder',
-     price: 397,
-     description: 'Outbound sales employee that calls and closes deals.',
-   },
- ];
-
+  const businessData: BusinessItem[] = [
+    {
+      id: 1,
+      title: "Avatar Builder",
+      price: 297,
+      description:
+        "Generates posts, captions, hashtags, and schedules content.",
+    },
+    {
+      id: 2,
+      title: "Content Management",
+      price: 297,
+      description:
+        "Creates branded avatars for outreach, training, or marketing.",
+    },
+    {
+      id: 3,
+      title: "Lead Generation",
+      price: 197,
+      description: "Performs background checks and internet data scrubbing.",
+    },
+    {
+      id: 4,
+      title: "Lead Nurturing",
+      price: 197,
+      description: "Warms leads with education and timely follow-ups.",
+    },
+    {
+      id: 5,
+      title: "SEO & GEO",
+      price: 297,
+      description: "Schedules and confirms client calls seamlessly.",
+    },
+    {
+      id: 6,
+      title: "Website Builder",
+      price: 397,
+      description: "Outbound sales employee that calls and closes deals.",
+    },
+  ];
 
   return (
     <div
@@ -108,11 +107,11 @@ const MarketingSolution = () => {
       <div className="custom-container relative flex flex-col items-center gap-10 lg:gap-14">
         <div className="flex flex-col items-center gap-2 md:gap-4">
           <h1 className="text-center text-3xl sm:text-5xl leading-14 font-bold text-white">
-            <div className='md:py-2'>
+            <div className="md:py-2">
               <span>Our AI Powered </span>
               <span className="text-gradient "> Digital</span>
             </div>
-            
+
             <span className="text-gradient"> Marketing Solutions</span>
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">
@@ -124,7 +123,7 @@ const MarketingSolution = () => {
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 business-card"
         >
-          {businessData?.map(data => (
+          {businessData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
