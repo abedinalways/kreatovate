@@ -56,20 +56,20 @@ const Banner = () => {
     <div
       id="home"
       ref={bannerRef}
-      className="relative min-h-svh md:min-h-screen overflow-hidden pt-14"
+      className="relative min-h-svh md:min-h-screen overflow-hidden pt-14 px-4 mx-auto"
     >
       <MainBg />
 
       <div className="absolute z-40 flex flex-col items-center justify-center gap-2 h-full w-full">
         <div className="flex flex-col items-center gap-2 text-center">
-          <div className="flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline">
+          <div className="flex items-center bg-white/10  md:px-10  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
             <Image
               src="/images/hrline1.png"
               alt="heading line vector 1"
               width={80}
               height={16}
             />
-            <p className="font-roboto text-sm md:text-lg font-light text-gradient uppercase">
+            <p className="font-roboto text-xs md:text-md py-2 font-light text-gradient uppercase">
               Top consulting platform
             </p>
             <Image
@@ -82,7 +82,7 @@ const Banner = () => {
           </div>
 
           <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
-            Transform Ideas with{" "}
+            Transform Ideas with{' '}
             <span className="text-gradient-special">Kreatovate’s Strategy</span>
           </h1>
 
