@@ -74,6 +74,8 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
 
       e.preventDefault();
 
+      setActive(id);
+
       const header = document.querySelector(
         headerSelector
       ) as HTMLElement | null;
@@ -83,7 +85,6 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
         const top =
           target.getBoundingClientRect().top + window.scrollY - offsetY;
         window.scrollTo({ top, behavior: "smooth" });
-        setActive(id);
         history.replaceState(null, "", id);
         return;
       }
@@ -97,7 +98,6 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
         ease: "power2.out",
         scrollTo: { y: target, offsetY, autoKill: true },
         onComplete: () => {
-          setActive(id);
           history.replaceState(null, "", id);
         },
       });

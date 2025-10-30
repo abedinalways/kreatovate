@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   useCallback,
   useEffect,
@@ -7,40 +8,30 @@ import React, {
 } from "react";
 import type { EmblaCarouselType } from "embla-carousel";
 
-export type EmblaApi = {
-  scrollPrev: () => void;
-  scrollNext: () => void;
-  canScrollPrev: () => boolean;
-  canScrollNext: () => boolean;
-  on: (event: string, callback: () => void) => unknown;
-};
-
-export const usePrevNextButtons = (emblaApi?: EmblaApi | null) => {
+export const usePrevNextButtons = (emblaApi?: EmblaCarouselType | null) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
+  const onSelect = useCallback((api: EmblaCarouselType) => {
+    setPrevBtnDisabled(!api.canScrollPrev());
+    setNextBtnDisabled(!api.canScrollNext());
+  }, []);
+
   const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollPrev();
+    emblaApi?.scrollPrev();
   }, [emblaApi]);
 
   const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
+    emblaApi?.scrollNext();
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
 
-    onSelect();
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
+    onSelect(emblaApi);
+
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
   return {
@@ -51,15 +42,10 @@ export const usePrevNextButtons = (emblaApi?: EmblaApi | null) => {
   };
 };
 
-export const PrevButton: React.FC<
-  React.ButtonHTMLAttributes<HTMLButtonElement>
-> = props => {
-  const { children, ...restProps } =
-    props as React.ButtonHTMLAttributes<HTMLButtonElement> & {
-      children?: React.ReactNode;
-    };
-
-type ArrowButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type ArrowButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  className?: string;
+  children?: React.ReactNode;
+};
 
 export const PrevButton: React.FC<ArrowButtonProps> = ({
   children,
@@ -69,6 +55,7 @@ export const PrevButton: React.FC<ArrowButtonProps> = ({
   return (
     <button
       type="button"
+      aria-label="Previous slide"
       className={`embla__button embla__button--prev ${className ?? ""}`}
       {...rest}
     >
@@ -83,17 +70,15 @@ export const PrevButton: React.FC<ArrowButtonProps> = ({
   );
 };
 
-export const NextButton: React.FC<
-  React.ButtonHTMLAttributes<HTMLButtonElement>
-> = props => {
-  const { children, ...restProps } =
-    props as React.ButtonHTMLAttributes<HTMLButtonElement> & {
-      children?: React.ReactNode;
-    };
-
+export const NextButton: React.FC<ArrowButtonProps> = ({
+  children,
+  className,
+  ...rest
+}) => {
   return (
     <button
       type="button"
+      aria-label="Next slide"
       className={`embla__button embla__button--next ${className ?? ""}`}
       {...rest}
     >

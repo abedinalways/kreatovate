@@ -1,9 +1,9 @@
-'use client';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import { BusinessItem } from '../../../../../kreatovate/types';
-import AddOnsCard from '@/components/shared/cards/AddOnsCard';
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import AddOnsCard from "@/components/shared/cards/AddOnsCard";
+import { BusinessItem } from "../../../../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,30 +13,30 @@ const AddOnsUpgrades = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -48,29 +48,29 @@ const AddOnsUpgrades = () => {
   const AddOnsData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Extra AI Employee Seat',
+      title: "Extra AI Employee Seat",
       price: 3997,
-      duration: 'monthly',
-      description: 'Add more AI employees to your team as your business grows.',
-      button: 'Add to Plan',
+      duration: "monthly",
+      description: "Add more AI employees to your team as your business grows.",
+      button: "Add to Plan",
     },
     {
       id: 2,
-      title: 'Advanced Analytics',
+      title: "Advanced Analytics",
       price: 3997,
-      duration: 'monthly',
+      duration: "monthly",
       description:
-        'Get deeper insights with advanced reporting and real-time dashboards.',
-      button: 'Add to Plan',
+        "Get deeper insights with advanced reporting and real-time dashboards.",
+      button: "Add to Plan",
     },
     {
       id: 3,
-      title: 'Custom Training Session',
+      title: "Custom Training Session",
       price: 3997,
-      duration: 'monthly',
+      duration: "monthly",
       description:
-        'Personalized AI training session to optimize for your business needs.',
-      button: 'Add to Plan',
+        "Personalized AI training session to optimize for your business needs.",
+      button: "Add to Plan",
     },
   ];
 
@@ -95,7 +95,7 @@ const AddOnsUpgrades = () => {
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch business-card"
         >
-          {AddOnsData?.map(data => (
+          {AddOnsData?.map((data) => (
             <AddOnsCard key={data.id} data={data} />
           ))}
         </div>
