@@ -1,73 +1,73 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import { PlusIcon, MinusIcon } from "lucide-react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
+import React, { useEffect, useRef, useState } from 'react';
+import { PlusIcon, MinusIcon } from 'lucide-react';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { Accordion, AccordionItem } from '@/components/ui/accordion';
 
 const faqsLeft = [
   {
-    id: "1",
-    title: "What is Bumps by Kreatovate?",
+    id: '1',
+    title: 'What is Bumps by Kreatovate?',
     content:
       "Bumps is our fundraising platform powered by BumpSale — every time someone buys, the price goes up by $1. It's a social, transparent, and fun way to crowdfund creative projects while rewarding early supporters.",
   },
   {
-    id: "2",
-    title: "What do I get when I buy?",
+    id: '2',
+    title: 'What do I get when I buy?',
     content:
-      "You’ll receive full access to the digital bundle and any exclusive supporter-only materials immediately after purchase.",
+      'You’ll receive full access to the digital bundle and any exclusive supporter-only materials immediately after purchase.',
   },
   {
-    id: "3",
-    title: "Why does the price change?",
+    id: '3',
+    title: 'Why does the price change?',
     content:
-      "The price increases by $1 with each purchase to reward early supporters and create momentum for the project.",
+      'The price increases by $1 with each purchase to reward early supporters and create momentum for the project.',
   },
   {
-    id: "4",
-    title: "Is this a donation or a product purchase?",
+    id: '4',
+    title: 'Is this a donation or a product purchase?',
     content:
-      "It’s a product purchase that supports creative development. You get real value while helping creators thrive.",
+      'It’s a product purchase that supports creative development. You get real value while helping creators thrive.',
   },
   {
-    id: "5",
-    title: "How will I receive my books?",
+    id: '5',
+    title: 'How will I receive my books?',
     content:
-      "After checkout, you’ll receive an email with download links and instructions for accessing your materials.",
+      'After checkout, you’ll receive an email with download links and instructions for accessing your materials.',
   },
 ];
 
 const faqsRight = [
   {
-    id: "6",
-    title: "Who is behind the NextGen Education Series?",
+    id: '6',
+    title: 'Who is behind the NextGen Education Series?',
     content:
-      "The series is produced by a collective of educators and designers passionate about accessible, future-ready learning.",
+      'The series is produced by a collective of educators and designers passionate about accessible, future-ready learning.',
   },
   {
-    id: "7",
-    title: "Why support now?",
+    id: '7',
+    title: 'Why support now?',
     content:
-      "Early support helps bring the project to life and rewards you with the best pricing and exclusive bonuses.",
+      'Early support helps bring the project to life and rewards you with the best pricing and exclusive bonuses.',
   },
   {
-    id: "8",
-    title: "Will there be physical copies?",
+    id: '8',
+    title: 'Will there be physical copies?',
     content:
-      "Currently, the bundle is digital-only, but physical copies may be available later depending on demand.",
+      'Currently, the bundle is digital-only, but physical copies may be available later depending on demand.',
   },
   {
-    id: "9",
-    title: "Can I gift the bundle?",
+    id: '9',
+    title: 'Can I gift the bundle?',
     content:
-      "Yes! You can purchase multiple bundles and send gift links to your friends and family.",
+      'Yes! You can purchase multiple bundles and send gift links to your friends and family.',
   },
   {
-    id: "10",
-    title: "What happens after the campaign ends?",
+    id: '10',
+    title: 'What happens after the campaign ends?',
     content:
-      "After the campaign, the bundle will move to regular pricing, and supporters will retain lifetime access.",
+      'After the campaign, the bundle will move to regular pricing, and supporters will retain lifetime access.',
   },
 ];
 
@@ -77,8 +77,8 @@ export default function FAQSection() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return setMounted(true);
     // next tick -> smooth transition
     const t = setTimeout(() => setMounted(true), 20);
@@ -130,7 +130,7 @@ export default function FAQSection() {
                             'group flex w-full items-center justify-between py-2 text-left',
                             'text-[15px] font-medium leading-6 transition-all outline-none',
                             'hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50',
-                            'cursor-pointer', // ← requested pointer cursor
+                            'cursor-pointer',
                           ].join(' ')}
                         >
                           {item.title}
@@ -145,7 +145,7 @@ export default function FAQSection() {
                             <MinusIcon
                               size={18}
                               aria-hidden="true"
-                              className="absolute opacity-0 transition-all duration-200 group-data-[state=open]:opacity-60"
+                              className="absolute opacity-0 transition-all duration-200 group-data-[state=open]:opacity-100"
                             />
                           </span>
                         </AccordionPrimitive.Trigger>
@@ -154,6 +154,7 @@ export default function FAQSection() {
                       {/* Smooth height animation (grid-rows trick) */}
                       <AccordionPrimitive.Content
                         className={[
+                          'group',
                           'grid grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]',
                           'transition-[grid-template-rows] duration-300 ease-out',
                         ].join(' ')}
@@ -161,11 +162,11 @@ export default function FAQSection() {
                         <div
                           className={[
                             'overflow-hidden',
-                            'text-sm text-white leading-relaxed',
+                            'text-sm text-gray-400 leading-relaxed',
                             'pr-0 pt-2',
                             // content fades & slides a touch when opening
                             'opacity-0 translate-y-1',
-                            'data-[state=open]:opacity-100 data-[state=open]:translate-y-0',
+                            'group-data-[state=open]:opacity-100 group-data-[state=open]:translate-y-0',
                             'transition-all duration-300 ease-out',
                           ].join(' ')}
                         >
@@ -193,20 +194,22 @@ export default function FAQSection() {
                             'group flex w-full items-center justify-between py-2 text-left',
                             'text-[15px] font-medium leading-6 transition-all outline-none',
                             'hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50',
-                            'cursor-pointer', // ← requested pointer cursor
+                            'cursor-pointer',
                           ].join(' ')}
                         >
                           {item.title}
                           <span className="relative inline-flex items-center justify-center">
+                            {/* Plus when closed */}
                             <PlusIcon
                               size={18}
                               aria-hidden="true"
                               className="opacity-60 transition-all duration-200 group-data-[state=open]:opacity-0"
                             />
+                            {/* Minus when open */}
                             <MinusIcon
                               size={18}
                               aria-hidden="true"
-                              className="absolute opacity-0 transition-all duration-200 group-data-[state=open]:opacity-60"
+                              className="absolute opacity-0 transition-all duration-200 group-data-[state=open]:opacity-100"
                             />
                           </span>
                         </AccordionPrimitive.Trigger>
@@ -225,10 +228,8 @@ export default function FAQSection() {
                             'text-sm text-gray-400 leading-relaxed',
                             'pr-0 pt-2',
                             'opacity-0 translate-y-1',
-                            
                             'group-data-[state=open]:opacity-100 group-data-[state=open]:translate-y-0',
                             'transition-all duration-300 ease-out',
-                            
                           ].join(' ')}
                         >
                           {item.content}
