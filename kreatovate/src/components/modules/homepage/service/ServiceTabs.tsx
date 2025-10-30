@@ -9,7 +9,6 @@ const ServiceTabs = () => {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const [active, setActive] = useState("marketing_service");
 
-  // helper: animate grid in with mask + pop
   const animateGridIn = (value: string) => {
     const grid = rootRef.current?.querySelector(
       `[data-tab="${value}"]`
@@ -39,7 +38,6 @@ const ServiceTabs = () => {
     );
   };
 
-  // helper: fade/slide out previous visible grids
   const animatePrevOut = (value: string) => {
     const others = rootRef.current?.querySelectorAll(
       `.service-grid:not([data-tab="${value}"])`
@@ -57,12 +55,9 @@ const ServiceTabs = () => {
   };
 
   useLayoutEffect(() => {
-    // initial in
     animateGridIn(active);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // DATA (unchanged)
   const marketingData: ServiceItem[] = [
     {
       id: "m1",
@@ -111,44 +106,59 @@ const ServiceTabs = () => {
   const consultingData: ServiceItem[] = [
     {
       id: "c1",
-      title: "AI Readiness Assessment",
-      desc: "Capability, data, and risk audit with a phased roadmap and ROI estimates.",
-      image: "/images/service1.png",
+      title: "Al Workforce Solutions",
+      desc: "A.I. Powered Digital Marketing Solutions: Enhance your online presence through A.I. Powered Automation with a full suite of A.I. Employees at your disposal handling administrative tasks like inbound/outbound calling, scheduling, updating records, chatting, and texting just to scratch the service. Of course we also offer the traditional SEO, PPC, content marketing, and social media marketing to effectively connect with your audience.",
+      image: "/images/service/service9.png",
       href: "/services/ai-readiness",
     },
+
     {
       id: "c2",
-      title: "Operating Model Design",
-      desc: "RACI, roles, and governance for AI-assisted teams and workflows.",
-      image: "/images/service4.png",
+      title: "Al Powered Sales Force",
+      desc: "A.I. Powered Digital Marketing Solutions: Enhance your online presence through A.I. Powered Automation with a full suite of A.I. Employees at your disposal handling administrative tasks like inbound/outbound calling, scheduling, updating records, chatting, and texting just to scratch the service. Of course we also offer the traditional SEO, PPC, content marketing, and social media marketing to effectively connect with your audience.",
+      image: "/images/service/service2.png",
       href: "/services/operating-model",
     },
     {
       id: "c3",
-      title: "Data Strategy",
-      desc: "Source mapping, quality, privacy posture, and warehouse architecture.",
-      image: "/images/service3.png",
+      title: "SaaS Implementation",
+      desc: "We shape and elevate your brand’s identity with cohesive visuals and strategic positioning to solidify its presence in the competitive market.",
+      image: "/images/service/service3.png",
       href: "/services/data-strategy",
     },
     {
       id: "c4",
-      title: "Use Case Prioritization",
-      desc: "Stack-rank automations by impact, feasibility, and time-to-value.",
-      image: "/images/service5.png",
+      title: "Automated Operating Systems & Oracle's",
+      desc: "Leverage comprehensive market analysis and innovative analytics tools to uncover key insights, trends, and customer behaviors for informed decision-making and strategic alignment.",
+      image: "/images/service/service4.png",
       href: "/services/usecase-prioritization",
     },
     {
       id: "c5",
-      title: "Change Management",
-      desc: "Playbooks, enablement plans, and adoption metrics for AI rollouts.",
-      image: "/images/service3.png",
+      title: "Automated Workflows",
+      desc: "Leverage expert guidance for optimal business performance and strategic growth with our comprehensive consulting and business strategy services.",
+      image: "/images/service/service5.png",
       href: "/services/change-management",
     },
     {
       id: "c6",
-      title: "Compliance Advisory",
-      desc: "Policy, redaction, and data retention aligned to SOC2/GDPR.",
-      image: "/images/service2.png",
+      title: "Blockchain Implementation",
+      desc: "Transform your business with intelligent automation. Our A.I. SaaS (Software as a Service) solutions handle the complex daily tasks, freeing your team to focus on what truly matters-building relationships and driving strategy.",
+      image: "/images/service/service6.png",
+      href: "/services/compliance-advisory",
+    },
+    {
+      id: "c7",
+      title: "Smart Contract Automation",
+      desc: "Leverage comprehensive market analysis and innovative analytics tools to uncover key insights, trends, and customer behaviors for informed decision-making and strategic alignment.",
+      image: "/images/service/service7.png",
+      href: "/services/compliance-advisory",
+    },
+    {
+      id: "c8",
+      title: "Automated Social Content Engine",
+      desc: "Leverage expert guidance for optimal business performance and strategic growth with our comprehensive consulting and business strategy services.",
+      image: "/images/service/service8.png",
       href: "/services/compliance-advisory",
     },
   ];
@@ -206,17 +216,15 @@ const ServiceTabs = () => {
         onValueChange={(v) => {
           animatePrevOut(v);
           setActive(v);
-          // slight delay to ensure new content is mounted
           setTimeout(() => animateGridIn(v), 40);
         }}
       >
         <TabsList className="px-8 py-10 bg-[#161721] flex items-center justify-between gap-8 w-full overflow-auto overflow-y-hidden">
-          {/* Your triggers unchanged */}
           <TabsTrigger
             value="marketing_service"
             className="group py-6 px-7 border border-gray-500 flex items-center bg-linear-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-linear-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] pb-2 group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
               Marketing Services
             </p>
           </TabsTrigger>
@@ -225,7 +233,7 @@ const ServiceTabs = () => {
             value="business_consultant"
             className="group py-6 px-7 border border-gray-500 flex items-center bg-linear-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-linear-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] pb-2 group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
               Business Consulting
             </p>
           </TabsTrigger>
@@ -234,7 +242,7 @@ const ServiceTabs = () => {
             value="business_automation"
             className="group py-6 px-7 border border-gray-500 flex items-center bg-linear-to-t from-[#FFFFFF00] to-[#777980] data-[state=active]:bg-linear-to-r data-[state=active]:from-[#E93D3D] data-[state=active]:to-[#4E30FE] transition-all duration-300 cursor-pointer"
           >
-            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
+            <p className="text-lg font-semibold leading-none text-transparent bg-clip-text bg-linear-to-r from-[#9767e4] to-[#47cfeb] pb-2 group-data-[state=active]:text-white! group-data-[state=active]:bg-none!">
               Business Automation
             </p>
           </TabsTrigger>
