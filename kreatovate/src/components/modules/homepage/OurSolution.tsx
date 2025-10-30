@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,18 +62,16 @@ const slides: SlideItem[] = [
 const OurSolution = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [open, setOpen] = useState(false);
-  const [unlocked, setUnlockedState] = useState(false);
+  const [unlocked, setUnlockedState] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return getUnlocked();
+  });
 
   const [videoOpen, setVideoOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [videoTitle, setVideoTitle] = useState<string>("");
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const unlockedValue = getUnlocked();
-    setUnlockedState(unlockedValue);
-  }, []);
 
   useLayoutEffect(() => {
     if (!sectionRef.current) return;

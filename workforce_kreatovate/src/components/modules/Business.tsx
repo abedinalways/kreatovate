@@ -87,8 +87,10 @@ const Business = () => {
   ];
 
   return (
-    <div ref={rootRef} className="py-12 bg-[#0F1016]">
+
+    <div id="our_solutions" ref={rootRef} className="py-12 bg-[#0F1016]" >
       <div className="custom-container flex flex-col px-4 gap-6 lg:gap-10">
+
         <div className="flex flex-col items-center gap-1 md:gap-4">
           <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold">
             Business Workforce v1

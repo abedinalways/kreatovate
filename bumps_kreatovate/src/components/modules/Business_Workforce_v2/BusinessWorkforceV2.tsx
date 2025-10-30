@@ -1,11 +1,10 @@
-'use client';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-
-import { BusinessItem } from '../../../../../kreatovate/types';
-import BusinessCardTwo from '@/components/shared/cards/BusinessCardTwo';
-import Image from 'next/image';
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import BusinessCardTwo from "@/components/shared/cards/BusinessCardTwo";
+import Image from "next/image";
+import { BusinessItem } from "../../../../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,30 +14,30 @@ const BusinessWorkForceV2 = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -49,27 +48,27 @@ const BusinessWorkForceV2 = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Closer (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'SDeplo',
+      title: "Closer (Trilingual)",
+      monthlyPrice: "$497/monthly",
+      button: "SDeplo",
     },
     {
       id: 2,
-      title: 'Appointment Setter (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deplo',
+      title: "Appointment Setter (Trilingual)",
+      monthlyPrice: "$497/monthly",
+      button: "Deplo",
     },
     {
       id: 3,
-      title: 'Appointment Setter (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deploy',
+      title: "Appointment Setter (Trilingual)",
+      monthlyPrice: "$497/monthly",
+      button: "Deploy",
     },
     {
       id: 4,
-      title: 'Support Employee (Trilingual)',
-      monthlyPrice: '$497/monthly',
-      button: 'Deploy',
+      title: "Support Employee (Trilingual)",
+      monthlyPrice: "$497/monthly",
+      button: "Deploy",
     },
   ];
 
@@ -105,7 +104,7 @@ const BusinessWorkForceV2 = () => {
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-4 gap-6 business-card"
         >
-          {businessData?.map(data => (
+          {businessData?.map((data) => (
             <BusinessCardTwo key={data.id} data={data} />
           ))}
         </div>

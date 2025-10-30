@@ -1,10 +1,11 @@
-'use client';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import { BusinessItem } from '../../../../../kreatovate/types';
-import BusinessCard from '@/components/shared/cards/BusinessCard';
-import Image from 'next/image';
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+import BusinessCard from "@/components/shared/cards/BusinessCard";
+import Image from "next/image";
+import { BusinessItem } from "../../../../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,30 +15,30 @@ const PersonalPricelist = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -48,44 +49,44 @@ const PersonalPricelist = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Resume Builder Agent',
+      title: "Resume Builder Agent",
       price: 197,
-      description: 'ATS-safe, A1-powered resume builder.',
+      description: "ATS-safe, A1-powered resume builder.",
     },
     {
       id: 2,
-      title: 'Avatar Builder (Personal)',
+      title: "Avatar Builder (Personal)",
       price: 297,
       description:
-        'Create your own AI likeness for video avatars, voice cloning, and personalized content.',
+        "Create your own AI likeness for video avatars, voice cloning, and personalized content.",
     },
     {
       id: 3,
-      title: 'Credit Repair Agent',
+      title: "Credit Repair Agent",
       price: 197,
       description:
-        'Monitors credit, generates dispute letters, and automates follow-ups.',
+        "Monitors credit, generates dispute letters, and automates follow-ups.",
     },
     {
       id: 4,
-      title: 'CPA',
+      title: "CPA",
       price: 297,
       description:
-        'Prepares filings, reconciles accounts, flags deductions, and drafts returns.',
+        "Prepares filings, reconciles accounts, flags deductions, and drafts returns.",
     },
     {
       id: 5,
-      title: 'Personal Assistant',
+      title: "Personal Assistant",
       price: 697,
       description:
-        'Manages personal calendars, errands, shopping, travel, and journaling.',
+        "Manages personal calendars, errands, shopping, travel, and journaling.",
     },
     {
       id: 6,
-      title: 'Trader (Lite)',
+      title: "Trader (Lite)",
       price: 1097,
       description:
-        'Risk-free sandbox trader. Great for learning and financial literacy.',
+        "Risk-free sandbox trader. Great for learning and financial literacy.",
     },
   ];
 
@@ -121,7 +122,7 @@ const PersonalPricelist = () => {
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 business-card"
         >
-          {businessData?.map(data => (
+          {businessData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
