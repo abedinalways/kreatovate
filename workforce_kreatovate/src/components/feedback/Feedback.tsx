@@ -48,7 +48,7 @@ const Feedback = () => {
       </div>
 
       <h2 ref={titleRef} className="md:text-5xl text-3xl text-center font-bold">
-        What our <span className="text-color-gradient">Customer Say</span>
+        What our <span className="text-gradient">Customer Say</span>
       </h2>
 
       <div ref={reviewsRef} className="flex justify-center">
