@@ -16,7 +16,7 @@ const HeadingButton: React.FC<HeadingButtonProps> = ({
       variant="default"
       className={cn(
         // Base layout
-        "px-10 py-2 text-base font-medium text-white capitalize rounded-full border border-white/10",
+        "px-8 py-1 text-[12px] font-medium text-white capitalize rounded-full border border-white/10",
         // Much lighter translucent gradient
         "bg-[linear-gradient(90deg,rgba(90,60,255,0.35)_0%,rgba(255,80,80,0.15)_100%)]",
         // Glassy blur effect

@@ -115,7 +115,7 @@ export function ConsultationForm({
   title = "Schedule a Free Consultation",
   subtitle,
   fields = defaultFields,
-  buttonText = "Book a consultation",
+  buttonText = "Book a Consultation",
   showButtonIcon = true,
   showDecorator = true,
   onSubmit,
@@ -292,12 +292,13 @@ export function ConsultationForm({
           <ButtonAll
             btnText={buttonText}
             disabled={isSubmitting}
-            className="w-full py-5! text-sm"
+            className="w-full rounded-lg md:text-sm"
           >
             {isSubmitting ? "Submitting..." : buttonText}
-            {showButtonIcon && !isSubmitting && (
-              <ArrowRight className="w-5 h-5 ml-2" />
-            )}
+            
+              <ArrowRight className="w-5 h-5" />
+            
+            {showButtonIcon && !isSubmitting}
           </ButtonAll>
         </form>
       </Form>
