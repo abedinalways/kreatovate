@@ -90,20 +90,20 @@ export default function FAQSection() {
       <div
         ref={rootRef}
         className={[
-          "custom-container py-16 mx-auto scroll-mt-20 px-4 md:px-0",
-          "transition-all duration-500 motion-safe:duration-500",
-          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
-        ].join(" ")}
+          'custom-container py-16 mx-auto scroll-mt-20 px-4 md:px-0',
+          'transition-all duration-500 motion-safe:duration-500',
+          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3',
+        ].join(' ')}
       >
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-col gap-4 text-center">
             <h2 className="md:text-5xl text-3xl text-center font-bold">
-              Get Answers To{" "}
-              <span className="text-color-gradient">Your Question</span>
+              Get Answers To{' '}
+              <span className="text-jgradient">Your Question</span>
             </h2>
             <p className="text-xs sm:text-sm font-normal md:mt-7 text-white/80">
               Explore our tailored solutions designed to elevate your brand and
-              boost your market presence effectively{" "}
+              boost your market presence effectively{' '}
               <br className="hidden sm:block" />
               for sustainable growth and lasting success.
             </p>
@@ -117,7 +117,7 @@ export default function FAQSection() {
               {/* Left Column */}
               <div>
                 <Accordion type="single" collapsible className="space-y-0">
-                  {faqsLeft.map((item) => (
+                  {faqsLeft.map(item => (
                     <AccordionItem
                       value={item.id}
                       key={item.id}
@@ -127,11 +127,11 @@ export default function FAQSection() {
                       <AccordionPrimitive.Header className="flex">
                         <AccordionPrimitive.Trigger
                           className={[
-                            "group flex w-full items-center justify-between py-2 text-left",
-                            "text-[15px] font-medium leading-6 transition-all outline-none",
-                            "hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50",
-                            "cursor-pointer", // ← requested pointer cursor
-                          ].join(" ")}
+                            'group flex w-full items-center justify-between py-2 text-left',
+                            'text-[15px] font-medium leading-6 transition-all outline-none',
+                            'hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50',
+                            'cursor-pointer', // ← requested pointer cursor
+                          ].join(' ')}
                         >
                           {item.title}
                           <span className="relative inline-flex items-center justify-center">
@@ -154,20 +154,20 @@ export default function FAQSection() {
                       {/* Smooth height animation (grid-rows trick) */}
                       <AccordionPrimitive.Content
                         className={[
-                          "grid grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]",
-                          "transition-[grid-template-rows] duration-300 ease-out",
-                        ].join(" ")}
+                          'grid grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]',
+                          'transition-[grid-template-rows] duration-300 ease-out',
+                        ].join(' ')}
                       >
                         <div
                           className={[
-                            "overflow-hidden",
-                            "text-sm text-gray-400 leading-relaxed",
-                            "pr-0 pt-2",
+                            'overflow-hidden',
+                            'text-sm text-white leading-relaxed',
+                            'pr-0 pt-2',
                             // content fades & slides a touch when opening
-                            "opacity-0 translate-y-1",
-                            "data-[state=open]:opacity-100 data-[state=open]:translate-y-0",
-                            "transition-all duration-300 ease-out",
-                          ].join(" ")}
+                            'opacity-0 translate-y-1',
+                            'data-[state=open]:opacity-100 data-[state=open]:translate-y-0',
+                            'transition-all duration-300 ease-out',
+                          ].join(' ')}
                         >
                           {item.content}
                         </div>
@@ -180,7 +180,7 @@ export default function FAQSection() {
               {/* Right Column */}
               <div>
                 <Accordion type="single" collapsible className="space-y-0">
-                  {faqsRight.map((item) => (
+                  {faqsRight.map(item => (
                     <AccordionItem
                       value={item.id}
                       key={item.id}
@@ -190,11 +190,11 @@ export default function FAQSection() {
                       <AccordionPrimitive.Header className="flex">
                         <AccordionPrimitive.Trigger
                           className={[
-                            "group flex w-full items-center justify-between py-2 text-left",
-                            "text-[15px] font-medium leading-6 transition-all outline-none",
-                            "hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50",
-                            "cursor-pointer", // ← requested pointer cursor
-                          ].join(" ")}
+                            'group flex w-full items-center justify-between py-2 text-left',
+                            'text-[15px] font-medium leading-6 transition-all outline-none',
+                            'hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-ring/50',
+                            'cursor-pointer', // ← requested pointer cursor
+                          ].join(' ')}
                         >
                           {item.title}
                           <span className="relative inline-flex items-center justify-center">
@@ -214,19 +214,22 @@ export default function FAQSection() {
 
                       <AccordionPrimitive.Content
                         className={[
-                          "grid grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]",
-                          "transition-[grid-template-rows] duration-300 ease-out",
-                        ].join(" ")}
+                          'group',
+                          'grid grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]',
+                          'transition-[grid-template-rows] duration-300 ease-out',
+                        ].join(' ')}
                       >
                         <div
                           className={[
-                            "overflow-hidden",
-                            "text-sm text-gray-400 leading-relaxed",
-                            "pr-0 pt-2",
-                            "opacity-0 translate-y-1",
-                            "data-[state=open]:opacity-100 data-[state=open]:translate-y-0",
-                            "transition-all duration-300 ease-out",
-                          ].join(" ")}
+                            'overflow-hidden',
+                            'text-sm text-gray-400 leading-relaxed',
+                            'pr-0 pt-2',
+                            'opacity-0 translate-y-1',
+                            
+                            'group-data-[state=open]:opacity-100 group-data-[state=open]:translate-y-0',
+                            'transition-all duration-300 ease-out',
+                            
+                          ].join(' ')}
                         >
                           {item.content}
                         </div>

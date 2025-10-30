@@ -175,8 +175,9 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
-  }
+  @apply  text-transparent bg-clip-text;
+  background-image: linear-gradient(to right, #E21717 0%, #3700FF 100%);
+}
 
   .text-color-gradient-tab {
     @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];

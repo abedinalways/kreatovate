@@ -94,25 +94,30 @@ const Banner = () => {
         <div className="px-4 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
           <h1
             ref={headingRef}
-            className=" text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-xl lg:max-w-4xl leading-9 md:leading-10 lg:leading-16"
+            className=" text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6"
           >
-            Unleash Potential with Kreatovate&apos;s{" "}
-            <span className="text-color-gradient">Expert Marketing</span>{" "}
-            <span className="text-color-gradient">& Consulting</span>
+            Unleash Potential with{' '}
+            <span className="text-gradient"> KREATOVATE&apos;s </span> <br />
+            Expert Business <span className="text-gradient">
+              {' '}
+              Automation
+            </span>{' '}
+            and AI <br />
+            Powered <span className="text-gradient">Digital Marketing</span>
           </h1>
           <p
             ref={textRef}
-            className="relative text-sm lg:text-[1rem] font-normal max-w-md lg:max-w-xl mb-5 md:mb-12 z-40"
+            className="relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed"
           >
             Unlock Your Brand&apos;s Potential with Kreatovate Marketing &
-            Consulting Where Innovation Meets Strategic Excellence to Propel
-            Your Business Forward.
+            Consulting Where Innovation Meets <br /> Strategic Excellence to
+            Propel Your Business Forward.
           </p>
 
           <div ref={buttonRef} className="cursor-pointer w-fit">
             <ButtonAll
               btnText="Get Started Today"
-              className="text-sm md:text-lg py-5"
+              className="text-sm md:text-md py-5"
             />
           </div>
         </div>

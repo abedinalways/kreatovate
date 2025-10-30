@@ -102,21 +102,21 @@ const Reviews = () => {
                 >
                   <div className="p-4">
                     <Card
-                      className={`border-1 border-[#E21717] text-white shadow-lg rounded-2xl  md:h-82 transition-all duration-300 ${
+                      className={`border border-[#E21717] text-white shadow-md rounded-2xl  md:h-82 transition-all duration-300 ${
                         isActive
-                          ? "bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]"
-                          : "bg-[#121218] text-gray-400 scale-95 opacity-70"
+                          ? 'bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white '
+                          : 'bg-[#121218] text-gray-400 opacity-70'
                       }`}
                       style={{
                         border: isActive
-                          ? "1px solid transparent"
-                          : "1px solid #1f1f25",
+                          ? '1px solid transparent'
+                          : '1px solid #ff1b6b',
                         backgroundImage: isActive
                           ? `linear-gradient(to bottom right, rgba(226,23,23,0.85), rgba(55,0,255,0.85), rgba(11,11,15,0.9)), url('/images/testimonioal02.png')`
                           : `url('/images/testimonioal02.png')`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
                       }}
                     >
                       <CardContent className="p-6 flex flex-col justify-between">

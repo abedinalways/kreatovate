@@ -44,7 +44,7 @@ const Feedback = () => {
       className="custom-container px-4 sm:px-36 md:px-5 py-20 flex-col gap-8 justify-center items-center"
     >
       <div ref={badgeRef} className="flex justify-center items-center mb-4">
-        <HeadingButton btnText="Testimonial" />
+        <HeadingButton btnText="Testimonial" className="w-33 py-0" />
       </div>
 
       <h2 ref={titleRef} className="md:text-5xl text-3xl text-center font-bold">

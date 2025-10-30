@@ -13,7 +13,7 @@ const ITEMS = [
   { id: "#about_us", label: "about us" },
   { id: "#our_solutions", label: "our solutions" },
   { id: "#testimonial", label: "testimonial" },
-  { id: "#footer", label: "contact us" },
+  { id: "#contact_us", label: "contact us" },
 ] as const;
 
 const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
@@ -142,7 +142,7 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
             <li
               key={item.id}
               className={[
-                "px-4 lg:px-2 py-2 rounded-full transition-all duration-200",
+                "px-4 lg:px-2 py-1 rounded-full transition-all duration-200",
                 isActive
                   ? "bg-[#ED1C24] font-semibold"
                   : "hover:bg-[#ED1C24]/40",
