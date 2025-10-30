@@ -102,17 +102,17 @@ const Reviews = () => {
                 >
                   <div className="p-4">
                     <Card
-                      className={`border border-[#E21717] text-white shadow-md rounded-2xl  md:h-82 transition-all duration-300 ${
+                      className={`border border-[#E21717] text-white shadow-md rounded-2xl h-fit md:h-78 transition-all duration-300 ${
                         isActive
-                          ? 'bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white '
-                          : 'bg-[#121218] text-gray-400 opacity-70'
+                          ? ' text-white bg-linear-gradient(to left, #E21717 0%, #3700FF 100%)'
+                          : 'bg-black text-white opacity-80 '
                       }`}
                       style={{
                         border: isActive
-                          ? '1px solid transparent'
-                          : '1px solid #ff1b6b',
+                          ? '2px solid #000000'
+                          : '1px solid #E21717',
                         backgroundImage: isActive
-                          ? `linear-gradient(to bottom right, rgba(226,23,23,0.85), rgba(55,0,255,0.85), rgba(11,11,15,0.9)), url('/images/testimonioal02.png')`
+                          ? `linear-gradient(to right, #E21717 0%, #3700FF 80%), url('/images/testimonioal01.png')`
                           : `url('/images/testimonioal02.png')`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
@@ -126,25 +126,26 @@ const Reviews = () => {
                             height={500}
                             src={review.image}
                             alt={review.name}
-                            className="w-12 h-12 rounded-full object-cover border-2 border-pink-500"
+                            className="w-12 h-12 rounded-full object-cover border"
                           />
-                          <div>
-                            <h3 className="font-semibold text-lg">
-                              {review.name}
-                            </h3>
-                            <p className="text-sm text-gray-400">
-                              {review.company}
-                            </p>
+                          <div className="md:flex items-center gap-6 justify-center">
+                            <div>
+                              <h3 className="font-semibold text-md">
+                                {review.name}
+                              </h3>
+                              <p className="text-xs text-white">
+                                {review.company}
+                              </p>
+                            </div>
+                            <div className="flex gap-1 text-yellow-400 mt-2 md:mt-0 lg-mt-0 xl:mt-0 ">
+                              {Array.from({ length: 5 }).map((_, i) => (
+                                <Star key={i} size={16} fill="currentColor" />
+                              ))}
+                            </div>
                           </div>
                         </div>
 
-                        <div className="flex gap-1 text-yellow-400 mb-3">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <Star key={i} size={16} fill="currentColor" />
-                          ))}
-                        </div>
-
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-white text-sm leading-relaxed">
                           {review.text}
                         </p>
                       </CardContent>
