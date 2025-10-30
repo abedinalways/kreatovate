@@ -160,3 +160,15 @@
 .heading-btn-bg {
   @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
 }
+
+.svc-head .mask,
+.svc-card {
+  opacity: 0;
+  will-change: transform, opacity, filter, clip-path;
+}
+
+.mask {
+  display: inline-block;
+  clip-path: inset(0 0 100% 0);
+  filter: blur(6px);
+}
