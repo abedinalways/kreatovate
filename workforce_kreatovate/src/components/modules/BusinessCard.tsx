@@ -44,12 +44,12 @@ const BusinessCard = ({ data }: CardProps) => {
       </div>
       <div className="bg-[#0B111F] w-full h-full p-6 rounded-2xl flex flex-col gap-[1.125rem]">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-semibold leading-8">{title}</h1>
-          <p className="text-[#E21717] text-[2rem] font-bold leading-10">
+          <h1 className=" text-lg md:text-xl font-semibold leading-8">{title}</h1>
+          <p className="text-[#E21717] text-[1.5rem]  md:text-[1.8rem] font-bold leading-10">
             ${price}
           </p>
         </div>
-        <p className="text-base font-normal leading-7 text-[#A5A5AB] truncate whitespace-nowrap overflow-hidden">
+        <p className="text-xs md:text-md font-normal leading-7 text-[#A5A5AB] truncate whitespace-nowrap overflow-hidden">
           {description}
         </p>
 

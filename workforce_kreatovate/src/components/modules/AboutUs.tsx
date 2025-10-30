@@ -53,7 +53,7 @@ const AboutUs = () => {
   return (
     <div
       id="about_us"
-      className="text-white pt-5 md:pt-10 lg:pt-16 mx-auto relative isolate"
+      className="text-white pt-5  mx-auto relative isolate"
     >
       <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 md:px-5 custom-container">
         <div className="about-image w-full lg:w-1/2">
@@ -77,21 +77,25 @@ const AboutUs = () => {
             </video>
           </div>
         </div>
-        <div className="about-text w-full lg:w-1/2 space-y-6">
-          <HeadingButton btnText="about us" />
-          <h1 className="text-2xl sm:text-5xl md:text-6xl font-semibold max-w-2xl">
-            Explore Our Tailored{" "}
-            <span className="text-color-gradient">AI Automation</span> &{" "}
-            <span className="text-color-gradient">Workforce Solutions</span>
+        <div className="about-text w-full lg:w-1/2 space-y-4">
+          <HeadingButton btnText="about us" className="w-33 py-0" />
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold max-w-2xl leading-[1.2]">
+            Explore Our Tailored <span className="text-gradient">AI</span>{' '}
+            <br />
+            <span className="text-gradient">Automation</span> &<br />
+            <span className="text-gradient">Workforce Solutions</span>
           </h1>
-          <p className="text-base leading-relaxed font-normal">
+          <p className="text-sm md:text-md lg:text-[1rem]  leading-relaxed ">
             Discover high-impact A.I. Powered marketing solutions that elevate
             your brand and drive substantial growth. Our personalized services,
             quick software deployment time and cater uniquely to your strategic
             and operational needs.
           </p>
 
-          <ButtonAll btnText="Try Demo" className="py-6" />
+          <ButtonAll
+            btnText="Try Demo"
+            className="text-sm md:text-md py-5 w-44"
+          />
         </div>
       </div>
       <Image

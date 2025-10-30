@@ -64,9 +64,9 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <ButtonAll
-            btnText="book consultation now"
+            btnText="Book Consultation Now"
             href="/#contact_us"
-            className="text-sm py-5"
+            className="md:text-sm py-5"
           />
         </div>
 
@@ -89,8 +89,8 @@ const Navbar = () => {
                 </div>
 
                 <ButtonAll
-                  btnText="book consultation now"
-                  className="w-fit text-sm font-normal py-6!"
+                  btnText="Book Consultation Now"
+                  className="w-fit text-sm font-normal "
                   href="/#contact_us"
                 />
               </SheetHeader>

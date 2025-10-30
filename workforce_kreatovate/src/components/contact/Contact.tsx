@@ -90,7 +90,7 @@ const Contact = () => {
           <ConsultationForm
             title="Schedule Your Free Consultation"
             subtitle="We'd love to hear from you"
-            buttonText="Book A Consultation"
+            buttonText="Book a Consultation"
             showButtonIcon={false}
             onSubmit={handleFormSubmit}
           />
