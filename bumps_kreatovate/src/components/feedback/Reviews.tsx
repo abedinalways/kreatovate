@@ -89,7 +89,7 @@ const Reviews = () => {
   return (
     <div className="w-full  mx-auto py-14 text-white relative">
       {/* ---- Top Right Navigation Buttons ---- */}
-      <div className="absolute top-[-16] md:top-[-20] right-6 flex items-center gap-3 z-5">
+      <div className="custom-container absolute top-[-16] md:top-[-20] md:right-65 right-10 flex items-center gap-3 z-5">
         <button
           onClick={scrollPrev}
           className="p-3 rounded-full border border-[#2a2a30] bg-[#121218]/70 hover:bg-[#1c1c22] transition-all duration-300 cursor-pointer"
@@ -112,13 +112,13 @@ const Reviews = () => {
               return (
                 <div
                   key={index}
-                  className="pl-2 min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[70%] md:basis-[50%] lg:basis-[33%]"
+                  className="pl-2 min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[70%] md:basis-[50%] lg:basis-[23%]"
                 >
                   <div className="md:p-4">
                     <Card
                       className={`border border-[#E21717] text-white shadow-lg rounded-2xl  md:h-62 transition-all duration-300 ${
                         isActive
-                          ? 'bg-gradient-to-br from-[#E21717] via-[#3700FF] to-[#0B0B0F] text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]'
+                          ? 'bg-gradient text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]'
                           : 'bg-[#121218] text-gray-400 scale-95 opacity-70'
                       }`}
                       style={{
