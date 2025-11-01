@@ -60,16 +60,16 @@ const Banner = () => {
     >
       <MainBg />
 
-      <div className="absolute z-40 flex flex-col items-center justify-center gap-2 h-full w-full">
-        <div className="flex flex-col items-center gap-2 text-center">
-          <div className="flex items-center bg-white/10  md:px-10  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
+      <div className="absolute ml-[-20] mt-20 z-40 flex flex-col items-center justify-center gap-2 h-full w-full px-4">
+        <div className="flex flex-col items-center gap-2 text-center px-2 mx-auto">
+          <div className="flex items-center justify-center bg-white/10  md:px-10  rounded-full mx-auto banner-tagline border border-gray-400 px-4">
             <Image
               src="/images/hrline1.png"
               alt="heading line vector 1"
               width={80}
               height={16}
             />
-            <p className="font-roboto text-xs md:text-md py-2 font-light text-gradient uppercase">
+            <p className="font-roboto bg-black text-xs md:text-md py-2 font-semibold text-gradient-special  uppercase">
               Top consulting platform
             </p>
             <Image
@@ -83,7 +83,7 @@ const Banner = () => {
 
           <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
             Transform Ideas with{' '}
-            <span className="text-gradient-special">Kreatovate’s Strategy</span>
+            <span className="text-gradient">Kreatovate’s Strategy</span>
           </h1>
 
           <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl banner-subtext">
