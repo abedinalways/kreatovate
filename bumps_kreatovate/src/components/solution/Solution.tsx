@@ -2,12 +2,13 @@ import Image from "next/image";
 import React from "react";
 import ButtonOne from "../shared/buttons/ButtonOne";
 import ButtonTwo from "../shared/buttons/ButtonTwo";
+import { ArrowBigLeft, ArrowRight } from "lucide-react";
 
 const Solution = () => {
   return (
     <div className="custom-container pt-24 relative w-full overflow-hidden px-2">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row justify-between gap-6 mb-8">
+      <div className="flex flex-col lg:flex-row justify-between gap-6 mb-8 px-2">
         <div className="lg:w-1/2">
           <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
             [ Our Solution ]
@@ -52,11 +53,18 @@ const Solution = () => {
               Data + AI to find what converts and scale it reliably.
             </p>
             <div className="w-fit">
+              <Image
+                src="/images/arrow-right.png"
+                alt="Solution Image"
+                width={26}
+                height={26}
+                className="relative left-30 top-8"
+              />
               <ButtonOne
                 btnText="View Details"
                 width="w-full md:w-auto"
-                padding="py-2 px-4"
-                fontSize="text-lg md:text-xl"
+                padding="py-1 px-9"
+                fontSize="text-sm md:text-md"
               />
             </div>
           </div>

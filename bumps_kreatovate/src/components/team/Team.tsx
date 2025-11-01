@@ -152,7 +152,7 @@ const Team: React.FC = () => {
                     >
                       <div className="relative w-full rounded-2xl p-px bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] h-full">
                         <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
-                          <div className="w-full aspect-3/4">
+                          <div className="w-full aspect-2/3">
                             <Image
                               width={800}
                               height={1066}
