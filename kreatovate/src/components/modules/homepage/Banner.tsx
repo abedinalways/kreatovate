@@ -83,7 +83,7 @@ const Banner = () => {
           alt="main banner image"
           width={835}
           height={750}
-          className="js-main-bg absolute right-0 top-1/2 -translate-y-[50%] aspect-147/130 z-10 blur-xs xl:blur-none opacity-50 lg:opacity-15 select-none pointer-events-none"
+          className="js-main-bg absolute right-0 top-1/2 -translate-y-[50%] aspect-147/130 z-10  xl:blur-none opacity-20 md:opacity-100 select-none pointer-events-none"
         />
       </div>
 
