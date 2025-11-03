@@ -6,7 +6,7 @@ const Logo = () => {
     <Link href="/">
       <div className="relative">
         <Image
-          src="/images/logo2.png"
+          src="/images/logo3.png"
           alt="logo"
           width={60}
           height={60}
