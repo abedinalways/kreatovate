@@ -9,6 +9,7 @@ import Solution from "@/components/solution/Solution";
 import Team from "@/components/team/Team";
 import FAQ from "@/components/FAQ/FAQ";
 import Counter from "@/components/modules/homepage/counter/Counter";
+import Trailer from "@/components/modules/homepage/trailer/Trailer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <Solution />
       <TrustedGrowth />
+      <Trailer />
       <Feedback />
       <Team />
       <Service />
