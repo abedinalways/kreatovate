@@ -6,6 +6,7 @@ import AboutUs from "@/components/modules/AboutUs";
 import Banner from "@/components/modules/home-page/banner/Banner";
 import Business from "@/components/modules/Business";
 import Service from "@/components/modules/Service";
+import Trailer from "@/components/modules/home-page/trailer/Trailer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Business />
       {/* <Service /> */}
       <Explore />
+      <Trailer />
       <Feedback />
       <Contact />
       <FAQ />
