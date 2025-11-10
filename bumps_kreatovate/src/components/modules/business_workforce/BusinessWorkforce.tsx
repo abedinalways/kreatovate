@@ -106,7 +106,7 @@ const BusinessWorkForce = () => {
     },
     {
       id: 9,
-      title: "Support Employee",
+      title: "Admin Support",
       price: 1497,
       description: "Handles FAQs, service issues, and retention.",
       button: "Subscribe",
