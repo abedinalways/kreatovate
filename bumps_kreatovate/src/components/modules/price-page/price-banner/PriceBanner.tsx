@@ -49,7 +49,7 @@ const DECOR: DecorPos[] = [
 const PRICES: PricePlan[] = [
   {
     title: "Lifestyle Manager",
-    price: "$1,497",
+    price: "$2,497",
     billing: "monthly",
     description:
       "Includes all vl Non-Voice Agents plus Inbound Voice v3 (Closer)(UCM) to answer all incoming personal calls, screen and take messages, and set priority.",

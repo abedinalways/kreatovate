@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { BusinessItem } from '../../../../types';
-import GradientBorderButton from '../buttons/GradientBorderButton';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { BusinessItem } from "../../../../types";
+import GradientBorderButton from "../buttons/GradientBorderButton";
 
 interface CardProps {
   data: BusinessItem;
@@ -20,15 +20,15 @@ const BusinessCardTwo = ({ data }: CardProps) => {
 
     // subtle hover scale/elevate
     const onEnter = () =>
-      gsap.to(el, { scale: 1.02, y: -4, duration: 0.25, ease: 'power2.out' });
+      gsap.to(el, { scale: 1.02, y: -4, duration: 0.25, ease: "power2.out" });
     const onLeave = () =>
-      gsap.to(el, { scale: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+      gsap.to(el, { scale: 1, y: 0, duration: 0.25, ease: "power2.out" });
 
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
     return () => {
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
     };
   }, []);
 
@@ -45,12 +45,13 @@ const BusinessCardTwo = ({ data }: CardProps) => {
       </div>
       <div className="bg-[#0B111F] w-74 h-58 p-6 rounded-2xl flex flex-col gap-[1.125rem] ">
         <div className="flex flex-col items-center justify-between flex-1">
-          <h1 className="text-xl font-semibold text-center leading-8">{title}</h1>
+          <h1 className="text-xl font-semibold text-center leading-8">
+            {title}
+          </h1>
           <p className="text-[#E21717] text-md font-bold leading-10">
             {monthlyPrice}
           </p>
         </div>
-        
 
         <GradientBorderButton btnText="Deploy" />
       </div>

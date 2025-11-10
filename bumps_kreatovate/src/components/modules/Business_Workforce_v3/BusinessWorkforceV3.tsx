@@ -47,14 +47,14 @@ const BusinessWorkForceV3 = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Closer (Memory Enabled)",
+      title: "Closer",
       price: 2997,
       description: "ATS-safe, A1-powered resume builder.",
       button: "Subscribe",
     },
     {
       id: 2,
-      title: "Appointment Setter (Memory) Enabled",
+      title: "Appointment Setter",
       price: 2997,
       description:
         "Create your own A1 likeness for video avatars, voice cloning, and personalized content.",
@@ -69,7 +69,7 @@ const BusinessWorkForceV3 = () => {
     },
     {
       id: 4,
-      title: "Support Employee (Memory Enabled)",
+      title: "Admin Support",
       price: 2997,
       description: "ATS-safe, A1-powered resume builder.",
       button: "Subscribe",

@@ -93,9 +93,8 @@ const PersonalPricelist = () => {
   return (
     <div
       ref={rootRef}
-      className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden"
+      className="relative py-25 px-4 md:px-0 bg-[#0F1016] overflow-hidden"
     >
-      {/* ✅ Background Image */}
       <Image
         src="/images/personal_pricelist_bg.png"
         alt="Background"
@@ -104,12 +103,13 @@ const PersonalPricelist = () => {
         priority
       />
 
-      {/* ✅ Dark overlay for better readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
 
-      {/* ✅ Main Content */}
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
+          <h1 className="font-jakarta text-[4rem] font-bold leading-16 text-color-gradient">
+            AI Agents/Employees Monthly Pricing
+          </h1>
           <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
             Personal AI Agents
           </h1>
