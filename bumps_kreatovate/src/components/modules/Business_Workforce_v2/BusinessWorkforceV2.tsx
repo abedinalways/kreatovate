@@ -66,7 +66,7 @@ const BusinessWorkForceV2 = () => {
     },
     {
       id: 4,
-      title: "Support Employee (Trilingual)",
+      title: "Admin Support (Trilingual)",
       monthlyPrice: "$497/monthly",
       button: "Deploy",
     },
