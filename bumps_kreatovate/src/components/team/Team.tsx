@@ -4,15 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsFacebook } from 'react-icons/bs';
 import { gsap } from 'gsap';
-import HeadingButton from '../shared/buttons/HeadingButton';
+
 
 // shadcn carousel
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -96,16 +95,35 @@ const Team: React.FC = () => {
     <div className="relative w-full" id="team">
       <div
         ref={sectionRef}
-        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center"
+        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center font-openSans"
       >
-        <div className="flex justify-center items-center mb-4 mt-6">
-          <HeadingButton btnText="Our Team" />
-        </div>
+        {/* heading */}
+        <div className="w-fit mx-auto">
+                      <div className="flex items-center justify-center bg-white/10  md:px-4  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
+                        <Image
+                          src="/images/hrline1.png"
+                          alt="heading line vector 1"
+                          width={60}
+                          height={16}
+                        />
+                        <p className="mx-2 font-roboto bg-white/10 text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
+                          our workforce team
+                        </p>
+                        <Image
+                          src="/images/hrline1.png"
+                          alt="heading line vector 1"
+                          width={60}
+                          height={16}
+                          className="scale-x-[-1]"
+                        />
+          </div>
+          </div>
+        {/*  */}
 
         <h2 className="text-3xl md:text-5xl text-center font-bold">
-          The People Behind{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93D3D] to-[#4E30FE]">
-            Kreatovate
+          Kreatovate{' '}
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
+            Team
           </span>
         </h2>
 
@@ -144,14 +162,14 @@ const Team: React.FC = () => {
                 {profiles.map(p => (
                   <CarouselItem
                     key={p.id}
-                    className="basis-full md:basis-1/2 lg:basis-1/4 px-4 sm:px-3"
+                    className="basis-full md:basis-1/2 lg:basis-1/3 px-4 sm:px-3"
                   >
                     <article
                       data-card
                       className="relative rounded-2xl p-2 shadow-2xl group transition-all duration-500 focus-within:ring-2 focus-within:ring-white/20 h-full"
                     >
-                      <div className="relative w-full rounded-2xl p-px bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] h-full">
-                        <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
+                      <div className="relative w-full rounded-2xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE] h-full">
+                          <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
                           <div className="w-full aspect-2/3">
                             <Image
                               width={800}
@@ -282,15 +300,15 @@ const Team: React.FC = () => {
               </CarouselContent>
 
               {/* Arrows */}
-              <CarouselPrevious className="left-[-24px] md:left-[-38px] bg-white/20 hover:bg-white/30 border border-white/20 backdrop-blur-md text-white" />
-              <CarouselNext className="right-[-18px] bg-gradient-to-r from-[#E21717] via-[#A000FF] to-[#3700FF] border border-black backdrop-blur-md text-white" />
+              {/* <CarouselPrevious className="left-[-24px] md:left-[-38px] bg-white/20 hover:bg-white/30 border border-white/20 backdrop-blur-md text-white" />
+              <CarouselNext className="right-[-18px] bg-gradient-to-r from-[#E21717] via-[#A000FF] to-[#3700FF] border border-black backdrop-blur-md text-white" /> */}
             </Carousel>
           )}
 
           {/* See All Button -> Team Page */}
           {!loading && profiles.length > 0 && (
             <div className="flex justify-center mt-10">
-              <div className="rounded-[12px] p-0.5 bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block">
+              <div className="rounded-[12px] p-0.5 bg-linear-to-r from-[#E21717] to-[#3700FF] inline-block">
                 <Link
                   href="/team"
                   className="px-8 py-2 rounded-[10px] bg-black text-white transition-transform duration-200 active:scale-95 cursor-pointer inline-block"

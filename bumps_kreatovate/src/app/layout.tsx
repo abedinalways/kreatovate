@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
+import { Open_Sans, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
 import LenisProvider from "@/providers/LenisProvider";
@@ -15,6 +15,12 @@ const roboto = Roboto({
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-roboto",
 });
+
+const openSans=Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-openSans",
+})
 
 export const metadata: Metadata = {
   title: "Bumps Kreatovate | Book Funnels & Smart Sales Automation",
@@ -56,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-w-[320px]">
       <body
-        className={`${jakarta.variable} ${roboto.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
+        className={`${jakarta.variable} ${roboto.variable} ${openSans.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
       </body>
