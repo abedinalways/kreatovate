@@ -8,64 +8,64 @@ import { Accordion, AccordionItem } from '@/components/ui/accordion';
 const faqsLeft = [
   {
     id: '1',
-    title: 'What is Bumps by Kreatovate?',
+    title: 'What is the Kreatovate AI Workforce?',
     content:
-      "Bumps is our fundraising platform powered by BumpSale — every time someone buys, the price goes up by $1. It's a social, transparent, and fun way to crowdfund creative projects while rewarding early supporters.",
+      'Our AI Workforce is a collection of prebuilt, fully functional AI Employees — digital agents that automate sales, support, scheduling, follow-ups, and customer engagement for your business.',
   },
   {
     id: '2',
-    title: 'What do I get when I buy?',
+    title: 'What can these AI Employees do?',
     content:
       'You’ll receive full access to the digital bundle and any exclusive supporter-only materials immediately after purchase.',
   },
   {
     id: '3',
-    title: 'Why does the price change?',
+    title: 'How are they different from a chatbot?',
     content:
       'The price increases by $1 with each purchase to reward early supporters and create momentum for the project.',
   },
   {
     id: '4',
-    title: 'Is this a donation or a product purchase?',
+    title: 'What does setup include?',
     content:
       'It’s a product purchase that supports creative development. You get real value while helping creators thrive.',
   },
   {
     id: '5',
-    title: 'How will I receive my books?',
+    title: 'Do I need to be tech-savvy?',
     content:
       'After checkout, you’ll receive an email with download links and instructions for accessing your materials.',
-  },
+  }
 ];
 
 const faqsRight = [
   {
     id: '6',
-    title: 'Who is behind the NextGen Education Series?',
+    title: 'What industries can use AI Employees?',
     content:
       'The series is produced by a collective of educators and designers passionate about accessible, future-ready learning.',
   },
   {
     id: '7',
-    title: 'Why support now?',
+    title: 'Can I try one before subscribing?',
     content:
       'Early support helps bring the project to life and rewards you with the best pricing and exclusive bonuses.',
   },
   {
     id: '8',
-    title: 'Will there be physical copies?',
+    title: 'How much does it cost?',
     content:
       'Currently, the bundle is digital-only, but physical copies may be available later depending on demand.',
   },
   {
     id: '9',
-    title: 'Can I gift the bundle?',
+    title: 'Is this secure?',
     content:
       'Yes! You can purchase multiple bundles and send gift links to your friends and family.',
   },
   {
     id: '10',
-    title: 'What happens after the campaign ends?',
+    title: 'What’s next after I sign up?',
     content:
       'After the campaign, the bundle will move to regular pricing, and supporters will retain lifetime access.',
   },

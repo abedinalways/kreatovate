@@ -33,7 +33,7 @@ const BusinessCard = ({ data }: CardProps) => {
 
   return (
     <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl">
-      <div className="w-64 h-48 absolute top-0 right-0">
+      <div className="absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
           alt="business card light"
@@ -49,7 +49,7 @@ const BusinessCard = ({ data }: CardProps) => {
             ${price}
           </p>
         </div>
-        <p className="text-xs md:text-md font-normal leading-7 text-[#A5A5AB] truncate whitespace-nowrap overflow-hidden">
+        <p className="text-sm md:text-md font-normal leading-7 text-[#A5A5AB] truncate whitespace-nowrap overflow-hidden">
           {description}
         </p>
 
