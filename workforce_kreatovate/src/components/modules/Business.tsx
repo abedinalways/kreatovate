@@ -48,41 +48,36 @@ const Business = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Content Manager",
-      price: 497,
-      description:
-        "Generates posts, captions, hashtags, and schedules.",
+      title: 'Closer',
+      price: 2497,
+      description: 'Outbound sales employee that calls and closes deals.',
     },
     {
       id: 2,
-      title: "Avatar Builder (Business)",
-      price: 497,
-      description:
-        "Creates branded avatars for outreach, training, or.",
+      title: 'Appointment Setter',
+      price: 1497,
+      description: 'Schedules and confirms client calls seamlessly..',
     },
     {
       id: 3,
-      title: "Investigator (Lite)",
-      price: 597,
-      description: "Basic background checks and internet scrubbing.",
+      title: 'Lead Nurturer',
+      price: 1497,
+      description: 'Warms leads with education and timely follow-ups.',
     },
+  ];
+
+  const businessSecondData: BusinessItem[] = [
     {
       id: 4,
-      title: "Lead Nurturer",
+      title: 'Missed Call 2 Text (MC2T)',
       price: 1497,
-      description: "Warms leads with education and timely follow-ups.",
+      description: 'Warms leads with education and timely follow-ups.',
     },
     {
       id: 5,
-      title: "Appointment Setter",
+      title: 'Support',
       price: 1497,
-      description: "Schedules and confirms client calls seamlessly.",
-    },
-    {
-      id: 6,
-      title: "Closer (Voice)",
-      price: 1497,
-      description: "Outbound sales employee that calls and closes deals.",
+      description: 'Schedules and confirms client calls seamlessly.',
     },
   ];
 
@@ -100,8 +95,13 @@ const Business = () => {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8">
           {businessData?.map(data => (
+            <BusinessCard key={data.id} data={data} />
+          ))}
+        </div>
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {businessSecondData?.map(data => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
