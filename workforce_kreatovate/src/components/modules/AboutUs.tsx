@@ -55,7 +55,7 @@ const AboutUs = () => {
     <div id="about_us" className="text-white pt-5  mx-auto relative isolate">
       <div className="py-12 flex flex-col-reverse lg:flex-row  gap-8 lg:gap-20 px-4 md:px-0 custom-container">
         <div className="about-image">
-          <div className="relative aspect-[16/17] sm:aspect-[16/10] rounded-2xl overflow-hidden scale-x-[-1] ">
+          <div className="relative aspect-[16/15] sm:aspect-[16/10] rounded-2xl overflow-hidden scale-x-[-1] ">
             <video
               autoPlay
               loop

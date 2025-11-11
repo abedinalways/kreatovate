@@ -1628,6 +1628,34 @@
     field-sizing: content;
   }
 
+  .aspect-\[16\/1\] {
+    aspect-ratio: 16;
+  }
+
+  .aspect-\[16\/8\] {
+    aspect-ratio: 16 / 8;
+  }
+
+  .aspect-\[16\/10\] {
+    aspect-ratio: 16 / 10;
+  }
+
+  .aspect-\[16\/13\] {
+    aspect-ratio: 16 / 13;
+  }
+
+  .aspect-\[16\/14\] {
+    aspect-ratio: 16 / 14;
+  }
+
+  .aspect-\[16\/15\] {
+    aspect-ratio: 16 / 15;
+  }
+
+  .aspect-\[16\/16\] {
+    aspect-ratio: 16 / 16;
+  }
+
   .aspect-\[16\/17\] {
     aspect-ratio: 16 / 17;
   }
@@ -4092,6 +4120,12 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:aspect-\[16\/17\] {
+      aspect-ratio: 16 / 17;
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:h-6 {
       height: calc(var(--spacing) * 6);
     }
@@ -4253,6 +4287,12 @@
   @media (min-width: 48rem) {
     .md\:h-\[50rem\] {
       height: 50rem;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:h-\[393px\] {
+      height: 393px;
     }
   }
 

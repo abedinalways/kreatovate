@@ -6,7 +6,7 @@ import { ArrowBigLeft, ArrowRight } from "lucide-react";
 
 const Solution = () => {
   return (
-    <div className="custom-container pt-24 relative w-full overflow-hidden px-2">
+    <div className="custom-container pt-24 relative w-full overflow-hidden px-2 font-jakarta">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-between gap-6 mb-8 px-2">
         <div className="lg:w-1/2">
@@ -40,7 +40,7 @@ const Solution = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 mx-auto flex justify-center items-center ">
           <div className="flex flex-col gap-6">
-            <small className="uppercase text-gradient-special font-roboto font-normal text-md">
+            <small className="uppercase text-color-gradient font-roboto font-normal text-md">
               /02 SaaS Marketing
             </small>
             <h2 className="text-2xl md:text-3xl font-bold">
@@ -58,13 +58,13 @@ const Solution = () => {
                 alt="Solution Image"
                 width={26}
                 height={26}
-                className="relative left-30 top-8"
+                className="relative left-26 top-8"
               />
               <ButtonOne
                 btnText="View Details"
                 width="w-full md:w-auto"
-                padding="py-1 px-9"
-                fontSize="text-sm md:text-md"
+                padding="py-1 px-8"
+                fontSize="text-xs md:text-md"
               />
             </div>
           </div>

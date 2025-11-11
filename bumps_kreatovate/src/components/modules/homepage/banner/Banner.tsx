@@ -60,34 +60,36 @@ const Banner = () => {
     >
       <MainBg />
 
-      <div className="absolute ml-[-20] mt-20 z-40 flex flex-col items-center justify-center gap-2 h-full w-full px-4">
-        <div className="flex flex-col items-center gap-2 text-center px-2 mx-auto">
-          <div className="flex items-center justify-center bg-white/10  md:px-10  rounded-full mx-auto banner-tagline border border-gray-400 px-4">
+      <div className="absolute ml-[-20] mt-5 z-40 flex flex-col items-center justify-center gap-2 h-full w-full px-4">
+        <div className="flex flex-col items-center gap-2  px-2 mx-auto">
+          <div className="flex items-center justify-center bg-white/10  md:px-6  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
             <Image
               src="/images/hrline1.png"
               alt="heading line vector 1"
-              width={80}
+              width={60}
               height={16}
             />
-            <p className="font-roboto bg-black text-xs md:text-md py-2 font-semibold text-gradient-special  uppercase">
+            <p className="font-roboto bg-white/10 text-[10px] mx-2 text-center py-2 font-bold text-gradient-special  uppercase">
               Top consulting platform
             </p>
             <Image
               src="/images/hrline1.png"
               alt="heading line vector 1"
-              width={80}
+              width={60}
               height={16}
               className="scale-x-[-1]"
             />
           </div>
 
-          <h1 className="mt-3 text-2xl sm:text-4xl md:text-5xl font-jakarta font-bold max-w-2xl banner-heading">
-            Transform Ideas with{' '}
+          <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold  banner-heading w-full ">
+            Transform Ideas with
+            <br />
             <span className="text-gradient">Kreatovate’s Strategy</span>
           </h1>
 
-          <p className="mt-3 md:mt-4 font-roboto text-sm md:text-lg max-w-3xl banner-subtext">
-            Turn concepts into measurable growth with strategies that scale your
+          <p className="mt-3 md:mt-4 font-[roboto] text-xs md:text-md max-w-3xl text-center banner-subtext">
+            Turn concepts into measurable growth with strategies that scale your{' '}
+            <br />
             impact, increase revenue, and deepen customer loyalty.
           </p>
 
@@ -96,15 +98,17 @@ const Banner = () => {
           </div>
         </div>
 
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full max-w-[800px] h-[40%] px-4 md:px-0 object-contain rounded-lg"
-        >
-          <source src="/videos/banner.mp4" type="video/mp4" />
-        </video>
+        <div className="rounded-2xl py-4">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full max-w-[1220px] md:h-[400px] h-[300px] px-4 md:px-0 md:object-cover rounded-2xl "
+          >
+            <source src="/videos/banner.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ const TrailerModal = () => {
           <DialogTitle>Trailer video</DialogTitle>
         </DialogHeader>
 
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full rounded-2xl">
           <DialogClose asChild>
             <button
               className="absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20 cursor-pointer!"
