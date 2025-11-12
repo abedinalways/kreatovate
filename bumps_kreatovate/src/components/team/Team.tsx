@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsFacebook } from 'react-icons/bs';
 import { gsap } from 'gsap';
-
+import { FaInstagram, FaSquareXTwitter, FaXTwitter } from 'react-icons/fa6';
 
 // shadcn carousel
 import {
@@ -93,31 +93,39 @@ const Team: React.FC = () => {
 
   return (
     <div className="relative w-full" id="team">
+      <div className="absolute top-0 right-20 z-0 rotate-180 rounded-full">
+        <Image
+          src="/images/strategy-ellipse1.png"
+          alt="bg light"
+          width={513}
+          height={208}
+        />
+      </div>
       <div
         ref={sectionRef}
         className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center font-openSans"
       >
         {/* heading */}
         <div className="w-fit mx-auto">
-                      <div className="flex items-center justify-center bg-white/10  md:px-4  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
-                        <Image
-                          src="/images/hrline1.png"
-                          alt="heading line vector 1"
-                          width={60}
-                          height={16}
-                        />
-                        <p className="mx-2 font-roboto bg-white/10 text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
-                          our workforce team
-                        </p>
-                        <Image
-                          src="/images/hrline1.png"
-                          alt="heading line vector 1"
-                          width={60}
-                          height={16}
-                          className="scale-x-[-1]"
-                        />
+          <div className="flex items-center justify-center bg-white/10  md:px-4  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={60}
+              height={16}
+            />
+            <p className="mx-2 font-roboto bg-white/10 text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
+              our workforce team
+            </p>
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={60}
+              height={16}
+              className="scale-x-[-1]"
+            />
           </div>
-          </div>
+        </div>
         {/*  */}
 
         <h2 className="text-3xl md:text-5xl text-center font-bold">
@@ -169,7 +177,7 @@ const Team: React.FC = () => {
                       className="relative rounded-2xl p-2 shadow-2xl group transition-all duration-500 focus-within:ring-2 focus-within:ring-white/20 h-full"
                     >
                       <div className="relative w-full rounded-2xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE] h-full">
-                          <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
+                        <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
                           <div className="w-full aspect-2/3">
                             <Image
                               width={800}
@@ -180,7 +188,7 @@ const Team: React.FC = () => {
                                   ? `${p.name} – ${p.title}`
                                   : 'Team member'
                               }
-                              className="object-cover w-full h-full mx-auto transition-transform duration-700 group-hover:scale-105"
+                              className="w-full h-full  object-cover  transition-transform duration-700 group-hover:scale-100"
                               sizes="(min-width:1280px) 20rem, (min-width:1024px) 18rem, (min-width:640px) 50vw, 100vw"
                             />
                           </div>
@@ -259,10 +267,10 @@ const Team: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Bottom Info (not hovered) */}
+                        {/* Bottom Info */}
                         <div className="absolute left-4 right-4 bottom-4 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
                           <div
-                            className="backdrop-blur-xl rounded-xl px-4 py-2 shadow-lg flex items-center justify-between"
+                            className="backdrop-blur-xl rounded-xl px-4 py-2 shadow-lg flex items-center gap-15"
                             style={{
                               background:
                                 'linear-gradient(120deg, rgba(226, 15, 18, 0.2) 40%, rgba(56, 83, 255, 0.2) 60%)',
@@ -277,19 +285,35 @@ const Team: React.FC = () => {
                                 {p.title}
                               </div>
                             </div>
-                            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                              {p.facebookUrl ? (
-                                <a
-                                  href={p.facebookUrl}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                  className="inline-flex"
-                                >
-                                  <BsFacebook />
-                                </a>
-                              ) : (
-                                <BsFacebook aria-hidden />
-                              )}
+                            <div className="flex items-center justify-end gap-5 ">
+                              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                                {p.facebookUrl ? (
+                                  <a
+                                    href={p.facebookUrl}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="cursor-pointer"
+                                  >
+                                    <FaInstagram />
+                                  </a>
+                                ) : (
+                                  <FaInstagram aria-hidden />
+                                )}
+                              </div>
+                              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                                {p.facebookUrl ? (
+                                  <a
+                                    href={p.facebookUrl}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="cursor-pointer"
+                                  >
+                                    <FaXTwitter />
+                                  </a>
+                                ) : (
+                                  <FaXTwitter aria-hidden />
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
