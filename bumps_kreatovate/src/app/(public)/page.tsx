@@ -17,9 +17,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <Banner />
       <Counter />
-      {/* <div className="bg-[#0F0F0F]">
-        <Strategy />
-      </div> */}
+     
       <BumpsProject />
       <TrustedGrowth />
       <Trailer />
