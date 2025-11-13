@@ -43,55 +43,53 @@ const Trailer = () => {
       aria-label="trailer section"
     >
       {/* ----------------------
-          BACKGROUND LAYERS (exact top 50% solid + bottom gradient)
+          BACKGROUND LAYERS
          ---------------------- */}
 
-      {/* 1) Top half solid #0F1016 */}
+      {/* 1) Top 50% solid color */}
       <div
         aria-hidden
         className="absolute top-0 left-0 w-full"
-        style={{ height: '50%', background: '#0F1016', zIndex: 0 }}
-      />
-
-      {/* 2) Bottom gradient (covers full area but visually blends with top half) */}
-      <div
-        aria-hidden
-        className="absolute inset-0 w-full h-full"
         style={{
+          height: '50%',
+          background: '#0F1016',
           zIndex: 0,
-          pointerEvents: 'none',
-          background:
-            // gradient designed so top 50% is visually the same as #0F1016 then blends into colorful hues
-            'linear-gradient(to bottom, rgba(15,16,22,0) 0%, rgba(15,16,22,0) 48%, rgba(38,6,32,0.95) 60%, rgba(110,8,90,0.85) 75%, rgba(16,6,60,0.95) 100%)',
         }}
       />
 
-      {/* 3) Soft radial glows to mimic the purple/pink/blue band from screenshot */}
+      {/* 2) Bottom 50% background image */}
       <div
         aria-hidden
-        className="absolute -left-20 bottom-10 w-[520px] h-[420px] rounded-full"
+        className="absolute bottom-0 left-0 w-full overflow-hidden"
         style={{
+          height: '50%',
           zIndex: 0,
-          filter: 'blur(80px)',
-          background:
-            'radial-gradient(circle at 30% 70%, rgba(176,22,85,0.18) 0%, rgba(176,22,85,0.10) 20%, transparent 60%)',
-          pointerEvents: 'none',
         }}
-      />
+      >
+        <Image
+          src="/images/image88.png"
+          alt="background image"
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-90"
+          priority
+        />
+      </div>
 
+      {/* 3) Soft radial glow effect */}
       <div
         aria-hidden
-        className="absolute right-0 -bottom-10 w-[720px] h-[520px] rounded-full"
+        className="absolute -left-20 bottom-10 w-[520px] h-[420px] rounded-full opacity-30"
         style={{
           zIndex: 0,
-          filter: 'blur(100px)',
+          filter: 'blur(90px)',
           background:
-            'radial-gradient(circle at 70% 60%, rgba(59,10,160,0.18) 0%, rgba(59,10,160,0.10) 25%, transparent 65%)',
+            'radial-gradient(circle at 30% 70%, rgba(176,22,85,0.3) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
 
-      {/* 4) Vignette / darken edges */}
+      {/* 4) Vignette / dark edges */}
       <div
         aria-hidden
         className="absolute inset-0"
@@ -104,7 +102,7 @@ const Trailer = () => {
       />
 
       {/* ----------------------
-          CONTENT (on top of backgrounds)
+          CONTENT (on top)
          ---------------------- */}
       <div className="relative z-10 custom-container space-y-8 md:space-y-12">
         <div className="flex flex-col md:flex-row items-end justify-between">
@@ -126,7 +124,7 @@ const Trailer = () => {
         <div className="relative trailer-poster">
           <Image
             src="/images/trailer-poster.png"
-            alt="trailer image"
+            alt="trailer poster"
             width={1320}
             height={547}
             className="rounded-3xl bg-black shadow-[0_0_45px_rgba(120,30,200,0.18)]"

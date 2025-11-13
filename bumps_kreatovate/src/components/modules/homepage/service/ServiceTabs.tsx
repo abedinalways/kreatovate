@@ -62,51 +62,66 @@ const ServiceTabs = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // DATA (unchanged)
+  // DATA
   const marketingData: ServiceItem[] = [
     {
-      id: "m1",
-      title: "AI Ad Campaign Orchestration",
-      desc: "Multi-channel ads with creative generation, targeting, and budget optimization powered by AI.",
-      image: "/images/service1.png",
-      href: "/services/ai-ad-orchestration",
+      id: 'm1',
+      title: 'AI Workforce Solutions',
+      desc: 'AI Powered Digital Marketing Solutions. Enhance your entire operations through AI. Powered automation with a full suite of AI. Employees at your service.',
+      image: '/images/marketing01.png',
+      href: '/services/ai-workforce-solutions',
     },
     {
-      id: "m2",
-      title: "SEO + Programmatic Pages",
-      desc: "Keyword clustering, internal links, and AI-generated long-tail landing pages at scale.",
-      image: "/images/service2.png",
-      href: "/services/seo-programmatic",
+      id: 'm2',
+      title: 'AI Powered Sales Force',
+      desc: 'AI Powered Digital Marketing Solutions. Enhance your performance through AI. Powered automation with a full suite of AI. Employees at your service.',
+      image: '/images/marketing02.png',
+      href: '/services/ai-powered-sales-force',
     },
     {
-      id: "m3",
-      title: "Content Engine",
-      desc: "AI-assisted blog, social, and email calendars with brand voice control.",
-      image: "/images/service3.png",
-      href: "/services/content-engine",
+      id: 'm3',
+      title: 'SaaS Implementation',
+      desc: 'We shape and elevate your brand’s identity with cohesive values and strategic positioning to solidify your presence in the competitive market.',
+      image: '/images/marketing03.png',
+      href: '/services/saas-implementation',
     },
     {
-      id: "m4",
-      title: "CRO & Personalization",
-      desc: "On-site experiments, copy variants, and AI segments that adapt to user intent.",
-      image: "/images/service4.png",
-      href: "/services/cro-personalization",
+      id: 'm4',
+      title: 'Automated Operating Systems & Oracle’s',
+      desc: 'Leverage comprehensive market analysis and automation tools to uncover key insights, trends, and opportunities for informed decisions.',
+      image: '/images/marketing04.png',
+      href: '/services/automated-operating-systems',
     },
     {
-      id: "m5",
-      title: "Lead Qualification Bots",
-      desc: "Website and WhatsApp agents that qualify leads and book meetings 24/7.",
-      image: "/images/service5.png",
-      href: "/services/lead-bots",
+      id: 'm5',
+      title: 'Automated Workflows',
+      desc: 'Leverage expert guidance for optimal business performance. Gain access to comprehensive automation strategies to drive success.',
+      image: '/images/marketing05.png',
+      href: '/services/automated-workflows',
     },
     {
-      id: "m6",
-      title: "Analytics & Attribution",
-      desc: "Unified dashboard, channel ROI, and LTV models to guide spend.",
-      image: "/images/service1.png",
-      href: "/services/analytics-attribution",
+      id: 'm6',
+      title: 'Blockchain Implementation',
+      desc: 'Transform your business with intelligent automation tools. Our AI SaaS software delivers a seamless solution to handle complex daily tasks through smart blockchain integration.',
+      image: '/images/marketing06.png',
+      href: '/services/blockchain-implementation',
+    },
+    {
+      id: 'm7',
+      title: 'Smart Contract Automation',
+      desc: 'Leverage comprehensive market analysis and automation tools to unlock key insights, trends, and opportunities for informed decision-making.',
+      image: '/images/service07.png',
+      href: '/services/smart-contract-automation',
+    },
+    {
+      id: 'm8',
+      title: 'Automated Social Content Engine',
+      desc: 'Leverage expert guidance for optimal business performance. Gain access to comprehensive strategies to enhance social automation efficiency.',
+      image: '/images/service08.png',
+      href: '/services/automated-social-engine',
     },
   ];
+
 
   const consultingData: ServiceItem[] = [
     {

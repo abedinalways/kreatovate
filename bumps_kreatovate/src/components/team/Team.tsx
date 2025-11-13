@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsFacebook } from 'react-icons/bs';
 import { gsap } from 'gsap';
-import { FaInstagram, FaSquareXTwitter, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 // shadcn carousel
 import {
@@ -188,7 +188,7 @@ const Team: React.FC = () => {
                                   ? `${p.name} – ${p.title}`
                                   : 'Team member'
                               }
-                              className="w-full h-full  object-cover  transition-transform duration-700 group-hover:scale-100"
+                              className="w-full h-fit absolute md:top-15 top-6 object-cover transition-transform duration-700 group-hover:scale-100"
                               sizes="(min-width:1280px) 20rem, (min-width:1024px) 18rem, (min-width:640px) 50vw, 100vw"
                             />
                           </div>
@@ -208,8 +208,8 @@ const Team: React.FC = () => {
                                   width={50}
                                   height={50}
                                   src={p.hoverImg}
-                                  alt=""
-                                  className="rounded-full border border-[#D1C8C8] bg-white/10 shrink-0"
+                                  alt="image"
+                                  className="rounded-full border border-[#D1C8C8] bg-purple-200 shrink-0"
                                 />
                                 <div className="min-w-0">
                                   <h3 className="text-sm font-semibold truncate">
@@ -278,15 +278,15 @@ const Team: React.FC = () => {
                             }}
                           >
                             <div className="min-w-0">
-                              <div className="text-white font-semibold text-sm truncate">
+                              <div className="text-white font-semibold text-xs md:text-sm truncate">
                                 {p.name}
                               </div>
-                              <div className="text-white/70 text-xs truncate">
+                              <div className="text-white/70  text-[8px] md:text-xs truncate">
                                 {p.title}
                               </div>
                             </div>
-                            <div className="flex items-center justify-end gap-5 ">
-                              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <div className="flex items-center justify-end md:gap-5 gap-2">
+                              <div className="md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center">
                                 {p.facebookUrl ? (
                                   <a
                                     href={p.facebookUrl}
@@ -300,7 +300,7 @@ const Team: React.FC = () => {
                                   <FaInstagram aria-hidden />
                                 )}
                               </div>
-                              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                              <div className="md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center">
                                 {p.facebookUrl ? (
                                   <a
                                     href={p.facebookUrl}
