@@ -23,22 +23,20 @@ const NavItems = ({ variant = "desktop" }: Props) => {
   const [activeHash, setActiveHash] = useState<string>("#home");
   const pathname = usePathname();
 
-  // Am I currently on the homepage?
-  const isHome = pathname === "/" || pathname === ""; // add more logic if you use locales/basePath
+  const isHome = pathname === "/" || pathname === "";
 
-  // Helper: turn a section hash into either "#hash" (on home) or "/#hash" (from any other page)
   const toHomeSection = (hash: string) => (isHome ? hash : `/${hash}`);
 
-  // Build items once per route change — no need to hardcode /contact-us anymore
   const items = [
-    { id: isHome ? "#home" : "/", label: "home" }, // home anchor vs go to /
+    { id: isHome ? "#home" : "/", label: "home" },
     { id: toHomeSection("#about_us"), label: "about us" },
-    { id: toHomeSection("#our_solutions"), label: "our solutions" },
+    { id: toHomeSection("#who_we_are"), label: "who we are" },
+    { id: toHomeSection("#our_services"), label: "our services" },
+    { id: toHomeSection("#our_team"), label: "our team" },
+    { id: toHomeSection("#our_projects"), label: "our projects" },
     { id: toHomeSection("#testimonial"), label: "testimonial" },
-    { id: "/contact-us", label: "contact us" }, // normal route
   ];
 
-  // Instantly mark active on click; TransitionLink handles scroll/route animation
   const handleInstantActive = (id: string) => {
     if (id.startsWith("#")) setActiveHash(id);
     else setActiveHash("");
