@@ -99,7 +99,7 @@ export default function FAQSection() {
           <div className="flex flex-col gap-4 text-center">
             <h2 className="md:text-5xl text-3xl text-center font-bold">
               Get Answers To{' '}
-              <span className="text-jgradient">Your Question</span>
+              <span className="text-gradient">Your Question</span>
             </h2>
             <p className="text-xs sm:text-sm font-normal md:mt-7 text-white/80">
               Explore our tailored solutions designed to elevate your brand and
