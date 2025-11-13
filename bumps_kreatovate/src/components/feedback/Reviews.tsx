@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
@@ -116,7 +115,7 @@ const Reviews = () => {
                 >
                   <div className="md:p-4">
                     <Card
-                      className={`border border-[#E21717] text-white shadow-lg rounded-2xl  md:h-62 transition-all duration-300 ${
+                      className={`border border-[#E21717] text-white shadow-lg rounded-2xl  md:h-60 transition-all duration-300 ${
                         isActive
                           ? 'bg-gradient text-white shadow-[0_0_20px_rgba(226,23,23,0.3)]'
                           : 'bg-[#121218] text-gray-400 scale-95 opacity-70'

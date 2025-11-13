@@ -182,7 +182,7 @@
   background: linear-gradient(to right, #3700FF 60%, #E21717 20%, #3700FF 30%);
 }
 .text-gradient-special {
-  @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+  @apply bg-linear-to-r from-[#FF0000] to-[#6b7cff] inline-block text-transparent bg-clip-text leading-none;
 }
 .mask {
   display: inline-block;

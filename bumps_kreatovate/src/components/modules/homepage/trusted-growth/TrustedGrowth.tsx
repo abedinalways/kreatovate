@@ -48,7 +48,7 @@ const TrustedGrowth = () => {
       id: 2,
       title: "5TH INDUSTRIAL REVOLUTION",
       description:
-        "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent systems shape our future...",
+        "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent.",
       image: "/images/books/book2.png",
     },
     {
@@ -62,7 +62,7 @@ const TrustedGrowth = () => {
       id: 4,
       title: "OWN THE GRID",
       description:
-        "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how decentralized systems empower communities...",
+        "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...",
       image: "/images/books/book4.png",
     },
   ];
@@ -70,10 +70,10 @@ const TrustedGrowth = () => {
   return (
     <div
       ref={sectionRef}
-      className="custom-container pt-24 flex flex-col gap-12 px-4 py-12"
+      className="custom-container pt-24 flex flex-col gap-12 px-4 py-12 font-jakarta"
     >
       <div className="space-y-2 trusted-title ">
-        <p className="uppercase text-color-gradient font-roboto font-normal text-sm">
+        <p className="uppercase text-color-gradient font-roboto font-normal text-xs">
           [ our books ]
         </p>
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-5 lg:items-end justify-between">

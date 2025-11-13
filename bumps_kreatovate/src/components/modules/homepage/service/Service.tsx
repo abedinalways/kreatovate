@@ -56,7 +56,7 @@ const Service = () => {
     <div
       id="our_solutions"
       ref={sectionRef}
-      className="md:py-16 mx-auto bg-[#000000] scroll-mt-20 px-4"
+      className="md:py-16 mx-auto bg-[#000000] scroll-mt-20 px-4 font-jakarta"
     >
       <div className="flex flex-col items-center gap-6 custom-container">
         <div className="svc-head flex flex-col items-center gap-7 relative">

@@ -27,18 +27,18 @@ const TrustCard = ({ title, description, image }: TGProps) => {
         />
 
         {/* main content */}
-        <div className="relative z-10 flex flex-col items-center gap-4">
+        <div className="relative z-10 flex flex-col items-center gap-4 h-120">
           <Image
             src={image}
             alt="book 1"
             width={222}
             height={186}
-            className="w-full h-full"
+            className="w-full"
           />
 
           <div className="flex flex-col items-start gap-3 text-center md:text-left">
-            <h1 className="font-jakarta font-semibold text-2xl">{title}</h1>
-            <p className="font-roboto text-base font-normal text-ring">
+            <h1 className="font-jakarta font-semibold text-lg h-14">{title}</h1>
+            <p className="font-roboto text-sm font-normal text-ring h-33">
               {description}
             </p>
             <div className="w-full">

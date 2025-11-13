@@ -174,9 +174,19 @@
     @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
   }
 
+ @layer utilities {
   .text-gradient {
-  @apply  text-transparent bg-clip-text;
-  background-image: linear-gradient(to right, #E21717 0%, #3700FF 100%);
+    background: linear-gradient(to right, #E21717, #3700FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* These ensure cross-browser text rendering (Safari/Chrome/Edge/Firefox) */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* Helps avoid odd clipping on inline elements in some browsers */
+    display: inline-block;
+  }
 }
 
   .text-color-gradient-tab {
