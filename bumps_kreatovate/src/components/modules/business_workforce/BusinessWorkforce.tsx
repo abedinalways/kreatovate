@@ -116,7 +116,7 @@ const BusinessWorkForce = () => {
   return (
     <div
       ref={rootRef}
-      className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden"
+      className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden font-jakarta"
     >
       {/* ✅ Dark overlay for better readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
@@ -124,7 +124,7 @@ const BusinessWorkForce = () => {
       {/* ✅ Main Content */}
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
+          <h1 className="bwv1-title text-2xl md:text-5xl leading-14 font-bold text-white">
             Business Workforce v1
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">

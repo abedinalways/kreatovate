@@ -21,7 +21,7 @@ const ButtonTwo = ({ btnText, className, isIcon = true, link }: BtnProps) => {
           href={link ? link : "/"}
           className="block w-full text-center capitalize"
         >
-          {btnText} {isIcon && <MoveRight />}
+          {btnText} 
         </Link>
       </Button>
     </div>

@@ -12,28 +12,41 @@ const Trailer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
-    gsap.from('.trailer-heading, .trailer-text', {
-      y: 60,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power3.out',
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 80%',
-      },
-    });
+    const ctx = gsap.context(() => {
+      // Heading + text animation
+      gsap.from('.trailer-heading, .trailer-text', {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          once: true, // ✅ Only animate once
+        },
+      });
 
-    gsap.from('.trailer-poster', {
-      scale: 0.9,
-      opacity: 0,
-      duration: 1.5,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 75%',
-      },
-    });
+      // Poster animation
+      gsap.from('.trailer-poster', {
+        scale: 0.9,
+        opacity: 0,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    // ✅ Cleanup GSAP & ScrollTrigger when route changes or unmounts
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsap.killTweensOf('*');
+    };
   }, []);
 
   return (
@@ -42,9 +55,7 @@ const Trailer = () => {
       className="relative overflow-hidden pt-10 pb-24 px-4 lg:px-0 font-jakarta"
       aria-label="trailer section"
     >
-      {/* ----------------------
-          BACKGROUND LAYERS
-         ---------------------- */}
+      {/* ---------- BACKGROUND LAYERS ---------- */}
 
       {/* 1) Top 50% solid color */}
       <div
@@ -71,7 +82,7 @@ const Trailer = () => {
           alt="background image"
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-90"
+          className="object-cover object-center opacity-90 transition-opacity duration-700"
           priority
         />
       </div>
@@ -101,9 +112,7 @@ const Trailer = () => {
         }}
       />
 
-      {/* ----------------------
-          CONTENT (on top)
-         ---------------------- */}
+      {/* ---------- CONTENT ---------- */}
       <div className="relative z-10 custom-container space-y-8 md:space-y-12">
         <div className="flex flex-col md:flex-row items-end justify-between">
           <div className="trailer-heading flex flex-col items-center md:items-start gap-2.5">

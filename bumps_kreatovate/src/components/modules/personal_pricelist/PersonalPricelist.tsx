@@ -49,51 +49,57 @@ const PersonalPricelist = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Resume Builder Agent",
+      title: 'Resume Builder Agent',
       price: 197,
-      description: "ATS-safe, A1-powered resume builder.",
+      description: 'ATS-safe, A1-powered resume builder.',
+      availability: 'Not Available',
     },
     {
       id: 2,
-      title: "Avatar Builder (Personal)",
+      title: 'Avatar Builder (Personal)',
       price: 297,
       description:
-        "Create your own AI likeness for video avatars, voice cloning, and personalized content.",
+        'Create your own AI likeness for video avatars, voice cloning, and personalized content.',
+      availability: 'Not Available',
     },
     {
       id: 3,
-      title: "Credit Repair Agent",
+      title: 'Credit Repair Agent',
       price: 197,
       description:
-        "Monitors credit, generates dispute letters, and automates follow-ups.",
+        'Monitors credit, generates dispute letters, and automates follow-ups.',
+      availability: 'Not Available',
     },
     {
       id: 4,
-      title: "CPA",
+      title: 'CPA',
       price: 297,
       description:
-        "Prepares filings, reconciles accounts, flags deductions, and drafts returns.",
+        'Prepares filings, reconciles accounts, flags deductions, and drafts returns.',
+      availability: 'Not Available',
     },
     {
       id: 5,
-      title: "Personal Assistant",
+      title: 'Personal Assistant',
       price: 697,
       description:
-        "Manages personal calendars, errands, shopping, travel, and journaling.",
+        'Manages personal calendars, errands, shopping, travel, and journaling.',
+      availability: 'Not Available',
     },
     {
       id: 6,
-      title: "Trader (Lite)",
+      title: 'Trader (Lite)',
       price: 1097,
       description:
-        "Risk-free sandbox trader. Great for learning and financial literacy.",
+        'Risk-free sandbox trader. Great for learning and financial literacy.',
+      availability: 'Not Available',
     },
   ];
 
   return (
     <div
       ref={rootRef}
-      className="relative py-25 px-4 md:px-0 bg-[#0F1016] overflow-hidden"
+      className="relative py-25 px-4 md:px-0 bg-[#0F1016] overflow-hidden font-jakarta"
     >
       <Image
         src="/images/personal_pricelist_bg.png"
@@ -107,22 +113,22 @@ const PersonalPricelist = () => {
 
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="font-jakarta text-[4rem] font-bold leading-16 text-color-gradient">
+          <h1 className="font-jakarta text-2xl md:text-5xl font-bold leading-16 text-color-gradient">
             AI Agents/Employees Monthly Pricing
           </h1>
-          <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
+          <h1 className="bwv1-title text-2xl md:text-5xl  leading-14 font-bold text-white">
             Personal AI Agents
           </h1>
-          <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">
+          <small className="bwv1-sub text-sm leading-7 font-normal text-gray-300">
             Consumer & Personal v1 (Non-Voice)
-          </p>
+          </small>
         </div>
 
         <div
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 business-card"
         >
-          {businessData?.map((data) => (
+          {businessData?.map(data => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
