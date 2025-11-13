@@ -4223,18 +4223,11 @@ const TrailerModal = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
                 showCloseButton: false,
                 className: "w-full max-w-4xl! h-fit bg-[#0F1016] border border-gray-800 p-0 overflow-hidden",
-                // 👇 this is the key
                 onOpenAutoFocus: (e)=>{
-                    // optional: keep Radix from focusing first focusable element
                     e.preventDefault();
                     const video = videoRef.current;
                     if (video) {
-                        // try to play after modal is visible
-                        video.play().catch(()=>{
-                        // if browser blocks autoplay with sound, you can:
-                        // 1) set video.muted = true before play
-                        // 2) or show a small "Tap to play" over video
-                        });
+                        video.play().catch(()=>{});
                     }
                 },
                 children: [
@@ -4244,12 +4237,12 @@ const TrailerModal = ()=>{
                             children: "Trailer video"
                         }, void 0, false, {
                             fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                            lineNumber: 51,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                        lineNumber: 50,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4258,7 +4251,7 @@ const TrailerModal = ()=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogClose"], {
                                 asChild: true,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20",
+                                    className: "absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20 cursor-pointer!",
                                     "aria-label": "Close",
                                     onClick: ()=>{
                                         if (videoRef.current) {
@@ -4270,17 +4263,17 @@ const TrailerModal = ()=>{
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 59,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 49,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                lineNumber: 55,
+                                lineNumber: 48,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
@@ -4291,13 +4284,13 @@ const TrailerModal = ()=>{
                                 children: "Your browser does not support the video tag."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                lineNumber: 70,
+                                lineNumber: 63,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                        lineNumber: 54,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

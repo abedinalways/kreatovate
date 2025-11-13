@@ -22,7 +22,7 @@ const BumpsProject = () => {
           <div className="flex flex-col gap-5 sm:gap-6 font-jakarta">
             <div className="flex flex-col gap-3 sm:gap-4">
               <h1 className="font-jakarta text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight sm:leading-snug lg:leading-14 lg:max-w-xl">
-                Get in early before{' '}
+                Get in early before{" "}
                 <span className="text-color-gradient">the next bump!</span>
               </h1>
 
@@ -100,7 +100,7 @@ const BumpsProject = () => {
               </p>
 
               <p className="text-base sm:text-lg font-normal leading-7 sm:leading-8 text-roboto text-ring">
-                Now that{' '}
+                Now that{" "}
                 <span className="text-white font-semibold">Round 1</span> is
                 reset to <span className="text-white font-semibold">$1</span>,
                 there’s never been a better time to jump in.

@@ -32,18 +32,11 @@ const TrailerModal = () => {
       <DialogContent
         showCloseButton={false}
         className="w-full max-w-4xl! h-fit bg-[#0F1016] border border-gray-800 p-0 overflow-hidden"
-        // 👇 this is the key
         onOpenAutoFocus={(e) => {
-          // optional: keep Radix from focusing first focusable element
           e.preventDefault();
           const video = videoRef.current;
           if (video) {
-            // try to play after modal is visible
-            video.play().catch(() => {
-              // if browser blocks autoplay with sound, you can:
-              // 1) set video.muted = true before play
-              // 2) or show a small "Tap to play" over video
-            });
+            video.play().catch(() => {});
           }
         }}
       >
@@ -54,7 +47,7 @@ const TrailerModal = () => {
         <div className="relative w-full h-full">
           <DialogClose asChild>
             <button
-              className="absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20"
+              className="absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20 cursor-pointer!"
               aria-label="Close"
               onClick={() => {
                 if (videoRef.current) {
