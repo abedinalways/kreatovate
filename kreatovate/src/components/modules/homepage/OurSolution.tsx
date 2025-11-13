@@ -114,6 +114,7 @@ const OurSolution = () => {
     <div
       ref={sectionRef}
       className="relative bg-[#0F1016] py-24 overflow-hidden"
+      id="our_projects"
     >
       {/* background ellipse */}
       <Image

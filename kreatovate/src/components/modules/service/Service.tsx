@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
-import { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import HeadingButton from '@/components/shared/buttons/HeadingButton';
-import ServiceTabs from './ServiceTabs';
-
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import HeadingButton from "@/components/shared/buttons/HeadingButton";
+import ServiceTabs from "./ServiceTabs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,35 +15,35 @@ const Service = () => {
     if (!sectionRef.current) return;
     const ctx = gsap.context(() => {
       // Heading masked sweep (clip-path + blur-to-sharp)
-      const masks = gsap.utils.toArray<HTMLElement>('.svc-head .mask');
+      const masks = gsap.utils.toArray<HTMLElement>(".svc-head .mask");
       gsap.set(masks, { opacity: 1 });
 
       gsap.to(masks, {
-        clipPath: 'inset(0 0 0% 0)',
-        filter: 'blur(0px)',
+        clipPath: "inset(0 0 0% 0)",
+        filter: "blur(0px)",
         duration: 0.9,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.08,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
 
       // Paragraph fade-in after masks
       gsap.fromTo(
-        '.svc-head p',
-        { opacity: 0, y: 12, filter: 'blur(6px)' },
+        ".svc-head p",
+        { opacity: 0, y: 12, filter: "blur(6px)" },
         {
           opacity: 1,
           y: 0,
-          filter: 'blur(0px)',
+          filter: "blur(0px)",
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
           delay: 0.1,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 78%',
+            start: "top 78%",
           },
         }
       );
@@ -55,7 +54,7 @@ const Service = () => {
 
   return (
     <div
-      id="our_solutions"
+      id="our_services"
       ref={sectionRef}
       className="py-16 mx-auto bg-[#000000] scroll-mt-20 px-4 mt-10"
     >
@@ -78,7 +77,7 @@ const Service = () => {
 
             <p className="text-xs sm:text-sm font-normal md:mt-7">
               Explore our tailored solutions designed to elevate your brand and
-              boost your market presence effectively{' '}
+              boost your market presence effectively{" "}
               <br className="hidden sm:block" />
               for sustainable growth and lasting success.
             </p>

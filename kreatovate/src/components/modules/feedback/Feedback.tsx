@@ -1,7 +1,6 @@
-import HeadingButton from '@/components/shared/buttons/HeadingButton';
-import React from 'react';
-import Reviews from './Reviews';
-
+import HeadingButton from "@/components/shared/buttons/HeadingButton";
+import React from "react";
+import Reviews from "./Reviews";
 
 const Feedback = () => {
   return (
