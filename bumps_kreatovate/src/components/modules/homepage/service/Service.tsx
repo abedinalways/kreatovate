@@ -54,7 +54,7 @@ const Service = () => {
 
   return (
     <div
-      id="our_solutions"
+      id="our_services"
       ref={sectionRef}
       className="md:py-16 mx-auto bg-[#000000] scroll-mt-20 px-4 font-jakarta"
     >

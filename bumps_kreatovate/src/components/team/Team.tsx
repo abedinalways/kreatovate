@@ -92,7 +92,7 @@ const Team: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full" id="team">
+    <div className="relative w-full" id="our_team">
       <div className="absolute top-0 right-20 z-0 rotate-180 rounded-full">
         <Image
           src="/images/strategy-ellipse1.png"

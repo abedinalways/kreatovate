@@ -45,10 +45,10 @@ const BusinessCardTwo = ({ data }: CardProps) => {
       </div>
       <div className="bg-[#0B111F] w-74 h-58 p-6 rounded-2xl flex flex-col gap-[1.125rem] ">
         <div className="flex flex-col items-center justify-between flex-1">
-          <h1 className="text-xl font-semibold text-center leading-8">
+          <h1 className="text-lg font-semibold text-center leading-8">
             {title}
           </h1>
-          <p className="text-[#E21717] text-md font-bold leading-10">
+          <p className="text-[#E21717] text-lg font-bold leading-10">
             {monthlyPrice}
           </p>
         </div>

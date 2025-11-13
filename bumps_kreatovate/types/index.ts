@@ -6,4 +6,5 @@ export interface BusinessItem {
   description?: string;
   button?: string;
   duration?: string;
+  availability?: string;
 }

@@ -4,13 +4,14 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { BusinessItem } from '../../../../types';
 import GradientBorderButton from '../buttons/GradientBorderButton';
+import { CircleAlertIcon } from 'lucide-react';
 
 interface CardProps {
   data: BusinessItem;
 }
 
 const BusinessCard = ({ data }: CardProps) => {
-  const { title, price, description } = data;
+  const { title, price, description, availability } = data;
 
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +34,7 @@ const BusinessCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="h-full business-card relative bg-color-gradient p-[1px] rounded-2xl ">
+    <div className="h-full business-card relative bg-color-gradient p-[px] rounded-2xl ">
       <div className=" absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
@@ -44,8 +45,19 @@ const BusinessCard = ({ data }: CardProps) => {
         />
       </div>
       <div className="bg-black w-full h-full p-10 rounded-2xl flex flex-col gap-4">
+        {/* <button className='bg-red-100 text-red-500 px-2 w-35 text-xs font-bold rounded-2xl flex items-center gap-2 py-1 border border-red-500'> <CircleAlertIcon size={14} /> {availability}</button> */}
+
+        {availability && (
+          <>
+            <button className="bg-red-100 text-red-500 px-2 w-32 text-xs font-bold rounded-lg flex items-center gap-2 py-1 border border-red-500">
+              {' '}
+              <CircleAlertIcon size={14} /> {availability}
+            </button>
+          </>
+          
+        )}
         <div className="flex items-center justify-between gap-8 flex-1">
-          <h1 className="text-2xl font-semibold leading-8 flex-1">{title}</h1>
+          <h1 className="text-lg font-semibold leading-8 flex-1">{title}</h1>
           <p className="text-[#E21717] text-lg md:text-3xl font-bold leading-10">
             ${price}
           </p>

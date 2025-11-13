@@ -6,7 +6,7 @@ import ButtonTwo from "../shared/buttons/ButtonTwo";
 
 const Solution = () => {
   return (
-    <div className="bg-[#0F1016]">
+    <div className="bg-[#0F1016]" id="our_solutions">
       <div className="custom-container pt-24 relative w-full overflow-hidden px-2 font-jakarta">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-6 mb-8 px-2">
