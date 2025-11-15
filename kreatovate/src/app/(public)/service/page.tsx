@@ -1,5 +1,5 @@
 import Contact from "@/components/modules/contact/Contact";
-import Service from "@/components/modules/service/Service";
+import Service from "@/components/modules/homepage/service/Service";
 import Team from "@/components/modules/team/Team";
 import TeamAll from "@/components/modules/team/TeamAll";
 import TeamForService from "@/components/modules/team/TeamForService";
