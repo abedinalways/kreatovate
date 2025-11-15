@@ -1,6 +1,8 @@
 import Contact from "@/components/modules/contact/Contact";
 import Service from "@/components/modules/service/Service";
 import Team from "@/components/modules/team/Team";
+import TeamAll from "@/components/modules/team/TeamAll";
+import TeamForService from "@/components/modules/team/TeamForService";
 import DynamicBanner from "@/components/shared/banner/DynamicBanner";
 import Partners from "@/components/shared/partners/Partners";
 import React from "react";
@@ -14,7 +16,7 @@ const ServicePage = () => {
         titleGradient="We Provide"
       />
       <Service />
-      <Team />
+      <TeamForService/>
       <Partners />
       <Contact />
     </div>

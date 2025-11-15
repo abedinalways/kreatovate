@@ -62,94 +62,130 @@ const ServiceTabs = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // DATA (unchanged)
+
+  // DATA
   const marketingData: ServiceItem[] = [
     {
       id: 'm1',
-      title: 'AI Ad Campaign Orchestration',
-      desc: 'Multi-channel ads with creative generation, targeting, and budget optimization powered by AI.',
-      image: '/images/service1.png',
-      href: '/services/ai-ad-orchestration',
+      title: 'AI Workforce Solutions',
+      desc: 'AI Powered Digital Marketing Solutions. Enhance your entire operations through AI. Powered automation with a full suite of AI. Employees at your service.',
+      image: '/images/marketing01.png',
+      href: '/services/ai-workforce-solutions',
     },
     {
       id: 'm2',
-      title: 'SEO + Programmatic Pages',
-      desc: 'Keyword clustering, internal links, and AI-generated long-tail landing pages at scale.',
-      image: '/images/service2.png',
-      href: '/services/seo-programmatic',
+      title: 'AI Powered Sales Force',
+      desc: 'AI Powered Digital Marketing Solutions. Enhance your performance through AI. Powered automation with a full suite of AI. Employees at your service.',
+      image: '/images/marketing02.png',
+      href: '/services/ai-powered-sales-force',
     },
     {
       id: 'm3',
-      title: 'Content Engine',
-      desc: 'AI-assisted blog, social, and email calendars with brand voice control.',
-      image: '/images/service3.png',
-      href: '/services/content-engine',
+      title: 'SaaS Implementation',
+      desc: 'We shape and elevate your brand’s identity with cohesive values and strategic positioning to solidify your presence in the competitive market.',
+      image: '/images/marketing03.png',
+      href: '/services/saas-implementation',
     },
     {
       id: 'm4',
-      title: 'CRO & Personalization',
-      desc: 'On-site experiments, copy variants, and AI segments that adapt to user intent.',
-      image: '/images/service4.png',
-      href: '/services/cro-personalization',
+      title: 'Automated Operating Systems & Oracle’s',
+      desc: 'Leverage comprehensive market analysis and automation tools to uncover key insights, trends, and opportunities for informed decisions.',
+      image: '/images/marketing04.png',
+      href: '/services/automated-operating-systems',
     },
     {
       id: 'm5',
-      title: 'Lead Qualification Bots',
-      desc: 'Website and WhatsApp agents that qualify leads and book meetings 24/7.',
-      image: '/images/service5.png',
-      href: '/services/lead-bots',
+      title: 'Automated Workflows',
+      desc: 'Leverage expert guidance for optimal business performance. Gain access to comprehensive automation strategies to drive success.',
+      image: '/images/marketing05.png',
+      href: '/services/automated-workflows',
     },
     {
       id: 'm6',
-      title: 'Analytics & Attribution',
-      desc: 'Unified dashboard, channel ROI, and LTV models to guide spend.',
-      image: '/images/service1.png',
-      href: '/services/analytics-attribution',
+      title: 'Blockchain Implementation',
+      desc: 'Transform your business with intelligent automation tools. Our AI SaaS software delivers a seamless solution to handle complex daily tasks through smart blockchain integration.',
+      image: '/images/marketing08.png',
+      href: '/services/blockchain-implementation',
+    },
+    {
+      id: 'm7',
+      title: 'Smart Contract Automation',
+      desc: 'Leverage comprehensive market analysis and automation tools to unlock key insights, trends, and opportunities for informed decision-making.',
+      image: '/images/service07.png',
+      href: '/services/smart-contract-automation',
+    },
+    {
+      id: 'm8',
+      title: 'Automated Social Content Engine',
+      desc: 'Leverage expert guidance for optimal business performance. Gain access to comprehensive strategies to enhance social automation efficiency.',
+      image: '/images/service08.png',
+      href: '/services/automated-social-engine',
     },
   ];
 
   const consultingData: ServiceItem[] = [
     {
       id: 'c1',
-      title: 'AI Readiness Assessment',
-      desc: 'Capability, data, and risk audit with a phased roadmap and ROI estimates.',
-      image: '/images/service1.png',
-      href: '/services/ai-readiness',
+      title: 'SMART Property Conversion',
+      desc: 'We retrofit existing buildings with IoT, automation, and integrated building management so spaces become safer, more efficient, and easier to run.',
+      image: '/images/service01.png',
+      href: '/services/smart-property-conversion',
     },
     {
       id: 'c2',
-      title: 'Operating Model Design',
-      desc: 'RACI, roles, and governance for AI-assisted teams and workflows.',
-      image: '/images/service4.png',
-      href: '/services/operating-model',
+      title: 'Green Property Conversion',
+      desc: 'We transform properties to lower-carbon, energy-efficient assets — solar integration, LED retrofits, efficient HVAC, and passive design improvements.',
+      image: '/images/service02.png',
+      href: '/services/green-property-conversion',
     },
     {
       id: 'c3',
-      title: 'Data Strategy',
-      desc: 'Source mapping, quality, privacy posture, and warehouse architecture.',
-      image: '/images/service3.png',
-      href: '/services/data-strategy',
+      title: 'NextGen Education',
+      desc: 'We build modern learning ecosystems — blended curriculum design, interactive digital platforms, adaptive assessments, and teacher toolkits.',
+      image: '/images/service03.png',
+      href: '/services/nextgen-education',
     },
     {
       id: 'c4',
-      title: 'Use Case Prioritization',
-      desc: 'Stack-rank automations by impact, feasibility, and time-to-value.',
-      image: '/images/service5.png',
-      href: '/services/usecase-prioritization',
+      title: 'Data Center Development + Management',
+      desc: 'We design, build, and commission resilient data centers tailored to your performance and uptime needs, managing operations and monitoring efficiency.',
+      image: '/images/service04.png',
+      href: '/services/data-center-development',
     },
     {
       id: 'c5',
-      title: 'Change Management',
-      desc: 'Playbooks, enablement plans, and adoption metrics for AI rollouts.',
-      image: '/images/service3.png',
-      href: '/services/change-management',
+      title: 'Data Mining Facilitation',
+      desc: 'We help you unlock value from raw data: collection pipelines, cleansing, feature engineering, and model-ready datasets with governance tooling.',
+      image: '/images/service05.png',
+      href: '/services/data-mining-facilitation',
     },
     {
       id: 'c6',
-      title: 'Compliance Advisory',
-      desc: 'Policy, redaction, and data retention aligned to SOC2/GDPR.',
-      image: '/images/service2.png',
-      href: '/services/compliance-advisory',
+      title: 'Crypto Mining Facilitation',
+      desc: 'We provide end-to-end support to plan, deploy, and operate efficient crypto-mining setups — site selection, power strategy, cooling, and hardware management.',
+      image: '/images/service06.png',
+      href: '/services/crypto-mining-facilitation',
+    },
+    {
+      id: 'c7',
+      title: 'Web/App/Ecosystem Architecture & Development',
+      desc: 'We design and build end-to-end web and mobile systems that scale — from high-level architecture to UX and DevOps deployment pipelines.',
+      image: '/images/service07.png',
+      href: '/services/web-app-architecture',
+    },
+    {
+      id: 'c8',
+      title: 'Blockchain/Web3 Infrastructure Development',
+      desc: 'We set up secure, production-ready Web3 infrastructure — smart contract frameworks, Layer-2 integrations, and wallet/oracle support.',
+      image: '/images/service08.png',
+      href: '/services/blockchain-infrastructure',
+    },
+    {
+      id: 'c9',
+      title: 'Real World Asset (RWA) Tokenization',
+      desc: 'We turn physical assets (real estate, commodities, invoices, etc.) into compliant digital tokens — managing legal mappings, custody models, and issuance.',
+      image: '/images/service09.png',
+      href: '/services/rwa-tokenization',
     },
   ];
 
@@ -199,7 +235,7 @@ const ServiceTabs = () => {
   ];
 
   return (
-    <div ref={rootRef} className="w-full">
+    <div ref={rootRef} className="w-full font-jakarta">
       <Tabs
         defaultValue="marketing_service"
         className="flex flex-col gap-6"
