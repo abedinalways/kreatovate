@@ -48,27 +48,27 @@ const BusinessWorkForceV2 = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Closer (Trilingual)",
-      monthlyPrice: "$497/monthly",
-      button: "SDeplo",
+      title: 'Closer(Trilingual)',
+      monthlyPrice: '$3497/monthly',
+      button: 'SDeplo',
     },
     {
       id: 2,
-      title: "Appointment Setter (Trilingual)",
-      monthlyPrice: "$497/monthly",
-      button: "Deplo",
+      title: 'Appointment Setter(Trilingual)',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deplo',
     },
     {
       id: 3,
-      title: "Appointment Setter (Trilingual)",
-      monthlyPrice: "$497/monthly",
-      button: "Deploy",
+      title: 'Lead Nurturer(Trilingual)',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deploy',
     },
     {
       id: 4,
-      title: "Support Employee (Trilingual)",
-      monthlyPrice: "$497/monthly",
-      button: "Deploy",
+      title: 'Admin Support',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deploy',
     },
   ];
 
@@ -92,7 +92,7 @@ const BusinessWorkForceV2 = () => {
       {/* ✅ Main Content */}
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
+          <h1 className="bwv1-title text-2xl md:text-5xl  leading-14 font-bold text-white">
             Business Workforce v2
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">

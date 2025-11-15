@@ -6,6 +6,9 @@ import AboutUs from "@/components/modules/AboutUs";
 import Banner from "@/components/modules/home-page/banner/Banner";
 import Business from "@/components/modules/Business";
 import Service from "@/components/modules/Service";
+import Trailer from "@/components/modules/home-page/trailer/Trailer";
+import Evolution from "@/components/modules/home-page/evolution/Evolution";
+import { OurBlurbs } from "@/components/blurbs/OurBlurbs";
 
 export default function Home() {
   return (
@@ -13,9 +16,12 @@ export default function Home() {
       <Banner />
 
       <AboutUs />
+      <OurBlurbs/>
       <Business />
       {/* <Service /> */}
       <Explore />
+      <Trailer />
+      <Evolution />
       <Feedback />
       <Contact />
       <FAQ />

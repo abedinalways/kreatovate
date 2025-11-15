@@ -83,7 +83,6 @@ const WhoWeAre = () => {
       );
     }, sectionRef);
 
-    
     ScrollTrigger.refresh();
 
     const onLoad = () => ScrollTrigger.refresh();
@@ -96,7 +95,11 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-[#0F1016] py-24 px-4 lg:px-4 xl:px-0">
+    <div
+      id="who_we_are"
+      ref={sectionRef}
+      className="bg-[#0F1016] py-24 px-4 lg:px-4 xl:px-0"
+    >
       <div className="custom-container grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center gap-6 lg:row-span-2">
           <div className="flex flex-col gap-4 md:gap-1 js-wwa-heading">

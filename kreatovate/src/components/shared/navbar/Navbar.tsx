@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonOne btnText="contact us" />
+          <ButtonOne href="/contact-us" btnText="contact us" />
         </div>
 
         <div className="lg:hidden">

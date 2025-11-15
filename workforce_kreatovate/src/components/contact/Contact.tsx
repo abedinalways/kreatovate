@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Calendar } from "../ui/calendar";
 import { ConsultationForm } from "../shared/consultation form/ConsultationForm";
+import HeadingButton from "../shared/HeadingButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,16 +82,16 @@ const Contact = () => {
       <div className="md:flex gap-30 py-[100px] custom-container px-4 md:px-5 justify-center items-start pb-20">
         {/* Left side: Form */}
         <div className="flex flex-col gap-2 items-start about-image">
-          <p className="text-gradient">[ Book an appointment ]</p>
+          <HeadingButton btnText="Contact Us" className="w-33 py-0" />
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-14 mb-12">
-            Ready to Transform <br /> Your{" "}
+            Ready to Transform <br /> Your{' '}
             <span className="text-gradient">Business</span>?
           </h2>
 
           <ConsultationForm
             title="Schedule Your Free Consultation"
             subtitle="We'd love to hear from you"
-            buttonText="Book A Consultation"
+            buttonText="Book a Consultation"
             showButtonIcon={false}
             onSubmit={handleFormSubmit}
           />

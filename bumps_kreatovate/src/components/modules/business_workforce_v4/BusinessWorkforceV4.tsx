@@ -50,14 +50,14 @@ const BusinessWorkForceV4 = () => {
     {
       id: 1,
       title: "Closer (All Encompassing)",
-      monthlyPrice: "$3997/monthly",
-      button: "SDeplo",
+      monthlyPrice: "$4997/monthly",
+      button: "Deploy",
     },
     {
       id: 2,
       title: "Appointment Setter (All Encompassing)",
       monthlyPrice: "$3997/monthly",
-      button: "Deplo",
+      button: "Deploy",
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ const BusinessWorkForceV4 = () => {
     },
     {
       id: 4,
-      title: "Support Employee (All Encompassing)",
+      title: "Admin Support (All Encompassing)",
       monthlyPrice: "$3997/monthly",
       button: "Deploy",
     },
@@ -93,7 +93,7 @@ const BusinessWorkForceV4 = () => {
       {/* ✅ Main Content */}
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
         <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="bwv1-title text-2xl sm:text-5xl md:text-6xl leading-14 font-bold text-white">
+          <h1 className="bwv1-title text-2xl  md:text-5xl leading-14 font-bold text-white">
             Business Workforce v4
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">

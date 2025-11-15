@@ -19,7 +19,7 @@ const Explore = () => {
             Start Building Your AI <br />Workforce Today
           </h2>
 
-          <p className="text-gray-300 max-w-xl text-sm md:text-base">
+          <p className="text-gray-300 max-w-xl text-sm md:text-base font-[roboto]">
             Experience how we’re transforming the workforce with AI-powered
             innovation. Dive deeper into our ecosystem.
           </p>

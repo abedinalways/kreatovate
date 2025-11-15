@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/50 px-4 md:px-5 py-5 backdrop-blur-0 bg-black/0"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/50 px-4 md:px-5 py-2 backdrop-blur-0 bg-black/0"
     >
       <div className="custom-container flex items-center justify-between">
         <Logo />
@@ -64,9 +64,9 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <ButtonAll
-            btnText="book consultation now"
+            btnText="Book Consultation Now"
             href="/#contact_us"
-            className="text-sm py-5"
+            className="md:text-sm py-5"
           />
         </div>
 
@@ -89,8 +89,8 @@ const Navbar = () => {
                 </div>
 
                 <ButtonAll
-                  btnText="book consultation now"
-                  className="w-fit text-sm font-normal py-6!"
+                  btnText="Book Consultation Now"
+                  className="w-fit text-sm font-normal "
                   href="/#contact_us"
                 />
               </SheetHeader>

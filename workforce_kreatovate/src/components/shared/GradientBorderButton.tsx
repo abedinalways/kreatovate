@@ -12,11 +12,11 @@ const GradientBorderButton = ({ btnText }: BtnProps) => {
       <Button
         asChild
         variant="ghost"
-        className="w-full rounded-[10px] bg-[#0B111F] hover:bg-[#0B111F] text-white hover:text-white px-4 py-6 text-lg font-medium cursor-pointer"
+        className="w-full rounded-[10px] bg-[#0B111F] hover:bg-[#0B111F] text-white hover:text-white px-4 py-6 md:text-md font-medium cursor-pointer"
       >
         <Link
           href={"/"}
-          className="block w-full text-center text-lg font-medium leading-8"
+          className="block w-full text-center md:text-md font-medium leading-8"
         >
           {btnText}
         </Link>

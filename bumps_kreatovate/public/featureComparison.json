@@ -27,7 +27,7 @@
     {
       "name": "Avatar Builder (Personal)",
       "availability": [
-        "unavailable",
+        "available",
         "unavailable",
         "unavailable",
         "unavailable",
@@ -39,7 +39,7 @@
     {
       "name": "Credit Repair Agent",
       "availability": [
-        "unavailable",
+        "available",
         "unavailable",
         "unavailable",
         "unavailable",
@@ -147,7 +147,7 @@
     {
       "name": "Quality Assurance Employee",
       "availability": [
-        "available",
+        "unavailable",
         "available",
         "available",
         "available",
@@ -221,7 +221,7 @@
       "availability": [
         "unavailable",
         "unavailable",
-        "available",
+        "unavailable",
         "available",
         "available",
         "available",
@@ -233,7 +233,7 @@
       "availability": [
         "unavailable",
         "unavailable",
-        "available",
+        "unavailable",
         "available",
         "available",
         "available",
@@ -243,7 +243,7 @@
     {
       "name": "Retail Clothing Arbitrage Agent",
       "availability": [
-        "unavailable",
+        "available",
         "available",
         "available",
         "available",
@@ -295,8 +295,8 @@
         "unavailable",
         "unavailable",
         "unavailable",
-        "unavailable",
-        "unavailable",
+        "available",
+        "available",
         "available"
       ]
     }

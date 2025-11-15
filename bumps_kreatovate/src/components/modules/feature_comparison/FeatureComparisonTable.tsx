@@ -68,11 +68,11 @@ const FeatureComparisonTable = () => {
       </div>
 
       {/* Table Section */}
-<div className="relative rounded-xl p-[1px] ">
+<div className="relative rounded-xl p-[px] ">
   <Card className="overflow-auto bg-[#11121a] shadow-lg custom-container py-12 rounded-xl border-0">
     <table className="min-w-full border-collapse rounded-xl">
       <thead>
-        <tr className="bg-[#151823] text-sm md:text-base text-gray-300">
+        <tr className="bg-[#151823] text-xs text-gray-300">
           {data.columns.map((col, i) => (
             <th
               key={i}

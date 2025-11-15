@@ -22,18 +22,42 @@ export function Calendar({ onDatesChange }: CalendarProps) {
   const [selectedZone, setSelectedZone] = React.useState('CET');
 
   const timeZones = [
-    { code: 'CET', label: 'Central European Time (GMT+1)' },
-    { code: 'BST', label: 'British Summer Time (GMT+1)' },
     { code: 'UTC', label: 'Coordinated Universal Time (GMT+0)' },
-    { code: 'EST', label: 'Eastern Standard Time (GMT-5)' },
-    { code: 'PST', label: 'Pacific Standard Time (GMT-8)' },
+    { code: 'GMT', label: 'Greenwich Mean Time (GMT+0)' },
+    { code: 'ECT', label: 'European Central Time (GMT+1)' },
+    { code: 'EET', label: 'Eastern European Time (GMT+2)' },
+    { code: 'ART', label: 'Eastern European Summer Time (GMT+3)' },
+    { code: 'EAT', label: 'Eastern Africa Time (GMT+3)' },
+    { code: 'MET', label: 'Middle East Time (GMT+3:30)' },
+    { code: 'NET', label: 'Near East Time (GMT+4)' },
+    { code: 'PLT', label: 'Pakistan Lahore Time (GMT+5)' },
     { code: 'IST', label: 'India Standard Time (GMT+5:30)' },
+    { code: 'BST', label: 'Bangladesh Standard Time (GMT+6)' },
+    { code: 'VST', label: 'Vietnam Standard Time (GMT+7)' },
+    { code: 'CTT', label: 'China Taiwan Time (GMT+8)' },
     { code: 'JST', label: 'Japan Standard Time (GMT+9)' },
+    { code: 'ACT', label: 'Australia Central Time (GMT+9:30)' },
+    { code: 'AET', label: 'Australia Eastern Time (GMT+10)' },
+    { code: 'SST', label: 'Solomon Standard Time (GMT+11)' },
+    { code: 'NST', label: 'New Zealand Standard Time (GMT+12)' },
+    { code: 'MIT', label: 'Midway Islands Time (GMT-11)' },
+    { code: 'HST', label: 'Hawaii Standard Time (GMT-10)' },
+    { code: 'AST', label: 'Alaska Standard Time (GMT-9)' },
+    { code: 'PST', label: 'Pacific Standard Time (GMT-8)' },
+    { code: 'MST', label: 'Mountain Standard Time (GMT-7)' },
+    { code: 'CST', label: 'Central Standard Time (GMT-6)' },
+    { code: 'EST', label: 'Eastern Standard Time (GMT-5)' },
+    { code: 'IET', label: 'Indiana Eastern Standard Time (GMT-5)' },
+    { code: 'PRT', label: 'Puerto Rico and US Virgin Islands Time (GMT-4)' },
+    { code: 'CNT', label: 'Canada Newfoundland Time (GMT-3:30)' },
+    { code: 'AGT', label: 'Argentina Standard Time (GMT-3)' },
+    { code: 'BET', label: 'Brazil Eastern Time (GMT-3)' },
+    { code: 'CAT', label: 'Central Africa Time (GMT+2)' },
   ];
 
   const handleSelect = (dates: Date[] | Date | undefined) => {
     if (!dates) return;
-    let updatedDates: Date[] = Array.isArray(dates) ? dates : [dates];
+    const updatedDates: Date[] = Array.isArray(dates) ? dates : [dates];
     setSelectedDates(updatedDates);
     onDatesChange?.(updatedDates);
   };
@@ -50,15 +74,17 @@ export function Calendar({ onDatesChange }: CalendarProps) {
           selected={selectedDates}
           onSelect={handleSelect}
           footer={
-            selectedDates.length > 0
-              ? `${selectedDates.length} date(s) selected`
-              : undefined
+            <div className="mt-4 text-center text-sm text-gray-300">
+              {selectedDates.length > 0
+                ? `${selectedDates.length} date(s) selected`
+                : 'No date selected'}
+            </div>
           }
           className="mx-auto"
           modifiersClassNames={{
             selected:
-              'bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full',
-            today: 'bg-purple-700 text-white rounded-full',
+              'bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full my-2',
+            today: 'bg-purple-700 text-white rounded-full ',
           }}
         />
       </div>
@@ -67,7 +93,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
       <div className="mt-4">
         <p className="text-sm text-white/70 mb-1">Time zone</p>
         <Select onValueChange={setSelectedZone} defaultValue={selectedZone}>
-          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white/80 px-3 py-2 rounded-md flex items-center justify-between">
+          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white/80 px-3 py-2 rounded-md flex items-center justify-between cursor-pointer">
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-white/60" />
               <SelectValue placeholder="Select a timezone" />
@@ -93,7 +119,7 @@ export function Calendar({ onDatesChange }: CalendarProps) {
           {selectedDates.map(date => (
             <span
               key={date.toISOString()}
-              className="px-1 py-1 bg-purple-600/50 rounded-full text-xs"
+              className="px-2 py-2 bg-purple-600/50 rounded-full text-xs"
             >
               {date.toDateString()}
             </span>

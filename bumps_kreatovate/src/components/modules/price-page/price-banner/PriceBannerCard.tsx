@@ -20,11 +20,11 @@ const PriceBannerCard = ({ plan }: { plan: PricePlan }) => {
       className={cn(
         'w-full h-full max-w-full sm:aspect-424/631 lg:aspect-auto',
 
-        'bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] border border-purple-500/60 shadow-2xl p-2px rounded-xl'
+        'bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] border border-purple-500/60 shadow-2xl p-2px rounded-xl font-jakarta'
       )}
     >
       <div
-        className="rounded-xl h-full  flex flex-col justify-between p-4 sm:p-6"
+        className="rounded-xl h-full  flex flex-col justify-between px-4 py-8 sm:p-6"
         style={{
           background:
             'linear-gradient(120deg, rgba(226, 15, 18, 0.2) 40%, rgba(56, 83, 255, 0.2) 60%)',

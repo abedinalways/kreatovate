@@ -136,10 +136,7 @@
 .text-color-gradient {
   @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
-.text-gradient {
-  @apply bg-gradient-to-r from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text;
-}
-
+ 
 .heading-btn-bg {
   @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
 }
@@ -177,12 +174,15 @@
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
 }
 
-.text-gradient {
-  @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none;
+.text-gradient{
+  @apply  text-transparent bg-clip-text;
+  background-image: linear-gradient(to left, #E21717 10%, #3700FF 90%);
 }
-
+.bg-gradient {
+  background: linear-gradient(to right, #3700FF 60%, #E21717 20%, #3700FF 30%);
+}
 .text-gradient-special {
-  @apply bg-linear-to-r from-[#E93D3D] to-[#4E30FE] inline-block text-transparent bg-clip-text leading-none pb-[8px];
+  @apply bg-linear-to-r from-[#FF0000] to-[#6b7cff] inline-block text-transparent bg-clip-text leading-none;
 }
 .mask {
   display: inline-block;
