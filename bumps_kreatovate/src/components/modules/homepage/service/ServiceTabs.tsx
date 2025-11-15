@@ -103,7 +103,7 @@ const ServiceTabs = () => {
       id: 'm6',
       title: 'Blockchain Implementation',
       desc: 'Transform your business with intelligent automation tools. Our AI SaaS software delivers a seamless solution to handle complex daily tasks through smart blockchain integration.',
-      image: '/images/marketing06.png',
+      image: '/images/marketing08.png',
       href: '/services/blockchain-implementation',
     },
     {

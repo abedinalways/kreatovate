@@ -8,11 +8,11 @@ export interface BtnProps {
 
 const GradientBorderButton = ({ btnText }: BtnProps) => {
   return (
-    <div className="p-[2px] rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
+    <div className="p-[2px] rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE]">
       <Button
         asChild
         variant="ghost"
-        className="w-full rounded-[10px] bg-[#0B111F] hover:bg-[#0B111F] text-white hover:text-white px-4 py-6 text-lg font-medium"
+        className="w-full cursor-pointer rounded-[10px] bg-[#0B111F] hover:bg-[#0B111F] text-white hover:text-white px-4 py-6 text-lg font-medium"
       >
         <Link
           href={'/'}
