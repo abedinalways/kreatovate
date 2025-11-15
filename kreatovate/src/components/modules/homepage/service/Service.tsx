@@ -3,8 +3,8 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import HeadingButton from "@/components/shared/buttons/HeadingButton";
 import ServiceTabs from "./ServiceTabs";
-import SectionHead from "@/components/shared/SectionHead";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +14,7 @@ const Service = () => {
   useLayoutEffect(() => {
     if (!sectionRef.current) return;
     const ctx = gsap.context(() => {
+      // Heading masked sweep (clip-path + blur-to-sharp)
       const masks = gsap.utils.toArray<HTMLElement>(".svc-head .mask");
       gsap.set(masks, { opacity: 1 });
 
@@ -29,6 +30,7 @@ const Service = () => {
         },
       });
 
+      // Paragraph fade-in after masks
       gsap.fromTo(
         ".svc-head p",
         { opacity: 0, y: 12, filter: "blur(6px)" },
@@ -54,12 +56,12 @@ const Service = () => {
     <div
       id="our_services"
       ref={sectionRef}
-      className="py-16 mx-auto bg-[#000000] scroll-mt-20 px-4"
+      className="md:py-16 mx-auto bg-[#000000] scroll-mt-20 px-4 font-jakarta"
     >
       <div className="flex flex-col items-center gap-6 custom-container">
         <div className="svc-head flex flex-col items-center gap-7 relative">
-          <div className="w-fit">
-            <SectionHead title="Our Service" />
+          <div>
+            <HeadingButton btnText="Service" />
           </div>
 
           <div className="flex flex-col gap-4 text-center">
@@ -69,7 +71,7 @@ const Service = () => {
                 AI&nbsp;Powered&nbsp;
               </span>
               <span className="mask text-color-gradient inline-block">
-                Business Automation Solutions
+                Business&nbsp;Solutions
               </span>
             </h1>
 
