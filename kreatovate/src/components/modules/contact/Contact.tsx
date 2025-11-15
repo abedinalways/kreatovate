@@ -85,9 +85,9 @@ const Contact = () => {
             For <span className="text-gradient">Expert Guidance</span>
           </h1>
 
-          <p className="js-contact-intro mt-3 md:mt-4 font-roboto text-sm md:text-md max-w-xl text-gray-200 banner-subtext">
-            Ready to elevate your business? Contact Kreatovate today to schedule
-            a consultation and discover.
+          <p className="js-contact-intro mt-3 md:mt-4 font-[roboto] text-sm md:text-md max-w-xl text-gray-200 banner-subtext">
+            Our job is to simply positively affect your organizations overall
+            bottom line while simultaneously ensuring exponential
           </p>
         </div>
 

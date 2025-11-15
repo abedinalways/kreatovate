@@ -15,7 +15,7 @@ const SectionHead = ({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 bg-white/10 py-2 px-8 md:px-16 w-fit rounded-full mx-auto banner-tagline border border-gray-400",
+        "flex items-center gap-3 bg-white/10 py-1 px-4 md:px-8 rounded-full mx-auto banner-tagline border border-gray-400",
         className
       )}
     >
@@ -27,7 +27,7 @@ const SectionHead = ({
       />
       <p
         className={cn(
-          "font-roboto text-sm md:text-lg font-light text-color-gradient uppercase text-center pb-0!",
+          "font-roboto text-sm font-semibold text-color-gradient uppercase text-center pb-0!",
           titleClassName
         )}
       >

@@ -11,7 +11,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -114,8 +113,8 @@ const Team: React.FC = () => {
               width={60}
               height={16}
             />
-            <p className="mx-2 font-roboto bg-white/10 text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
-              our workforce team
+            <p className="mx-2 font-[roboto]  text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
+              our ai workforce team
             </p>
             <Image
               src="/images/hrline1.png"
@@ -205,8 +204,8 @@ const Team: React.FC = () => {
                             <header className="flex items-center justify-between gap-3">
                               <div className="flex items-center gap-3 min-w-0">
                                 <Image
-                                  width={50}
-                                  height={50}
+                                  width={40}
+                                  height={40}
                                   src={p.hoverImg}
                                   alt="image"
                                   className="rounded-full border border-[#D1C8C8] bg-purple-200 shrink-0"
