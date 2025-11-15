@@ -2,6 +2,7 @@
 import BusinessWorkForceV2 from '@/components/modules/Business_Workforce_v2/BusinessWorkforceV2';
 import BusinessWorkForceV3 from '@/components/modules/Business_Workforce_v3/BusinessWorkforceV3';
 import AddOnsUpgrades from '@/components/modules/add_ons/AddOnsUpgrades';
+import AvailableForRent from '@/components/modules/available_for_rent/AvailableForRent';
 import BusinessWorkForce from '@/components/modules/business_workforce/BusinessWorkforce';
 import BusinessWorkForceV4 from '@/components/modules/business_workforce_v4/BusinessWorkforceV4';
 import ContactUs from '@/components/modules/contact_us/ContactUs';
@@ -24,6 +25,7 @@ const PricePage = () => {
       <BusinessWorkForceV2 />
       <BusinessWorkForceV3 />
       <BusinessWorkForceV4 />
+      <AvailableForRent/>
       <PremiumEnterprise />
       <SaaSA1EmployeeLicensing/>
       <Explore />

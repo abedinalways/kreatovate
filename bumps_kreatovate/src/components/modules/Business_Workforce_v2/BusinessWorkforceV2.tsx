@@ -48,27 +48,27 @@ const BusinessWorkForceV2 = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Closer (Trilingual)",
-      monthlyPrice: "$3497/monthly",
-      button: "SDeplo",
+      title: 'Closer(Trilingual)',
+      monthlyPrice: '$3497/monthly',
+      button: 'SDeplo',
     },
     {
       id: 2,
-      title: "Appointment Setter (Trilingual)",
-      monthlyPrice: "$2497/monthly",
-      button: "Deplo",
+      title: 'Appointment Setter(Trilingual)',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deplo',
     },
     {
       id: 3,
-      title: "Appointment Setter (Trilingual)",
-      monthlyPrice: "$2497/monthly",
-      button: "Deploy",
+      title: 'Lead Nurturer(Trilingual)',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deploy',
     },
     {
       id: 4,
-      title: "Admin Support (Trilingual)",
-      monthlyPrice: "$2497/monthly",
-      button: "Deploy",
+      title: 'Admin Support',
+      monthlyPrice: '$2497/monthly',
+      button: 'Deploy',
     },
   ];
 

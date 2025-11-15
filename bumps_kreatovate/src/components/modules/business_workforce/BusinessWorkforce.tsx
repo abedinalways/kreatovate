@@ -47,70 +47,36 @@ const BusinessWorkForce = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
+      title: "Avatar Builder",
+      price: 497,
+      description:
+      "Creates branded avatars for outreach, training, or marketing.",
+      button: "Subscribe",
+    },
+    {
+      id: 2,
+      title: "Investigator",
+      price: 597,
+      description: "Basic background checks and internet scrubbing.",
+      button: "Subscribe",
+    },
+    {
+      id: 3,
+      title: "Lead Generation ",
+      price: 997,
+      description:
+      "AI prospector that finds, qualifies, and routes high-quality leads.",
+      button: "Subscribe",
+    },
+    {
+      id: 4,
       title: "Content Manager",
       price: 497,
       description:
         "Generates posts, captions, hashtags, and schedules content.",
       button: "Subscribe",
     },
-    {
-      id: 2,
-      title: "Avatar Builder (Business)",
-      price: 497,
-      description:
-        "Creates branded avatars for outreach, training, or marketing.",
-      button: "Subscribe",
-    },
-    {
-      id: 3,
-      title: "Investigator (Lite)",
-      price: 597,
-      description: "Basic background checks and internet scrubbing.",
-      button: "Subscribe",
-    },
-    {
-      id: 4,
-      title: "Lead Generation Employee",
-      price: 997,
-      description:
-        "AI prospector that finds, qualifies, and routes high-quality leads.",
-      button: "Subscribe",
-    },
-    {
-      id: 5,
-      title: "Order Taker Employee",
-      price: 997,
-      description: "Captures and confirms orders via voice or chat support.",
-      button: "Subscribe",
-    },
-    {
-      id: 6,
-      title: "Closer (Voice)",
-      price: 1497,
-      description: "Outbound sales employee that calls and closes deals.",
-      button: "Subscribe",
-    },
-    {
-      id: 7,
-      title: "Appointment Setter",
-      price: 1497,
-      description: "Schedules and confirms client calls seamlessly.",
-      button: "Subscribe",
-    },
-    {
-      id: 8,
-      title: "Lead Nurturer",
-      price: 1497,
-      description: "Warms leads with education and timely follow-ups.",
-      button: "Subscribe",
-    },
-    {
-      id: 9,
-      title: "Admin Support",
-      price: 1497,
-      description: "Handles FAQs, service issues, and retention.",
-      button: "Subscribe",
-    },
+
   ];
 
   return (
@@ -128,15 +94,15 @@ const BusinessWorkForce = () => {
             Business Workforce v1
           </h1>
           <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">
-            Lite / Starter Voice Employees
+            Lite / Starter Non-Voice Employees
           </p>
         </div>
 
         <div
           ref={gridRef}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch business-card"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch business-card"
         >
-          {businessData?.map((data) => (
+          {businessData?.map(data => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>

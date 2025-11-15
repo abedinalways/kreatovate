@@ -62,32 +62,19 @@ const BusinessWorkForceV3 = () => {
     },
     {
       id: 3,
-      title: "Lead Nurturer (Memory Enabled",
+      title: "Lead Nurturer",
       price: 2997,
       description: "ATS-safe, A1-powered resume builder..",
       button: "Subscribe",
     },
     {
       id: 4,
-      title: "Admin Support",
+      title: "Admin Support(All Encompassing)",
       price: 2997,
       description: "ATS-safe, A1-powered resume builder.",
       button: "Subscribe",
     },
-    {
-      id: 5,
-      title: "Technical Support Emp Enabled",
-      price: 2997,
-      description: "ATS-safe, A1-powered resume builder.",
-      button: "Subscribe",
-    },
-    {
-      id: 6,
-      title: "Administrative Assistant",
-      price: 2997,
-      description: "ATS-safe, A1-powered resume builder.",
-      button: "Subscribe",
-    },
+    
   ];
 
   return (
@@ -111,7 +98,7 @@ const BusinessWorkForceV3 = () => {
 
         <div
           ref={gridRef}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch business-card"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch business-card"
         >
           {businessData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
