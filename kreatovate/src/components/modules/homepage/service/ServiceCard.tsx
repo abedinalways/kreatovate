@@ -12,9 +12,9 @@ export interface ServiceItem {
 
 const ServiceCard = ({ title, desc, image, href }: ServiceItem) => {
   return (
-    <div className="svc-card p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] h-full">
-      <div className="rounded-[10px] w-full h-full bg-black overflow-hidden flex flex-col">
-        <div className="relative flex flex-col items-center gap-5 p-6 grow">
+    <div className="svc-card p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
+      <div className="rounded-[10px] w-full h-full bg-black overflow-hidden">
+        <div className="relative flex flex-col items-center gap-5 p-6 h-full">
           {/* background lights */}
           <Image
             src="/images/service-light-1.png"
@@ -41,11 +41,9 @@ const ServiceCard = ({ title, desc, image, href }: ServiceItem) => {
           />
 
           {/* text section */}
-          <div className="z-20 flex flex-col gap-4 text-left grow justify-between">
-            <div>
-              <h1 className="text-lg lg:text-2xl font-semibold">{title}</h1>
-              <p className="text-sm text-gray-400 line-clamp-2">{desc}</p>
-            </div>
+          <div className="z-20 flex flex-col gap-4 text-center">
+            <h1 className="text-lg lg:text-2xl font-semibold">{title}</h1>
+            <p className="text-xs md:text-sm text-[#A5A5AB]">{desc}</p>
 
             <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer">
               <Button

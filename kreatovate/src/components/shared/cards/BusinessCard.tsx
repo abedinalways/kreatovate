@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { BusinessItem } from '../../../../types';
-import GradientBorderButton from '../buttons/GradientBorderButton';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { BusinessItem } from "../../../../types";
+import GradientBorderButton from "../buttons/GradientBorderButton";
 
 interface CardProps {
   data: BusinessItem;
@@ -20,20 +20,20 @@ const BusinessCard = ({ data }: CardProps) => {
 
     // subtle hover scale/elevate
     const onEnter = () =>
-      gsap.to(el, { scale: 1.02, y: -4, duration: 0.25, ease: 'power2.out' });
+      gsap.to(el, { scale: 1.02, y: -4, duration: 0.25, ease: "power2.out" });
     const onLeave = () =>
-      gsap.to(el, { scale: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+      gsap.to(el, { scale: 1, y: 0, duration: 0.25, ease: "power2.out" });
 
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
     return () => {
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
     };
   }, []);
 
   return (
-    <div className="h-full business-card relative bg-color-gradient p-[1px] rounded-2xl ">
+    <div className="h-full business-card relative bg-color-gradient p-[1px] rounded-2xl overflow-hidden">
       <div className=" absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
