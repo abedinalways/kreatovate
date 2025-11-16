@@ -1,20 +1,18 @@
-"use client";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { BsFacebook } from "react-icons/bs";
-import { gsap } from "gsap";
+'use client';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BsFacebook } from 'react-icons/bs';
+import { gsap } from 'gsap';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 // shadcn carousel
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import HeadingButton from "@/components/shared/buttons/HeadingButton";
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 // --- Types ---
 interface Profile {
@@ -47,16 +45,16 @@ const Team: React.FC = () => {
   // Fetch data
   useEffect(() => {
     let isMounted = true;
-    fetch("/profiles.json")
-      .then((res) => {
+    fetch('/profiles.json')
+      .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       })
       .then((data: Profile[]) => {
         if (isMounted) setProfiles(Array.isArray(data) ? data : []);
       })
-      .catch((err) => {
-        console.error("Failed to load profiles:", err);
+      .catch(err => {
+        console.error('Failed to load profiles:', err);
         if (isMounted) setError("Couldn't load team profiles.");
       })
       .finally(() => isMounted && setLoading(false));
@@ -72,14 +70,14 @@ const Team: React.FC = () => {
     const ctx = gsap.context(() => {
       gsap.set(el, { opacity: 0, y: 24 });
       const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+        entries => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
               gsap.to(el, {
                 opacity: 1,
                 y: 0,
                 duration: 0.7,
-                ease: "power3.out",
+                ease: 'power3.out',
               });
               io.disconnect();
             }
@@ -94,18 +92,45 @@ const Team: React.FC = () => {
 
   return (
     <div className="relative w-full" id="our_team">
+      <div className="absolute top-0 right-20 z-0 rotate-180 rounded-full">
+        <Image
+          src="/images/strategy-ellipse1.png"
+          alt="bg light"
+          width={513}
+          height={208}
+        />
+      </div>
       <div
         ref={sectionRef}
-        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center"
+        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center font-openSans"
       >
-        <div className="flex justify-center items-center mb-4 mt-6">
-          <HeadingButton btnText="WORKFORCE TEAM" />
+        {/* heading */}
+        <div className="w-fit mx-auto">
+          <div className="flex items-center justify-center bg-white/10  md:px-4  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={60}
+              height={16}
+            />
+            <p className="mx-2 font-[roboto]  text-[10px] text-center py-2 font-bold text-gradient-special  uppercase">
+              our ai workforce team
+            </p>
+            <Image
+              src="/images/hrline1.png"
+              alt="heading line vector 1"
+              width={60}
+              height={16}
+              className="scale-x-[-1]"
+            />
+          </div>
         </div>
+        {/*  */}
 
         <h2 className="text-3xl md:text-5xl text-center font-bold">
-          AI Powered{" "}
+          Kreatovate{' '}
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
-            Workforce Team
+            Team
           </span>
         </h2>
 
@@ -136,15 +161,15 @@ const Team: React.FC = () => {
           {!loading && !error && profiles.length > 0 && (
             <Carousel
               className="w-full"
-              opts={{ align: "start", loop: true }}
+              opts={{ align: 'start', loop: true }}
               plugins={[autoplay.current]}
               onMouseEnter={autoplay.current.stop}
             >
               <CarouselContent>
-                {profiles.map((p) => (
+                {profiles.map(p => (
                   <CarouselItem
                     key={p.id}
-                    className="basis-full md:basis-1/2 lg:basis-1/4 px-4 sm:px-3"
+                    className="basis-full md:basis-1/2 lg:basis-1/3 px-4 sm:px-3"
                   >
                     <article
                       data-card
@@ -152,7 +177,7 @@ const Team: React.FC = () => {
                     >
                       <div className="relative w-full rounded-2xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE] h-full">
                         <div className="relative rounded-2xl overflow-hidden bg-[#1A1A1A] group-hover:scale-[1.01] transition-transform duration-500 h-full">
-                          <div className="w-full aspect-3/4">
+                          <div className="w-full aspect-2/3">
                             <Image
                               width={800}
                               height={1066}
@@ -160,9 +185,9 @@ const Team: React.FC = () => {
                               alt={
                                 p.name
                                   ? `${p.name} – ${p.title}`
-                                  : "Team member"
+                                  : 'Team member'
                               }
-                              className="object-cover w-full h-full mx-auto transition-transform duration-700 group-hover:scale-105"
+                              className="w-full h-fit absolute md:top-15 top-6 object-cover transition-transform duration-700 group-hover:scale-100"
                               sizes="(min-width:1280px) 20rem, (min-width:1024px) 18rem, (min-width:640px) 50vw, 100vw"
                             />
                           </div>
@@ -172,18 +197,18 @@ const Team: React.FC = () => {
                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out p-4 sm:p-5 text-white flex flex-col justify-between"
                             style={{
                               background:
-                                "linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)",
+                                'linear-gradient(90deg, rgba(226, 23, 23, 0.9) 0%, rgba(55, 0, 255, 0.9) 100%)',
                             }}
                             aria-hidden
                           >
                             <header className="flex items-center justify-between gap-3">
                               <div className="flex items-center gap-3 min-w-0">
                                 <Image
-                                  width={50}
-                                  height={50}
+                                  width={40}
+                                  height={40}
                                   src={p.hoverImg}
-                                  alt="hover"
-                                  className="rounded-full border border-[#D1C8C8] bg-white/10 shrink-0"
+                                  alt="image"
+                                  className="rounded-full border border-[#D1C8C8] bg-purple-200 shrink-0"
                                 />
                                 <div className="min-w-0">
                                   <h3 className="text-sm font-semibold truncate">
@@ -223,7 +248,7 @@ const Team: React.FC = () => {
                                     <li>
                                       <span className="font-semibold text-gray-100">
                                         Superpower:
-                                      </span>{" "}
+                                      </span>{' '}
                                       {p.superpower}
                                     </li>
                                   )}
@@ -231,7 +256,7 @@ const Team: React.FC = () => {
                                     <li>
                                       <span className="font-semibold text-gray-100">
                                         Weakness:
-                                      </span>{" "}
+                                      </span>{' '}
                                       {p.weakness}
                                     </li>
                                   )}
@@ -241,37 +266,53 @@ const Team: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Bottom Info (not hovered) */}
+                        {/* Bottom Info */}
                         <div className="absolute left-4 right-4 bottom-4 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
                           <div
-                            className="backdrop-blur-xl rounded-xl px-4 py-2 shadow-lg flex items-center justify-between"
+                            className="backdrop-blur-xl rounded-xl px-4 py-2 shadow-lg flex items-center gap-15"
                             style={{
                               background:
-                                "linear-gradient(120deg, rgba(226, 15, 18, 0.2) 40%, rgba(56, 83, 255, 0.2) 60%)",
-                              border: "2px solid rgba(255, 255, 255, 0.2)",
+                                'linear-gradient(120deg, rgba(226, 15, 18, 0.2) 40%, rgba(56, 83, 255, 0.2) 60%)',
+                              border: '2px solid rgba(255, 255, 255, 0.2)',
                             }}
                           >
                             <div className="min-w-0">
-                              <div className="text-white font-semibold text-sm truncate">
+                              <div className="text-white font-semibold text-xs md:text-sm truncate">
                                 {p.name}
                               </div>
-                              <div className="text-white/70 text-xs truncate">
+                              <div className="text-white/70  text-[8px] md:text-xs truncate">
                                 {p.title}
                               </div>
                             </div>
-                            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                              {p.facebookUrl ? (
-                                <a
-                                  href={p.facebookUrl}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                  className="inline-flex"
-                                >
-                                  <BsFacebook />
-                                </a>
-                              ) : (
-                                <BsFacebook aria-hidden />
-                              )}
+                            <div className="flex items-center justify-end md:gap-5 gap-2">
+                              <div className="md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center">
+                                {p.facebookUrl ? (
+                                  <a
+                                    href={p.facebookUrl}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="cursor-pointer"
+                                  >
+                                    <FaInstagram />
+                                  </a>
+                                ) : (
+                                  <FaInstagram aria-hidden />
+                                )}
+                              </div>
+                              <div className="md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center">
+                                {p.facebookUrl ? (
+                                  <a
+                                    href={p.facebookUrl}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="cursor-pointer"
+                                  >
+                                    <FaXTwitter />
+                                  </a>
+                                ) : (
+                                  <FaXTwitter aria-hidden />
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -282,8 +323,8 @@ const Team: React.FC = () => {
               </CarouselContent>
 
               {/* Arrows */}
-              <CarouselPrevious className="-left-6 md:left-[-38px] bg-white/20 hover:bg-white/30 border border-white/20 backdrop-blur-md text-white" />
-              <CarouselNext className="right-[-18px] bg-linear-to-r from-[#E21717] via-[#A000FF] to-[#3700FF] border border-black backdrop-blur-md text-white" />
+              {/* <CarouselPrevious className="left-[-24px] md:left-[-38px] bg-white/20 hover:bg-white/30 border border-white/20 backdrop-blur-md text-white" />
+              <CarouselNext className="right-[-18px] bg-gradient-to-r from-[#E21717] via-[#A000FF] to-[#3700FF] border border-black backdrop-blur-md text-white" /> */}
             </Carousel>
           )}
 
