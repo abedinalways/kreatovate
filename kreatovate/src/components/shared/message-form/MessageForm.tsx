@@ -85,7 +85,7 @@ export default function MessageForm({
   showButtonIcon = true,
   onSubmit,
   className,
-  apiEndpoint = "/api/consultation",
+  apiEndpoint = "/api/ghl",
   successMessage = "Form submitted successfully!",
   errorMessage = "Something went wrong. Please try again.",
 }: ConsultationFormProps) {
@@ -111,27 +111,43 @@ export default function MessageForm({
 
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    const payload = {
+      locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
+      fullName: data.fullName,
+      email: data.email,
+      phone: data.phone || undefined,
+      companyName: data.company,
+      source: 'Website - Consultation Form',
+      tags: ['Consultation Request', data.service || ''],
+      customFields: [
+        { key: 'service_interest', field_value: data.service },
+        { key: 'message', field_value: data.message },
+        
+      ],
+    };
+
     try {
-      if (onSubmit) {
-        await onSubmit(data as unknown as Record<string, unknown>);
-      } else {
-        const res = await fetch(apiEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        if (!res.ok) throw new Error("Failed to submit form");
+      const res = await fetch('/api/ghl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || 'Failed to submit form');
       }
-      alert(successMessage);
+
+      alert('Form submitted successfully!');
       form.reset();
     } catch (error) {
       console.error(error);
-      alert(errorMessage);
+      alert(error instanceof Error ? error.message : 'Something went wrong.');
     } finally {
+      // ✅ STOP "Submitting..."
       setIsSubmitting(false);
     }
   };
-
   const renderField = (field: FormFieldConfig) => (
     <FormField
       key={field.name}
