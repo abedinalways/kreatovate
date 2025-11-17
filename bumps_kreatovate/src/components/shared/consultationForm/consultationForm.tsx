@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 
 import * as React from "react";
@@ -25,7 +24,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
 import ButtonAll from "../buttons/ButtonAll";
 
 export interface FormFieldConfig {
@@ -52,6 +50,8 @@ export interface ConsultationFormProps {
   apiEndpoint?: string;
   successMessage?: string;
   errorMessage?: string;
+  selectedDates?: Date[];
+  selectedZone?: string;
 }
 
 const defaultFields: FormFieldConfig[] = [
@@ -61,7 +61,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "text",
     required: true,
     gridCol: 2,
-    validation: z.string().min(2),
+    validation: z.string().min(2, "First name must be at least 2 characters"),
   },
   {
     name: "lastName",
@@ -69,7 +69,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "text",
     required: true,
     gridCol: 2,
-    validation: z.string().min(2),
+    validation: z.string().min(2, "Last name must be at least 2 characters"),
   },
   {
     name: "company",
@@ -77,7 +77,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "text",
     required: true,
     gridCol: 1,
-    validation: z.string().min(2),
+    validation: z.string().min(2, "Company name must be at least 2 characters"),
   },
   {
     name: "email",
@@ -85,7 +85,15 @@ const defaultFields: FormFieldConfig[] = [
     type: "email",
     required: true,
     gridCol: 1,
-    validation: z.string().email(),
+    validation: z.string().email("Please enter a valid email address"),
+  },
+  {
+    name: "phone",
+    label: "Phone number",
+    type: "tel",
+    required: false,
+    gridCol: 1,
+    validation: z.string().optional(),
   },
   {
     name: "service",
@@ -93,7 +101,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "select",
     required: true,
     gridCol: 1,
-    validation: z.string().min(1),
+    validation: z.string().min(1, "Please select a service"),
     options: [
       { value: "digital-marketing", label: "Digital Marketing" },
       { value: "seo", label: "SEO Services" },
@@ -108,7 +116,7 @@ const defaultFields: FormFieldConfig[] = [
     label: "Message",
     type: "textarea",
     rows: 4,
-    gridCol: 1,
+    gridCol: 2,
     validation: z.string().optional(),
   },
 ];
@@ -122,23 +130,25 @@ export function ConsultationForm({
   showDecorator = true,
   onSubmit,
   className = "text-white",
-  apiEndpoint = "/api/consultation",
-  successMessage = "Form submitted successfully!",
+  apiEndpoint = "/api/ghl/book-consultation",
   errorMessage = "Something went wrong. Please try again.",
+  selectedDates = [],
+  selectedZone = "America/New_York",
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const createSchema = () => {
     const schemaFields: Record<string, z.ZodType<any, any>> = {};
     fields.forEach((field) => {
-      if (field.name === "selectedDates")
-        schemaFields[field.name] = z.array(z.string());
-      else if (field.validation) schemaFields[field.name] = field.validation;
-      else if (field.required)
+      if (field.validation) {
+        schemaFields[field.name] = field.validation;
+      } else if (field.required) {
         schemaFields[field.name] = z
           .string()
           .min(1, `${field.label} is required`);
-      else schemaFields[field.name] = z.string().optional();
+      } else {
+        schemaFields[field.name] = z.string().optional();
+      }
     });
     return z.object(schemaFields);
   };
@@ -148,32 +158,42 @@ export function ConsultationForm({
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      ...fields.reduce(
-        (acc, f) => ({ ...acc, [f.name]: "" }),
-        {} as Record<string, any>
-      ),
-      selectedDates: [],
-      timeZone: "CET",
-    },
+    defaultValues: fields.reduce(
+      (acc, f) => ({ ...acc, [f.name]: "" }),
+      {} as Record<string, any>
+    ),
   });
 
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      if (onSubmit) await onSubmit(data);
-      else {
+      console.log("Form data submitted:", data);
+
+      // Include selected dates and timezone in the form data
+      const formDataWithSchedule = {
+        ...data,
+        selectedDates: selectedDates.map((d) => d.toISOString()),
+        timeZone: selectedZone,
+      };
+
+      if (onSubmit) {
+        await onSubmit(formDataWithSchedule);
+      } else {
         const response = await fetch(apiEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formDataWithSchedule),
         });
-        if (!response.ok) throw new Error("Failed to submit form");
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Failed to submit form");
+        }
       }
-      alert(successMessage);
+
       form.reset();
     } catch (error) {
-      console.error(error);
+      console.error("Form submission error:", error);
       alert(errorMessage);
     } finally {
       setIsSubmitting(false);
@@ -186,26 +206,30 @@ export function ConsultationForm({
       control={form.control}
       name={field.name}
       render={({ field: formField }) => (
-        <FormItem>
-          <FormLabel>{field.label}</FormLabel>
+        <FormItem className={field.gridCol === 2 ? "col-span-2" : ""}>
+          <FormLabel className="text-white/80">
+            {field.label}
+            {field.required && <span className="text-red-400 ml-1">*</span>}
+          </FormLabel>
           <FormControl>
             {field.type === "textarea" ? (
               <Textarea
                 rows={field.rows}
                 placeholder={field.placeholder}
                 {...formField}
+                className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
               />
             ) : field.type === "select" ? (
               <Select
                 onValueChange={formField.onChange}
                 value={formField.value}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-white/5 border-white/10 text-white">
                   <SelectValue
                     placeholder={field.placeholder || "Select Option"}
                   />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[#1a0b2e] border-purple-500/30 text-white">
                   {field.options?.map((opt) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       {opt.label}
@@ -213,24 +237,16 @@ export function ConsultationForm({
                   ))}
                 </SelectContent>
               </Select>
-            ) : field.name === "selectedDates" ? (
-              <Calendar
-                onDatesChange={(dates) =>
-                  form.setValue(
-                    "selectedDates",
-                    dates.map((d) => d.toISOString())
-                  )
-                }
-              />
             ) : (
               <Input
                 type={field.type}
                 placeholder={field.placeholder}
                 {...formField}
+                className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
               />
             )}
           </FormControl>
-          <FormMessage />
+          <FormMessage className="text-red-400" />
         </FormItem>
       )}
     />
@@ -255,7 +271,6 @@ export function ConsultationForm({
           <div className="flex items-center justify-center w-full my-6">
             <div className="flex-1 h-px bg-[linear-gradient(90deg,#E21717_0%,#3700FF_100%)]" />
             <div className="mx-3 shrink-0">
-              {/* SVG Decorator */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
@@ -290,15 +305,39 @@ export function ConsultationForm({
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
-          {fields.map(renderField)}
+          <div className="grid grid-cols-2 gap-4">
+            {fields.map(renderField)}
+          </div>
+
+          {/* Schedule Summary */}
+          {selectedDates.length > 0 && (
+            <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
+              <h3 className="text-white font-semibold mb-2">
+                Selected Schedule:
+              </h3>
+              <div className="text-white/70 text-sm">
+                <p>
+                  Dates:{" "}
+                  {selectedDates
+                    .map((date) => date.toLocaleDateString())
+                    .join(", ")}
+                </p>
+                <p>Time Zone: {selectedZone}</p>
+              </div>
+            </div>
+          )}
+
           <ButtonAll
             type="submit"
-            btnText={buttonText}
-            disabled={isSubmitting}
-            className="w-full"
+            disabled={isSubmitting || selectedDates.length === 0}
+            className="w-full mt-4"
           >
-            {isSubmitting ? "Submitting..." : buttonText}
-            {showButtonIcon && !isSubmitting && (
+            {isSubmitting
+              ? "Submitting..."
+              : selectedDates.length === 0
+              ? "Please select a date"
+              : buttonText}
+            {showButtonIcon && !isSubmitting && selectedDates.length > 0 && (
               <ArrowRight className="w-5 h-5 ml-2" />
             )}
           </ButtonAll>
