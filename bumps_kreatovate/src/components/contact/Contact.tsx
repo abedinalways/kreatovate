@@ -161,7 +161,7 @@ const Contact = () => {
         message += "We'll contact you to confirm the schedule.";
       }
 
-      alert(`${message} FROM CONTACT COMP -----------`);
+      alert(message);
 
       // Reset form
       setSelectedDates([]);
