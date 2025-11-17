@@ -44,7 +44,7 @@ const BusinessCard = ({ data }: CardProps) => {
           className="object-cover rounded-tr-2xl"
         />
       </div>
-      <div className="bg-black w-full h-full p-10 rounded-2xl flex flex-col gap-4">
+      <div className="bg-[#0F1016] w-full h-full p-10 rounded-2xl flex flex-col gap-4">
         {/* <button className='bg-red-100 text-red-500 px-2 w-35 text-xs font-bold rounded-2xl flex items-center gap-2 py-1 border border-red-500'> <CircleAlertIcon size={14} /> {availability}</button> */}
 
         {availability && (
@@ -54,7 +54,6 @@ const BusinessCard = ({ data }: CardProps) => {
               <CircleAlertIcon size={14} /> {availability}
             </button>
           </>
-          
         )}
         <div className="flex items-center justify-between gap-8 flex-1">
           <h1 className="text-lg font-semibold leading-8 flex-1">{title}</h1>

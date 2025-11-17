@@ -17,7 +17,6 @@ export default function Home() {
     <div className="overflow-hidden">
       <Banner />
       <Counter />
-     
       <BumpsProject />
       <TrustedGrowth />
       <Trailer />
