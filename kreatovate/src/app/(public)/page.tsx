@@ -7,6 +7,7 @@ import OurSolution from "@/components/modules/homepage/OurSolution";
 import Service from "@/components/modules/homepage/service/Service";
 import Strategy from "@/components/modules/homepage/strategy/Strategy";
 import WhoWeAre from "@/components/modules/homepage/WhoWeAre";
+import OurPricing from "@/components/modules/our-pricing/OurPricing";
 import Team from "@/components/modules/team/Team";
 
 import Partners from "@/components/shared/partners/Partners";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <WhoWeAre />
       <BookAppointment />
       <Service />
+      <OurPricing/>
       <Team />
       <OurSolution />
       <Partners />
