@@ -104,19 +104,19 @@ const Reviews = () => {
                     <Card
                       className={`border border-[#E21717] text-white shadow-md rounded-2xl h-fit md:h-78 transition-all duration-300 ${
                         isActive
-                          ? ' text-white bg-linear-gradient(to left, #E21717 0%, #3700FF 100%)'
-                          : 'bg-black text-white opacity-80 '
+                          ? " text-white bg-linear-gradient(to left, #E21717 0%, #3700FF 100%)"
+                          : "bg-black text-white opacity-80 "
                       }`}
                       style={{
                         border: isActive
-                          ? '2px solid #000000'
-                          : '1px solid #E21717',
+                          ? "2px solid #000000"
+                          : "1px solid #E21717",
                         backgroundImage: isActive
-                          ? `linear-gradient(to right, #E21717 0%, #3700FF 80%), url('/images/testimonioal01.png')`
+                          ? `linear-gradient(to right, #E21717 0%, #3700FF 80%), url('/images/testimonial01.png')`
                           : `url('/images/testimonioal02.png')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
                       }}
                     >
                       <CardContent className="p-6 flex flex-col justify-between">
