@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Globe } from "lucide-react";
+import { Globe, Clock } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
@@ -15,91 +15,121 @@ import {
 
 interface CalendarProps {
   onDatesChange?: (dates: Date[]) => void;
-  onTimeZoneChange?: (timeZone: string) => void;
+  onTimeZoneChange?: (zone: string) => void;
+  onTimeSlotChange?: (slot: { start: string; end: string }) => void;
 }
 
-export function Calendar({ onDatesChange, onTimeZoneChange }: CalendarProps) {
+export function Calendar({
+  onDatesChange,
+  onTimeZoneChange,
+  onTimeSlotChange,
+}: CalendarProps) {
   const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone, setSelectedZone] = React.useState("CET");
+  const [selectedZone, setSelectedZone] = React.useState("America/New_York");
+  const [selectedSlot, setSelectedSlot] = React.useState("");
 
   const timeZones = [
-    { code: "UTC", label: "Coordinated Universal Time (GMT+0)" },
-    { code: "GMT", label: "Greenwich Mean Time (GMT+0)" },
-    { code: "CET", label: "Central European Time (GMT+1)" },
-    { code: "EET", label: "Eastern European Time (GMT+2)" },
-    { code: "MSK", label: "Moscow Time (GMT+3)" },
-    { code: "GST", label: "Gulf Standard Time (GMT+4)" },
-    { code: "IST", label: "India Standard Time (GMT+5:30)" },
-    { code: "CST", label: "China Standard Time (GMT+8)" },
-    { code: "JST", label: "Japan Standard Time (GMT+9)" },
-    { code: "AEST", label: "Australian Eastern Time (GMT+10)" },
-    { code: "NZST", label: "New Zealand Standard Time (GMT+12)" },
-    { code: "HST", label: "Hawaii Standard Time (GMT-10)" },
-    { code: "AKST", label: "Alaska Standard Time (GMT-9)" },
-    { code: "PST", label: "Pacific Standard Time (GMT-8)" },
-    { code: "MST", label: "Mountain Standard Time (GMT-7)" },
-    { code: "EST", label: "Eastern Standard Time (GMT-5)" },
+    { code: "UTC", label: "UTC (GMT+0)" },
+    { code: "America/New_York", label: "Eastern Time — GMT-5" },
+    { code: "America/Chicago", label: "Central Time — GMT-6" },
+    { code: "America/Denver", label: "Mountain Time — GMT-7" },
+    { code: "America/Los_Angeles", label: "Pacific Time — GMT-8" },
   ];
+
+  const timeSlots = Array.from({ length: 24 }, (_, i) => ({
+    key: `${i}`,
+    start: `${i}:00`,
+    end: `${i + 1}:00`,
+    label: `${new Date(0, 0, 0, i).toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    })} - ${new Date(0, 0, 0, i + 1).toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    })}`,
+  }));
 
   const handleSelect = (dates: Date[] | Date | undefined) => {
     if (!dates) return;
-    const updatedDates: Date[] = Array.isArray(dates) ? dates : [dates];
-    setSelectedDates(updatedDates);
-    onDatesChange?.(updatedDates);
-  };
-
-  const handleTimeZoneChange = (zone: string) => {
-    setSelectedZone(zone);
-    onTimeZoneChange?.(zone);
+    const arr = Array.isArray(dates) ? dates : [dates];
+    setSelectedDates(arr);
+    onDatesChange?.(arr);
   };
 
   return (
-    <div className="bg-linear-to-br w-full max-w-md mx-auto md:p-6 p-4 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
-      <h2 className="text-lg font-semibold mb-4 text-center">
-        Select Date & Time
-      </h2>
+    <div className="bg-linear-to-br w-full max-w-md mx-auto p-6 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
+      {/* ⬇⬇ OVERRIDE DAYPICKER GRID LAYOUT ⬇⬇ */}
+      <style jsx global>{`
+        .rdp {
+          width: 100%;
+        }
+        .rdp-table {
+          width: 100% !important;
+          table-layout: fixed !important; /* Force equal cells */
+        }
+        .rdp-head_cell,
+        .rdp-cell {
+          width: 14.28% !important; /* Perfect 7-column grid */
+          padding: 4px !important;
+        }
+        .rdp-day {
+          margin: 0 auto !important; /* Center circles */
+        }
+      `}</style>
 
-      <div className="overflow-hidden rounded-2xl">
-        <DayPicker
-          mode="multiple"
-          selected={selectedDates}
-          onSelect={handleSelect}
-          footer={
-            <div className="mt-4 text-center text-sm text-gray-300">
-              {selectedDates.length > 0
-                ? `${selectedDates.length} date(s) selected`
-                : "Please select at least one date for your consultation"}
-            </div>
-          }
-          className="mx-auto"
-          modifiersClassNames={{
-            selected:
-              "bg-gradient-to-r from-[#9b5cff] to-[#ff2fd1] text-white rounded-full my-2",
-            today: "bg-purple-700 text-white rounded-full",
-          }}
-        />
+      <DayPicker
+        mode="multiple"
+        selected={selectedDates}
+        onSelect={handleSelect}
+        className="w-full"
+        modifiersClassNames={{
+          today:
+            "bg-gradient-to-r from-[#5e2bff] to-[#b05bff] text-white rounded-full shadow-md font-semibold",
+          selected:
+            "bg-gradient-to-r from-[#ff4ad8] to-[#ff77ef] text-white rounded-full shadow-lg font-bold",
+        }}
+        footer={
+          <div className="mt-4 text-center text-sm text-gray-300">
+            {selectedDates.length > 0
+              ? `${selectedDates.length} date(s) selected`
+              : "Select at least one date"}
+          </div>
+        }
+      />
+
+      {/* TIME SLOT */}
+      <div className="mt-6 w-full">
+        <p className="text-sm text-white/70 mb-1">Select Time Slot</p>
+
+        <Select onValueChange={setSelectedSlot} value={selectedSlot}>
+          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white px-3 py-2">
+            <Clock className="w-4 h-4 text-white/60" />
+            <SelectValue placeholder="Choose a time slot" />
+          </SelectTrigger>
+
+          <SelectContent className="bg-[#0f1419]/95 border border-purple-600/40 text-white max-h-[40vh] overflow-y-auto">
+            {timeSlots.map((slot) => (
+              <SelectItem key={slot.key} value={slot.key}>
+                {slot.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
-      {/* Time Zone Selector */}
-      <div className="mt-4">
-        <p className="text-sm text-white/70 mb-1">Time zone</p>
-        <Select
-          onValueChange={handleTimeZoneChange}
-          defaultValue={selectedZone}
-        >
-          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white/80 px-3 py-2 rounded-md flex items-center justify-between cursor-pointer">
-            <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-white/60" />
-              <SelectValue placeholder="Select a timezone" />
-            </div>
+      {/* TIME ZONE */}
+      <div className="mt-6 w-full">
+        <p className="text-sm text-white/70 mb-1">Time Zone</p>
+
+        <Select onValueChange={setSelectedZone} value={selectedZone}>
+          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white px-3 py-2">
+            <Globe className="w-4 h-4 text-white/60" />
+            <SelectValue placeholder="Select timezone" />
           </SelectTrigger>
-          <SelectContent className="bg-[#0f1419]/95 border border-purple-600/40 text-white rounded-lg shadow-lg max-h-[60vh] overflow-y-auto">
+
+          <SelectContent className="bg-[#0f1419]/95 border border-purple-600/40 text-white max-h-[50vh] overflow-y-auto">
             {timeZones.map((zone) => (
-              <SelectItem
-                key={zone.code}
-                value={zone.code}
-                className="px-3 py-2 hover:bg-white/10 text-white text-sm"
-              >
+              <SelectItem key={zone.code} value={zone.code}>
                 {zone.label}
               </SelectItem>
             ))}
@@ -107,21 +137,21 @@ export function Calendar({ onDatesChange, onTimeZoneChange }: CalendarProps) {
         </Select>
       </div>
 
-      {/* Selected Dates Preview */}
+      {/* PREVIEW */}
       {selectedDates.length > 0 && (
-        <div className="mt-4">
-          <p className="text-sm text-white/70 mb-2">Selected dates:</p>
-          <div className="flex flex-wrap gap-2 max-h-24 overflow-y-auto">
+        <div className="mt-6 text-sm text-white/70 w-full">
+          <p className="mb-2">Selected dates:</p>
+          <div className="grid grid-cols-2 gap-2 w-full">
             {selectedDates.map((date) => (
               <span
                 key={date.toISOString()}
-                className="px-3 py-1 bg-purple-600/50 rounded-full text-xs"
+                className="px-3 py-1 bg-purple-700/40 rounded-full text-xs text-center"
               >
                 {date.toLocaleDateString("en-US", {
                   weekday: "short",
-                  year: "numeric",
                   month: "short",
                   day: "numeric",
+                  year: "numeric",
                 })}
               </span>
             ))}

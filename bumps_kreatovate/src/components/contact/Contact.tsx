@@ -14,8 +14,6 @@ interface ConsultationFormData {
   company?: string;
   service?: string;
   message?: string;
-  selectedDates?: string[];
-  timeZone?: string;
 }
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +21,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const [selectedDates, setSelectedDates] = useState<Date[]>([]);
   const [selectedZone, setSelectedZone] = useState("America/New_York");
+  const [selectedSlot, setSelectedSlot] = useState<{
+    start: string;
+    end: string;
+  } | null>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,35 +64,32 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
-  /**
-   * Convert selected dates to appointment times
-   * Default duration: 1 hour per appointment
-   */
+  // Convert selected dates + slot to appointment objects
   const prepareAppointments = (
     dates: Date[],
     timeZone: string,
-    durationMinutes: number = 60
+    slot: { start: string; end: string }
   ) => {
     return dates.map((date) => {
-      const startTime = new Date(date);
-      const endTime = new Date(
-        startTime.getTime() + durationMinutes * 60 * 1000
-      );
+      const [startHour] = slot.start.split(":").map(Number);
+      const [endHour] = slot.end.split(":").map(Number);
 
-      // Format as ISO string (GHL accepts standard ISO format)
+      const start = new Date(date);
+      start.setHours(startHour, 0, 0, 0);
+
+      const end = new Date(date);
+      end.setHours(endHour, 0, 0, 0);
+
       return {
-        startTime: startTime.toISOString(),
-        endTime: endTime.toISOString(),
+        startTime: start.toISOString(),
+        endTime: end.toISOString(),
         timezone: timeZone,
       };
     });
   };
 
-  /**
-   * Get service label from service value
-   */
-  const getServiceLabel = (serviceValue?: string): string => {
-    const serviceMap: Record<string, string> = {
+  const getServiceLabel = (val?: string) => {
+    const map: any = {
       "digital-marketing": "Digital Marketing",
       seo: "SEO Services",
       "social-media": "Social Media Marketing",
@@ -98,95 +97,78 @@ const Contact = () => {
       "web-development": "Web Development",
       consulting: "Business Consulting",
     };
-    return serviceMap[serviceValue || ""] || serviceValue || "Consultation";
+    return map[val || ""] || "Consultation";
   };
 
-  const handleFormSubmit = async (formData: ConsultationFormData) => {
-    try {
-      // Prepare appointments from selected dates
-      const appointments =
-        selectedDates.length > 0
-          ? prepareAppointments(selectedDates, selectedZone)
-          : [];
-
-      // Prepare payload for GHL API
-      const payload = {
-        locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        phone: formData.phone || undefined,
-        companyName: formData.company,
-        source: "Website - Consultation Form",
-        tags: ["Consultation Request", getServiceLabel(formData.service)],
-        customFields: [
-          { key: "service_interest", field_value: formData.service || "" },
-          { key: "message", field_value: formData.message || "" },
-          {
-            key: "selected_dates",
-            field_value: selectedDates.map((d) => d.toISOString()).join(", "),
-          },
-          { key: "time_zone", field_value: selectedZone },
-        ],
-        appointments: appointments,
-      };
-
-      // Submit to API
-      const res = await fetch("/api/ghl/book-consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result.message || "Failed to submit consultation");
-      }
-
-      // Show success message
-      const appointmentCount =
-        result.appointments?.filter((a: any) => a.success).length || 0;
-      const errorCount =
-        result.appointments?.filter((a: any) => a.error).length || 0;
-
-      let message = "Form submitted successfully! ";
-
-      if (appointmentCount > 0) {
-        message += `${appointmentCount} appointment(s) have been scheduled. We'll send you a confirmation email shortly.`;
-      } else if (errorCount > 0) {
-        message +=
-          "We received your request but there was an issue scheduling the appointment. We'll contact you to confirm the schedule.";
-      } else {
-        message += "We'll contact you to confirm the schedule.";
-      }
-
-      alert(message);
-
-      // Reset form
-      setSelectedDates([]);
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again later."
-      );
+  // FORM SUBMISSION
+  const handleFormSubmit = async (data: ConsultationFormData) => {
+    if (selectedDates.length === 0) {
+      alert("Please select at least one date.");
+      return false;
     }
-  };
 
-  const handleDatesChange = (dates: Date[]) => {
-    setSelectedDates(dates);
-  };
+    if (!selectedSlot) {
+      alert("Please select a time slot.");
+      return false;
+    }
 
-  const handleTimeZoneChange = (zone: string) => {
-    setSelectedZone(zone);
+    const appointments = prepareAppointments(
+      selectedDates,
+      selectedZone,
+      selectedSlot
+    );
+
+    const payload = {
+      ...data,
+      locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
+      source: "Website - Consultation Form",
+      tags: ["Consultation Request", getServiceLabel(data.service)],
+      customFields: [
+        { key: "service", field_value: data.service || "" },
+        { key: "message", field_value: data.message || "" },
+        {
+          key: "dates_selected",
+          field_value: selectedDates.map((d) => d.toISOString()).join(", "),
+        },
+        { key: "timezone", field_value: selectedZone },
+      ],
+      appointments,
+    };
+
+    const res = await fetch("/api/ghl/book-consultation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await res.json();
+
+    if (!res.ok || result.error) {
+      const msg = result.message?.toLowerCase() || "";
+
+      if (msg.includes("slot") && msg.includes("available")) {
+        alert(
+          "❌ This time slot is no longer available. Please choose a different time."
+        );
+      } else {
+        alert("❌ Error: " + result.message);
+      }
+
+      return false; // ❌ prevent form reset
+    }
+
+    alert("🎉 Appointment booked successfully!");
+
+    // Reset ONLY after success
+    setSelectedDates([]);
+    setSelectedSlot(null);
+    return true;
   };
 
   return (
     <div className="bg-[#0F1016]" id="contact_us">
       <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
-        {/* Left side: Form */}
+        {/* LEFT SIDE FORM */}
         <div className="flex flex-col gap-2 items-start about-image">
           <p className="text-gradient">[ Book an appointment ]</p>
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
@@ -205,19 +187,21 @@ const Contact = () => {
           />
         </div>
 
-        {/* Right side: Calendar */}
+        {/* RIGHT SIDE CALENDAR */}
         <div className="text-white about-text md:pl-10 mt-10 md:mt-0">
           <p className="text-gray-200 text-end mb-4">
             Get a free consultation and discover how we can <br />
             optimize your operations
           </p>
+
           <h2 className="text-xl font-bold text-center my-10">
-            Let's Talk – Pick a Time That <br /> Works for You
+            Let&apos;s Talk – Pick a Time That Works for You
           </h2>
 
           <Calendar
-            onDatesChange={handleDatesChange}
-            onTimeZoneChange={handleTimeZoneChange}
+            onDatesChange={setSelectedDates}
+            onTimeZoneChange={setSelectedZone}
+            onTimeSlotChange={setSelectedSlot}
           />
         </div>
       </div>
