@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { useLayoutEffect, useState } from "react";
+
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ConsultationForm } from "../shared/consultationForm/consultationForm";
@@ -26,43 +27,8 @@ const Contact = () => {
     end: string;
   } | null>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".about-image",
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".about-image",
-            start: "top 85%",
-            toggleActions: "play none none reset",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        ".about-text",
-        { opacity: 0, x: 80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".about-text",
-            start: "top 85%",
-            toggleActions: "play none none reset",
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  // Scope GSAP animations to this section only
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   // Convert selected dates + slot to appointment objects
   const prepareAppointments = (
@@ -154,7 +120,7 @@ const Contact = () => {
         alert("❌ Error: " + result.message);
       }
 
-      return false; // ❌ prevent form reset
+      return false; // prevent form reset
     }
 
     alert("🎉 Appointment booked successfully!");
@@ -166,10 +132,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#0F1016]" id="contact_us">
+    <div className="bg-[#0F1016]" id="contact_us" ref={sectionRef}>
       <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
         {/* LEFT SIDE FORM */}
-        <div className="flex flex-col gap-2 items-start about-image">
+        <div className="flex flex-col gap-2 items-start" data-animate="image">
           <p className="text-gradient">[ Book an appointment ]</p>
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
             Ready to Transform <br /> Your{" "}
@@ -188,7 +154,10 @@ const Contact = () => {
         </div>
 
         {/* RIGHT SIDE CALENDAR */}
-        <div className="text-white about-text md:pl-10 mt-10 md:mt-0">
+        <div
+          className="text-white md:pl-10 mt-10 md:mt-0 w-full md:w-auto"
+          data-animate="text"
+        >
           <p className="text-gray-200 text-end mb-4">
             Get a free consultation and discover how we can <br />
             optimize your operations

@@ -161,7 +161,12 @@ export function ConsultationForm({
       control={form.control}
       name={field.name}
       render={({ field: f }) => (
-        <FormItem className={field.gridCol === 2 ? "col-span-2" : ""}>
+        <FormItem
+          className={cn(
+            "w-full",
+            field.gridCol === 2 ? "col-span-1 md:col-span-2" : "col-span-1"
+          )}
+        >
           <FormLabel className="text-white/80">
             {field.label}
             {field.required && <span className="text-red-400 ml-1">*</span>}
@@ -172,11 +177,11 @@ export function ConsultationForm({
               <Textarea
                 rows={field.rows}
                 {...f}
-                className="bg-white/5 border-white/10 text-white"
+                className="w-full bg-white/5 border-white/10 text-white mt-1"
               />
             ) : field.type === "select" ? (
               <Select onValueChange={f.onChange} value={f.value}>
-                <SelectTrigger className="w-full bg-white/5 border-white/10 text-white">
+                <SelectTrigger className="w-full bg-white/5 border-white/10 text-white mt-1">
                   <SelectValue placeholder="Select option" />
                 </SelectTrigger>
                 <SelectContent
@@ -195,7 +200,7 @@ export function ConsultationForm({
               <Input
                 type={field.type}
                 {...f}
-                className="bg-white/5 border-white/10 text-white"
+                className="w-full bg-white/5 border-white/10 text-white mt-1"
               />
             )}
           </FormControl>
@@ -258,7 +263,7 @@ export function ConsultationForm({
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
             {fields.map(renderField)}
           </div>
 
