@@ -90,7 +90,6 @@ export async function POST(req: Request) {
         endTime: appointment.endTime,
         timezone: appointment.timezone,
         appointmentStatus: "confirmed",
-        description: `Consultation Request\nName: ${body.firstName} ${body.lastName}\nEmail: ${body.email}`,
       };
 
       const res = await fetch(`${GHL_BASE_URL}/calendars/events/appointments`, {

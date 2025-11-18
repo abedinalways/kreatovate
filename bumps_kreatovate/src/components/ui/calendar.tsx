@@ -122,7 +122,17 @@ export function Calendar({
       <div className="mt-6">
         <p className="text-sm text-white/70 mb-1">Select Time Slot</p>
 
-        <Select onValueChange={setSelectedSlot} value={selectedSlot}>
+        <Select
+          onValueChange={(val) => {
+            setSelectedSlot(val);
+
+            const slot = timeSlots.find((s) => s.key === val);
+            if (slot) {
+              onTimeSlotChange?.({ start: slot.start, end: slot.end });
+            }
+          }}
+          value={selectedSlot}
+        >
           <SelectTrigger className="w-full bg-white/5 border-white/10 text-white px-3 py-2">
             <Clock className="w-4 h-4 text-white/60" />
             <SelectValue placeholder="Choose a time slot" />
@@ -142,7 +152,13 @@ export function Calendar({
       <div className="mt-6">
         <p className="text-sm text-white/70 mb-1">Time Zone</p>
 
-        <Select onValueChange={setSelectedZone} value={selectedZone}>
+        <Select
+          onValueChange={(zone) => {
+            setSelectedZone(zone);
+            onTimeZoneChange?.(zone);
+          }}
+          value={selectedZone}
+        >
           <SelectTrigger className="w-full bg-white/5 border-white/10 text-white px-3 py-2">
             <Globe className="w-4 h-4 text-white/60" />
             <SelectValue placeholder="Select timezone" />
