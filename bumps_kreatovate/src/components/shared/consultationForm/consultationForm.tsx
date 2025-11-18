@@ -26,42 +26,29 @@ import {
 } from "@/components/ui/select";
 import ButtonAll from "../buttons/ButtonAll";
 
-export interface FormFieldConfig {
-  name: string;
-  label: string;
-  type: "text" | "email" | "tel" | "select" | "textarea";
-  placeholder?: string;
-  required?: boolean;
-  options?: { value: string; label: string }[];
-  rows?: number;
-  gridCol?: 1 | 2;
-  validation?: z.ZodType<any, any>;
-}
-
 export interface ConsultationFormProps {
   title?: string;
   subtitle?: string;
-  fields?: FormFieldConfig[];
+  fields?: any[];
   buttonText?: string;
   showButtonIcon?: boolean;
   showDecorator?: boolean;
-  onSubmit?: (data: Record<string, any>) => Promise<void>;
+  onSubmit?: (data: any) => Promise<boolean>; // returns true/false
   className?: string;
   apiEndpoint?: string;
-  successMessage?: string;
   errorMessage?: string;
   selectedDates?: Date[];
   selectedZone?: string;
 }
 
-const defaultFields: FormFieldConfig[] = [
+const defaultFields = [
   {
     name: "firstName",
     label: "First name",
     type: "text",
     required: true,
     gridCol: 2,
-    validation: z.string().min(2, "First name must be at least 2 characters"),
+    validation: z.string().min(2),
   },
   {
     name: "lastName",
@@ -69,7 +56,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "text",
     required: true,
     gridCol: 2,
-    validation: z.string().min(2, "Last name must be at least 2 characters"),
+    validation: z.string().min(2),
   },
   {
     name: "company",
@@ -77,7 +64,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "text",
     required: true,
     gridCol: 1,
-    validation: z.string().min(2, "Company name must be at least 2 characters"),
+    validation: z.string().min(2),
   },
   {
     name: "email",
@@ -85,7 +72,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "email",
     required: true,
     gridCol: 1,
-    validation: z.string().email("Please enter a valid email address"),
+    validation: z.string().email(),
   },
   {
     name: "phone",
@@ -93,7 +80,6 @@ const defaultFields: FormFieldConfig[] = [
     type: "tel",
     required: false,
     gridCol: 1,
-    validation: z.string().optional(),
   },
   {
     name: "service",
@@ -101,7 +87,7 @@ const defaultFields: FormFieldConfig[] = [
     type: "select",
     required: true,
     gridCol: 1,
-    validation: z.string().min(1, "Please select a service"),
+    validation: z.string().min(1),
     options: [
       { value: "digital-marketing", label: "Digital Marketing" },
       { value: "seo", label: "SEO Services" },
@@ -115,8 +101,8 @@ const defaultFields: FormFieldConfig[] = [
     name: "message",
     label: "Message",
     type: "textarea",
-    rows: 4,
     gridCol: 2,
+    rows: 4,
     validation: z.string().optional(),
   },
 ];
@@ -129,108 +115,76 @@ export function ConsultationForm({
   showButtonIcon = true,
   showDecorator = true,
   onSubmit,
-  className = "text-white",
-  apiEndpoint = "/api/ghl/book-consultation",
-  errorMessage = "Something went wrong. Please try again.",
+  className = "",
   selectedDates = [],
   selectedZone = "America/New_York",
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const createSchema = () => {
-    const schemaFields: Record<string, z.ZodType<any, any>> = {};
-    fields.forEach((field) => {
-      if (field.validation) {
-        schemaFields[field.name] = field.validation;
-      } else if (field.required) {
-        schemaFields[field.name] = z
-          .string()
-          .min(1, `${field.label} is required`);
-      } else {
-        schemaFields[field.name] = z.string().optional();
-      }
-    });
-    return z.object(schemaFields);
-  };
+  const schemaShape: any = {};
+  fields.forEach((f) => {
+    if (f.validation) schemaShape[f.name] = f.validation;
+    else if (f.required) schemaShape[f.name] = z.string().min(1);
+    else schemaShape[f.name] = z.string().optional();
+  });
+  const formSchema = z.object(schemaShape);
 
-  const formSchema = createSchema();
-  type FormValues = z.infer<typeof formSchema>;
-
-  const form = useForm<FormValues>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: fields.reduce(
-      (acc, f) => ({ ...acc, [f.name]: "" }),
-      {} as Record<string, any>
-    ),
+    defaultValues: fields.reduce((acc: any, f: any) => {
+      acc[f.name] = "";
+      return acc;
+    }, {}),
   });
 
-  const handleSubmit = async (data: FormValues) => {
+  const handleSubmit = async (values: any) => {
     setIsSubmitting(true);
-    try {
-      console.log("Form data submitted:", data);
 
-      // Include selected dates and timezone in the form data
-      const formDataWithSchedule = {
-        ...data,
-        selectedDates: selectedDates.map((d) => d.toISOString()),
-        timeZone: selectedZone,
-      };
+    const payload = {
+      ...values,
+      selectedDates: selectedDates.map((d) => d.toISOString()),
+      timeZone: selectedZone,
+    };
 
-      if (onSubmit) {
-        await onSubmit(formDataWithSchedule);
-      } else {
-        const response = await fetch(apiEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formDataWithSchedule),
-        });
+    const ok = await onSubmit?.(payload);
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "Failed to submit form");
-        }
-      }
-
-      form.reset();
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert(errorMessage);
-    } finally {
-      setIsSubmitting(false);
+    if (ok) {
+      form.reset(); // reset ONLY on successful submission
     }
+
+    setIsSubmitting(false);
   };
 
-  const renderField = (field: FormFieldConfig) => (
+  const renderField = (field: any) => (
     <FormField
       key={field.name}
       control={form.control}
       name={field.name}
-      render={({ field: formField }) => (
+      render={({ field: f }) => (
         <FormItem className={field.gridCol === 2 ? "col-span-2" : ""}>
           <FormLabel className="text-white/80">
             {field.label}
             {field.required && <span className="text-red-400 ml-1">*</span>}
           </FormLabel>
+
           <FormControl>
             {field.type === "textarea" ? (
               <Textarea
                 rows={field.rows}
-                placeholder={field.placeholder}
-                {...formField}
-                className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                {...f}
+                className="bg-white/5 border-white/10 text-white"
               />
             ) : field.type === "select" ? (
-              <Select
-                onValueChange={formField.onChange}
-                value={formField.value}
-              >
+              <Select onValueChange={f.onChange} value={f.value}>
                 <SelectTrigger className="w-full bg-white/5 border-white/10 text-white">
-                  <SelectValue
-                    placeholder={field.placeholder || "Select Option"}
-                  />
+                  <SelectValue placeholder="Select option" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1a0b2e] border-purple-500/30 text-white">
-                  {field.options?.map((opt) => (
+                <SelectContent
+                  side="bottom"
+                  position="popper"
+                  className="bg-[#1a0b2e] text-white max-h-[30vh] overflow-auto"
+                >
+                  {field.options?.map((opt: any) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       {opt.label}
                     </SelectItem>
@@ -240,9 +194,8 @@ export function ConsultationForm({
             ) : (
               <Input
                 type={field.type}
-                placeholder={field.placeholder}
-                {...formField}
-                className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                {...f}
+                className="bg-white/5 border-white/10 text-white"
               />
             )}
           </FormControl>
@@ -309,35 +262,13 @@ export function ConsultationForm({
             {fields.map(renderField)}
           </div>
 
-          {/* Schedule Summary */}
-          {selectedDates.length > 0 && (
-            <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
-              <h3 className="text-white font-semibold mb-2">
-                Selected Schedule:
-              </h3>
-              <div className="text-white/70 text-sm">
-                <p>
-                  Dates:{" "}
-                  {selectedDates
-                    .map((date) => date.toLocaleDateString())
-                    .join(", ")}
-                </p>
-                <p>Time Zone: {selectedZone}</p>
-              </div>
-            </div>
-          )}
-
           <ButtonAll
             type="submit"
-            disabled={isSubmitting || selectedDates.length === 0}
+            disabled={isSubmitting}
             className="w-full mt-4"
           >
-            {isSubmitting
-              ? "Submitting..."
-              : selectedDates.length === 0
-              ? "Please select a date"
-              : buttonText}
-            {showButtonIcon && !isSubmitting && selectedDates.length > 0 && (
+            {isSubmitting ? "Submitting..." : buttonText}
+            {showButtonIcon && !isSubmitting && (
               <ArrowRight className="w-5 h-5 ml-2" />
             )}
           </ButtonAll>

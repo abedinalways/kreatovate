@@ -4,68 +4,42 @@ import { NextResponse } from "next/server";
 const GHL_BASE_URL =
   process.env.NEXT_PUBLIC_GHL_BASE_URL ||
   "https://services.leadconnectorhq.com";
+
 const GHL_API_KEY = process.env.GHL_API_KEY;
 const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 const GHL_CALENDAR_ID = process.env.GHL_CALENDAR_ID;
 
-interface AppointmentData {
-  startTime: string;
-  endTime: string;
-  timezone: string;
-}
-
-interface ConsultationRequest {
-  locationId?: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone?: string;
-  companyName?: string;
-  source?: string;
-  tags?: string[];
-  customFields?: Array<{
-    key: string;
-    field_value: string;
-  }>;
-  appointments?: AppointmentData[];
-}
-
 export async function POST(req: Request) {
   try {
-    const body: ConsultationRequest = await req.json();
+    const body = await req.json();
 
-    // Validate environment variables
-    if (!GHL_API_KEY) {
-      throw new Error("GHL_API_KEY is not configured");
-    }
-
-    if (!GHL_LOCATION_ID) {
-      throw new Error("GHL_LOCATION_ID is not configured");
-    }
-
-    if (!GHL_CALENDAR_ID) {
-      console.warn(
-        "GHL_CALENDAR_ID is not configured - appointments will not be created"
+    if (!GHL_API_KEY) throw new Error("GHL_API_KEY is not configured");
+    if (!GHL_LOCATION_ID) throw new Error("GHL_LOCATION_ID is not configured");
+    if (!GHL_CALENDAR_ID)
+      throw new Error(
+        "GHL_CALENDAR_ID is missing — cannot create appointments"
       );
-    }
 
-    // Validate required fields
+    // Validate form data
     if (!body.firstName || !body.lastName || !body.email) {
       return NextResponse.json(
-        { error: true, message: "firstName, lastName, and email are required" },
+        {
+          error: true,
+          message: "firstName, lastName, and email are required",
+        },
         { status: 400 }
       );
     }
 
-    // Step 1: Create or Update Contact
+    // STEP 1 — CREATE CONTACT FIRST (required for appointment)
     const contactPayload = {
-      locationId: body.locationId || GHL_LOCATION_ID,
+      locationId: GHL_LOCATION_ID,
       firstName: body.firstName,
       lastName: body.lastName,
       email: body.email,
       phone: body.phone,
       companyName: body.companyName,
-      source: body.source || "Website - Consultation Form",
+      source: "Website - Consultation Form",
       tags: body.tags || ["Consultation Request"],
       customFields: body.customFields || [],
     };
@@ -84,116 +58,91 @@ export async function POST(req: Request) {
     const contactData = await contactResponse.json();
 
     if (!contactResponse.ok) {
-      throw new Error(
-        `Contact creation failed: ${
-          contactData.message || contactData.msg || JSON.stringify(contactData)
-        }`
+      return NextResponse.json(
+        {
+          error: true,
+          message: contactData.message || "Contact creation failed",
+        },
+        { status: 400 }
       );
     }
 
     const contactId = contactData.contact?.id || contactData.id;
 
     if (!contactId) {
-      throw new Error("No contact ID returned from GHL");
+      return NextResponse.json(
+        { error: true, message: "Contact ID missing from GHL response" },
+        { status: 500 }
+      );
     }
 
-    // Step 2: Create Appointments using the CORRECT endpoint
+    // STEP 2 — NOW TRY TO CREATE APPOINTMENTS
     const appointments = body.appointments || [];
-    const createdAppointments = [];
+    let failedError: string | null = null;
 
-    if (appointments.length > 0 && GHL_CALENDAR_ID) {
-      for (const [index, appointment] of appointments.entries()) {
-        try {
-          const description = `Consultation Request:
-• Name: ${body.firstName} ${body.lastName}
-• Company: ${body.companyName || "N/A"}
-• Email: ${body.email}
-• Phone: ${body.phone || "N/A"}
-• Service: ${body.tags?.[1] || "Consultation"}
+    for (const appointment of appointments) {
+      const appointmentPayload = {
+        title: `Consultation - ${body.firstName} ${body.lastName}`,
+        calendarId: GHL_CALENDAR_ID,
+        locationId: GHL_LOCATION_ID,
+        contactId,
+        startTime: appointment.startTime,
+        endTime: appointment.endTime,
+        timezone: appointment.timezone,
+        appointmentStatus: "confirmed",
+        description: `Consultation Request\nName: ${body.firstName} ${body.lastName}\nEmail: ${body.email}`,
+      };
 
-Booked through website consultation form.`;
+      const res = await fetch(`${GHL_BASE_URL}/calendars/events/appointments`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${GHL_API_KEY}`,
+          Version: "2021-07-28",
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(appointmentPayload),
+      });
 
-          // Use the CORRECT payload structure from GHL documentation
-          const appointmentPayload = {
-            title: `Consultation - ${body.firstName} ${body.lastName}`,
-            calendarId: GHL_CALENDAR_ID,
-            locationId: GHL_LOCATION_ID,
-            contactId: contactId,
-            startTime: appointment.startTime,
-            endTime: appointment.endTime,
-            description: description,
-          };
+      const resData = await res.json();
 
-          // Use the CORRECT endpoint from GHL documentation
-          const appointmentResponse = await fetch(
-            `${GHL_BASE_URL}/calendars/events/appointments`,
-            {
-              method: "POST",
-              headers: {
-                Authorization: `Bearer ${GHL_API_KEY}`,
-                Version: "2021-04-15", // Use the version from GHL docs
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(appointmentPayload),
-            }
-          );
+      if (!res.ok) {
+        failedError =
+          resData.message || resData.msg || "Failed to create appointment";
 
-          const appointmentData = await appointmentResponse.json();
-
-          if (appointmentResponse.ok) {
-            createdAppointments.push({
-              success: true,
-              id: appointmentData.id || appointmentData.appointmentId,
-              startTime: appointment.startTime,
-              endTime: appointment.endTime,
-            });
-          } else {
-            console.error(`Appointment ${index + 1} failed:`, appointmentData);
-            createdAppointments.push({
-              error: true,
-              message:
-                appointmentData.message ||
-                appointmentData.msg ||
-                "Appointment creation failed",
-              details: appointmentData,
-            });
-          }
-        } catch (appointmentError: any) {
-          console.error(`Appointment ${index + 1} error:`, appointmentError);
-          createdAppointments.push({
-            error: true,
-            message: appointmentError.message,
-          });
-        }
+        break; // STOP processing more appointments
       }
-    } else {
-      console.log("No appointments to create or calendar ID missing");
     }
 
-    const response = {
-      success: true,
-      contact: {
-        id: contactId,
-        firstName: body.firstName,
-        lastName: body.lastName,
-        email: body.email,
-      },
-      appointments: createdAppointments,
-      message: `Contact created${
-        appointments.length > 0 ? " with appointments" : ""
-      }`,
-    };
+    // ❌ ERROR? DELETE CONTACT + RETURN FAILURE
+    if (failedError) {
+      await fetch(`${GHL_BASE_URL}/contacts/${contactId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${GHL_API_KEY}`,
+          Version: "2021-07-28",
+        },
+      });
 
-    return NextResponse.json(response);
+      return NextResponse.json(
+        {
+          error: true,
+          message: failedError,
+        },
+        { status: 400 }
+      );
+    }
+
+    // SUCCESS RESPONSE
+    return NextResponse.json({
+      success: true,
+      message: "Appointments successfully created.",
+      contactId,
+    });
   } catch (error: any) {
-    console.error("=== GHL API ERROR ===");
-    console.error(error);
+    console.error("GHL API ERROR:", error);
     return NextResponse.json(
-      {
-        error: true,
-        message: error.message || "Internal server error",
-      },
+      { error: true, message: error.message || "Internal server error" },
       { status: 500 }
     );
   }
