@@ -37,18 +37,28 @@ const Contact = () => {
     slot: { start: string; end: string }
   ) => {
     return dates.map((date) => {
-      const [startHour] = slot.start.split(":").map(Number);
-      const [endHour] = slot.end.split(":").map(Number);
+      const [sHour] = slot.start.split(":").map(Number);
+      const [eHour] = slot.end.split(":").map(Number);
 
       const start = new Date(date);
-      start.setHours(startHour, 0, 0, 0);
+      start.setHours(sHour, 0, 0, 0);
 
       const end = new Date(date);
-      end.setHours(endHour, 0, 0, 0);
+      end.setHours(eHour, 0, 0, 0);
+
+      // GHL needs “YYYY-MM-DD HH:mm”
+      const format = (d: Date) =>
+        d
+          .toLocaleString("sv-SE", {
+            timeZone,
+            hour12: false,
+          })
+          .replace("T", " ")
+          .slice(0, 16);
 
       return {
-        startTime: start.toISOString(),
-        endTime: end.toISOString(),
+        startTime: format(start),
+        endTime: format(end),
         timezone: timeZone,
       };
     });
@@ -122,7 +132,7 @@ const Contact = () => {
 
       return false; // prevent form reset
     }
-
+    console.log("resss", result);
     alert("🎉 Appointment booked successfully!");
 
     // Reset ONLY after success
