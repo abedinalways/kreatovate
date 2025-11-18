@@ -57,26 +57,47 @@ export function Calendar({
   };
 
   return (
-    <div className="bg-linear-to-br w-full max-w-md mx-auto p-6 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white">
-      {/* ⬇⬇ OVERRIDE DAYPICKER GRID LAYOUT ⬇⬇ */}
+    <div className="bg-linear-to-br w-full mx-auto p-4 sm:p-6 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white overflow-hidden">
+      {/* FIX ALL RESPONSIVE ISSUES */}
       <style jsx global>{`
         .rdp {
-          width: 100%;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 auto !important;
         }
+
+        .rdp-months {
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          display: block !important;
+        }
+
+        .rdp-month {
+          width: 100% !important;
+        }
+
         .rdp-table {
           width: 100% !important;
-          table-layout: fixed !important; /* Force equal cells */
+          table-layout: fixed !important;
         }
+
         .rdp-head_cell,
         .rdp-cell {
-          width: 14.28% !important; /* Perfect 7-column grid */
-          padding: 4px !important;
+          padding: 6px 0 !important;
+          text-align: center !important;
         }
+
+        /* FIX circle size so it never forces overflow */
         .rdp-day {
-          margin: 0 auto !important; /* Center circles */
+          margin: 0 auto !important;
+          width: 36px !important;
+          height: 36px !important;
+          line-height: 36px !important;
         }
       `}</style>
 
+      {/* Calendar */}
       <DayPicker
         mode="multiple"
         selected={selectedDates}
@@ -98,11 +119,11 @@ export function Calendar({
       />
 
       {/* TIME SLOT */}
-      <div className="mt-6 w-full">
+      <div className="mt-6">
         <p className="text-sm text-white/70 mb-1">Select Time Slot</p>
 
         <Select onValueChange={setSelectedSlot} value={selectedSlot}>
-          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white px-3 py-2">
+          <SelectTrigger className="w-full bg-white/5 border-white/10 text-white px-3 py-2">
             <Clock className="w-4 h-4 text-white/60" />
             <SelectValue placeholder="Choose a time slot" />
           </SelectTrigger>
@@ -118,11 +139,11 @@ export function Calendar({
       </div>
 
       {/* TIME ZONE */}
-      <div className="mt-6 w-full">
+      <div className="mt-6">
         <p className="text-sm text-white/70 mb-1">Time Zone</p>
 
         <Select onValueChange={setSelectedZone} value={selectedZone}>
-          <SelectTrigger className="w-full bg-white/5 border border-white/10 text-white px-3 py-2">
+          <SelectTrigger className="w-full bg-white/5 border-white/10 text-white px-3 py-2">
             <Globe className="w-4 h-4 text-white/60" />
             <SelectValue placeholder="Select timezone" />
           </SelectTrigger>
@@ -139,9 +160,9 @@ export function Calendar({
 
       {/* PREVIEW */}
       {selectedDates.length > 0 && (
-        <div className="mt-6 text-sm text-white/70 w-full">
+        <div className="mt-6 text-sm text-white/70">
           <p className="mb-2">Selected dates:</p>
-          <div className="grid grid-cols-2 gap-2 w-full">
+          <div className="grid grid-cols-2 gap-2">
             {selectedDates.map((date) => (
               <span
                 key={date.toISOString()}
