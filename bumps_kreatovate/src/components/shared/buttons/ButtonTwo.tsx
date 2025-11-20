@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
 interface BtnProps {
@@ -21,7 +21,7 @@ const ButtonTwo = ({ btnText, className, isIcon = true, link }: BtnProps) => {
           href={link ? link : "/"}
           className="block w-full text-center capitalize"
         >
-          {btnText} 
+          {btnText}
         </Link>
       </Button>
     </div>
