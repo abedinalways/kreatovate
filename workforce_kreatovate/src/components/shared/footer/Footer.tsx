@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-
+import { FaDiscord, FaThreads } from 'react-icons/fa6';
 import Image from "next/image";
 import Logo from "../Logo";
 
@@ -19,18 +19,9 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative w-full text-white overflow-hidden bg-[#0b1121]"
+      className="relative w-full text-white overflow-hidden bg-black"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-10">
-        <Image
-          src="/images/footer-bg.png"
-          alt="footer background"
-          width={1600}
-          height={461}
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+      
 
       {/* Content */}
       <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
@@ -40,14 +31,14 @@ export default function Footer() {
             <Logo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Our AI-Driven Marketing Platform gives you an affordable
+              Our AI-powered Marketing Platform gives you an affordable
               enterprise digital marketing and advertising solution that does
               all the heavy lifting.
             </p>
 
             <div className="flex gap-3 pt-2">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/kreatovate/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -55,7 +46,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/kreatovate?igsh=MWl1Y29rcXJlM3V2bg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -63,7 +54,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/kreatovate?s=21/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -71,12 +62,28 @@ export default function Footer() {
                 <XIcon />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/kreatovate-marketing-consultings/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.threads.com/@kreatovate?igshid=NTc4MTIwNjQ2YQ==/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaThreads className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://discord.gg/kmECdpsdK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaDiscord className="w-5 h-5" />
               </Link>
             </div>
           </div>
