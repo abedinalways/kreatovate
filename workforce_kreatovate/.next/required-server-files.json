@@ -98,7 +98,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\shipa\\projects\\office\\kreatovate\\workforce_kreatovate",
+    "outputFileTracingRoot": "D:\\SHIPAN_MALLIK\\office\\terranwilliams\\workforce_kreatovate",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -288,10 +288,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "C:\\Users\\shipa\\projects\\office\\kreatovate\\workforce_kreatovate"
+      "root": "D:\\SHIPAN_MALLIK\\office\\terranwilliams\\workforce_kreatovate"
     }
   },
-  "appDir": "C:\\Users\\shipa\\projects\\office\\kreatovate\\workforce_kreatovate",
+  "appDir": "D:\\SHIPAN_MALLIK\\office\\terranwilliams\\workforce_kreatovate",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import * as React from "react";
@@ -15,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -23,37 +24,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
 import ButtonAll from "../buttons/ButtonAll";
-import { Textarea } from "@/components/ui/textarea";
-
-export interface FormFieldConfig {
-  name: string;
-  label: string;
-  type: "text" | "email" | "tel" | "select" | "textarea";
-  placeholder?: string;
-  required?: boolean;
-  options?: { value: string; label: string }[];
-  rows?: number;
-  gridCol?: 1 | 2;
-  validation?: z.ZodTypeAny; // ✅ no explicit any
-}
 
 export interface ConsultationFormProps {
   title?: string;
   subtitle?: string;
-  fields?: FormFieldConfig[];
+  fields?: any[];
   buttonText?: string;
   showButtonIcon?: boolean;
   showDecorator?: boolean;
-  onSubmit?: (data: Record<string, unknown>) => Promise<void>; // ✅ no any
+  onSubmit?: (data: any) => Promise<boolean>; // returns true/false
   className?: string;
   apiEndpoint?: string;
-  successMessage?: string;
   errorMessage?: string;
+  selectedDates?: Date[];
+  selectedZone?: string;
 }
 
-const defaultFields: FormFieldConfig[] = [
+const defaultFields = [
   {
     name: "firstName",
     label: "First name",
@@ -87,6 +75,13 @@ const defaultFields: FormFieldConfig[] = [
     validation: z.string().email(),
   },
   {
+    name: "phone",
+    label: "Phone number",
+    type: "tel",
+    required: false,
+    gridCol: 1,
+  },
+  {
     name: "service",
     label: "Which service you want?",
     type: "select",
@@ -106,8 +101,8 @@ const defaultFields: FormFieldConfig[] = [
     name: "message",
     label: "Message",
     type: "textarea",
+    gridCol: 2,
     rows: 4,
-    gridCol: 1,
     validation: z.string().optional(),
   },
 ];
@@ -120,143 +115,96 @@ export function ConsultationForm({
   showButtonIcon = true,
   showDecorator = true,
   onSubmit,
-  className = "text-white",
-  apiEndpoint = "/api/consultation",
-  successMessage = "Form submitted successfully!",
-  errorMessage = "Something went wrong. Please try again.",
+  className = "",
+  selectedDates = [],
+  selectedZone = "America/New_York",
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const createSchema = () => {
-    const schemaFields: Record<string, z.ZodTypeAny> = {}; // ✅ no any
-    fields.forEach((field) => {
-      if (field.name === "selectedDates") {
-        schemaFields[field.name] = z.array(z.string());
-      } else if (field.validation) {
-        schemaFields[field.name] = field.validation;
-      } else if (field.required) {
-        schemaFields[field.name] = z
-          .string()
-          .min(1, `${field.label} is required`);
-      } else {
-        schemaFields[field.name] = z.string().optional();
-      }
-    });
-    return z.object(schemaFields);
-  };
+  const schemaShape: any = {};
+  fields.forEach((f) => {
+    if (f.validation) schemaShape[f.name] = f.validation;
+    else if (f.required) schemaShape[f.name] = z.string().min(1);
+    else schemaShape[f.name] = z.string().optional();
+  });
+  const formSchema = z.object(schemaShape);
 
-  const formSchema = createSchema();
-  type FormValues = z.infer<typeof formSchema>;
-
-  const form = useForm<FormValues>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      ...fields.reduce<Record<string, string>>((acc, f) => {
-        acc[f.name] = "";
-        return acc;
-      }, {}),
-
-      selectedDates: [],
-
-      timeZone: "CET",
-    },
+    defaultValues: fields.reduce((acc: any, f: any) => {
+      acc[f.name] = "";
+      return acc;
+    }, {}),
   });
 
-  const handleSubmit = async (data: FormValues) => {
+  const handleSubmit = async (values: any) => {
     setIsSubmitting(true);
-    try {
-      if (onSubmit) {
-        await onSubmit(data as unknown as Record<string, unknown>);
-      } else {
-        const response = await fetch(apiEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        if (!response.ok) throw new Error("Failed to submit form");
-      }
-      alert(successMessage);
-      form.reset();
-    } catch (error) {
-      console.error(error);
-      alert(errorMessage);
-    } finally {
-      setIsSubmitting(false);
+
+    const payload = {
+      ...values,
+      selectedDates: selectedDates.map((d) => d.toISOString()),
+      timeZone: selectedZone,
+    };
+
+    const ok = await onSubmit?.(payload);
+
+    if (ok) {
+      form.reset(); // reset ONLY on successful submission
     }
+
+    setIsSubmitting(false);
   };
 
-  const renderField = (field: FormFieldConfig) => (
+  const renderField = (field: any) => (
     <FormField
       key={field.name}
       control={form.control}
-      name={field.name as keyof FormValues}
-      render={({ field: formField }) => (
-        <FormItem>
-          <FormLabel>{field.label}</FormLabel>
+      name={field.name}
+      render={({ field: f }) => (
+        <FormItem
+          className={cn(
+            "w-full",
+            field.gridCol === 2 ? "col-span-1 md:col-span-2" : "col-span-1"
+          )}
+        >
+          <FormLabel className="text-white/80">
+            {field.label}
+            {field.required && <span className="text-red-400 ml-1">*</span>}
+          </FormLabel>
+
           <FormControl>
             {field.type === "textarea" ? (
               <Textarea
                 rows={field.rows}
-                placeholder={field.placeholder}
-                name={formField.name}
-                onBlur={formField.onBlur}
-                onChange={formField.onChange}
-                ref={formField.ref}
-                value={
-                  typeof formField.value === "string"
-                    ? formField.value
-                    : formField.value == null
-                    ? ""
-                    : String(formField.value)
-                }
+                {...f}
+                className="w-full bg-white/5 border-white/10 text-white mt-1"
               />
             ) : field.type === "select" ? (
-              <Select
-                onValueChange={formField.onChange}
-                value={String(formField.value ?? "")}
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue
-                    placeholder={field.placeholder || "Select Option"}
-                  />
+              <Select onValueChange={f.onChange} value={f.value}>
+                <SelectTrigger className="w-full bg-white/5 border-white/10 text-white mt-1">
+                  <SelectValue placeholder="Select option" />
                 </SelectTrigger>
-                <SelectContent>
-                  {field.options?.map((opt) => (
+                <SelectContent
+                  side="bottom"
+                  position="popper"
+                  className="bg-[#1a0b2e] text-white max-h-[30vh] overflow-auto"
+                >
+                  {field.options?.map((opt: any) => (
                     <SelectItem key={opt.value} value={opt.value}>
                       {opt.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-            ) : field.name === "selectedDates" ? (
-              <Calendar
-                onDatesChange={(dates: Date[]) =>
-                  form.setValue(
-                    "selectedDates" as keyof FormValues,
-
-                    dates.map((d) => d.toISOString())
-                  )
-                }
-              />
             ) : (
               <Input
                 type={field.type}
-                placeholder={field.placeholder}
-                name={formField.name}
-                onBlur={formField.onBlur}
-                onChange={formField.onChange}
-                ref={formField.ref}
-                value={
-                  typeof formField.value === "string"
-                    ? formField.value
-                    : formField.value == null
-                    ? ""
-                    : String(formField.value)
-                }
+                {...f}
+                className="w-full bg-white/5 border-white/10 text-white mt-1"
               />
             )}
           </FormControl>
-          <FormMessage />
+          <FormMessage className="text-red-400" />
         </FormItem>
       )}
     />
@@ -315,12 +263,14 @@ export function ConsultationForm({
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5">
-          {fields.map(renderField)}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+            {fields.map(renderField)}
+          </div>
+
           <ButtonAll
             type="submit"
-            btnText={buttonText}
             disabled={isSubmitting}
-            className="w-full"
+            className="w-full mt-4"
           >
             {isSubmitting ? "Submitting..." : buttonText}
             {showButtonIcon && !isSubmitting && (
