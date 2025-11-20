@@ -1,9 +1,9 @@
-"use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import BusinessCard from "@/components/shared/cards/BusinessCard";
-import { BusinessItem } from "../../../../types";
+'use client';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+import BusinessCard from '@/components/shared/cards/BusinessCard';
+import { BusinessItem } from '../../../../types';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,30 +13,32 @@ const BusinessWorkForceV3 = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".bwv1-title", {
+      gsap.from('.bwv1-title', {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: "power2.out",
+        ease: 'power2.out',
       });
 
-      gsap.from(".bwv1-sub", {
+      gsap.from('.bwv1-sub', {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: "power2.out",
+        ease: 'power2.out',
       });
 
-      gsap.from(".business-card", {
+      // Targeting the cards directly for stagger to work cleanly
+      gsap.from('.business-card-item', {
+        // Note: I suggest adding this class to your BusinessCard component's root
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: "power2.out",
+        ease: 'power2.out',
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: "top 80%",
+          start: 'top 80%',
         },
       });
     }, rootRef);
@@ -44,37 +46,53 @@ const BusinessWorkForceV3 = () => {
     return () => ctx.revert();
   }, []);
 
+  // ✅ Updated businessData with all six items from the screenshot
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Closer",
+      title: 'Closer',
       price: 3997,
-      description: "ATS-safe, A1-powered resume builder.",
-      button: "Subscribe",
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
     },
     {
       id: 2,
-      title: "Appointment Setter",
+      title: 'Appointment Setter',
       price: 2997,
-      description:
-        "Create your own A1 likeness for video avatars, voice cloning, and personalized content.",
-      button: "Subscribe",
+      // Updated description to match the visual length/style more closely
+      description: 'Create your own A1 likeness for video avatars, voice ..',
+      button: 'Subscribe',
     },
     {
       id: 3,
-      title: "Lead Nurturer",
+      title: 'Lead Nurturer',
       price: 2997,
-      description: "ATS-safe, A1-powered resume builder..",
-      button: "Subscribe",
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
     },
+    // Second row
     {
       id: 4,
-      title: "Admin Support(All Encompassing)",
+      // Renamed to match the screenshot title 'Admin Support'
+      title: 'Admin Support',
       price: 2997,
-      description: "ATS-safe, A1-powered resume builder.",
-      button: "Subscribe",
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
     },
-    
+    {
+      id: 5, // ✅ New item
+      title: 'Technical Support',
+      price: 2997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
+    {
+      id: 6, // ✅ New item
+      title: 'Administrative Assistant',
+      price: 2997,
+      description: 'ATS-safe, A1-powered resume builder.',
+      button: 'Subscribe',
+    },
   ];
 
   return (
@@ -96,12 +114,19 @@ const BusinessWorkForceV3 = () => {
           </p>
         </div>
 
+
         <div
           ref={gridRef}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch business-card"
+          
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
         >
-          {businessData?.map((data) => (
-            <BusinessCard key={data.id} data={data} />
+          {businessData?.map(data => (
+            
+            <BusinessCard
+              key={data.id}
+              data={data}
+             
+            />
           ))}
         </div>
       </div>

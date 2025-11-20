@@ -230,7 +230,7 @@ const SaaSA1EmployeeLicensing = () => {
     },
     {
       id: 26,
-      title: 'Support Employee',
+      title: 'Admin Support',
       price: 30000,
       description: 'Messaging + reports package',
       button: 'Subscribe',
