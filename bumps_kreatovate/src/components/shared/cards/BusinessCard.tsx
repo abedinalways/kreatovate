@@ -44,7 +44,7 @@ const BusinessCard = ({ data }: CardProps) => {
   return (
     <div
       ref={cardRef}
-      className="h-full business-card relative bg-color-gradient rounded-2xl"
+      className="h-full business-card relative bg-color-gradient rounded-2xl border border-red-600/10"
     >
       {/* Top-right glow overlay */}
       <div className="absolute top-0 right-0 pointer-events-none">
