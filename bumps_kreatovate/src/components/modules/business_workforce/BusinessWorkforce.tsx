@@ -1,9 +1,9 @@
-"use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import BusinessCard from "@/components/shared/cards/BusinessCard";
-import { BusinessItem } from "../../../../types";
+'use client';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+import BusinessCard from '@/components/shared/cards/BusinessCard';
+import { BusinessItem } from '../../../../types';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,30 +13,30 @@ const BusinessWorkForce = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".bwv1-title", {
+      gsap.from('.bwv1-title', {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: "power2.out",
+        ease: 'power2.out',
       });
 
-      gsap.from(".bwv1-sub", {
+      gsap.from('.bwv1-sub', {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: "power2.out",
+        ease: 'power2.out',
       });
 
-      gsap.from(".business-card", {
+      gsap.from('.business-card', {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: "power2.out",
+        ease: 'power2.out',
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: "top 80%",
+          start: 'top 80%',
         },
       });
     }, rootRef);
@@ -44,39 +44,53 @@ const BusinessWorkForce = () => {
     return () => ctx.revert();
   }, []);
 
+  // -------------------------------
+  // UPDATED DATA (Matches Screenshot)
+  // -------------------------------
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: "Avatar Builder",
+      title: 'Avatar Builder',
       price: 497,
+      availability: 'Not Available',
       description:
-      "Creates branded avatars for outreach, training, or marketing.",
-      button: "Subscribe",
+        'Creates branded avatars for outreach, training, or marketing.',
+      button: 'Subscribe',
     },
     {
       id: 2,
-      title: "Investigator",
-      price: 597,
-      description: "Basic background checks and internet scrubbing.",
-      button: "Subscribe",
+      title: 'MC2T',
+      price: 2997,
+      availability: 'Available',
+      description: 'ATS-safe, AI-powered resume builder.',
+      button: 'Subscribe',
     },
     {
       id: 3,
-      title: "Lead Generation ",
-      price: 997,
-      description:
-      "AI prospector that finds, qualifies, and routes high-quality leads.",
-      button: "Subscribe",
+      title: 'Investigator',
+      price: 597,
+      availability: 'Not Available',
+      description: 'Basic background checks and internet scrubbing.',
+      button: 'Subscribe',
     },
     {
       id: 4,
-      title: "Content Manager",
-      price: 497,
+      title: 'Lead Generation',
+      price: 997,
+      availability: 'Not Available',
       description:
-        "Generates posts, captions, hashtags, and schedules content.",
-      button: "Subscribe",
+        'AI prospector that finds, qualifies, and routes high-intent leads.',
+      button: 'Subscribe',
     },
-
+    {
+      id: 5,
+      title: 'Content Manager',
+      price: 497,
+      availability: 'Not Available',
+      description:
+        'Generates posts, captions, hashtags, and schedules for social media.',
+      button: 'Subscribe',
+    },
   ];
 
   return (
@@ -84,26 +98,36 @@ const BusinessWorkForce = () => {
       ref={rootRef}
       className="relative py-[6.25rem] px-4 md:px-0 bg-[#0F1016] overflow-hidden font-jakarta"
     >
-      {/* ✅ Dark overlay for better readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70 -z-10"></div>
 
-      {/* ✅ Main Content */}
       <div className="custom-container relative flex flex-col items-center gap-14 lg:gap-24">
-        <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="bwv1-title text-2xl md:text-5xl leading-14 font-bold text-white">
-            Business Workforce v1
+        {/* Title */}
+        <div className="flex flex-col items-center gap-2 md:gap-4">
+          <h1 className="bwv1-title text-2xl md:text-5xl font-bold text-white text-center">
+            Business Workforce Non-Voice v1
           </h1>
-          <p className="bwv1-sub text-sm md:text-md leading-7 font-normal text-gray-300">
+          <p className="bwv1-sub text-sm md:text-md text-gray-300 text-center">
             Lite / Starter Non-Voice Employees
           </p>
         </div>
 
+        {/* GRID — UPDATED */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch business-card"
+          className="
+            grid 
+            grid-cols-1 
+            md:grid-cols-2 
+            lg:grid-cols-3 
+            gap-8 
+            items-stretch 
+            justify-center
+            w-full
+          "
         >
-          {businessData?.map(data => (
-            <BusinessCard key={data.id} data={data} />
+          {businessData.map(item => (
+            <BusinessCard key={item.id} data={item} />
           ))}
         </div>
       </div>

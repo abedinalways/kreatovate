@@ -1,20 +1,21 @@
-"use client";
-import BusinessWorkForceV2 from "@/components/modules/Business_Workforce_v2/BusinessWorkforceV2";
-import BusinessWorkForceV3 from "@/components/modules/Business_Workforce_v3/BusinessWorkforceV3";
-import AddOnsUpgrades from "@/components/modules/add_ons/AddOnsUpgrades";
-import AvailableForRent from "@/components/modules/available_for_rent/AvailableForRent";
-import BusinessWorkForce from "@/components/modules/business_workforce/BusinessWorkforce";
-import BusinessWorkForceV4 from "@/components/modules/business_workforce_v4/BusinessWorkforceV4";
-import ContactUs from "@/components/modules/contact_us/ContactUs";
-import CustomAutomation from "@/components/modules/custom_automation/CustomAutomation";
-import Explore from "@/components/modules/explore/Explore";
-import FeatureComparisonTable from "@/components/modules/feature_comparison/FeatureComparisonTable";
-import PersonalPricelist from "@/components/modules/personal_pricelist/PersonalPricelist";
-import PremiumEnterprise from "@/components/modules/premium_&_enterprise/PremiumEnterprise";
-import PriceBanner from "@/components/modules/price-page/price-banner/PriceBanner";
-import SaaSA1EmployeeLicensing from "@/components/modules/saas_ a1_employee_licensing/SaaSA1EmployeeLicensing";
-import ValueVsCost from "@/components/modules/value_vs_cost/ValueVsCost";
-import React from "react";
+
+import BusinessWorkForceV2 from '@/components/modules/Business_Workforce_v2/BusinessWorkforceV2';
+import BusinessWorkForceV3 from '@/components/modules/Business_Workforce_v3/BusinessWorkforceV3';
+import AddOnsUpgrades from '@/components/modules/add_ons/AddOnsUpgrades';
+import AvailableForRent from '@/components/modules/available_for_rent/AvailableForRent';
+import BusinessWorkForceVoice from '@/components/modules/business-workforce-voice/BusinessWorkforceVoice';
+import BusinessWorkForce from '@/components/modules/business_workforce/BusinessWorkforce';
+import BusinessWorkForceV4 from '@/components/modules/business_workforce_v4/BusinessWorkforceV4';
+import ContactUs from '@/components/modules/contact_us/ContactUs';
+import CustomAutomation from '@/components/modules/custom_automation/CustomAutomation';
+import Explore from '@/components/modules/explore/Explore';
+import FeatureComparisonTable from '@/components/modules/feature_comparison/FeatureComparisonTable';
+import PersonalPricelist from '@/components/modules/personal_pricelist/PersonalPricelist';
+import PremiumEnterprise from '@/components/modules/premium_&_enterprise/PremiumEnterprise';
+import PriceBanner from '@/components/modules/price-page/price-banner/PriceBanner';
+import SaaSA1EmployeeLicensing from '@/components/modules/saas_ a1_employee_licensing/SaaSA1EmployeeLicensing';
+import ValueVsCost from '@/components/modules/value_vs_cost/ValueVsCost';
+import React from 'react';
 
 const PricePage = () => {
   return (
@@ -22,6 +23,7 @@ const PricePage = () => {
       <PriceBanner />
       <PersonalPricelist />
       <BusinessWorkForce />
+      <BusinessWorkForceVoice/>
       <BusinessWorkForceV2 />
       <BusinessWorkForceV3 />
       <BusinessWorkForceV4 />
