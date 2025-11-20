@@ -1,9 +1,9 @@
-'use client';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import { BusinessItem } from '../../../../types';
-import BusinessCard from '@/components/shared/cards/BusinessCard';
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import { BusinessItem } from "../../../../types";
+import BusinessCard from "@/components/shared/cards/BusinessCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,30 +13,30 @@ const EmployeeLicensing = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -47,67 +47,67 @@ const EmployeeLicensing = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Starter Voice (VI)',
-      price: 25000,
-      description: 'Includes full workflow package + docs',
-      button: 'Subscribe',
+      title: "Starter Voice (VI)",
+      price: "25000",
+      description: "Includes full workflow package + docs",
+      button: "Subscribe",
     },
     {
       id: 2,
-      title: 'Standard Voice (v2)',
-      price: 35000,
+      title: "Standard Voice (v2)",
+      price: "35000",
       description:
-        'Creates branded avatars for outreach. training, or customer-facing content.',
-      button: 'Subscribe',
+        "Creates branded avatars for outreach. training, or customer-facing content.",
+      button: "Subscribe",
     },
     {
       id: 3,
-      title: 'Expert Voice (v3)',
-      price: 40000,
-      description: 'Memory-enabled workflows',
-      button: 'Subscribe',
+      title: "Expert Voice (v3)",
+      price: "40000",
+      description: "Memory-enabled workflows",
+      button: "Subscribe",
     },
     {
       id: 4,
-      title: 'Elite Voice (v4)',
-      price: 50000,
-      description: 'Top-tier A1 stack with global scaling',
-      button: 'Subscribe',
+      title: "Elite Voice (v4)",
+      price: "50000",
+      description: "Top-tier A1 stack with global scaling",
+      button: "Subscribe",
     },
     {
       id: 5,
-      title: 'Administrative Assistant',
-      price: 35000,
-      description: 'Standard voice workflows, trilingual.',
-      button: 'Subscribe',
+      title: "Administrative Assistant",
+      price: "35000",
+      description: "Standard voice workflows, trilingual.",
+      button: "Subscribe",
     },
     {
       id: 6,
-      title: 'Executive Assistant',
-      price: 50000,
-      description: 'Premium hybrid workflows, memory-enabled + meeting avatar',
-      button: 'Subscribe',
+      title: "Executive Assistant",
+      price: "50000",
+      description: "Premium hybrid workflows, memory-enabled + meeting avatar",
+      button: "Subscribe",
     },
     {
       id: 7,
-      title: 'Order Taker Employee',
-      price: 20000,
-      description: 'Voice-enabled, retail/event-ready',
-      button: 'Subscribe',
+      title: "Order Taker Employee",
+      price: "20000",
+      description: "Voice-enabled, retail/event-ready",
+      button: "Subscribe",
     },
     {
       id: 8,
-      title: 'Technical Support',
-      price: 35000,
-      description: 'Memory-enabled workflows',
-      button: 'Subscribe',
+      title: "Technical Support",
+      price: "35000",
+      description: "Memory-enabled workflows",
+      button: "Subscribe",
     },
     {
       id: 9,
-      title: 'Lead Generation',
-      price: 25000,
-      description: 'Lead scoring and routing',
-      button: 'Subscribe',
+      title: "Lead Generation",
+      price: "25000",
+      description: "Lead scoring and routing",
+      button: "Subscribe",
     },
   ];
 
@@ -134,7 +134,7 @@ const EmployeeLicensing = () => {
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"
         >
-          {businessData?.map(data => (
+          {businessData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
