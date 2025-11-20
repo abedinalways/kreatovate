@@ -178,11 +178,12 @@ const TermsOfServiceCard = () => {
           KREATOVATE MARKETING & CONSULTING Terms of Service
         </h1>
         <p className="text-lg text-ring">
-          Welcome to Kreatovate.com ("Kreatovate", "we", "our" or "us"). By
-          accessing or using our website, services, or consulting solutions, you
-          agree to comply with and be bound by the following Terms of Service
-          ("Terms"). Please read these Terms carefully. If you do not agree, you
-          may not use our services.
+          Welcome to Kreatovate.com (&quot;Kreatovate&quot;, &quot;we&quot;,
+          &quot;our&quot; or &quot;us&quot;). By accessing or using our website,
+          services, or consulting solutions, you agree to comply with and be
+          bound by the following Terms of Service (&quot;Terms&quot;). Please
+          read these Terms carefully. If you do not agree, you may not use our
+          services.
         </p>
       </div>
 
