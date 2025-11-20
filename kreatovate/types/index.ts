@@ -1,9 +1,11 @@
 export interface BusinessItem {
   id: number;
   title: string;
-  price?: number;
+  price?: string;
+  duration?: string;
   monthlyPrice?: string;
   description?: string;
   button?: string;
-  duration?: string;
+  availability?: string;
+  type?: string;
 }

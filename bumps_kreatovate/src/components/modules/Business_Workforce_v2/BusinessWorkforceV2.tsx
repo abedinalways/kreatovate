@@ -50,17 +50,20 @@ const BusinessWorkForceV2 = () => {
       id: 1,
       title: 'Closer(Trilingual)',
       monthlyPrice: '$3497/monthly',
+      availability: 'Not Available',
       button: 'SDeplo',
     },
     {
       id: 2,
       title: 'Appointment Setter(Trilingual)',
+      availability: 'Not Available',
       monthlyPrice: '$2497/monthly',
       button: 'Deplo',
     },
     {
       id: 3,
       title: 'Lead Nurturer(Trilingual)',
+      availability: 'Not Available',
       monthlyPrice: '$2497/monthly',
       button: 'Deploy',
     },
@@ -68,6 +71,7 @@ const BusinessWorkForceV2 = () => {
       id: 4,
       title: 'Admin Support',
       monthlyPrice: '$2497/monthly',
+      availability: 'Not Available',
       button: 'Deploy',
     },
   ];

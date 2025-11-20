@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "../logo/Logo";
 import Image from "next/image";
+import { FaDiscord, FaThreads } from "react-icons/fa6";
 
 const XIcon = () => (
   <svg
@@ -43,7 +44,7 @@ export default function Footer() {
 
             <div className="flex gap-3 pt-2">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/kreatovate/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -51,7 +52,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/kreatovate?igsh=MWl1Y29rcXJlM3V2bg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -59,7 +60,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/kreatovate?s=21/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -67,12 +68,28 @@ export default function Footer() {
                 <XIcon />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/kreatovate-marketing-consultings/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.threads.com/@kreatovate?igshid=NTc4MTIwNjQ2YQ==/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaThreads className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://discord.gg/kmECdpsdK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaDiscord className="w-5 h-5" />
               </Link>
             </div>
           </div>

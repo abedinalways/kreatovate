@@ -15,7 +15,7 @@ const Banner = () => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
-      // ✨ হেডার ব্লক (tagline, heading, paragraph, button) — staggered fade+up+scale
+     
       tl.from(".js-hero-seq > *", {
         opacity: 0,
         y: 18,
@@ -26,7 +26,7 @@ const Banner = () => {
         stagger: 0.12,
       });
 
-      // 🫧 ব্যাকগ্রাউন্ড স্ট্যাটিক ইমেজগুলোতে subtle float (infinite, low amplitude)
+   
       gsap.to(".js-blob-top", {
         y: 10,
         duration: 3,
@@ -107,7 +107,10 @@ const Banner = () => {
         </div>
 
         <div className="js-hero-seq w-fit z-40">
-          <ButtonTwo btnText="Get Started Today " />
+          <ButtonTwo
+            btnText="Get Started Today "
+            link="/contact-us/"
+          />
         </div>
       </div>
     </div>

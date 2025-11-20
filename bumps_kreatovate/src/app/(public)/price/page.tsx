@@ -3,6 +3,7 @@ import BusinessWorkForceV2 from '@/components/modules/Business_Workforce_v2/Busi
 import BusinessWorkForceV3 from '@/components/modules/Business_Workforce_v3/BusinessWorkforceV3';
 import AddOnsUpgrades from '@/components/modules/add_ons/AddOnsUpgrades';
 import AvailableForRent from '@/components/modules/available_for_rent/AvailableForRent';
+import BusinessWorkForceVoice from '@/components/modules/business-workforce-voice/BusinessWorkforceVoice';
 import BusinessWorkForce from '@/components/modules/business_workforce/BusinessWorkforce';
 import BusinessWorkForceV4 from '@/components/modules/business_workforce_v4/BusinessWorkforceV4';
 import ContactUs from '@/components/modules/contact_us/ContactUs';
@@ -19,21 +20,22 @@ import React from 'react';
 const PricePage = () => {
   return (
     <div>
-      <PriceBanner/>
+      <PriceBanner />
       <PersonalPricelist />
       <BusinessWorkForce />
+      <BusinessWorkForceVoice/>
       <BusinessWorkForceV2 />
       <BusinessWorkForceV3 />
       <BusinessWorkForceV4 />
-      <AvailableForRent/>
+      <AvailableForRent />
       <PremiumEnterprise />
-      <SaaSA1EmployeeLicensing/>
+      <SaaSA1EmployeeLicensing />
       <Explore />
       <FeatureComparisonTable />
       <ValueVsCost />
       <AddOnsUpgrades />
       <CustomAutomation />
-      <ContactUs/>
+      <ContactUs />
     </div>
   );
 };

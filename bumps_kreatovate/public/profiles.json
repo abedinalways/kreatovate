@@ -31,5 +31,71 @@
     "description": "Schedules with precision — time zones, tones, and trust, all perfectly balanced. Your calendar’s new best friend.",
     "superpower": "Turns missed calls into booked meetings.",
     "weakness": "Gets jealous of Google Calendar."
+  },
+  {
+    "id": 4,
+    "name": "Ava Lin",
+    "title": "Chief Experience Architect",
+    "img": "/images/img21.png",
+    "hoverImg": "/images/img21.png",
+    "quote": "Designs empathy into every click.",
+    "description": "Crafts interfaces that feel human, blending intuition with precision. Every pixel has a purpose.",
+    "superpower": "Turns confusion into clarity with design.",
+    "weakness": "Gets distracted by imperfect spacing."
+  },
+  {
+    "id": 5,
+    "name": "Orion Vega",
+    "title": "Head of Data Strategy",
+    "img": "/images/img22.png",
+    "hoverImg": "/images/img22.png",
+    "quote": "Numbers whisper, I listen.",
+    "description": "Transforms raw data into stories that drive decisions. Insight is his native language.",
+    "superpower": "Finds meaning in the messiest datasets.",
+    "weakness": "Overanalyzes even simple coffee orders."
+  },
+  {
+    "id": 6,
+    "name": "jakie tom",
+    "title": "Director of Frontend Innovation",
+    "img": "/images/img27.png",
+    "hoverImg": "/images/img27.png",
+    "quote": "Pixels are my playground.",
+    "description": "Builds seamless, responsive experiences that delight users across every device.",
+    "superpower": "Turns static layouts into living experiences.",
+    "weakness": "Obsessed with chasing pixel perfection."
+  },
+  {
+    "id": 7,
+    "name": "Kat Winslet",
+    "title": "AI Project Coordinator",
+    "img": "/images/img28.png",
+    "hoverImg": "/images/img28.png",
+    "quote": "Deadlines are my love language.",
+    "description": "Keeps projects humming with balance between creativity and structure.",
+    "superpower": "Turns chaos into timelines that work.",
+    "weakness": "Gets restless without a Gantt chart nearby."
+  },
+  {
+    "id": 8,
+    "name": "Nova Reyes",
+    "title": "Customer Success Visionary",
+    "img": "/images/img25.png",
+    "hoverImg": "/images/img25.png",
+    "quote": "Every client deserves delight.",
+    "description": "Ensures every interaction feels personal, supportive, and memorable.",
+    "superpower": "Turns feedback into loyalty.",
+    "weakness": "Takes negative reviews too personally."
+  },
+  {
+    "id": 9,
+    "name": "Atlas Monroe",
+    "title": "Chief Systems Optimizer",
+    "img": "/images/img26.png",
+    "hoverImg": "/images/img26.png",
+    "quote": "Efficiency is my art form.",
+    "description": "Streamlines workflows until they run smoother than silk. No bottleneck survives his gaze.",
+    "superpower": "Turns wasted time into productivity.",
+    "weakness": "Gets annoyed by slow-loading pages."
   }
 ]

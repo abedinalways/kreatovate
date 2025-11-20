@@ -6,9 +6,10 @@ import gsap from "gsap";
 
 interface CardProps {
   data: BusinessItem;
+  className?: string;
 }
 
-const BusinessCard = ({ data }: CardProps) => {
+const BusinessCard = ({ data, className }: CardProps) => {
   const { title, price, description } = data;
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -32,19 +33,23 @@ const BusinessCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl">
+    <div
+      className={`overflow-hidden business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500 ${className}`}
+    >
       <div className="absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
           alt="business card light"
-          width={500}
-          height={500}
+          width={200}
+          height={200}
           className="object-cover rounded-tr-2xl"
         />
       </div>
       <div className="bg-[#0B111F] w-full h-full p-6 rounded-2xl flex flex-col gap-[1.125rem]">
         <div className="flex items-center justify-between">
-          <h1 className=" text-lg md:text-xl font-semibold leading-8">{title}</h1>
+          <h1 className=" text-lg md:text-xl font-semibold leading-8">
+            {title}
+          </h1>
           <p className="text-[#E21717] text-[1.5rem]  md:text-[1.8rem] font-bold leading-10">
             ${price}
           </p>

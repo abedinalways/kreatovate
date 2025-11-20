@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { FaDiscord, FaThreads } from "react-icons/fa6";
 
-import Image from "next/image";
 import Logo from "../Logo";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 
 const XIcon = () => (
   <svg
@@ -19,19 +22,8 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative w-full text-white overflow-hidden bg-[#0b1121]"
+      className="relative w-full text-white overflow-hidden bg-black"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-10">
-        <Image
-          src="/images/footer-bg.png"
-          alt="footer background"
-          width={1600}
-          height={461}
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
@@ -40,14 +32,14 @@ export default function Footer() {
             <Logo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Our AI-Driven Marketing Platform gives you an affordable
+              Our AI-powered Marketing Platform gives you an affordable
               enterprise digital marketing and advertising solution that does
               all the heavy lifting.
             </p>
 
             <div className="flex gap-3 pt-2">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/kreatovate/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -55,7 +47,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/kreatovate?igsh=MWl1Y29rcXJlM3V2bg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -63,7 +55,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/kreatovate?s=21/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
@@ -71,12 +63,28 @@ export default function Footer() {
                 <XIcon />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/kreatovate-marketing-consultings/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.threads.com/@kreatovate?igshid=NTc4MTIwNjQ2YQ==/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaThreads className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://discord.gg/kmECdpsdK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaDiscord className="w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -86,18 +94,27 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white">
+                <Link
+                  href="#home"
+                  onClick={(e) => smoothScrollTo(e, "#home")}
+                  className="text-gray-400 hover:text-white"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
+                <Link
+                  href="#about_us"
+                  onClick={(e) => smoothScrollTo(e, "#about_us")}
+                  className="text-gray-400 hover:text-white"
+                >
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions"
+                  href="#our_solutions"
+                  onClick={(e) => smoothScrollTo(e, "#our_solutions")}
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
@@ -105,7 +122,8 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/testimonial"
+                  href="#testimonial"
+                  onClick={(e) => smoothScrollTo(e, "#testimonial")}
                   className="text-gray-400 hover:text-white"
                 >
                   Testimonial
@@ -113,7 +131,8 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="#contact_us"
+                  onClick={(e) => smoothScrollTo(e, "#contact_us")}
                   className="text-gray-400 hover:text-white"
                 >
                   Contact Us
@@ -170,6 +189,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -178,6 +198,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies

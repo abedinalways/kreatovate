@@ -1,114 +1,186 @@
 "use client";
-import React, { useLayoutEffect } from "react";
+
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { Calendar } from "../ui/calendar";
 import { ConsultationForm } from "../shared/consultation form/ConsultationForm";
-import HeadingButton from "../shared/HeadingButton";
+
+interface ConsultationFormData {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+  service?: string;
+  message?: string;
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone, _] = React.useState("CET");
+  const [selectedDates, setSelectedDates] = useState<Date[]>([]);
+  const [selectedZone, setSelectedZone] = useState("America/New_York");
+  const [selectedSlot, setSelectedSlot] = useState<{
+    start: string;
+    end: string;
+  } | null>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".about-image",
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".about-image",
-            start: "top 85%",
-            toggleActions: "play none none reset",
-          },
-        }
-      );
+  // Scope GSAP animations to this section only
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
-      gsap.fromTo(
-        ".about-text",
-        { opacity: 0, x: 80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".about-text",
-            start: "top 85%",
-            toggleActions: "play none none reset",
-          },
-        }
-      );
+  // Convert selected dates + slot to appointment objects
+  const prepareAppointments = (
+    dates: Date[],
+    timeZone: string,
+    slot: { start: string; end: string }
+  ) => {
+    return dates.map((date) => {
+      const [sHour] = slot.start.split(":").map(Number);
+      const [eHour] = slot.end.split(":").map(Number);
+
+      const start = new Date(date);
+      start.setHours(sHour, 0, 0, 0);
+
+      const end = new Date(date);
+      end.setHours(eHour, 0, 0, 0);
+
+      // GHL needs “YYYY-MM-DD HH:mm”
+      const format = (d: Date) =>
+        d
+          .toLocaleString("sv-SE", {
+            timeZone,
+            hour12: false,
+          })
+          .replace("T", " ")
+          .slice(0, 16);
+
+      return {
+        startTime: format(start),
+        endTime: format(end),
+        timezone: timeZone,
+      };
     });
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const getServiceLabel = (val?: string) => {
+    const map: any = {
+      "digital-marketing": "Digital Marketing",
+      seo: "SEO Services",
+      "social-media": "Social Media Marketing",
+      "content-creation": "Content Creation",
+      "web-development": "Web Development",
+      consulting: "Business Consulting",
+    };
+    return map[val || ""] || "Consultation";
+  };
 
-  // Form submission handler
-  const handleFormSubmit = async (formData: Record<string, any>) => {
+  // FORM SUBMISSION
+  const handleFormSubmit = async (data: ConsultationFormData) => {
+    if (selectedDates.length === 0) {
+      alert("Please select at least one date.");
+      return false;
+    }
+
+    if (!selectedSlot) {
+      alert("Please select a time slot.");
+      return false;
+    }
+
+    const appointments = prepareAppointments(
+      selectedDates,
+      selectedZone,
+      selectedSlot
+    );
+
     const payload = {
-      ...formData,
-      selectedDates: selectedDates.map((d) => d.toISOString()),
-      timeZone: selectedZone,
+      ...data,
+      locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
+      source: "Website - Consultation Form",
+      tags: ["Consultation Request", getServiceLabel(data.service)],
+      customFields: [
+        { key: "service", field_value: data.service || "" },
+        { key: "message", field_value: data.message || "" },
+        {
+          key: "dates_selected",
+          field_value: selectedDates.map((d) => d.toISOString()).join(", "),
+        },
+        { key: "timezone", field_value: selectedZone },
+      ],
+      appointments,
     };
 
-    console.log("Submitting combined data:", payload);
+    const res = await fetch("/api/ghl/book-consultation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-    try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const result = await res.json();
 
-      if (!res.ok) throw new Error("Failed to submit form");
+    if (!res.ok || result.error) {
+      const msg = result.message?.toLowerCase() || "";
 
-      alert("Form submitted successfully!");
-    } catch (error) {
-      console.error(error);
-      alert(error instanceof Error ? error.message : "Something went wrong.");
+      if (msg.includes("slot") && msg.includes("available")) {
+        alert(
+          "❌ This time slot is no longer available. Please choose a different time."
+        );
+      } else {
+        alert("❌ Error: " + result.message);
+      }
+
+      return false; // prevent form reset
     }
+    console.log("resss", result);
+    alert("🎉 Appointment booked successfully!");
+
+    // Reset ONLY after success
+    setSelectedDates([]);
+    setSelectedSlot(null);
+    return true;
   };
 
   return (
-    <div className="bg-[#0F1016]" id="contact_us">
-      <div className="md:flex gap-30 py-[100px] custom-container px-4 md:px-5 justify-center items-start pb-20">
-        {/* Left side: Form */}
-        <div className="flex flex-col gap-2 items-start about-image">
-          <HeadingButton btnText="Contact Us" className="w-33 py-0" />
-          <h2 className="text-white text-3xl md:text-5xl font-bold leading-14 mb-12">
-            Ready to Transform <br /> Your{' '}
+    <div className="bg-[#0F1016]" id="contact_us" ref={sectionRef}>
+      <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
+        {/* LEFT SIDE FORM */}
+        <div className="flex flex-col gap-2 items-start" data-animate="image">
+          <p className="text-gradient">[ Book an appointment ]</p>
+          <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
+            Ready to Transform <br /> Your{" "}
             <span className="text-gradient">Business</span>?
           </h2>
 
           <ConsultationForm
             title="Schedule Your Free Consultation"
             subtitle="We'd love to hear from you"
-            buttonText="Book a Consultation"
+            buttonText="Book A Consultation"
             showButtonIcon={false}
             onSubmit={handleFormSubmit}
+            selectedDates={selectedDates}
+            selectedZone={selectedZone}
           />
         </div>
 
-        {/* Right side: Calendar */}
-        <div className="text-white about-text md:pl-10 mt-10 md:mt-0">
+        {/* RIGHT SIDE CALENDAR */}
+        <div
+          className="text-white md:pl-10 mt-10 md:mt-0 w-full md:w-auto"
+          data-animate="text"
+        >
           <p className="text-gray-200 text-end mb-4">
             Get a free consultation and discover how we can <br />
             optimize your operations
           </p>
+
           <h2 className="text-xl font-bold text-center my-10">
-            Let’s Talk – Pick a Time That <br /> Works for You
+            Let&apos;s Talk – Pick a Time That Works for You
           </h2>
 
-          {/* Calendar component */}
-          <Calendar onDatesChange={setSelectedDates} />
+          <Calendar
+            onDatesChange={setSelectedDates}
+            onTimeZoneChange={setSelectedZone}
+            onTimeSlotChange={setSelectedSlot}
+          />
         </div>
       </div>
     </div>

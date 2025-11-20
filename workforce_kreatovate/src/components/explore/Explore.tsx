@@ -1,6 +1,5 @@
 import ButtonAll from "../shared/ButtonAll";
 
-
 const Explore = () => {
   return (
     <div className="bg-[#0F1016] py-10 px-4">
@@ -24,7 +23,12 @@ const Explore = () => {
             innovation. Dive deeper into our ecosystem.
           </p>
 
-          <ButtonAll btnText="Explore Kreatovate.com" className="md:py-6 " />
+          <ButtonAll
+            btnText="Explore Kreatovate.com"
+            href={process.env.NEXT_PUBLIC_EXPLORE_BTN_LINK}
+            target="_blank"
+            className="md:py-6 "
+          />
         </div>
       </div>
     </div>
