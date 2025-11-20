@@ -96,12 +96,12 @@ const Banner = () => {
             ref={headingRef}
             className=" text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6"
           >
-            Unleash Potential with{' '}
+            Unleash Potential with{" "}
             <span className="text-gradient"> KREATOVATE&apos;s </span> <br />
             Expert Business <span className="text-gradient">
-              {' '}
+              {" "}
               Automation
-            </span>{' '}
+            </span>{" "}
             and AI <br />
             Powered <span className="text-gradient">Digital Marketing</span>
           </h1>
@@ -117,6 +117,7 @@ const Banner = () => {
           <div ref={buttonRef} className="cursor-pointer w-fit">
             <ButtonAll
               btnText="Get Started Today"
+              href="#contact_us"
               className="text-sm md:text-md py-5"
             />
           </div>

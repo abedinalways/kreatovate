@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import { FaDiscord, FaThreads } from 'react-icons/fa6';
-import Image from "next/image";
+import { FaDiscord, FaThreads } from "react-icons/fa6";
+
 import Logo from "../Logo";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 
 const XIcon = () => (
   <svg
@@ -21,8 +24,6 @@ export default function Footer() {
       id="footer"
       className="relative w-full text-white overflow-hidden bg-black"
     >
-      
-
       {/* Content */}
       <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
@@ -93,18 +94,27 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white">
+                <Link
+                  href="#home"
+                  onClick={(e) => smoothScrollTo(e, "#home")}
+                  className="text-gray-400 hover:text-white"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
+                <Link
+                  href="#about_us"
+                  onClick={(e) => smoothScrollTo(e, "#about_us")}
+                  className="text-gray-400 hover:text-white"
+                >
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions"
+                  href="#our_solutions"
+                  onClick={(e) => smoothScrollTo(e, "#our_solutions")}
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
@@ -112,7 +122,8 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/testimonial"
+                  href="#testimonial"
+                  onClick={(e) => smoothScrollTo(e, "#testimonial")}
                   className="text-gray-400 hover:text-white"
                 >
                   Testimonial
@@ -120,7 +131,8 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="#contact_us"
+                  onClick={(e) => smoothScrollTo(e, "#contact_us")}
                   className="text-gray-400 hover:text-white"
                 >
                   Contact Us
@@ -177,6 +189,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -185,6 +198,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies
