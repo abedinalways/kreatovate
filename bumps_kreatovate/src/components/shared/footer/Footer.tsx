@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "../logo/Logo";
@@ -183,6 +185,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -191,6 +194,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies
