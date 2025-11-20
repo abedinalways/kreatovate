@@ -142,7 +142,7 @@ const AboutUs = () => {
           </div>
 
           <div className="w-fit">
-            <ButtonTwo btnText="Learn More" />
+            <ButtonTwo btnText="Learn More" link='/contact-us'/>
           </div>
         </div>
       </div>

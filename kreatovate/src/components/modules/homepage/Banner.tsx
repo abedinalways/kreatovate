@@ -107,10 +107,7 @@ const Banner = () => {
         </div>
 
         <div className="js-hero-seq w-fit z-40">
-          <ButtonTwo
-            btnText="Get Started Today "
-            link="/contact-us/"
-          />
+          <ButtonTwo btnText="Get Started Today " link="#contact_us" />
         </div>
       </div>
     </div>
