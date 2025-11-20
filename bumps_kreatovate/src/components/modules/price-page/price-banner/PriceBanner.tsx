@@ -51,6 +51,7 @@ const PRICES: PricePlan[] = [
     title: 'Lifestyle Manager',
     price: '$2,497',
     billing: 'monthly',
+    availability: 'Not Available',
     description:
       'Includes all vl Non-Voice Agents plus Inbound Voice v3 (Closer)(UCM) to answer all incoming personal calls, screen and take messages, and set priority.',
     buttonText: 'Get Started',
@@ -65,6 +66,7 @@ const PRICES: PricePlan[] = [
     title: 'Chief of Staff',
     price: '$9,497',
     billing: 'monthly',
+    availability: 'Not Available',
     description:
       'Includes all Lite vl Non-Voice + all Expert v3 Voice Roles (UCM).',
     buttonText: 'Get Started',
@@ -79,6 +81,7 @@ const PRICES: PricePlan[] = [
     title: 'Chief Operating Officer',
     price: '$14,497',
     billing: 'monthly',
+    availability: 'Not Available',
     description:
       'Includes all Lite vl Non-Voice + all Elite v4 Voice + all Premium vl (UCM + Trilingual).',
     buttonText: 'Get Started',

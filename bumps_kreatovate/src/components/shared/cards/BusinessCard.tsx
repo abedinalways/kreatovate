@@ -34,8 +34,8 @@ const BusinessCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="h-full business-card relative bg-color-gradient p-[px] rounded-2xl ">
-      <div className=" absolute top-0 right-0">
+    <div className="h-full business-card relative bg-color-gradient p-[px] rounded-2xl  ">
+      <div className=" absolute top-0 right-0 pointer-events-none">
         <Image
           src="/images/business_card_light.png"
           alt="business card light"

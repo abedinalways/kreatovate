@@ -34,7 +34,7 @@ const BusinessCardTwo = ({ data }: CardProps) => {
 
   return (
     <div className="business-card relative  p-px rounded-2xl ">
-      <div className="w-64 h-48 absolute top-0 right-0">
+      <div className="w-64 h-48 absolute top-0 right-0 pointer-events-none">
         <Image
           src="/images/business_card_light.png"
           alt="business card light"
