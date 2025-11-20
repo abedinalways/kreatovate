@@ -304,10 +304,10 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
         onDatesChange?.(arr);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-9c6951782f3f97c0" + " " + "bg-linear-to-br w-full mx-auto p-4 sm:p-6 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white overflow-hidden",
+        className: "jsx-3fef3a09fd8fde5" + " " + "bg-linear-to-br w-full mx-auto p-4 sm:p-6 from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-lg text-white overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "9c6951782f3f97c0",
+                id: "3fef3a09fd8fde5",
                 children: ".rdp{width:100%!important;max-width:100%!important;margin:0 auto!important}.rdp-months{width:100%!important;margin:0!important;padding:0!important;display:block!important}.rdp-month{width:100%!important}.rdp-table{table-layout:fixed!important;width:100%!important}.rdp-head_cell,.rdp-cell{text-align:center!important;padding:6px 0!important}.rdp-day{width:36px!important;height:36px!important;margin:0 auto!important;line-height:36px!important}"
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$day$2d$picker$2f$dist$2f$esm$2f$DayPicker$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DayPicker"], {
@@ -320,7 +320,7 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
                     selected: "bg-gradient-to-r from-[#ff4ad8] to-[#ff77ef] text-white rounded-full shadow-lg font-bold"
                 },
                 footer: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-9c6951782f3f97c0" + " " + "mt-4 text-center text-sm text-gray-300",
+                    className: "jsx-3fef3a09fd8fde5" + " " + "mt-4 text-center text-sm text-gray-300",
                     children: selectedDates.length > 0 ? `${selectedDates.length} date(s) selected` : "Select at least one date"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/calendar.tsx",
@@ -333,10 +333,10 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-9c6951782f3f97c0" + " " + "mt-6",
+                className: "jsx-3fef3a09fd8fde5" + " " + "mt-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "jsx-9c6951782f3f97c0" + " " + "text-sm text-white/70 mb-1",
+                        className: "jsx-3fef3a09fd8fde5" + " " + "text-sm text-white/70 mb-1",
                         children: "Select Time Slot"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/calendar.tsx",
@@ -407,10 +407,10 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-9c6951782f3f97c0" + " " + "mt-6",
+                className: "jsx-3fef3a09fd8fde5" + " " + "mt-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "jsx-9c6951782f3f97c0" + " " + "text-sm text-white/70 mb-1",
+                        className: "jsx-3fef3a09fd8fde5" + " " + "text-sm text-white/70 mb-1",
                         children: "Time Zone"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/calendar.tsx",
@@ -475,10 +475,10 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
                 columnNumber: 7
             }, this),
             selectedDates.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-9c6951782f3f97c0" + " " + "mt-6 text-sm text-white/70",
+                className: "jsx-3fef3a09fd8fde5" + " " + "mt-6 text-sm text-white/70",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "jsx-9c6951782f3f97c0" + " " + "mb-2",
+                        className: "jsx-3fef3a09fd8fde5" + " " + "mb-2",
                         children: "Selected dates:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/calendar.tsx",
@@ -486,9 +486,9 @@ function Calendar({ onDatesChange, onTimeZoneChange, onTimeSlotChange }) {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-9c6951782f3f97c0" + " " + "grid grid-cols-2 gap-2",
+                        className: "jsx-3fef3a09fd8fde5" + " " + "grid grid-cols-2 gap-2",
                         children: selectedDates.map((date)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "jsx-9c6951782f3f97c0" + " " + "px-3 py-1 bg-purple-700/40 rounded-full text-xs text-center",
+                                className: "jsx-3fef3a09fd8fde5" + " " + "px-3 py-1 bg-purple-700/40 rounded-full text-xs text-center",
                                 children: date.toLocaleDateString("en-US", {
                                     weekday: "short",
                                     month: "short",
@@ -3178,7 +3178,7 @@ const Banner = ()=>{
                                 className: " text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6",
                                 children: [
                                     "Unleash Potential with",
-                                    ' ',
+                                    " ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-gradient",
                                         children: " KREATOVATE's "
@@ -3197,7 +3197,7 @@ const Banner = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-gradient",
                                         children: [
-                                            ' ',
+                                            " ",
                                             "Automation"
                                         ]
                                     }, void 0, true, {
@@ -3205,7 +3205,7 @@ const Banner = ()=>{
                                         lineNumber: 101,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
-                                    ' ',
+                                    " ",
                                     "and AI ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
@@ -3249,6 +3249,7 @@ const Banner = ()=>{
                                 className: "cursor-pointer w-fit",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ButtonAll$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     btnText: "Get Started Today",
+                                    href: "#contact_us",
                                     className: "text-sm md:text-md py-5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
@@ -3275,7 +3276,7 @@ const Banner = ()=>{
                         className: `absolute right-0 bottom-0 z-10 ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$home$2d$page$2f$banner$2f$banner$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].roboImg}`
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                        lineNumber: 125,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -3292,7 +3293,7 @@ const Banner = ()=>{
                 className: "absolute bottom-0 xl:-bottom-0.5 left-0 w-full z-40"
             }, void 0, false, {
                 fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                lineNumber: 134,
+                lineNumber: 135,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -3390,15 +3391,15 @@ const BusinessCard = ({ data })=>{
         };
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl",
+        className: "overflow-hidden business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 right-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     src: "/images/business_card_light.png",
                     alt: "business card light",
-                    width: 500,
-                    height: 500,
+                    width: 200,
+                    height: 200,
                     className: "object-cover rounded-tr-2xl"
                 }, void 0, false, {
                     fileName: "[project]/src/components/modules/BusinessCard.tsx",
@@ -3432,7 +3433,7 @@ const BusinessCard = ({ data })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                                lineNumber: 48,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -3446,7 +3447,7 @@ const BusinessCard = ({ data })=>{
                         children: description
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                        lineNumber: 52,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3455,12 +3456,12 @@ const BusinessCard = ({ data })=>{
                             btnText: "Subscribe"
                         }, void 0, false, {
                             fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                            lineNumber: 57,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                        lineNumber: 56,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -4253,7 +4254,7 @@ const EvolutionCard = ({ version, title, description, buttonText, icon = /*#__PU
                     className: "hidden sm:block opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 w-fit",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                         variant: "default",
-                        className: " text-base leading-7 w-fit text-left px-6 py-4 bg-[#FB2C360D] border border-[#FB2C3633] rounded-[12px] ",
+                        className: "   text-base leading-7 w-fit text-left   px-6 py-4   bg-[#FB2C360D] border border-[#FB2C3633] rounded-[12px]   ",
                         children: shortText
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/home-page/evolution/EvolutionCard.tsx",
