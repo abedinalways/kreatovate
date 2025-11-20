@@ -20,22 +20,22 @@ import React from 'react';
 const PricePage = () => {
   return (
     <div>
-      <PriceBanner/>
+      <PriceBanner />
       <PersonalPricelist />
       <BusinessWorkForce />
       <BusinessWorkForceVoice/>
       <BusinessWorkForceV2 />
       <BusinessWorkForceV3 />
       <BusinessWorkForceV4 />
-      <AvailableForRent/>
+      <AvailableForRent />
       <PremiumEnterprise />
-      <SaaSA1EmployeeLicensing/>
+      <SaaSA1EmployeeLicensing />
       <Explore />
       <FeatureComparisonTable />
       <ValueVsCost />
       <AddOnsUpgrades />
       <CustomAutomation />
-      <ContactUs/>
+      <ContactUs />
     </div>
   );
 };
