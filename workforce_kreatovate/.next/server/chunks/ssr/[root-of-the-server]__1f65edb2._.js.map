@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 27, "column": 0}, "map": {"version":3,"sources":["file:///D:/SHIPAN_MALLIK/office/terranwilliams/workforce_kreatovate/src/app/%28public%29/terms-of-services/page.tsx"],"sourcesContent":["const TermsOfServicesPage = () => {\r\n  return (\r\n    <div className=\"overflow-hidden\">\r\n      <DynamicBanner\r\n        imageUrl=\"/images/terms-of-services.png\"\r\n        title=\"Terms of\"\r\n        titleGradient=\"Service\"\r\n      />\r\n      <TermsOfServiceCard />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TermsOfServicesPage;\r\n"],"names":[],"mappings":";;;;;;AAAA,MAAM,sBAAsB;IAC1B,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBACC,UAAS;gBACT,OAAM;gBACN,eAAc;;;;;;0BAEhB,8OAAC;;;;;;;;;;;AAGP;uCAEe","debugId":null}}]
-}
