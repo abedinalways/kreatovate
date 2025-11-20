@@ -619,6 +619,7 @@ const ButtonAll = (param)=>{
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 href: disabled ? "#" : href,
                 target: target,
+                rel: target === "_blank" ? "noopener noreferrer" : undefined,
                 "aria-disabled": disabled,
                 tabIndex: disabled ? -1 : 0,
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(disabled && "pointer-events-none opacity-60"),
@@ -644,7 +645,7 @@ const ButtonAll = (param)=>{
         children: content
     }, void 0, false, {
         fileName: "[project]/src/components/shared/ButtonAll.tsx",
-        lineNumber: 73,
+        lineNumber: 74,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

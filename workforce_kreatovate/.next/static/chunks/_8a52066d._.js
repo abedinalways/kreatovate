@@ -3669,7 +3669,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const BusinessCard = (param)=>{
-    let { data } = param;
+    let { data, className } = param;
     _s();
     const { title, price, description } = data;
     const cardRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -3705,7 +3705,7 @@ const BusinessCard = (param)=>{
         }
     }["BusinessCard.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "overflow-hidden business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500",
+        className: "overflow-hidden business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500 ".concat(className),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 right-0",
@@ -3717,12 +3717,12 @@ const BusinessCard = (param)=>{
                     className: "object-cover rounded-tr-2xl"
                 }, void 0, false, {
                     fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                    lineNumber: 37,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                lineNumber: 36,
+                lineNumber: 39,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3736,7 +3736,7 @@ const BusinessCard = (param)=>{
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                                lineNumber: 47,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3747,13 +3747,13 @@ const BusinessCard = (param)=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                                lineNumber: 50,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                        lineNumber: 46,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3761,7 +3761,7 @@ const BusinessCard = (param)=>{
                         children: description
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                        lineNumber: 54,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3770,24 +3770,24 @@ const BusinessCard = (param)=>{
                             btnText: "Subscribe"
                         }, void 0, false, {
                             fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                            lineNumber: 59,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/modules/BusinessCard.tsx",
-                lineNumber: 45,
+                lineNumber: 48,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/modules/BusinessCard.tsx",
-        lineNumber: 35,
+        lineNumber: 36,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3812,11 +3812,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$inde
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$BusinessCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/modules/BusinessCard.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/gsap/ScrollTrigger.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ButtonAll$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/shared/ButtonAll.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
-;
 ;
 ;
 ;
@@ -3825,32 +3823,35 @@ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e
 const Business = ()=>{
     _s();
     const rootRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const gridRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Business.useEffect": ()=>{
             const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].context({
                 "Business.useEffect.ctx": ()=>{
+                    // Title fade-up
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].from(".bwv1-title", {
                         opacity: 0,
-                        y: 24,
+                        y: 20,
                         duration: 0.8,
                         ease: "power2.out"
                     });
+                    // Subtitle fade-up
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].from(".bwv1-sub", {
                         opacity: 0,
-                        y: 12,
-                        duration: 0.6,
+                        y: 15,
+                        duration: 0.7,
                         delay: 0.1,
                         ease: "power2.out"
                     });
+                    // Card animation
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].from(".business-card", {
                         opacity: 0,
-                        y: 28,
-                        duration: 0.8,
+                        y: 30,
+                        duration: 1,
                         ease: "power2.out",
-                        stagger: 0.12,
+                        stagger: 0.15,
+                        immediateRender: false,
                         scrollTrigger: {
-                            trigger: gridRef.current,
+                            trigger: ".business-grid",
                             start: "top 80%"
                         }
                     });
@@ -3864,35 +3865,35 @@ const Business = ()=>{
     const businessData = [
         {
             id: 1,
-            title: 'Closer',
+            title: "Closer",
             price: 2497,
-            description: 'Outbound sales employee that calls and closes deals.'
+            description: "Outbound sales employee that calls and closes deals."
         },
         {
             id: 2,
-            title: 'Appointment Setter',
+            title: "Appointment Setter",
             price: 1497,
-            description: 'Schedules and confirms client calls seamlessly..'
+            description: "Schedules and confirms client calls seamlessly.."
         },
         {
             id: 3,
-            title: 'Lead Nurturer',
+            title: "Lead Nurturer",
             price: 1497,
-            description: 'Warms leads with education and timely follow-ups.'
+            description: "Warms leads with education and timely follow-ups."
         }
     ];
     const businessSecondData = [
         {
             id: 4,
-            title: 'Missed Call 2 Text (MC2T)',
+            title: "Missed Call 2 Text (MC2T)",
             price: 1497,
-            description: 'Warms leads with education and timely follow-ups.'
+            description: "Warms leads with education and timely follow-ups."
         },
         {
             id: 5,
-            title: 'Admin Support',
+            title: "Admin Support",
             price: 1497,
-            description: 'Schedules and confirms client calls seamlessly.'
+            description: "Schedules and confirms client calls seamlessly."
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3911,7 +3912,7 @@ const Business = ()=>{
                                 "Business Workforce V1",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/src/components/modules/Business.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3919,13 +3920,13 @@ const Business = ()=>{
                                     children: "Monthly Pricing"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/modules/Business.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/modules/Business.tsx",
-                            lineNumber: 88,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3933,66 +3934,70 @@ const Business = ()=>{
                             children: "Lite / Starter Voice Employees"
                         }, void 0, false, {
                             fileName: "[project]/src/components/modules/Business.tsx",
-                            lineNumber: 93,
+                            lineNumber: 97,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/modules/Business.tsx",
-                    lineNumber: 87,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: gridRef,
-                    className: "grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8",
-                    children: businessData === null || businessData === void 0 ? void 0 : businessData.map((data)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$BusinessCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            data: data
+                    className: "business-grid grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8",
+                    children: businessData === null || businessData === void 0 ? void 0 : businessData.map((data)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "business-card",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$BusinessCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                data: data
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/modules/Business.tsx",
+                                lineNumber: 106,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
                         }, data.id, false, {
                             fileName: "[project]/src/components/modules/Business.tsx",
-                            lineNumber: 103,
+                            lineNumber: 105,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/modules/Business.tsx",
-                    lineNumber: 98,
+                    lineNumber: 103,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: gridRef,
-                    className: "grid grid-cols-1 md:grid-cols-2 gap-8",
-                    children: businessSecondData === null || businessSecondData === void 0 ? void 0 : businessSecondData.map((data)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$BusinessCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            data: data
+                    className: "business-grid grid grid-cols-1 md:grid-cols-2 gap-8",
+                    children: businessSecondData === null || businessSecondData === void 0 ? void 0 : businessSecondData.map((data)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "business-card",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$BusinessCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                data: data
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/modules/Business.tsx",
+                                lineNumber: 115,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
                         }, data.id, false, {
                             fileName: "[project]/src/components/modules/Business.tsx",
-                            lineNumber: 108,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/components/modules/Business.tsx",
-                    lineNumber: 106,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ButtonAll$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    btnText: "View Full Workforce",
-                    className: "py-6 mx-auto"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/modules/Business.tsx",
-                    lineNumber: 111,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/modules/Business.tsx",
-            lineNumber: 86,
+            lineNumber: 88,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/modules/Business.tsx",
-        lineNumber: 85,
+        lineNumber: 87,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(Business, "gFAXd1hrqDZ30tF16k2VMuH06sk=");
+_s(Business, "Bbi/gSzGuaeygbnzN31K04tsrQ0=");
 _c = Business;
 const __TURBOPACK__default__export__ = Business;
 var _c;
@@ -4299,19 +4304,19 @@ const TrailerModal = ()=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogClose"], {
                                 asChild: true,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20 cursor-pointer!",
+                                    className: "absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20",
                                     "aria-label": "Close",
                                     onClick: ()=>{
-                                        if (videoRef.current) {
-                                            videoRef.current.pause();
-                                            videoRef.current.currentTime = 0;
+                                        const iframe = document.getElementById("yt-frame");
+                                        if (iframe) {
+                                            iframe.src = iframe.src; // reset to stop video
                                         }
                                     },
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 61,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
@@ -4324,15 +4329,16 @@ const TrailerModal = ()=>{
                                 lineNumber: 48,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                                ref: videoRef,
-                                controls: true,
-                                className: "w-full h-auto",
-                                src: "/videos/trailer.mp4",
-                                children: "Your browser does not support the video tag."
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                                id: "yt-frame",
+                                className: "w-full h-[500px]",
+                                src: "https://www.youtube.com/embed/PqfmogZ5ZTs?autoplay=1",
+                                title: "YouTube video player",
+                                allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+                                allowFullScreen: true
                             }, void 0, false, {
                                 fileName: "[project]/src/components/modules/home-page/trailer/TrailerModal.tsx",
-                                lineNumber: 63,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]

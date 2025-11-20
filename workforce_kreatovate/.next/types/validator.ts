@@ -56,6 +56,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/(public)/privacy-policy/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/privacy-policy">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/privacy-policy/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(public)/terms-of-services/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/terms-of-services">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/terms-of-services/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/ghl/book-consultation/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/ghl/book-consultation">> = Specific
