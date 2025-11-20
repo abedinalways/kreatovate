@@ -4217,7 +4217,7 @@ const EvolutionCard = ({ version, title, description, buttonText, icon = /*#__PU
                     className: "hidden sm:block opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 w-fit",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                         variant: "default",
-                        className: "   text-base leading-7 w-fit text-left   px-6 py-4   bg-[#FB2C360D] border border-[#FB2C3633] rounded-[12px]   ",
+                        className: " text-base leading-7 w-fit text-left px-6 py-4 bg-[#FB2C360D] border border-[#FB2C3633] rounded-[12px] ",
                         children: shortText
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/home-page/evolution/EvolutionCard.tsx",
