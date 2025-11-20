@@ -40,7 +40,7 @@ const BusinessCardTwo = ({ data }: CardProps) => {
   return (
     <div
       ref={cardRef}
-      className="business-card relative p-px rounded-2xl h-full min-h-[210px]"
+      className="business-card relative p-px rounded-2xl h-full min-h-[210px] border border-gray-50/10"
     >
       {/* Light overlay */}
       <div className="absolute top-0 right-0 pointer-events-none w-40 h-40">
@@ -54,6 +54,7 @@ const BusinessCardTwo = ({ data }: CardProps) => {
       </div>
 
       {/* 🔥 FIXED HEIGHT CARD */}
+      
       <div className="bg-[#0B111F] h-full p-4 rounded-2xl flex flex-col justify-center gap-4">
         <div className='flex justify-center items-center'>
           {/* Availability Badge */}
