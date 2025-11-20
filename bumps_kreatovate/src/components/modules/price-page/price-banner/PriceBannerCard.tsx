@@ -2,11 +2,13 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import ButtonTwo from '@/components/shared/buttons/ButtonTwo';
 import { useState } from 'react';
+import { CircleAlertIcon } from 'lucide-react';
 
 export type PricePlan = {
   title: string;
   price: string;
   billing: string;
+  availability: string;
   description: string;
   buttonText: string;
   features: string[];
@@ -31,9 +33,17 @@ const PriceBannerCard = ({ plan }: { plan: PricePlan }) => {
         }}
       >
         {/* Title */}
-        <h2 className="font-sans text-xl xs:text-2xl sm:text-3xl font-semibold leading-tight">
+        <h2 className="font-sans text-lg md:text-2xl font-semibold leading-tight py-4">
           {plan.title}
         </h2>
+        {plan.availability && (
+          <>
+            <button className="bg-red-100 text-red-500 px-2 w-32 text-xs font-bold rounded-lg flex items-center gap-2 py-1 border border-red-500">
+              {' '}
+              <CircleAlertIcon size={14} /> {plan.availability}
+            </button>
+          </>
+        )}
 
         {/* Price + Description */}
         <div className="mt-3 sm:mt-4">
