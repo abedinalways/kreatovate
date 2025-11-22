@@ -1,0 +1,56 @@
+/* [project]/src/components/modules/home-page/banner/banner.module.css [app-client] (css) */
+.banner-module__ZLcMoG__roboImg {
+  width: 55%;
+  height: 80%;
+}
+
+@media (max-width: 1024px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 65%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 75%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 720px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 80%;
+    height: 55%;
+  }
+}
+
+@media (max-width: 450px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 82%;
+    height: 45%;
+  }
+}
+
+@media (max-width: 430px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 85%;
+    height: 43%;
+  }
+}
+
+@media (max-width: 380px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 90%;
+    height: 40%;
+  }
+}
+
+@media (max-width: 340px) {
+  .banner-module__ZLcMoG__roboImg {
+    width: 95%;
+    height: 38%;
+  }
+}
+
+/*# sourceMappingURL=src_components_modules_home-page_banner_banner_module_css_bad6b30c._.single.css.map*/
