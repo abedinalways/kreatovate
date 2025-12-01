@@ -3,6 +3,8 @@ import { Open_Sans, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
 import LenisProvider from "@/providers/LenisProvider";
+import Script from "next/script";
+import BumpSaleLoader from "@/components/BumpSaleLoader";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -16,11 +18,11 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-const openSans=Open_Sans({
+const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-openSans",
-})
+});
 
 export const metadata: Metadata = {
   title: "Bumps Kreatovate | Book Funnels & Smart Sales Automation",
@@ -65,6 +67,18 @@ export default function RootLayout({
         className={`${jakarta.variable} ${roboto.variable} ${openSans.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
+        {/* <BumpSaleLoader /> */}
+        {/* <Script
+          src="https://widgets.bumpsale.co/button.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            console.log("Bumpsale widget script loaded");
+          }}
+        /> */}
+        <Script
+          src="https://widgets.bumpsale.co/button.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

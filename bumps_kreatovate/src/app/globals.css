@@ -3,6 +3,25 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.bumpsale_button {
+  display: inline-block;
+  padding: 12px 58px;
+  font: normal 14px Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid red;
+  margin-right: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bumpsale_button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -136,7 +155,7 @@
 .text-color-gradient {
   @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
- 
+
 .heading-btn-bg {
   @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
 }
@@ -174,12 +193,12 @@
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
 }
 
-.text-gradient{
-  @apply  text-transparent bg-clip-text;
-  background-image: linear-gradient(to left, #E21717 10%, #3700FF 90%);
+.text-gradient {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
 }
 .bg-gradient {
-  background: linear-gradient(to right, #3700FF 60%, #E21717 20%, #3700FF 30%);
+  background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
 }
 .text-gradient-special {
   @apply bg-linear-to-r from-[#FF0000] to-[#6b7cff] inline-block text-transparent bg-clip-text leading-none;
@@ -229,6 +248,3 @@
   height: auto;
   object-fit: cover;
 }
-
-
-

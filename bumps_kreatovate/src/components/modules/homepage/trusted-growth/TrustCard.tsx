@@ -1,3 +1,4 @@
+import BumpsaleButton from "@/components/BumpsaleButton";
 import ButtonOne from "@/components/shared/buttons/ButtonOne";
 import Image from "next/image";
 
@@ -5,9 +6,17 @@ interface TGProps {
   title: string;
   description: string;
   image: string;
+  bumpsaleId?: string;
+  price?: string | number;
 }
 
-const TrustCard = ({ title, description, image }: TGProps) => {
+const TrustCard = ({
+  title,
+  description,
+  image,
+  bumpsaleId,
+  price,
+}: TGProps) => {
   return (
     <div className="relative w-full rounded-xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
       <div className="relative bg-black rounded-xl p-8 flex flex-col gap-4 items-center overflow-hidden">
@@ -42,7 +51,12 @@ const TrustCard = ({ title, description, image }: TGProps) => {
               {description}
             </p>
             <div className="w-full">
-              <ButtonOne btnText="Learn More" />
+              {/* <ButtonOne
+                btnText="Learn More"
+                bumpsaleId={bumpsaleId}
+                price={price}
+              /> */}
+              <BumpsaleButton />
             </div>
           </div>
         </div>

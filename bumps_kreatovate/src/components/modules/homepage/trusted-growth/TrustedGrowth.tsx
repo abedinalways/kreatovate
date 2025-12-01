@@ -9,7 +9,6 @@ const TrustedGrowth = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 🟣 Title Section Animation (fade + slide-up)
       gsap.from(".trusted-title > *", {
         opacity: 0,
         y: 30,
@@ -18,7 +17,6 @@ const TrustedGrowth = () => {
         ease: "power2.out",
       });
 
-      // 🟢 Cards Continuous Floating Motion
       const cards = gsap.utils.toArray<HTMLElement>(".trust-card");
 
       cards.forEach((card, i) => {
@@ -43,6 +41,8 @@ const TrustedGrowth = () => {
       description:
         "This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...",
       image: "/images/books/book1.png",
+      bumpsaleId: "DqnAuwLrNJZ3161s219qxft1",
+      price: "$2",
     },
     {
       id: 2,
@@ -96,18 +96,11 @@ const TrustedGrowth = () => {
               title={book.title}
               description={book.description}
               image={book.image}
+              bumpsaleId={book.bumpsaleId}
+              price={book.price}
             />
           </div>
         ))}
-        {/* <div className="trust-card w-full">
-          <TrustCard />
-        </div>
-        <div className="trust-card w-full">
-          <TrustCard />
-        </div>
-        <div className="trust-card w-full">
-          <TrustCard />
-        </div> */}
       </div>
     </div>
   );
