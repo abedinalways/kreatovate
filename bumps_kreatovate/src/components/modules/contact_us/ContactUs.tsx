@@ -56,8 +56,9 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
-  // Form submission handler
-  const handleFormSubmit = async (formData: ConsultationFormData) => {
+  const handleFormSubmit = async (
+    formData: ConsultationFormData
+  ): Promise<boolean> => {
     const payload = {
       ...formData,
       selectedDates: selectedDates.map((d) => d.toISOString()),
