@@ -1,41 +1,3 @@
-// "use client";
-
-// import Script from "next/script";
-// import { useEffect, useState } from "react";
-
-// export default function BumpsaleButton({
-//   productId = "DqnAuwLrNJZ3161s219qxft1",
-//   text = "Buy Now at _PRICE_",
-// }) {
-//   const [mounted, setMounted] = useState(false);
-
-//   useEffect(() => {
-//     setMounted(true);
-//   }, []);
-
-//   return (
-//     <>
-//       <Script
-//         src="https://widgets.bumpsale.co/button.js"
-//         strategy="afterInteractive"
-//         onLoad={() => {
-//           console.log("Bumpsale widget script loaded");
-//         }}
-//       />
-
-//       {mounted && (
-//         <a
-//           data-bumpsale="DqnAuwLrNJZ3161s219qxft1"
-//           data-bumpsale-text="Buy Now at _PRICE_"
-//         >
-//           Buy Now
-//         </a>
-//       )}
-//     </>
-//   );
-// }
-
-// BumpsaleButton.tsx
 "use client";
 
 import { useEffect } from "react";
@@ -74,7 +36,7 @@ export default function BumpsaleButton() {
       <a
         href="#"
         className="bumpsale_button"
-        data-bumpsale="DqnAuwLrNJZ3161s219qxft1"
+        data-bumpsale="uPpDJDrVPbXPq28McoDrNFJf"
         data-bumpsale-text="Buy Now at _PRICE_"
         onClick={(e) => {
           console.log("🖱️ Button clicked");

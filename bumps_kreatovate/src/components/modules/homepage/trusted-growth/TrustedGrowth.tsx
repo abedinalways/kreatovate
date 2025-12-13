@@ -41,7 +41,7 @@ const TrustedGrowth = () => {
       description:
         "This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...",
       image: "/images/books/book1.png",
-      bumpsaleId: "DqnAuwLrNJZ3161s219qxft1",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
       price: "$2",
     },
     {
@@ -50,6 +50,7 @@ const TrustedGrowth = () => {
       description:
         "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent.",
       image: "/images/books/book2.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
     },
     {
       id: 3,
@@ -57,6 +58,7 @@ const TrustedGrowth = () => {
       description:
         "This book guides entrepreneurs, investors and families to build financial systems that outlast them – not just for profit today...",
       image: "/images/books/book3.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
     },
     {
       id: 4,
@@ -64,6 +66,7 @@ const TrustedGrowth = () => {
       description:
         "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...",
       image: "/images/books/book4.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
     },
   ];
 
