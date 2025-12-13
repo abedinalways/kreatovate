@@ -1,8 +1,4 @@
 {
   "/(public)/page": "app/(public)/page.js",
-  "/(public)/privacy-policy/page": "app/(public)/privacy-policy/page.js",
-  "/(public)/terms-of-services/page": "app/(public)/terms-of-services/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/ghl/book-consultation/route": "app/api/ghl/book-consultation/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
