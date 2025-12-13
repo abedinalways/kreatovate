@@ -1,8 +1,0 @@
-{
-  "editor.hover.enabled": "off",
-  "[typescript]": { "editor.hover.enabled": "on" },
-  "[typescriptreact]": {
-    "editor.hover.enabled": "on"
-  },
-  "editor.formatOnSave": true
-}

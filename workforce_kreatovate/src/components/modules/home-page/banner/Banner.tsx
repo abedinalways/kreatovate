@@ -103,7 +103,7 @@ const Banner = () => {
               Automation
             </span>{" "}
             and AI <br />
-            Powered <span className="text-gradient">Digital Marketing</span>
+            Powered <span className="text-gradient">Workforce Solutions</span>
           </h1>
           <p
             ref={textRef}
