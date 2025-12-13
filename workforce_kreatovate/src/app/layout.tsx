@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/LenisProvider";
+import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -10,9 +11,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-roboto',
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -32,6 +33,12 @@ export default function RootLayout({
         className={`${jakarta.variable} ${roboto.variable} antialiased bg-[#000] font-jakarta text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693bbcb7e9d47628adf3781e"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/LenisProvider";
 import { ReactNode } from "react";
+import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -31,6 +32,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <LenisProvider>
           <div id="page-root">{children}</div>
         </LenisProvider>
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693bbcb7e9d47628adf3781e"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

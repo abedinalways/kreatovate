@@ -79,6 +79,12 @@ export default function RootLayout({
           src="https://widgets.bumpsale.co/button.js"
           strategy="lazyOnload"
         />
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693bbcb7e9d47628adf3781e"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

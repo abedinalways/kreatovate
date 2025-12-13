@@ -16,6 +16,7 @@
   margin-right: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .bumpsale_button:hover {
@@ -247,4 +248,23 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* LeadConnector Chat Animation */
+#lc_text-widget-box {
+  transform-origin: bottom right;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Closed state */
+#lc_text-widget-box[style*="display: none"],
+#lc_text-widget-box.lc-hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+}
+
+/* Open state */
+#lc_text-widget-box:not([style*="display: none"]) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
