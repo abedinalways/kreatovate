@@ -1,8 +1,0 @@
-{
-  "/(public)/page": "/",
-  "/(public)/privacy-policy/page": "/privacy-policy",
-  "/(public)/terms-of-services/page": "/terms-of-services",
-  "/_not-found/page": "/_not-found",
-  "/api/ghl/book-consultation/route": "/api/ghl/book-consultation",
-  "/favicon.ico/route": "/favicon.ico"
-}
