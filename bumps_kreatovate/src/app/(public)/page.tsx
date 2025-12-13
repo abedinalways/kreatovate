@@ -11,6 +11,7 @@ import FAQ from "@/components/FAQ/FAQ";
 import Counter from "@/components/modules/homepage/counter/Counter";
 import Trailer from "@/components/modules/homepage/trailer/Trailer";
 import BumpsProject from "@/components/modules/homepage/bumps-project/BumpsProject";
+import LeaveReview from "@/components/leaveReview/LeaveReview";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <Explore />
         <Contact />
         <FAQ />
+        <LeaveReview />
       </div>
     </div>
   );
