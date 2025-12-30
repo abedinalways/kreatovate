@@ -8,16 +8,25 @@ import TrustedGrowth from "@/components/modules/homepage/trusted-growth/TrustedG
 import Solution from "@/components/solution/Solution";
 import Team from "@/components/team/Team";
 import FAQ from "@/components/FAQ/FAQ";
-import Counter from "@/components/modules/homepage/counter/Counter";
+// import Counter from "@/components/modules/homepage/counter/Counter";
 import Trailer from "@/components/modules/homepage/trailer/Trailer";
-import BumpsProject from "@/components/modules/homepage/bumps-project/BumpsProject";
+import Launchpad from "@/components/modules/homepage/launchpad/Launchpad";
+import WhyWeBuildIt from "@/components/modules/homepage/why-we-build-it/WhyWeBuildIt";
+import OurModel from "@/components/modules/homepage/our-model/OurModel";
+import LaunchpadInitiatives from "@/components/modules/homepage/launchpad-initiatives/LaunchpadInitiatives";
+
+// import BumpsProject from "@/components/modules/homepage/bumps-project/BumpsProject";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <Banner />
-      <Counter />
-      <BumpsProject />
+      {/* <Counter /> */}
+      {/* <BumpsProject /> */}
+      <Launchpad />
+      <WhyWeBuildIt />
+      <OurModel />
+      <LaunchpadInitiatives />
       <TrustedGrowth />
       <Trailer />
       <Feedback />
