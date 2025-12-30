@@ -36,7 +36,7 @@ export default function BumpsaleButton() {
         href="#"
         className="bumpsale_button"
         data-bumpsale="uPpDJDrVPbXPq28McoDrNFJf"
-        data-bumpsale-text="Buy Now at _PRICE_"
+        data-bumpsale-text="Buy Bundle Now at _PRICE_"
         onClick={(e) => {
           console.log("🖱️ Button clicked");
           console.log("Button element:", e.currentTarget);

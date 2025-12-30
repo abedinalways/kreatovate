@@ -34,7 +34,7 @@ const BusinessCard = ({ data, className }: CardProps) => {
 
   return (
     <div
-      className={`overflow-hidden business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500 ${className}`}
+      className={`business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500 ${className}`}
     >
       <div className="absolute top-0 right-0">
         <Image
@@ -60,6 +60,29 @@ const BusinessCard = ({ data, className }: CardProps) => {
 
         <div className="mt-auto z-40">
           <GradientBorderButton btnText="Subscribe" />
+        </div>
+      </div>
+      <div className="absolute top-20 -right-6 z-40 -rotate-12">
+        <div
+          className="relative flex items-center justify-center size-36 rounded-full 
+    bg-gradient-to-br from-[#B84CFF] via-[#7A2EFF] to-[#4B1B99]
+    shadow-[0_0_40px_rgba(184,76,255,0.6)]"
+        >
+          {/* inner soft glass layer */}
+          <div
+            className="size-[118px] rounded-full 
+      bg-black/70 backdrop-blur-md
+      flex items-center justify-center
+      shadow-inner"
+          >
+            <h1
+              className="text-center uppercase font-bold leading-tight
+        text-white tracking-widest text-sm md:text-base"
+            >
+              Coming <br />
+              Soon
+            </h1>
+          </div>
         </div>
       </div>
     </div>

@@ -72,7 +72,7 @@ const Business = () => {
     {
       id: 4,
       title: "Missed Call 2 Text (MC2T)",
-      price: 1497,
+      price: 397,
       description: "Warms leads with education and timely follow-ups.",
     },
     {

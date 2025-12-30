@@ -1,4 +1,4 @@
-import BumpsaleButton from "@/components/BumpsaleButton";
+// import BumpsaleButton from "@/components/BumpsaleButton";
 import Image from "next/image";
 
 interface TGProps {
@@ -46,9 +46,9 @@ const TrustCard = ({ title, description, image }: TGProps) => {
               {description}
             </p>
 
-            <div className="w-fit lg:w-full mt-auto">
+            {/* <div className="w-fit lg:w-full mt-auto">
               <BumpsaleButton />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

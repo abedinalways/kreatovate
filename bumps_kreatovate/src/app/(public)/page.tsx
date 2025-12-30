@@ -19,8 +19,8 @@ export default function Home() {
       <Banner />
       <Counter />
       <BumpsProject />
-      <TrustedGrowth />
       <Trailer />
+      <TrustedGrowth />
       <Feedback />
       <Solution />
       <Team />
