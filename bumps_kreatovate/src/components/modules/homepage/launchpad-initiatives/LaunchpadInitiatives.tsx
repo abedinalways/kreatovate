@@ -4,8 +4,15 @@ import Image from "next/image";
 
 const LaunchpadInitiatives = () => {
   return (
-    <div>
-      <div className="custom-container px-4 md:px-4 pt-16 sm:pt-20 lg:pt-24 pb-10 lg:pb-24 flex flex-col items-center">
+    <div className="relative overflow-hidden">
+      <Image
+        src="/images/launchpad-initiatives/ellipse.png"
+        alt="bg light"
+        width={1446}
+        height={998}
+        className="absolute z-0 left-1/2 -translate-x-1/2 -bottom-1/2 object-cover pointer-events-none"
+      />
+      <div className="relative z-10 custom-container px-4 md:px-4 pt-16 sm:pt-20 lg:pt-24 pb-10 lg:pb-24 flex flex-col items-center">
         <div className="w-fit mb-2">
           <SiteBigBadge title="our Initiatives" />
         </div>
@@ -20,8 +27,8 @@ const LaunchpadInitiatives = () => {
           next.
         </p>
 
-        <div className="bg-white/10 p-8 rounded-[12px] flex flex-col md:flex-row items-center gap-14">
-          <div className="w-1/2">
+        <div className="bg-white/10 p-2 md:p-8 rounded-[12px] flex flex-col md:flex-row items-center gap-14">
+          <div className="w-full md:w-1/2">
             <div className="relative w-full h-[400px]">
               <Image
                 src="/images/launchpad-initiatives/image.png"
@@ -31,7 +38,7 @@ const LaunchpadInitiatives = () => {
               />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <p className="font-medium text-lg leading-[180%] uppercase text-gradient-special mb-2">
               Bumpsale Strategy
             </p>
