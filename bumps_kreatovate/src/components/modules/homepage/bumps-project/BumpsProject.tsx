@@ -1,4 +1,5 @@
-import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
+import BumpsaleButton from "@/components/BumpsaleButton";
+// import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import Image from "next/image";
 
 const BumpsProject = () => {
@@ -44,7 +45,7 @@ const BumpsProject = () => {
             </div>
 
             <div className="w-35">
-              <ButtonTwo btnText="Buy Now" />
+              <BumpsaleButton />
             </div>
           </div>
         </div>

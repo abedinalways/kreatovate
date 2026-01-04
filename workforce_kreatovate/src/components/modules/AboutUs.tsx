@@ -6,11 +6,43 @@ import HeadingButton from "../shared/HeadingButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../shared/AboutUsAccordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../shared/AboutUsAccordion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+  const accordionData = [
+    {
+      value: "item-1",
+      title: "AI Employees",
+      desc: "On demand AI Employees designed to handle sales, support, marketing, administration, and operations 24/7. Each role is pre-trained, customizable, and seamlessly integrated into your business workflows.",
+    },
+    {
+      value: "item-2",
+      title: "Automation Engine",
+      desc: "An intelligent automation layer that connects your systems, eliminates manual tasks, and executes workflows behind the scenes routing leads, triggering actions, and scaling operations without additional staff.",
+    },
+    {
+      value: "item-3",
+      title: "Workforce Control Center",
+      desc: "A unified command center to manage your AI Employees, conversations, pipelines, performance metrics, and activity logs giving you full visibility and control across your entire workforce ecosystem.",
+    },
+    {
+      value: "item-4",
+      title: "Compliance First Architecture",
+      desc: "Built with compliance and trust at the core secure data handling, consent management, role based access, and industry aligned safeguards to ensure your AI workforce operates responsibly and securely.",
+    },
+    {
+      value: "item-5",
+      title: "Enterprise Integrations",
+      desc: "Custom integrations that connect your AI workforce to CRMs, telephony providers, marketing platforms, databases, and internal systems engineered to fit your operations, not force you into rigid tools.",
+    },
+  ];
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Image: slide in from left
@@ -67,9 +99,6 @@ const AboutUs = () => {
             </video>
           </div>
           <div>
-            <h2 className="md:mt-8 mt-5 text-lg font-[roboto] mb-5">
-              Our Workforce Solutions Include:
-            </h2>
             <p className="text-sm font-[roboto] text-[#E9E9EA]">
               Our goal is simple — replace repetitive labor with intelligent
               automation, allowing you to scale output without scaling payroll.
@@ -95,7 +124,7 @@ const AboutUs = () => {
           <HeadingButton btnText="about us" className="w-33 py-0" />
           <h1 className="text-3xl md:text-4xl font-semibold max-w-2xl leading-[1.2]">
             Power Your Organization <br />
-            <span className="text-white"> with </span>{' '}
+            <span className="text-white"> with </span>{" "}
             <span className="text-gradient"> an Intelligent</span>
             <br />
             <span className="text-gradient">Workforce</span>
@@ -105,68 +134,30 @@ const AboutUs = () => {
             employees that handle the work most teams struggle to keep up with —
             from lead capture and scheduling to follow-ups, closing, and
             customer support.
-          </p>{' '}
+          </p>{" "}
           <p className=" font-[roboto] text-[#E9E9EA] text-sm md:text-md leading-relaxed">
             We design, deploy, and maintain turn-key business automation
             ecosystems that integrate seamlessly with your existing tools, CRMs,
             and communication channels.
           </p>
-          <div className="w-full h-full md:py-6">
+          <div className="w-full h-full md:pb-6">
+            <h2 className="md:mt-8 mt-5 text-lg font-[roboto] mb-5">
+              Our Workforce Solutions Include:
+            </h2>
             <Accordion
               type="single"
               collapsible
               className="w-full"
               defaultValue="item-1"
             >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>AI Employees</AccordionTrigger>
-                <AccordionContent className="">
-                  <p>
-                    AI Employees that manage your marketing, sales, and service
-                    pipelines around the clock
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Process Automation</AccordionTrigger>
-                <AccordionContent className="">
-                  <p>
-                    We offer worldwide shipping through trusted courier
-                    partners. Standard delivery takes 3-5 business days, while
-                    express shipping ensures delivery within 1-2 business days.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Unified Dashboards</AccordionTrigger>
-                <AccordionContent className="">
-                  <p>
-                    We stand behind our products with a comprehensive 30-day
-                    return policy. If you&apos;re not completely satisfied,
-                    simply return the item in its original condition.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>Compliance & Data Security</AccordionTrigger>
-                <AccordionContent className="">
-                  <p>
-                    We stand behind our products with a comprehensive 30-day
-                    return policy. If you&apos;re not completely satisfied,
-                    simply return the item in its original condition.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5">
-                <AccordionTrigger>Custom Integrations</AccordionTrigger>
-                <AccordionContent className="">
-                  <p>
-                    We stand behind our products with a comprehensive 30-day
-                    return policy. If you&apos;re not completely satisfied,
-                    simply return the item in its original condition.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+              {accordionData?.map((data, i) => (
+                <AccordionItem key={i} value={data.value}>
+                  <AccordionTrigger>{data.title}</AccordionTrigger>
+                  <AccordionContent className="">
+                    <p>{data.desc}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
