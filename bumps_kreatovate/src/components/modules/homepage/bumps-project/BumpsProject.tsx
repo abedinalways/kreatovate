@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BumpsProject = () => {
   return (
-    <div className="relative overflow-hidden font-jakarta" id='about_us'>
+    <div className="relative overflow-hidden font-jakarta" id="about_us">
       <div className="flex flex-col-reverse lg:flex-row gap-8 sm:gap-10 lg:gap-14 custom-container px-4 md:px-0 pt-16 sm:pt-20 lg:pt-24 pb-10 lg:pb-12">
         {/* Left column */}
         <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
