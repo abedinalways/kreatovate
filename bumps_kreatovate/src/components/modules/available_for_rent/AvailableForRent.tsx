@@ -1,12 +1,10 @@
-'use client';
-import gsap from 'gsap';
-import { BusinessItem } from '../../../types';
+"use client";
+import gsap from "gsap";
+import { BusinessItem } from "../../../types";
 
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-import BusinessCard from '@/components/shared/cards/BusinessCard';
-
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import BusinessCard from "@/components/shared/cards/BusinessCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,30 +14,30 @@ const AvailableForRent = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.bwv1-title', {
+      gsap.from(".bwv1-title", {
         opacity: 0,
         y: 24,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.bwv1-sub', {
+      gsap.from(".bwv1-sub", {
         opacity: 0,
         y: 12,
         duration: 0.6,
         delay: 0.1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
-      gsap.from('.business-card', {
+      gsap.from(".business-card", {
         opacity: 0,
         y: 28,
         duration: 0.8,
-        ease: 'power2.out',
+        ease: "power2.out",
         stagger: 0.12,
         scrollTrigger: {
           trigger: gridRef.current,
-          start: 'top 80%',
+          start: "top 80%",
         },
       });
     }, rootRef);
@@ -50,37 +48,37 @@ const AvailableForRent = () => {
   const businessData: BusinessItem[] = [
     {
       id: 1,
-      title: 'Closer',
+      title: "Closer",
       price: 3997,
-      description: 'ATS-safe, A1-powered resume builder.',
+      description: "ATS-safe, A1-powered resume builder.",
     },
     {
       id: 2,
-      title: 'Appointment Setter',
+      title: "Appointment Setter",
       price: 2997,
       description:
-        'Create your own A1 likeness for video avatars, voice cloning, and personalized content.',
+        "Create your own A1 likeness for video avatars, voice cloning, and personalized content.",
     },
     {
       id: 3,
-      title: 'Lead Nurturer',
+      title: "Lead Nurturer",
       price: 2997,
-      description: 'ATS-safe, A1-powered resume builder.',
+      description: "ATS-safe, A1-powered resume builder.",
     },
   ];
 
   const businessSecondData: BusinessItem[] = [
     {
       id: 4,
-      title: 'MC2T',
-      price: 2997,
-      description: 'ATS-safe, A1-powered resume builder.',
+      title: "MC2T",
+      price: 397,
+      description: "ATS-safe, A1-powered resume builder.",
     },
     {
       id: 5,
-      title: 'Admin Support',
+      title: "Admin Support",
       price: 2997,
-      description: 'ATS-safe, A1-powered resume builder.',
+      description: "ATS-safe, A1-powered resume builder.",
     },
   ];
 
@@ -104,12 +102,12 @@ const AvailableForRent = () => {
           ref={gridRef}
           className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {businessData?.map(data => (
+          {businessData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {businessSecondData?.map(data => (
+          {businessSecondData?.map((data) => (
             <BusinessCard key={data.id} data={data} />
           ))}
         </div>

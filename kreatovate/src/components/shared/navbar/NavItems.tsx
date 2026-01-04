@@ -33,7 +33,10 @@ const NavItems = ({ variant = "desktop" }: Props) => {
     { id: toHomeSection("#who_we_are"), label: "who we are" },
     { id: toHomeSection("#our_services"), label: "our services" },
     { id: toHomeSection("#our_team"), label: "our team" },
-    { id: toHomeSection("#our_projects"), label: "our projects" },
+    {
+      id: toHomeSection("https://kreatovate-projects.lovable.app/projects"),
+      label: "our projects",
+    },
     { id: toHomeSection("#testimonial"), label: "testimonial" },
   ];
 
