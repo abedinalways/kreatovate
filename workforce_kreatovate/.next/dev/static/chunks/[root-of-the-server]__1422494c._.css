@@ -826,15 +826,15 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-400: lab(63.7053% 60.7449 31.3109);
+      --color-red-400: lab(63.7053% 60.745 31.3109);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
       --color-purple-500: lab(52.0183% 66.11 -78.2316);
       --color-purple-600: lab(43.0295% 75.21 -86.5669);
       --color-purple-700: lab(36.1758% 69.8525 -80.0381);
-      --color-gray-200: lab(91.6229% -.159085 -2.26791);
+      --color-gray-200: lab(91.6229% -.159115 -2.26791);
       --color-gray-300: lab(85.1236% -.612259 -3.7138);
-      --color-gray-400: lab(65.9269% -.832707 -8.17474);
-      --color-gray-500: lab(47.7841% -.393212 -10.0268);
+      --color-gray-400: lab(65.9269% -.832707 -8.17473);
+      --color-gray-500: lab(47.7841% -.393182 -10.0268);
       --color-gray-700: lab(27.1134% -.956401 -12.3224);
       --color-gray-800: lab(16.1051% -1.18239 -11.7533);
     }
@@ -3554,14 +3554,14 @@
   @media (hover: hover) {
     .hover\:bg-\[\#ED1C24\]\/40:hover {
       background-color: #ed1c2466;
-      background-color: lab(51.5896% 74.042 53.7561 / .4);
+      background-color: lab(51.5896% 74.042 53.7562 / .4);
     }
   }
 
   @media (hover: hover) {
     .hover\:bg-\[\#ED1C24\]\/60:hover {
       background-color: #ed1c2499;
-      background-color: lab(51.5896% 74.042 53.7561 / .6);
+      background-color: lab(51.5896% 74.042 53.7562 / .6);
     }
   }
 
@@ -5210,15 +5210,15 @@
     --popover-foreground: lab(2.75381% 0 0);
     --primary: lab(7.78201% -.0000149012 0);
     --primary-foreground: lab(98.26% 0 0);
-    --secondary: lab(96.52% -.0000596046 0);
+    --secondary: lab(96.52% -.0000298023 .0000119209);
     --secondary-foreground: lab(7.78201% -.0000149012 0);
-    --muted: lab(96.52% -.0000596046 0);
+    --muted: lab(96.52% -.0000298023 .0000119209);
     --muted-foreground: lab(48.496% 0 0);
-    --accent: lab(96.52% -.0000596046 0);
+    --accent: lab(96.52% -.0000298023 .0000119209);
     --accent-foreground: lab(7.78201% -.0000149012 0);
     --destructive: lab(48.4493% 77.4328 61.5452);
-    --border: lab(90.952% -.0000596046 0);
-    --input: lab(90.952% -.0000596046 0);
+    --border: lab(90.952% 0 -.0000119209);
+    --input: lab(90.952% 0 -.0000119209);
     --ring: lab(66.128% -.0000298023 .0000119209);
     --chart-1: lab(57.1026% 64.2584 89.8886);
     --chart-2: lab(55.0223% -41.0774 -3.90277);
@@ -5229,9 +5229,9 @@
     --sidebar-foreground: lab(2.75381% 0 0);
     --sidebar-primary: lab(7.78201% -.0000149012 0);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(96.52% -.0000596046 0);
+    --sidebar-accent: lab(96.52% -.0000298023 .0000119209);
     --sidebar-accent-foreground: lab(7.78201% -.0000149012 0);
-    --sidebar-border: lab(90.952% -.0000596046 0);
+    --sidebar-border: lab(90.952% 0 -.0000119209);
     --sidebar-ring: lab(66.128% -.0000298023 .0000119209);
   }
 }
@@ -5278,15 +5278,15 @@
     --card-foreground: lab(98.26% 0 0);
     --popover: lab(7.78201% -.0000149012 0);
     --popover-foreground: lab(98.26% 0 0);
-    --primary: lab(90.952% -.0000596046 0);
+    --primary: lab(90.952% 0 -.0000119209);
     --primary-foreground: lab(7.78201% -.0000149012 0);
-    --secondary: lab(15.204% 0 0);
+    --secondary: lab(15.204% 0 -.00000596046);
     --secondary-foreground: lab(98.26% 0 0);
-    --muted: lab(15.204% 0 0);
+    --muted: lab(15.204% 0 -.00000596046);
     --muted-foreground: lab(66.128% -.0000298023 .0000119209);
-    --accent: lab(15.204% 0 0);
+    --accent: lab(15.204% 0 -.00000596046);
     --accent-foreground: lab(98.26% 0 0);
-    --destructive: lab(63.7053% 60.7449 31.3109);
+    --destructive: lab(63.7053% 60.745 31.3109);
     --border: lab(100% 0 0 / .1);
     --input: lab(100% 0 0 / .15);
     --ring: lab(48.496% 0 0);
@@ -5294,12 +5294,12 @@
     --chart-2: lab(66.9756% -58.27 19.5419);
     --chart-3: lab(72.7183% 31.8672 97.9407);
     --chart-4: lab(52.0183% 66.11 -78.2316);
-    --chart-5: lab(56.101% 79.4329 31.4532);
+    --chart-5: lab(56.101% 79.4328 31.4532);
     --sidebar: lab(7.78201% -.0000149012 0);
     --sidebar-foreground: lab(98.26% 0 0);
     --sidebar-primary: lab(36.9089% 35.0961 -85.6872);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(15.204% 0 0);
+    --sidebar-accent: lab(15.204% 0 -.00000596046);
     --sidebar-accent-foreground: lab(98.26% 0 0);
     --sidebar-border: lab(100% 0 0 / .1);
     --sidebar-ring: lab(48.496% 0 0);
