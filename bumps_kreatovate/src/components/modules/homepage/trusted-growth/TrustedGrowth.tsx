@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import TrustCard from "./TrustCard";
 import gsap from "gsap";
+import BumpsaleButton from "@/components/BumpsaleButton";
+import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 
 const TrustedGrowth = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -77,9 +79,12 @@ const TrustedGrowth = () => {
       id="our_books"
     >
       <div className="space-y-2 trusted-title ">
-        <p className="uppercase text-color-gradient font-roboto font-normal text-xs">
+        <div className="w-full flex justify-center items-center mb-6">
+          <SiteBigBadge title="our books" />
+        </div>
+        {/* <p className="uppercase text-color-gradient font-roboto font-normal text-xs">
           [ our books ]
-        </p>
+        </p> */}
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-5 lg:items-end justify-between">
           <h1 className="font-jakarta text-2xl lg:text-5xl font-bold">
             Trusted growth plans:
@@ -104,6 +109,9 @@ const TrustedGrowth = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center">
+        <BumpsaleButton />
       </div>
     </div>
   );

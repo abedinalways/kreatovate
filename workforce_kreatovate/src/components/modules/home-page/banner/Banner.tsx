@@ -4,11 +4,13 @@ import ButtonAll from "../../../shared/ButtonAll";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import styles from "./banner.module.css";
+import ButtonAllTwo from "@/components/shared/ButtonAllTwo";
 
 const Banner = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
+  const textRefTwo = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const robotRef = useRef<HTMLImageElement>(null);
 
@@ -37,6 +39,12 @@ const Banner = () => {
         { y: 0, opacity: 1 },
         "-=0.4"
       );
+      tl.fromTo(
+        textRefTwo.current,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1 },
+        "-=0.4"
+      );
 
       tl.fromTo(
         buttonRef.current,
@@ -60,7 +68,7 @@ const Banner = () => {
     <div
       id="home"
       ref={containerRef}
-      className="relative h-[40rem] md:h-[50rem] xl:h-screen"
+      className="relative h-[45rem] md:h-[50rem] xl:h-screen"
     >
       {/* background */}
       <div className="absolute top-0 left-0 w-full h-full">
@@ -92,7 +100,7 @@ const Banner = () => {
 
       <div className="relative custom-container w-full h-full z-30">
         <div className="px-4 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
-          <h1
+          {/* <h1
             ref={headingRef}
             className=" text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6"
           >
@@ -104,22 +112,63 @@ const Banner = () => {
             </span>{" "}
             and AI <br />
             Powered <span className="text-gradient">Workforce Solutions</span>
+          </h1> */}
+          <h1
+            ref={headingRef}
+            className="text-xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6 max-w-3xl"
+          >
+            KINpro.ai The Intelligent CRM & Business Operating System
           </h1>
-          <p
+          {/* <p
             ref={textRef}
             className="relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed"
           >
             Unlock Your Brand&apos;s Potential with Kreatovate Marketing &
             Consulting Where Innovation Meets <br /> Strategic Excellence to
             Propel Your Business Forward.
-          </p>
+          </p> */}
+          <div>
+            <p
+              ref={textRef}
+              className="relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed"
+            >
+              One platform to run sales, operations, communications, and
+              automation - powered by A.D.O.N-I.S. Intelligence.
+            </p>
 
-          <div ref={buttonRef} className="cursor-pointer w-fit">
+            <p
+              ref={textRefTwo}
+              className="relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed max-w-4xl"
+            >
+              KINpro is a SMART CRM at its core - expanded into a full Business
+              Operating System, It unifies your pipeline inbox, tasks, projects,
+              time tracking, automation, analytics, and workforce intelligence
+              into one adactive platform.
+            </p>
+          </div>
+
+          {/* <div ref={buttonRef} className="cursor-pointer w-fit">
             <ButtonAll
               btnText="Get Started Today"
               href="#contact_us"
               className="text-sm md:text-md py-5"
             />
+          </div> */}
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div ref={buttonRef} className="cursor-pointer w-fit">
+              <ButtonAll
+                btnText="Activate Your Platform"
+                href="#contact_us"
+                className="text-sm md:text-md py-6"
+              />
+            </div>
+            <div ref={buttonRef} className="cursor-pointer w-fit">
+              <ButtonAllTwo
+                btnText="View Capabilities & Pricing"
+                // href="#contact_us"
+                className="text-sm md:text-md py-5"
+              />
+            </div>
           </div>
         </div>
 

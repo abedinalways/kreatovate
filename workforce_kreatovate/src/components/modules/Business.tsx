@@ -87,15 +87,26 @@ const Business = () => {
     <div id="our_solutions" ref={rootRef} className="py-12 bg-[#0F1016]">
       <div className="custom-container flex flex-col px-4 gap-6 lg:gap-10">
         <div className="flex flex-col items-center gap-1 md:gap-4">
-          <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold">
+          {/* <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold">
             Business Workforce V1
             <br />
             <span className="text-center flex justify-center">
               Monthly Pricing
             </span>
+          </h1> */}
+          <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold max-w-xl text-center">
+            Pricing Scales by Authority, Not Headcount
           </h1>
-          <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal">
+          {/* <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal">
             Lite / Starter Voice Employees
+          </p> */}
+          <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal text-center max-w-4xl">
+            KINpro pricing reflects the decision authority and operational scope
+            you want A.D.O.N.I.S. to manage — from execution (Admin) to full
+            operational leadership (COO). Core Business OS capabilities (CRM,
+            inbox, tasks, projects, time tracking, automation, analytics) remain
+            consistent; higher tiers expand autonomy, cross-department reach,
+            and intelligence authority.
           </p>
         </div>
 

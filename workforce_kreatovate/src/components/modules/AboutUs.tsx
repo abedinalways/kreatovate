@@ -85,9 +85,9 @@ const AboutUs = () => {
 
   return (
     <div id="about_us" className="text-white pt-5  mx-auto relative isolate">
-      <div className="py-12 flex flex-col-reverse lg:flex-row  gap-8 lg:gap-20 px-4 md:px-0 custom-container">
-        <div className="about-image">
-          <div className="relative aspect-[16/15] sm:aspect-[16/10] rounded-2xl overflow-hidden scale-x-[-1] ">
+      <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-20 px-4 md:px-0 custom-container">
+        <div className="about-image w-full md:w-1/2">
+          {/* <div className="relative aspect-[16/15] sm:aspect-[16/10] rounded-2xl overflow-hidden scale-x-[-1] ">
             <video
               autoPlay
               loop
@@ -97,8 +97,19 @@ const AboutUs = () => {
             >
               <source src="/videos/about_us1.mp4" type="video/mp4" />
             </video>
+          </div> */}
+          <div className="relative aspect-[16/15] sm:aspect-[16/16] rounded-2xl overflow-hidden scale-x-[-1] ">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full rounded-2xl object-cover"
+            >
+              <source src="/videos/about_us1.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div>
+          {/* <div>
             <p className="text-sm font-[roboto] text-[#E9E9EA]">
               Our goal is simple — replace repetitive labor with intelligent
               automation, allowing you to scale output without scaling payroll.
@@ -118,29 +129,40 @@ const AboutUs = () => {
           <ButtonAll
             btnText="Try Demo"
             className="text-sm md:text-md py-5 w-44"
-          />
+          /> */}
         </div>
-        <div className="about-text w-full h-full space-y-4">
+        <div className="about-text w-full md:w-1/2 h-full space-y-4">
           <HeadingButton btnText="about us" className="w-33 py-0" />
-          <h1 className="text-3xl md:text-4xl font-semibold max-w-2xl leading-[1.2]">
+          {/* <h1 className="text-3xl md:text-4xl font-semibold max-w-2xl leading-[1.2]">
             Power Your Organization <br />
             <span className="text-white"> with </span>{" "}
             <span className="text-gradient"> an Intelligent</span>
             <br />
             <span className="text-gradient">Workforce</span>
+          </h1> */}
+          <h1 className="text-3xl md:text-4xl font-semibold max-w-2xl leading-[1.2]">
+            CRM on the front. Business OS underneath.
           </h1>
           <p className="font-[roboto] text-[#E9E9EA] text-sm md:text-md leading-relaxed ">
+            Most systems stop at CRM. KINpro goes further. A.D.O.N.I.S.
+            (Autonomous Digital Operations & Neural Intelligence System) governs
+            how your business runs day-to-day - from lead handling and customer
+            conversations to internal execution like tasks, project delivery,
+            and time tracking. During onboarding, ADONIS identifies what your
+            business needs and configures the right dashboard modules to match.
+          </p>{" "}
+          {/* <p className="font-[roboto] text-[#E9E9EA] text-sm md:text-md leading-relaxed ">
             Kreatovate delivers full-stack automation systems and AI-powered
             employees that handle the work most teams struggle to keep up with —
             from lead capture and scheduling to follow-ups, closing, and
             customer support.
-          </p>{" "}
-          <p className=" font-[roboto] text-[#E9E9EA] text-sm md:text-md leading-relaxed">
+          </p>{" "} */}
+          {/* <p className=" font-[roboto] text-[#E9E9EA] text-sm md:text-md leading-relaxed">
             We design, deploy, and maintain turn-key business automation
             ecosystems that integrate seamlessly with your existing tools, CRMs,
             and communication channels.
-          </p>
-          <div className="w-full h-full md:pb-6">
+          </p> */}
+          {/* <div className="w-full h-full md:pb-6">
             <h2 className="md:mt-8 mt-5 text-lg font-[roboto] mb-5">
               Our Workforce Solutions Include:
             </h2>
@@ -159,7 +181,7 @@ const AboutUs = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
+          </div> */}
         </div>
       </div>
       <Image

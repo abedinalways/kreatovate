@@ -3082,90 +3082,71 @@ const Banner = ()=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                 ref: headingRef,
-                                className: " text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6",
+                                className: "text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6 max-w-3xl",
+                                children: "KINpro.ai The Intelligent CRM & Business Operating System"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
+                                lineNumber: 108,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
-                                    "Unleash Potential with",
-                                    " ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-gradient",
-                                        children: " KREATOVATE's "
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        ref: textRef,
+                                        className: "relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed",
+                                        children: "One platform to run sales, operations, communications, and automation - powered by A.D.O.N-I.S. Intelligence."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 123,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
-                                    " ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 100,
-                                        columnNumber: 72
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    "Expert Business ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-gradient",
-                                        children: [
-                                            " ",
-                                            "Automation"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 101,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    " ",
-                                    "and AI ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 105,
-                                        columnNumber: 20
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    "Powered ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-gradient",
-                                        children: "Workforce Solutions"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        ref: textRef,
+                                        className: "relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed max-w-4xl",
+                                        children: "KINpro is a SMART CRM at its core - expanded into a full Business Operating System, It unifies your pipeline inbox, tasks, projects, time tracking, automation, analytics, and workforce intelligence into one adactive platform."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 106,
-                                        columnNumber: 21
+                                        lineNumber: 131,
+                                        columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                lineNumber: 95,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                ref: textRef,
-                                className: "relative text-sm md:text-md lg:text-[1rem] font-normal  mb-5 md:mb-6 z-40 font-[roboto] leading-relaxed",
-                                children: [
-                                    "Unlock Your Brand's Potential with Kreatovate Marketing & Consulting Where Innovation Meets ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                        lineNumber: 113,
-                                        columnNumber: 47
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    " Strategic Excellence to Propel Your Business Forward."
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                lineNumber: 108,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 ref: buttonRef,
                                 className: "cursor-pointer w-fit",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ButtonAll$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    btnText: "Get Started Today",
+                                    btnText: "Activate Your Platform",
                                     href: "#contact_us",
                                     className: "text-sm md:text-md py-5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                                lineNumber: 117,
+                                lineNumber: 149,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                ref: buttonRef,
+                                className: "cursor-pointer w-fit",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$ButtonAll$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    btnText: "Activate Your Platform",
+                                    href: "#contact_us",
+                                    className: "text-sm md:text-md py-5"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
+                                    lineNumber: 157,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
+                                lineNumber: 156,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -3183,7 +3164,7 @@ const Banner = ()=>{
                         className: `absolute right-0 bottom-0 z-10 ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$modules$2f$home$2d$page$2f$banner$2f$banner$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].roboImg}`
                     }, void 0, false, {
                         fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                        lineNumber: 126,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -3200,7 +3181,7 @@ const Banner = ()=>{
                 className: "absolute bottom-0 xl:-bottom-0.5 left-0 w-full z-40"
             }, void 0, false, {
                 fileName: "[project]/src/components/modules/home-page/banner/Banner.tsx",
-                lineNumber: 135,
+                lineNumber: 174,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
