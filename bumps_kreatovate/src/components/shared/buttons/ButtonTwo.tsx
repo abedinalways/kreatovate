@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import ArrowIcon from "../icons/ArrowIcon";
 
 interface BtnProps {
   btnText: string;
@@ -11,18 +12,22 @@ interface BtnProps {
 
 const ButtonTwo = ({ btnText, className, isIcon = false, link }: BtnProps) => {
   return (
-    <div className="p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer hover:bg-transparent font-[roboto]">
+    <div className="p-px rounded-[12px] bg-gradient-btn cursor-pointer hover:bg-transparent font-[roboto]">
       <Button
         asChild
         variant="ghost"
-        className={` ${className} w-full rounded-[10px] py-5 px-6 text-xs md:text-sm font-medium text-center text-white hover:text-white hover:bg-transparent`}
+        className={` ${className} w-[208px] h-[52px] rounded-[12px] text-[16px] font-normal leading-[180%] text-center text-white hover:text-white hover:bg-transparent`}
       >
         <Link
-          href={link ? link : "/"}
+          href={link ? link : '/'}
           className="block w-full text-center capitalize"
         >
+<<<<<<< HEAD
+          {btnText}<ArrowIcon/>
+=======
           {btnText}
           {isIcon && <MoveRight color="white" />}
+>>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
         </Link>
       </Button>
     </div>

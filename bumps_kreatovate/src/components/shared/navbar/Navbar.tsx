@@ -34,7 +34,7 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block ">
-          <Link href='/contact-us'>
+          <Link href="/contact-us">
             <button className="btnOne-bg-gradient  rounded-[12px] p-px">
               <button className="w-[121px] h-[52px] rounded-[12px] bg-black cursor-pointer ">
                 <span className="text-gradient">Contact Us</span>
@@ -63,7 +63,13 @@ const Navbar = () => {
 
                 {/* Mobile CTA */}
                 <div className="mt-4 ">
-                  <ButtonOne btnText="Contact Us" href="/contact-us" />
+                  <Link href="/contact-us">
+                    <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
+                      <button className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer ">
+                        <span className="text-gradient text-[18px]">Contact Us</span>
+                      </button>
+                    </button>
+                  </Link>
                 </div>
               </SheetHeader>
             </SheetContent>
