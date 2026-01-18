@@ -29,7 +29,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     { id: '#our_team', label: 'Our Team' },
   ];
 
-  // ✅ useCallback ensures scrollToHash reference is stable, fixing ESLint warning
+  //useCallback ensures scrollToHash reference is stable, fixing ESLint warning
   const scrollToHash = useCallback(
     (hash: string) => {
       if (!hash || !hash.startsWith('#')) return;
@@ -52,7 +52,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
         scrollTo: { y: target, offsetY, autoKill: true },
       });
     },
-    [headerSelector] // ✅ dependency properly declared
+    [headerSelector]
   );
 
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -84,7 +84,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     applyFromHash();
     window.addEventListener('hashchange', applyFromHash);
     return () => window.removeEventListener('hashchange', applyFromHash);
-  }, [scrollToHash]); // ✅ Added dependency
+  }, [scrollToHash]);
 
   // ✅ Mobile navigation
   if (variant === 'mobile') {
