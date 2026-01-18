@@ -71,6 +71,7 @@ const Banner = () => {
             />
             <p className="font-roboto bg-white/10 text-[10px] mx-2 text-center py-2 font-bold text-gradient-special  uppercase">
               Top consulting platform
+              {/* KREATOVATE LAUNCHPAD */}
             </p>
             <Image
               src="/images/hrline1.png"
@@ -83,18 +84,31 @@ const Banner = () => {
 
           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold  banner-heading w-full ">
             Transform Ideas with
+            {/* Kreatovate Project */}
             <br />
-            <span className="text-gradient">Kreatovate’s Strategy</span>
+            <span className="text-gradient">
+              Kreatovate’s Strategy
+              {/* Launchpad */}
+            </span>
           </h1>
 
           <p className="mt-3 md:mt-4 font-[roboto] text-xs md:text-md max-w-3xl text-center banner-subtext">
-            Turn concepts into measurable growth with strategies that scale your{' '}
+            Turn concepts into measurable growth with strategies that scale your{" "}
             <br />
             impact, increase revenue, and deepen customer loyalty.
+            {/* A community-powered launchpad designed to fund and launch real
+            digital projects—built to support tangible products, fuel innovation
+            through value, and create shared momentum that turns participation
+            into progress today and into the future. */}
           </p>
 
           <div className="mt-5 banner-button">
+<<<<<<< HEAD
             <ButtonTwo btnText="Get Started Now" />
+=======
+            {/* Explore the Launchpad */}
+            <ButtonTwo btnText="Get Started " />
+>>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
           </div>
         </div>
 

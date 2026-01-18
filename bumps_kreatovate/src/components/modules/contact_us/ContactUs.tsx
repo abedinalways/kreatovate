@@ -1,10 +1,9 @@
-'use client';
-import React, { useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ConsultationForm } from '@/components/shared/consultationForm/consultationForm';
-import { Calendar } from '@/components/ui/calendar';
-
+"use client";
+import React, { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ConsultationForm } from "@/components/shared/consultationForm/consultationForm";
+import { Calendar } from "@/components/ui/calendar";
 
 interface ConsultationFormData {
   name?: string;
@@ -17,38 +16,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const [selectedDates, setSelectedDates] = React.useState<Date[]>([]);
-  const [selectedZone] = React.useState('CET');
+  const [selectedZone] = React.useState("CET");
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.about-image',
+        ".about-image",
         { opacity: 0, x: -80 },
         {
           opacity: 1,
           x: 0,
           duration: 1.2,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: '.about-image',
-            start: 'top 85%',
-            toggleActions: 'play none none reset',
+            trigger: ".about-image",
+            start: "top 85%",
+            toggleActions: "play none none reset",
           },
         }
       );
 
       gsap.fromTo(
-        '.about-text',
+        ".about-text",
         { opacity: 0, x: 80 },
         {
           opacity: 1,
           x: 0,
           duration: 1.2,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: '.about-text',
-            start: 'top 85%',
-            toggleActions: 'play none none reset',
+            trigger: ".about-text",
+            start: "top 85%",
+            toggleActions: "play none none reset",
           },
         }
       );
@@ -57,29 +56,32 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
-  // Form submission handler
-  const handleFormSubmit = async (formData: ConsultationFormData) => {
+  const handleFormSubmit = async (
+    formData: ConsultationFormData
+  ): Promise<boolean> => {
     const payload = {
       ...formData,
-      selectedDates: selectedDates.map(d => d.toISOString()),
+      selectedDates: selectedDates.map((d) => d.toISOString()),
       timeZone: selectedZone,
     };
 
-    console.log('Submitting combined data:', payload);
+    console.log("Submitting combined data:", payload);
 
     try {
-      const res = await fetch('/api/consultation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error('Failed to submit form');
+      if (!res.ok) throw new Error("Failed to submit form");
 
-      alert('Form submitted successfully!');
+      alert("Form submitted successfully!");
+      return true;
     } catch (error) {
       console.error(error);
-      alert(error instanceof Error ? error.message : 'Something went wrong.');
+      alert(error instanceof Error ? error.message : "Something went wrong.");
+      return false;
     }
   };
 
@@ -90,7 +92,7 @@ const Contact = () => {
         <div className="flex flex-col gap-2 items-start about-image">
           <p className="text-gradient">[ Book an appointment ]</p>
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-            Ready to Transform <br /> Your{' '}
+            Ready to Transform <br /> Your{" "}
             <span className="text-gradient">Business</span>?
           </h2>
 

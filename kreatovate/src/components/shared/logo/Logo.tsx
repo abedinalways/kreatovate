@@ -6,7 +6,7 @@ const Logo = () => {
     <Link href="/">
       <div className="relative w-[180px] sm:w-[251px] md:w-[170px] h-[60px]">
         <Image
-          src="/images/logo.png"
+          src="/images/logowhitetransparent.png"
           alt="logo"
           fill
           className="object-contain"

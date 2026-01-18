@@ -51,7 +51,12 @@ const ServiceCard = ({ title, desc, image, href }: ServiceItem) => {
                 variant="ghost"
                 className="w-full rounded-[10px] bg-black hover:bg-black/90 text-white hover:text-white py-3 text-lg font-medium"
               >
-                <Link href={href} className="block w-full text-center">
+                <Link
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center"
+                >
                   Learn More
                 </Link>
               </Button>

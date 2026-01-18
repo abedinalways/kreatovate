@@ -10,7 +10,7 @@ interface BtnProps {
   link?: string;
 }
 
-const ButtonTwo = ({ btnText, className, isIcon = true, link }: BtnProps) => {
+const ButtonTwo = ({ btnText, className, isIcon = false, link }: BtnProps) => {
   return (
     <div className="p-px rounded-[12px] bg-gradient-btn cursor-pointer hover:bg-transparent font-[roboto]">
       <Button
@@ -22,7 +22,12 @@ const ButtonTwo = ({ btnText, className, isIcon = true, link }: BtnProps) => {
           href={link ? link : '/'}
           className="block w-full text-center capitalize"
         >
+<<<<<<< HEAD
           {btnText}<ArrowIcon/>
+=======
+          {btnText}
+          {isIcon && <MoveRight color="white" />}
+>>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
         </Link>
       </Button>
     </div>

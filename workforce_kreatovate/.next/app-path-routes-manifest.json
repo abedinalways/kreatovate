@@ -1,5 +1,0 @@
-{
-  "/(public)/page": "/",
-  "/_not-found/page": "/_not-found",
-  "/favicon.ico/route": "/favicon.ico"
-}

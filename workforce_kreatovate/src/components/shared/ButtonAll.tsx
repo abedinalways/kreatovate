@@ -58,6 +58,7 @@ const ButtonAll: React.FC<ButtonAllProps> = ({
         <Link
           href={disabled ? "#" : href}
           target={target}
+          rel={target === "_blank" ? "noopener noreferrer" : undefined}
           aria-disabled={disabled}
           tabIndex={disabled ? -1 : 0}
           className={cn(disabled && "pointer-events-none opacity-60")}

@@ -13,6 +13,7 @@ import { Menu } from "lucide-react";
 import Logo from "../Logo";
 import NavItems from "./NavItems";
 import ButtonAll from "../ButtonAll";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -49,6 +50,11 @@ const Navbar = () => {
       st?.kill?.();
     };
   }, []);
+
+  const handleBtnClick = () => {
+    const e = new Event("click");
+    smoothScrollTo(e, "#contact_us");
+  };
 
   return (
     <nav
@@ -92,6 +98,7 @@ const Navbar = () => {
                   btnText="Book Consultation Now"
                   className="w-fit text-sm font-normal "
                   href="/#contact_us"
+                  onClick={handleBtnClick}
                 />
               </SheetHeader>
             </SheetContent>

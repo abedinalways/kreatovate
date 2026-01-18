@@ -1,4 +1,6 @@
+import BumpsaleButton from "@/components/BumpsaleButton";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
+// import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import Image from "next/image";
 
 const BumpsProject = () => {

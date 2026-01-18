@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Logo from "../logo/Logo";
 import Image from "next/image";
-import { FaDiscord, FaThreads } from "react-icons/fa6";
+import { FaDiscord, FaThreads, FaTiktok } from "react-icons/fa6";
 
 const XIcon = () => (
   <svg
@@ -90,6 +92,14 @@ export default function Footer() {
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FaDiscord className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@kreatovate?_r=1&_t=ZP-929O8XTObJ1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+              >
+                <FaTiktok className="w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -183,6 +193,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -191,6 +202,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
+                  onClick={(e) => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies

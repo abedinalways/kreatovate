@@ -3,6 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.bumpsale_button {
+  display: inline-block;
+  padding: 12px 58px;
+  font: normal 14px Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid red;
+  margin-right: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.bumpsale_button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -136,7 +156,7 @@
 .text-color-gradient {
   @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }
- 
+
 .heading-btn-bg {
   @apply bg-gradient-to-tr from-[#E20F12] to-[#3853FF];
 }
@@ -174,12 +194,12 @@
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
 }
 
-.text-gradient{
-  @apply  text-transparent bg-clip-text;
-  background-image: linear-gradient(to left, #E21717 10%, #3700FF 90%);
+.text-gradient {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
 }
 .bg-gradient {
-  background: linear-gradient(to right, #3700FF 60%, #E21717 20%, #3700FF 30%);
+  background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
 }
 .text-gradient-special {
   @apply bg-linear-to-r from-[#FF0000] to-[#6b7cff] inline-block text-transparent bg-clip-text leading-none;
@@ -230,6 +250,11 @@
   object-fit: cover;
 }
 
+/* LeadConnector Chat Animation */
+#lc_text-widget-box {
+  transform-origin: bottom right;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
 
 .text-gradient{
   background: linear-gradient(90deg, #4e30fe 0%, #e93d3d 100%);
@@ -237,9 +262,12 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+<<<<<<< HEAD
 
 .bg-gradient-btn{
   background:
     linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
+=======
+>>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
