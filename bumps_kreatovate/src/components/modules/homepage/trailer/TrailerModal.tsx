@@ -50,9 +50,11 @@ const TrailerModal = () => {
               className="absolute top-2 right-2 text-white bg-gray-800/50 hover:bg-gray-700 rounded-full p-2 transition z-20 cursor-pointer!"
               aria-label="Close"
               onClick={() => {
-                if (videoRef.current) {
-                  videoRef.current.pause();
-                  videoRef.current.currentTime = 0;
+                const iframe = document.getElementById(
+                  "trailer-yt"
+                ) as HTMLIFrameElement;
+                if (iframe) {
+                  iframe.src = iframe.src; // reset to stop video
                 }
               }}
             >
@@ -60,14 +62,15 @@ const TrailerModal = () => {
             </button>
           </DialogClose>
 
-          <video
-            ref={videoRef}
-            controls
-            className="w-full h-auto"
-            src="/videos/trailer.mp4"
-          >
-            Your browser does not support the video tag.
-          </video>
+          {/* YouTube Embed */}
+          <iframe
+            id="trailer-yt"
+            className="w-full h-[400px] md:h-[500px]"
+            src="https://www.youtube.com/embed/NA5kBWztleI?autoplay=1"
+            title="Trailer Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
       </DialogContent>
     </Dialog>

@@ -6,9 +6,10 @@ import gsap from "gsap";
 
 interface CardProps {
   data: BusinessItem;
+  className?: string;
 }
 
-const BusinessCard = ({ data }: CardProps) => {
+const BusinessCard = ({ data, className }: CardProps) => {
   const { title, price, description } = data;
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -32,19 +33,23 @@ const BusinessCard = ({ data }: CardProps) => {
   }, []);
 
   return (
-    <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl">
+    <div
+      className={`business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-2xl shadow-2xl hover:shadow-none transition-all ease-in-out duration-500 ${className}`}
+    >
       <div className="absolute top-0 right-0">
         <Image
           src="/images/business_card_light.png"
           alt="business card light"
-          width={500}
-          height={500}
+          width={200}
+          height={200}
           className="object-cover rounded-tr-2xl"
         />
       </div>
       <div className="bg-[#0B111F] w-full h-full p-6 rounded-2xl flex flex-col gap-[1.125rem]">
         <div className="flex items-center justify-between">
-          <h1 className=" text-lg md:text-xl font-semibold leading-8">{title}</h1>
+          <h1 className=" text-lg md:text-xl font-semibold leading-8">
+            {title}
+          </h1>
           <p className="text-[#E21717] text-[1.5rem]  md:text-[1.8rem] font-bold leading-10">
             ${price}
           </p>
@@ -55,6 +60,29 @@ const BusinessCard = ({ data }: CardProps) => {
 
         <div className="mt-auto z-40">
           <GradientBorderButton btnText="Subscribe" />
+        </div>
+      </div>
+      <div className="absolute top-20 -right-6 z-40 -rotate-12">
+        <div
+          className="relative flex items-center justify-center size-36 rounded-full 
+    bg-gradient-to-br from-[#B84CFF] via-[#7A2EFF] to-[#4B1B99]
+    shadow-[0_0_40px_rgba(184,76,255,0.6)]"
+        >
+          {/* inner soft glass layer */}
+          <div
+            className="size-[118px] rounded-full 
+      bg-black/70 backdrop-blur-md
+      flex items-center justify-center
+      shadow-inner"
+          >
+            <h1
+              className="text-center uppercase font-bold leading-tight
+        text-white tracking-widest text-sm md:text-base"
+            >
+              Coming <br />
+              Soon
+            </h1>
+          </div>
         </div>
       </div>
     </div>

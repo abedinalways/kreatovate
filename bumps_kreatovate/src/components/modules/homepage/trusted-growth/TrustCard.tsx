@@ -1,16 +1,18 @@
-import ButtonOne from "@/components/shared/buttons/ButtonOne";
+// import BumpsaleButton from "@/components/BumpsaleButton";
 import Image from "next/image";
 
 interface TGProps {
   title: string;
   description: string;
   image: string;
+  bumpsaleId?: string;
+  price?: string | number;
 }
 
 const TrustCard = ({ title, description, image }: TGProps) => {
   return (
-    <div className="relative w-full rounded-xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
-      <div className="relative bg-black rounded-xl p-8 flex flex-col gap-4 items-center overflow-hidden">
+    <div className="relative w-full h-full rounded-xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
+      <div className="relative bg-black rounded-xl p-8 flex flex-col gap-4 items-center h-full overflow-hidden">
         <Image
           src="/images/service-light-1.png"
           alt="service light 1"
@@ -26,24 +28,27 @@ const TrustCard = ({ title, description, image }: TGProps) => {
           className="absolute top-0 right-0 rounded-tr-xl opacity-60 pointer-events-none select-none"
         />
 
-        {/* main content */}
-        <div className="relative z-10 flex flex-col items-center gap-4 h-120">
+        <div className="relative z-10 flex flex-col items-center gap-4 w-full grow">
           <Image
             src={image}
-            alt="book 1"
+            alt={title}
             width={222}
             height={186}
-            className="w-full"
+            className="w-full max-w-[222px] object-contain"
           />
 
-          <div className="flex flex-col items-start gap-3 text-center md:text-left">
-            <h1 className="font-jakarta font-semibold text-lg h-14">{title}</h1>
-            <p className="font-roboto text-sm font-normal text-ring h-33">
+          <div className="flex flex-col items-center md:items-start gap-3 w-full grow">
+            <h1 className="font-jakarta font-semibold text-sm text-center md:text-left">
+              {title}
+            </h1>
+
+            <p className="font-roboto text-sm font-normal text-ring text-center md:text-left">
               {description}
             </p>
-            <div className="w-full">
-              <ButtonOne btnText="Learn More" />
-            </div>
+
+            {/* <div className="w-fit lg:w-full mt-auto">
+              <BumpsaleButton />
+            </div> */}
           </div>
         </div>
       </div>

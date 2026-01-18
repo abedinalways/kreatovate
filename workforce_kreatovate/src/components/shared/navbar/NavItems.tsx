@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 
 type Props = {
   variant?: "desktop" | "mobile";
@@ -65,45 +66,9 @@ const NavItems = ({ variant = "desktop", headerSelector = "nav" }: Props) => {
     };
   }, []);
 
-  const handleNavClick = useCallback(
-    async (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-      if (!id.startsWith("#")) return;
-
-      const target = sectionsRef.current[id];
-      if (!target) return;
-
-      e.preventDefault();
-
-      setActive(id);
-
-      const header = document.querySelector(
-        headerSelector
-      ) as HTMLElement | null;
-      const offsetY = (header?.offsetHeight ?? 0) + 8;
-
-      if (prefersReducedMotion || !gsapRef.current) {
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - offsetY;
-        window.scrollTo({ top, behavior: "smooth" });
-        history.replaceState(null, "", id);
-        return;
-      }
-
-      const gsap = gsapRef.current as any;
-      const { default: ScrollToPlugin } = await import("gsap/ScrollToPlugin");
-      gsap.registerPlugin(ScrollToPlugin);
-
-      gsap.to(window, {
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTo: { y: target, offsetY, autoKill: true },
-        onComplete: () => {
-          history.replaceState(null, "", id);
-        },
-      });
-    },
-    [headerSelector, prefersReducedMotion]
-  );
+  const handleNavClick = (e: any, id: string) => {
+    smoothScrollTo(e, id);
+  };
 
   if (variant === "mobile") {
     return (

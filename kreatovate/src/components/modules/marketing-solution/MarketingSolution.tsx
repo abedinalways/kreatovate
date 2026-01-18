@@ -49,39 +49,39 @@ const MarketingSolution = () => {
     {
       id: 1,
       title: "Avatar Builder",
-      price: 297,
+      price: "297",
       description:
         "Generates posts, captions, hashtags, and schedules content.",
     },
     {
       id: 2,
       title: "Content Management",
-      price: 297,
+      price: "297",
       description:
         "Creates branded avatars for outreach, training, or marketing.",
     },
     {
       id: 3,
       title: "Lead Generation",
-      price: 197,
+      price: "197",
       description: "Performs background checks and internet data scrubbing.",
     },
     {
       id: 4,
       title: "Lead Nurturing",
-      price: 197,
+      price: "197",
       description: "Warms leads with education and timely follow-ups.",
     },
     {
       id: 5,
       title: "SEO & GEO",
-      price: 297,
+      price: "297",
       description: "Schedules and confirms client calls seamlessly.",
     },
     {
       id: 6,
       title: "Website Builder",
-      price: 397,
+      price: "397",
       description: "Outbound sales employee that calls and closes deals.",
     },
   ];
