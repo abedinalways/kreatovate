@@ -16,6 +16,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useState } from "react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -23,7 +24,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b bg-[rgba(0,0,0,0.40)] border-white/30 backdrop-blur-xs">
+    <nav className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b bg-[rgba(0,0,0,0.40)] border-white/30 backdrop-blur-xs font-[roboto]">
       <div className="custom-container flex flex-row items-center justify-between">
         <Logo />
 
@@ -33,7 +34,13 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block ">
-          <ButtonOne btnText="Contact Us" href="/contact-us" />
+          <Link href='/contact-us'>
+            <button className="btnOne-bg-gradient  rounded-[12px] p-px">
+              <button className="w-[121px] h-[52px] rounded-[12px] bg-black cursor-pointer ">
+                <span className="text-gradient">Contact Us</span>
+              </button>
+            </button>
+          </Link>
         </div>
 
         {/* Mobile menu */}

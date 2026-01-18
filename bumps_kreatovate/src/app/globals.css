@@ -256,15 +256,9 @@
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Closed state */
-#lc_text-widget-box[style*="display: none"],
-#lc_text-widget-box.lc-hidden {
-  opacity: 0;
-  transform: translateY(20px) scale(0.9);
-}
-
-/* Open state */
-#lc_text-widget-box:not([style*="display: none"]) {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.text-gradient{
+  background: linear-gradient(90deg, #4e30fe 0%, #e93d3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

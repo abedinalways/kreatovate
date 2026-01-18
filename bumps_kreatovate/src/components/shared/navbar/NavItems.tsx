@@ -5,13 +5,15 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Link from 'next/link';
 import { MouseEvent, useCallback, useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 type Props = {
   variant?: 'desktop' | 'mobile';
   headerSelector?: string;
 };
 
-gsap.registerPlugin(ScrollToPlugin);
+
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
   const [active, setActive] = useState('#home');
@@ -55,21 +57,53 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     [headerSelector]
   );
 
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    // Non-hash routes (e.g., /price) should navigate normally
-    if (!id.startsWith('#')) return;
+  useEffect(() => {
+    if (pathname === '/') {
+      setActive(window.location.hash || '#home');
+    } else {
+      setActive(pathname);
+    }
+  }, [pathname]);
 
-    // If not on the homepage, redirect to '/#section'
+
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (!id.startsWith('#')) {
+      setActive(id);
+      return;
+    }
+
     if (pathname !== '/') {
       e.preventDefault();
       router.push(`/${id}`);
       return;
     }
 
-    // Already on homepage → smooth scroll
     e.preventDefault();
     scrollToHash(id);
   };
+  
+
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    items.forEach(item => {
+      if (!item.id.startsWith('#')) return;
+
+      const section = document.querySelector(item.id);
+      if (!section) return;
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => setActive(item.id),
+        onEnterBack: () => setActive(item.id),
+      });
+    });
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+  }, [pathname]);
+
 
   useEffect(() => {
     const applyFromHash = () => {
