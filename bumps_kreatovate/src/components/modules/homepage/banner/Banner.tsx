@@ -94,7 +94,7 @@ const Banner = () => {
           </p>
 
           <div className="mt-5 banner-button">
-            <ButtonTwo btnText="Get Started" />
+            <ButtonTwo btnText="Get Started Now" />
           </div>
         </div>
 

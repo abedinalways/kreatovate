@@ -237,3 +237,9 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.bg-gradient-btn{
+  background:
+    linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
