@@ -103,12 +103,7 @@ const Banner = () => {
           </p>
 
           <div className="mt-5 banner-button">
-<<<<<<< HEAD
             <ButtonTwo btnText="Get Started Now" />
-=======
-            {/* Explore the Launchpad */}
-            <ButtonTwo btnText="Get Started " />
->>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
           </div>
         </div>
 
