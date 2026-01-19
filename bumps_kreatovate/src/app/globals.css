@@ -262,12 +262,20 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-<<<<<<< HEAD
 
-.bg-gradient-btn{
+.gradient-btns{
   background:
     linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
-=======
->>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
+
+.launch-text-gradient {
+  background: linear-gradient(90deg, #e21717 0%, #3700ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-media-bg{
+  background: linear-gradient(244deg, rgba(226, 15, 18, 0.2) 0%, rgba(56, 83, 255, 0.2) 100%);
+}

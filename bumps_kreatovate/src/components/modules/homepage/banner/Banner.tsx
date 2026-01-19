@@ -1,56 +1,46 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import MainBg from "./MainBg";
-import Image from "next/image";
-import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
-import gsap from "gsap";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+
+import MainBg from './MainBg';
+import ButtonTwo from '@/components/shared/buttons/ButtonTwo';
+import ArrowIcon from '@/components/shared/icons/ArrowIcon';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
   const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Timeline for smooth sequence
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      tl.from(".banner-tagline", {
-        y: -30,
+      // scroll animation ONLY for the button
+      gsap.from('.banner-button', {
+        scrollTrigger: {
+          trigger: '.banner-button',
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+        y: 40,
         opacity: 0,
-        duration: 0.8,
-      })
-        .from(
-          ".banner-heading",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-          },
-          "-=0.3"
-        )
-        .from(
-          ".banner-subtext",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-          },
-          "-=0.4"
-        )
-        .from(
-          ".banner-button",
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.6,
-          },
-          "-=0.3"
-        );
+        duration: 0.7,
+        ease: 'power3.out',
+      });
     }, bannerRef);
 
     return () => ctx.revert();
   }, []);
+
+  const scrollToTarget = () => {
+    document.getElementById('about_us')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
 
   return (
     <div
@@ -60,65 +50,60 @@ const Banner = () => {
     >
       <MainBg />
 
-      <div className="absolute ml-[-20] mt-5 z-40 flex flex-col items-center justify-center gap-2 h-full w-full px-4">
-        <div className="flex flex-col items-center gap-2  px-2 mx-auto">
-          <div className="flex items-center justify-center bg-white/10  md:px-6  rounded-full mx-auto banner-tagline border border-gray-400 px-2">
+      <div className="absolute z-40 flex flex-col items-center justify-center gap-2 h-full w-full px-4">
+        <div className="flex flex-col items-center gap-2 px-2 mx-auto">
+          {/* TAGLINE */}
+          <div className="flex items-center justify-center bg-white/10 md:px-6 rounded-full mx-auto border border-gray-400 px-2">
             <Image
               src="/images/hrline1.png"
-              alt="heading line vector 1"
+              alt="heading line vector"
               width={60}
               height={16}
             />
-            <p className="font-roboto bg-white/10 text-[10px] mx-2 text-center py-2 font-bold text-gradient-special  uppercase">
+            <p className="font-roboto text-[10px] mx-2 text-center py-2 font-bold uppercase text-gradient-special">
               Top consulting platform
-              {/* KREATOVATE LAUNCHPAD */}
             </p>
             <Image
               src="/images/hrline1.png"
-              alt="heading line vector 1"
+              alt="heading line vector"
               width={60}
               height={16}
               className="scale-x-[-1]"
             />
           </div>
 
-          <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold  banner-heading w-full ">
+          {/* HEADING */}
+          <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
             Transform Ideas with
-            {/* Kreatovate Project */}
             <br />
-            <span className="text-gradient">
-              Kreatovate’s Strategy
-              {/* Launchpad */}
-            </span>
+            <span className="text-gradient">Kreatovate’s Strategy</span>
           </h1>
 
-          <p className="mt-3 md:mt-4 font-[roboto] text-xs md:text-md max-w-3xl text-center banner-subtext">
-            Turn concepts into measurable growth with strategies that scale your{" "}
-            <br />
+          {/* SUBTEXT */}
+          <p className="mt-3 md:mt-4 font-roboto text-xs md:text-md max-w-3xl text-center">
+            Turn concepts into measurable growth with strategies that scale your
             impact, increase revenue, and deepen customer loyalty.
-            {/* A community-powered launchpad designed to fund and launch real
-            digital projects—built to support tangible products, fuel innovation
-            through value, and create shared momentum that turns participation
-            into progress today and into the future. */}
           </p>
 
+          {/* CTA BUTTON (SCROLL ANIMATED) */}
           <div className="mt-5 banner-button">
-<<<<<<< HEAD
-            <ButtonTwo btnText="Get Started Now" />
-=======
-            {/* Explore the Launchpad */}
-            <ButtonTwo btnText="Get Started " />
->>>>>>> 72e336259f0d85efcd271b98e9fc2ab1dca98068
+            <button
+              onClick={scrollToTarget}
+              className="cursor-pointer gradient-btns w-[208px] h-[52px] rounded-[10px] flex items-center justify-center gap-1 "
+            >
+              <span>Get Started Now</span><ArrowIcon />
+            </button>
           </div>
         </div>
 
+        {/* VIDEO */}
         <div className="rounded-2xl py-4">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full max-w-[1220px] md:h-[400px] h-[300px] px-4 md:px-0 md:object-cover rounded-2xl "
+            className="w-full max-w-[1220px] md:h-[400px] h-[300px] px-4 md:px-0 md:object-cover rounded-2xl"
           >
             <source src="/videos/banner.mp4" type="video/mp4" />
           </video>

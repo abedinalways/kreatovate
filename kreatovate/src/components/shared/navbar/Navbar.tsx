@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from "react";
 import Logo from "../logo/Logo";
 import NavItems from "./NavItems";
 import ButtonOne from "../buttons/ButtonOne";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,12 +60,21 @@ const Navbar = () => {
       }
     );
 
+   
+
     return () => {
       window.removeEventListener("resize", updateNavHeight);
       tween?.scrollTrigger?.kill();
       tween?.kill();
     };
   }, []);
+
+   const scrollToTarget = () => {
+     document.getElementById('contact_us')?.scrollIntoView({
+       behavior: 'smooth',
+       block: 'start',
+     });
+   };
 
   return (
     <nav
@@ -79,7 +89,14 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonOne href="/contact-us" btnText="contact us" />
+          <button
+            className="btnOne-bg-gradient  rounded-[12px] p-px"
+            onClick={scrollToTarget}
+          >
+            <button className="w-[121px] h-[42px] rounded-[12px] bg-black cursor-pointer ">
+              <span className="text-gradient">Contact Us</span>
+            </button>
+          </button>
         </div>
 
         <div className="lg:hidden">

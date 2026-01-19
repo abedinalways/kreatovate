@@ -30,7 +30,7 @@ const WhyWeBuildIt = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" id='our_solutions'>
       <Image
         src="/images/whyWeBuildIt/ellipse2.svg"
         alt="bg image"

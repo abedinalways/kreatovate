@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import Logo from "../logo/Logo";
-import Image from "next/image";
-import { FaDiscord, FaThreads, FaTiktok } from "react-icons/fa6";
+
+import FooterLogo from "../logo/FooterLogo";
 
 const XIcon = () => (
   <svg
@@ -19,9 +18,9 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative w-full text-white overflow-hidden bg-[#0b1121]">
+    <footer className="relative w-full text-white overflow-hidden bg-gray-900">
       {/* Background Image */}
-      <div className="absolute inset-0 z-10">
+      {/* <div className="absolute inset-0 z-10">
         <Image
           src="/images/footer-bg.png"
           alt="footer background"
@@ -29,14 +28,14 @@ export default function Footer() {
           height={461}
           className="w-full h-full object-cover object-center"
         />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Logo />
+            <FooterLogo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Our AI-Driven Marketing Platform gives you an affordable
@@ -49,7 +48,7 @@ export default function Footer() {
                 href="https://www.facebook.com/kreatovate/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </Link>
@@ -57,7 +56,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kreatovate?igsh=MWl1Y29rcXJlM3V2bg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </Link>
@@ -65,7 +64,7 @@ export default function Footer() {
                 href="https://x.com/kreatovate?s=21/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <XIcon />
               </Link>
@@ -73,11 +72,11 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/kreatovate-marketing-consultings/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
-              <Link
+              {/* <Link
                 href="https://www.threads.com/@kreatovate?igshid=NTc4MTIwNjQ2YQ==/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,7 +99,7 @@ export default function Footer() {
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FaTiktok className="w-5 h-5" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -193,7 +192,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -202,7 +201,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies
@@ -215,7 +214,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-[rgba(237,28,36,0.2)] mt-10 pt-6">
           <p className="text-center text-gray-500 text-sm">
-            © 2025 — Kreatovate. All rights reserved.
+            © {new Date().getFullYear()} — Kreatovate. All rights reserved.
           </p>
         </div>
       </div>

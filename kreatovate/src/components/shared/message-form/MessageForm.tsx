@@ -26,7 +26,7 @@ export interface FormFieldConfig {
   options?: { value: string; label: string }[];
   rows?: number;
   gridCol?: 1 | 2;
-  validation?: z.ZodTypeAny; // ✅ no explicit any
+  validation?: z.ZodTypeAny; 
 }
 
 export interface ConsultationFormProps {
@@ -35,7 +35,7 @@ export interface ConsultationFormProps {
   buttonText?: string;
   showButtonIcon?: boolean;
   showDecorator?: boolean;
-  onSubmit?: (data: Record<string, unknown>) => Promise<void>; // ✅ no any
+  onSubmit?: (data: Record<string, unknown>) => Promise<void>; 
   className?: string;
   apiEndpoint?: string;
   successMessage?: string;
@@ -85,7 +85,7 @@ export default function MessageForm({
   showButtonIcon = true,
   onSubmit,
   className,
-  apiEndpoint = "/api/ghl",
+  // apiEndpoint = "/api/ghl",
   successMessage = "Form submitted successfully!",
   errorMessage = "Something went wrong. Please try again.",
 }: ConsultationFormProps) {
@@ -112,26 +112,30 @@ export default function MessageForm({
   const handleSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     const payload = {
-      locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
+      // locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
       fullName: data.fullName,
       email: data.email,
       phone: data.phone || undefined,
-      companyName: data.company,
-      source: 'Website - Consultation Form',
-      tags: ['Consultation Request', data.service || ''],
-      customFields: [
-        { key: 'service_interest', field_value: data.service },
-        { key: 'message', field_value: data.message },
+      message:data?.message,
+      // source: 'Website - Consultation Form',
+      // companyName: data.company,
+      // tags: ['Consultation Request', data.service || ''],
+      // customFields: [
+      //   { key: 'service_interest', field_value: data.service },
+      //   { key: 'message', field_value: data.message },
         
-      ],
+      // ],
     };
 
     try {
-      const res = await fetch('/api/ghl', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        'https://services.leadconnectorhq.com/hooks/HrhbwxyklwA3rFb1WupM/webhook-trigger/0dedb617-c3cd-407d-ae61-288667683a47',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        },
+      );
 
       if (!res.ok) {
         const err = await res.json();

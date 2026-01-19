@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="hidden lg:block ">
           <Link href="/contact-us">
             <button className="btnOne-bg-gradient  rounded-[12px] p-px">
-              <button className="w-[121px] h-[52px] rounded-[12px] bg-black cursor-pointer ">
+              <button className="w-[121px] h-[42px] rounded-[12px] bg-black cursor-pointer ">
                 <span className="text-gradient">Contact Us</span>
               </button>
             </button>
