@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '@/lib/utils'; // ✅ utility for conditional class merging
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 type ButtonAllProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {

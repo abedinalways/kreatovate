@@ -12,7 +12,7 @@ interface BtnProps {
 
 const ButtonTwo = ({ btnText, className, isIcon = false, link }: BtnProps) => {
   return (
-    <div className="p-px rounded-[12px] bg-gradient-btn cursor-pointer hover:bg-transparent font-[roboto]">
+    <div className="p-px rounded-[12px] gradient-btns cursor-pointer hover:bg-transparent font-[roboto]">
       <Button
         asChild
         variant="ghost"
@@ -22,7 +22,8 @@ const ButtonTwo = ({ btnText, className, isIcon = false, link }: BtnProps) => {
           href={link ? link : '/'}
           className="block w-full text-center capitalize"
         >
-          {btnText}<ArrowIcon/>
+          {btnText}
+          <ArrowIcon />
         </Link>
       </Button>
     </div>
