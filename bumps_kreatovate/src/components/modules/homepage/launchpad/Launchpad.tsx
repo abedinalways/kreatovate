@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Launchpad = () => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" id='about_us'>
       <Image
         src="/images/launchpad/ellipse-1.png"
         alt="ellipse 1"

@@ -8,13 +8,15 @@ interface BtnProps {
   className?: string;
   isIcon?: boolean;
   link?: string;
+  onClick?: () => void;
 }
 
-const ButtonTwo = ({ btnText, className, isIcon = false, link }: BtnProps) => {
+const ButtonTwo = ({ btnText, className, isIcon = false, link, onClick }: BtnProps) => {
   return (
     <div className="p-px rounded-[12px] gradient-btns cursor-pointer hover:bg-transparent font-[roboto]">
       <Button
         asChild
+        
         variant="ghost"
         className={` ${className} w-[208px] h-[52px] rounded-[12px] text-[16px] font-normal leading-[180%] text-center text-white hover:text-white hover:bg-transparent`}
       >

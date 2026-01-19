@@ -9,7 +9,7 @@ const OurModel = () => {
     { text: "The Bumpsale Strategy" },
   ];
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" id="our_services">
       <div className="w-[1046px] h-[598px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none select-none">
         <Image
           src="/images/our-model/ellipse.svg"
@@ -31,7 +31,7 @@ const OurModel = () => {
             </span>
           </h1>
           <ul className="flex flex-col gap-4 mb-8">
-            {model?.map((m) => (
+            {model?.map(m => (
               <li key={m.text}>
                 <div className="flex items-center gap-1">
                   <Image

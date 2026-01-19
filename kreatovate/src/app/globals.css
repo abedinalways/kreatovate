@@ -146,10 +146,18 @@
   font-family: var(--font-jakarta);
 }
 
-.btn-gradient {
+.btn-gradient{
   @apply bg-gradient-to-r from-[#E93D3D] to-[#4E30FE];
 }
 
+.btnOne-bg-gradient {
+  @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
+}
+
+.text-gradient {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+}
 .text-color-gradient {
   @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-2;
 }
