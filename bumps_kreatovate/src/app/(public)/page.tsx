@@ -9,6 +9,7 @@ import OurVision from "@/components/modules/homepage/our-vision/OurVision";
 import ReadyToLaunch from "@/components/modules/homepage/ready-to-launch/ReadyToLaunch";
 import Launchpad from "@/components/modules/homepage/launchpad/Launchpad";
 import TrustedGrowth from "@/components/modules/homepage/trusted-growth/TrustedGrowth";
+import Welcome from "@/components/welcome/Welcome";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Launchpad />
       <WhyWeBuildIt />
       <OurModel />
+      <Welcome/>
       <LaunchpadInitiatives />
       <TrustedGrowth />
       <HowItWorks />

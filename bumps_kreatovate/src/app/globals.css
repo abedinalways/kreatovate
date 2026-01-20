@@ -198,7 +198,7 @@
   @apply text-transparent bg-clip-text;
   background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
 }
-.bg-gradient {
+.bg-gradient{
   background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
 }
 .text-gradient-special {
