@@ -1,12 +1,15 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 .bumpsale_button {
   display: inline-block;
   padding: 12px 58px;
-  font: normal 14px Helvetica, Arial, sans-serif;
+  font:
+    normal 14px Helvetica,
+    Arial,
+    sans-serif;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -142,7 +145,7 @@
 }
 
 :root {
-  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
 }
 
 .font-jakarta {
@@ -167,7 +170,7 @@
 }
 
 .banner-bg {
-  background-image: url("/images/banner1.png");
+  background-image: url('/images/banner1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,15 +193,20 @@
   will-change: transform, opacity, filter, clip-path;
 }
 
-.btnOne-bg-gradient {
+/* .btnOne-bg-gradient {
+  
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
+} */
+
+.btnOne-bg-gradient {
+  @apply bg-gradient-to-r from-[#4E30FE] to-[#E93D3D];
 }
 
 .text-gradient {
   @apply text-transparent bg-clip-text;
   background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
 }
-.bg-gradient{
+.bg-gradient {
   background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
 }
 .text-gradient-special {
@@ -253,20 +261,41 @@
 /* LeadConnector Chat Animation */
 #lc_text-widget-box {
   transform-origin: bottom right;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
-.text-gradient{
+.text-gradient {
   background: linear-gradient(90deg, #4e30fe 0%, #e93d3d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-btns{
+.shape-squircle {
+  corner-shape: squircle;
+}
+
+.gradient-btns {
+  corner-shape: squircle;
   background:
     linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
+.gradient-btn {
+  background:
+    linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
 }
 
 .launch-text-gradient {
@@ -276,6 +305,10 @@
   background-clip: text;
 }
 
-.social-media-bg{
-  background: linear-gradient(244deg, rgba(226, 15, 18, 0.2) 0%, rgba(56, 83, 255, 0.2) 100%);
+.social-media-bg {
+  background: linear-gradient(
+    244deg,
+    rgba(226, 15, 18, 0.2) 0%,
+    rgba(56, 83, 255, 0.2) 100%
+  );
 }

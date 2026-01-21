@@ -39,7 +39,7 @@ const HowItWorks = () => {
     },
   ];
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden font-jakarta" id="process_overview">
       <Image
         src="/images/how-it-works/ellipse.svg"
         alt="bg light"
@@ -54,7 +54,7 @@ const HowItWorks = () => {
               <SiteBigBadge title="How It Works" />
             </div>
             <h1 className="font-bold text-2xl md:text-5xl leading-[120%] text-center">
-              How the{" "}
+              How the{' '}
               <span className="text-gradient-special">Launchpad Works</span>
             </h1>
           </div>

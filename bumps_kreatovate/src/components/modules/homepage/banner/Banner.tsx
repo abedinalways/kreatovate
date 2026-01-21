@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import MainBg from './MainBg';
 import ButtonTwo from '@/components/shared/buttons/ButtonTwo';
-import ArrowIcon from '@/components/shared/icons/ArrowIcon';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,19 +80,24 @@ const Banner = () => {
           </h1>
 
           {/* SUBTEXT */}
-          <p className="mt-3 md:mt-4 font-roboto text-xs md:text-md max-w-3xl text-center">
+          <p className="mt-3 md:mt-4 font-[roboto] text-xs md:text-lg leading-[180%] font-normal text-[#E9E9EA] max-w-3xl text-center">
             Turn concepts into measurable growth with strategies that scale your
+            <br />
             impact, increase revenue, and deepen customer loyalty.
           </p>
 
           {/* CTA BUTTON (SCROLL ANIMATED) */}
           <div className="mt-5 banner-button">
-            <button
+            {/* <button
               onClick={scrollToTarget}
               className="cursor-pointer gradient-btns w-[208px] h-[52px] rounded-[10px] flex items-center justify-center gap-1 "
             >
               <span>Get Started Now</span><ArrowIcon />
-            </button>
+            </button> */}
+            <ButtonTwo
+              onClick={scrollToTarget}
+              btnText="Get Started Now"
+            ></ButtonTwo>
           </div>
         </div>
 

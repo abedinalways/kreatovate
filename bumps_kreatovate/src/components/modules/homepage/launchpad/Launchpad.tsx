@@ -1,10 +1,11 @@
+import Btn from "@/components/shared/buttons/Btn";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 import Image from "next/image";
 
 const Launchpad = () => {
   return (
-    <div className="relative overflow-hidden" id='about_us'>
+    <div className="relative overflow-hidden font-jakarta" id='about_us' >
       <Image
         src="/images/launchpad/ellipse-1.png"
         alt="ellipse 1"
@@ -28,12 +29,12 @@ const Launchpad = () => {
             The{" "}
             <span className="text-gradient-special">Kreatovate Launchpad</span>
           </h1>
-          <p className="font-semibold text-base md:text-lg leading-[180%] text-white mb-5">
+          <p className="font-semibold text-base md:text-lg leading-[180%] text-white mb-5 font-jakarta">
             The Kreatovate Launchpad is our centralized fundraising and
             activation hub built to help ideas, startups, and operating
             businesses raise capital by delivering value, not promises.
           </p>
-          <p className="font-normal text-base md:text-lg leading-[180%] text-ring mb-6">
+          <p className="font-normal text-base md:text-lg leading-[180%] text-ring mb-6 font-[roboto]">
             Instead of traditional donations, ads, or speculative raises, the
             Launchpad enables fundraising through digital products that can be
             delivered instantly, paired with transparent, repeatable fundraising
@@ -42,7 +43,7 @@ const Launchpad = () => {
             demand—without friction or gatekeepers.
           </p>
           <div className="w-fit">
-            <ButtonTwo btnText="Explore the Launchpad" isIcon />
+            <Btn btnText="Explore the Launchpad" isIcon />
           </div>
         </div>
         <div className="w-full lg:w-1/2">

@@ -30,7 +30,7 @@ const WhyWeBuildIt = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden" id='our_solutions'>
+    <div className="relative overflow-hidden font-jakarta" id="our_solutions">
       <Image
         src="/images/whyWeBuildIt/ellipse2.svg"
         alt="bg image"
@@ -43,13 +43,11 @@ const WhyWeBuildIt = () => {
           <div className="w-fit mb-2">
             <SiteBigBadge title="Why We Build It" />
           </div>
-          <h1 className="font-bold text-2xl md:text-5xl leading-[120%] text-center mb-4">
-            We built the Launchpad <br className="hidden md:block" /> to{" "}
-            <span className="text-gradient-special">
-              solve a simple problem
-            </span>
+          <h1 className="font-bold text-2xl md:text-5xl leading-[120%]  text-center mb-4 ">
+            We built the Launchpad <br className="hidden md:block" /> to{' '}
+            <span className="text-gradient">solve a simple problem</span>
           </h1>
-          <p className="font-normal text-base md:text-lg leading-[180%] text-center text-ring">
+          <p className="font-normal text-base md:text-lg leading-[180%] text-center  text-[#A5A5AB]">
             Great ideas shouldn’t stall because of slow, centralized, or
             inaccessible fundraising.
           </p>
@@ -61,7 +59,7 @@ const WhyWeBuildIt = () => {
             </h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {existTo?.map((exist) => (
+              {existTo?.map(exist => (
                 <div
                   key={exist.id}
                   className="bg-linear-to-l from-[#3700ff] to-[#e21717] p-px rounded-[20px]"
@@ -71,7 +69,7 @@ const WhyWeBuildIt = () => {
                       className="p-3.5 rounded-full w-fit mb-8"
                       style={{
                         background:
-                          "linear-gradient(90deg, #e21717 0%, #3700ff 100%)",
+                          'linear-gradient(90deg, #e21717 0%, #3700ff 100%)',
                       }}
                     >
                       <Image
@@ -104,7 +102,7 @@ const WhyWeBuildIt = () => {
             </h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-              {fund?.map((f) => (
+              {fund?.map(f => (
                 <div
                   key={f.text}
                   className="bg-linear-to-l from-[#3700ff] to-[#e21717] p-px rounded-[12px] text-center h-full"
