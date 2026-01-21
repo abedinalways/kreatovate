@@ -93,7 +93,7 @@ const Navbar = () => {
             className="btnOne-bg-gradient  rounded-[12px] p-px"
             onClick={scrollToTarget}
           >
-            <button className="w-[121px] h-[42px] rounded-[12px] bg-black cursor-pointer ">
+            <button className="w-[121px] h-[42px] rounded-[10px] bg-black cursor-pointer ">
               <span className="text-gradient">Contact Us</span>
             </button>
           </button>

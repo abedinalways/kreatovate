@@ -9,7 +9,7 @@ const OurModel = () => {
     { text: "The Bumpsale Strategy" },
   ];
   return (
-    <div className="relative overflow-hidden" id="our_services">
+    <div className="relative overflow-hidden font-jakarta" id="our_model">
       <div className="w-[1046px] h-[598px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none select-none">
         <Image
           src="/images/our-model/ellipse.svg"

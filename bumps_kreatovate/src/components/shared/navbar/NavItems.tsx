@@ -24,11 +24,15 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     { id: '#home', label: 'Home' },
     { id: '#about_us', label: 'About Us' },
     { id: '#our_solutions', label: 'Our Solutions' },
-    { id: '#our_services', label: 'Our Services' },
+    // { id: '#our_services', label: 'Our Services' },
+    { id: '#our_model', label: 'Our Model' },
+    { id: '#dashboard', label: 'Dashboard' },
     { id: '#our_books', label: 'Our Books' },
+    { id: '#process_overview', label: 'Process Overview' },
+    { id: '#our_vision', label: 'Our Vision' },
     { id: '/price', label: 'Pricing Plan' },
-    { id: '#testimonial', label: 'Testimonial' },
-    { id: '#our_team', label: 'Our Team' },
+    // { id: '#testimonial', label: 'Testimonial' },
+    // { id: '#our_team', label: 'Our Team' },
   ];
 
   //useCallback ensures scrollToHash reference is stable, fixing ESLint warning

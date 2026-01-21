@@ -18,7 +18,7 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative w-full text-white overflow-hidden bg-gray-900">
+    <footer className="relative w-full text-white overflow-hidden bg-gray-900  mx-auto font-jakarta">
       {/* Background Image */}
       {/* <div className="absolute inset-0 z-10">
         <Image
@@ -31,13 +31,13 @@ export default function Footer() {
       </div> */}
 
       {/* Content */}
-      <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
+      <div className="relative z-20 py-16 px-6 md:px-0 custom-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
             <FooterLogo />
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
               Our AI-Driven Marketing Platform gives you an affordable
               enterprise digital marketing and advertising solution that does
               all the heavy lifting.
@@ -113,13 +113,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
+                <Link href="#about_us" className="text-gray-400 hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions"
+                  href="#our_solutions"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions

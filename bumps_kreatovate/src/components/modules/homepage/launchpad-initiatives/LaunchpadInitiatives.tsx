@@ -1,10 +1,11 @@
+import Btn from "@/components/shared/buttons/Btn";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 import Image from "next/image";
 
 const LaunchpadInitiatives = () => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden font-jakarta" id='our_books'>
       <Image
         src="/images/launchpad-initiatives/ellipse.png"
         alt="bg light"
@@ -19,6 +20,7 @@ const LaunchpadInitiatives = () => {
 
         <h1 className="font-bold text-2xl md:text-5xl leading-[120%] mb-4">
           Launchpad <span className="text-gradient-special">Initiatives</span>
+          
         </h1>
 
         <p className="font-medium text-lg leading-[180%] text-ring mb-12 max-w-154 text-center">
@@ -42,7 +44,7 @@ const LaunchpadInitiatives = () => {
             <p className="font-medium text-lg leading-[180%] uppercase text-gradient-special mb-2">
               Bumpsale Strategy
             </p>
-            <h1 className="font-semibold text-xl md:text-3xl leading-[130%] mb-4">
+            <h1 className="font-semibold text-xl md:text-[32px] leading-[130%] mb-4">
               NextGen 4 - Book Bundle Sale
             </h1>
             <p className="font-medium text-base md:text-lg leading-[180%] text-[#e9e9ea] mb-6">
@@ -55,7 +57,7 @@ const LaunchpadInitiatives = () => {
             </p>
 
             <div className="w-fit">
-              <ButtonTwo btnText="learn more" />
+              <Btn btnText="Learn More" isIcon={false} className="w-34! h-14! text-center"/>
             </div>
           </div>
         </div>

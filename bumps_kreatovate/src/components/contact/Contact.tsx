@@ -118,7 +118,7 @@ const Contact = () => {
     });
 
     const result = await res.json();
-
+    console.log(result)
     if (!res.ok || result.error) {
       const msg = result.message?.toLowerCase() || "";
 

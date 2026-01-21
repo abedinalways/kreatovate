@@ -22,7 +22,7 @@ export default function Home() {
       <OurModel />
       <Welcome/>
       <LaunchpadInitiatives />
-      <TrustedGrowth />
+      {/* <TrustedGrowth /> */}
       <HowItWorks />
       <OurVision />
       {/* <Trailer /> */}

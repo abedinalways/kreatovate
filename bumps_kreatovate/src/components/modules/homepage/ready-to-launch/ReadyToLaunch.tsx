@@ -1,4 +1,6 @@
+import Btn from "@/components/shared/buttons/Btn";
 import ButtonAll from "@/components/shared/buttons/ButtonAll";
+import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import ArrowIcon from "@/components/shared/icons/ArrowIcon";
 
 const ReadyToLaunch = () => {
@@ -15,10 +17,10 @@ const ReadyToLaunch = () => {
             the Kreatovate Launchpad.
           </p>
 
-          <button className="flex items-center gap-1  justify-center rounded-[12px] cursor-pointer gradient-btns w-52 h-13">
-            <span className="leading-[120%] text-[18px]">Get Started Now </span>
-            <ArrowIcon />
-          </button>
+          <ButtonTwo
+           
+            btnText="Get Started Now"
+          ></ButtonTwo>
         </div>
       </div>
     </div>

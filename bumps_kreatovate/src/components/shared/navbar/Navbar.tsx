@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Sheet,
@@ -6,17 +6,17 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import Logo from "../logo/Logo";
-import NavItems from "./NavItems";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
-import ButtonOne from "../buttons/ButtonOne";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useState } from "react";
-import Link from "next/link";
+} from '@/components/ui/sheet';
+import Logo from '../logo/Logo';
+import NavItems from './NavItems';
+import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
+import ButtonOne from '../buttons/ButtonOne';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { useState } from 'react';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -33,10 +33,10 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block ">
+        <div className="hidden lg:block">
           <Link href="/contact-us">
-            <button className="btnOne-bg-gradient  rounded-[12px] p-px">
-              <button className="w-[121px] h-[42px] rounded-[12px] bg-black cursor-pointer ">
+            <button className="btnOne-bg-gradient shape-squircle rounded-[32px] p-[1.5px] ">
+              <button className="w-[142px] shape-squircle h-[42px] bg-black cursor-pointer rounded-[32px]">
                 <span className="text-gradient">Contact Us</span>
               </button>
             </button>
@@ -66,7 +66,9 @@ const Navbar = () => {
                   <Link href="/contact-us">
                     <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
                       <button className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer ">
-                        <span className="text-gradient text-[18px]">Contact Us</span>
+                        <span className="text-gradient text-[18px]">
+                          Contact Us
+                        </span>
                       </button>
                     </button>
                   </Link>

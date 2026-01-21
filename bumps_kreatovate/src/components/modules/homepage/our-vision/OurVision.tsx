@@ -20,7 +20,7 @@ const OurVision = () => {
     },
   ];
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden font-jakarta" id='our_vision'>
       <Image
         src="/images/how-it-works/ellipse.svg"
         alt="bg light"
