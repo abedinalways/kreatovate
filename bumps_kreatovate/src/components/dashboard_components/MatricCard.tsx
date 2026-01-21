@@ -44,9 +44,9 @@ const MetricCard: React.FC<MetricCardProps> = ({ metric, index }) => {
   };
 
   return (
-    <div className="btnOne-bg-gradient p-px rounded-[10px]">
+    <div className="btnOne-bg-gradient p-px rounded-[16px]">
       <Card
-        className={`bg-black rounded-[10px] ${getBorderColor(
+        className={`bg-black rounded-[16px] ${getBorderColor(
           index,
         )} border-x-0 border-b-0 hover:bg-black transition-colors`}
       >
