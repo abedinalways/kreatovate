@@ -26,7 +26,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     { id: '#our_solutions', label: 'Our Solutions' },
     // { id: '#our_services', label: 'Our Services' },
     { id: '#our_model', label: 'Our Model' },
-    { id: '#dashboard', label: 'Dashboard' },
+    { id: '/dashboard', label: 'Dashboard' },
     { id: '#our_books', label: 'Our Books' },
     { id: '#process_overview', label: 'Process Overview' },
     { id: '#our_vision', label: 'Our Vision' },

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Btn from '../shared/buttons/Btn';
 import MetricCard, { MetricData } from './MatricCard';
@@ -38,6 +39,51 @@ const metricsData: MetricData[] = [
   },
 ];
 
+// export CSV
+
+function convertToCSV(objArray: unknown): string {
+  const array = typeof objArray !== 'object' ? JSON.parse(objArray as string) : objArray;
+
+  if (!array || !array.length) {
+    // If the array is empty, return empty string
+    return '';
+  }
+
+  const headers = Object.keys(array[0]);
+  const csvRows = [];
+
+  // Add headers row
+  csvRows.push(headers.join(','));
+
+  // Add rows
+  (array as Record<string, unknown>[]).forEach(item => {
+    const values = headers.map(header => {
+      let val = item[header];
+      if (typeof val === 'object') val = JSON.stringify(val); // convert objects to string
+      if (typeof val === 'string') val = `"${val.replace(/"/g, '""')}"`;
+      return val;
+    });
+    csvRows.push(values.join(','));
+  });
+
+  return csvRows.join('\n');
+}
+
+function downloadCSV(data: unknown, filename: string = 'export.csv'): void {
+  const csv = convertToCSV(data);
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+
+  link.setAttribute('href', url);
+  link.setAttribute('download', filename);
+  link.style.visibility = 'hidden';
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 export default function StatCards() {
   // TODO: Replace with actual API call
   // const [metrics, setMetrics] = React.useState<MetricData[]>(metricsData);
@@ -68,7 +114,28 @@ export default function StatCards() {
             Manage and track your active initiatives in real-time
           </p>
         </div>
-        <Btn btnText="Export CSV" />
+        <Btn
+          btnText="Export CSV"
+          className="cursor-pointer"
+          onClick={() => {
+            if (!metricsData || metricsData.length === 0) {
+              alert('No data to export!');
+              return;
+            }
+
+            const flatData = metricsData.map(b => ({
+              id: b.id,
+              title: b.title,
+              value: b.value, 
+              change: b.change,
+              changeType: b.changeType,
+              subtitle: b.subtitle,
+              
+            }));
+
+            downloadCSV(flatData, 'bookings.csv');
+          }}
+        />
       </div>
 
       {/* Metric Cards Grid */}

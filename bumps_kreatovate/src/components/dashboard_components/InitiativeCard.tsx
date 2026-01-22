@@ -1,9 +1,9 @@
-
 'use client';
 
 import { Initiative } from '@/types/initiative';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const statusConfig = {
   active: {
@@ -11,18 +11,21 @@ const statusConfig = {
     badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
     button: 'Enter Sale →',
     enabled: true,
+    link: '/dashboard/our-books',
   },
   coming: {
     label: 'Coming Soon',
     badge: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
     button: 'Enter Sale →',
     enabled: false,
+    link: '#',
   },
   closed: {
     label: 'Closed',
     badge: 'bg-red-500/10 text-red-400 border-red-500/30',
-    button: 'View Report →',
-    enabled: true,
+    button: 'Enter Sale →',
+    enabled: false,
+    link: '#',
   },
 };
 
@@ -58,26 +61,43 @@ export default function InitiativeCard({
           </p>
 
           {/* Metrics */}
-          <div className="flex gap-4 text-sm">
-            <Metric label="Views" value={initiative.views} />
-            <Metric label="Clicks" value={initiative.clicks} />
-            <Metric label="Raised" value={initiative.raised} />
+
+          <div className="flex gap-4 text-sm ">
+            <div className="btnOne-bg-gradient rounded-full  p-[1.5px] ">
+              <div className="bg-black rounded-full ">
+                <Metric label="Views" value={initiative.views} />
+              </div>
+            </div>
+            <div className="btnOne-bg-gradient rounded-full  p-[1.5px]">
+              <div className="bg-black rounded-full ">
+                <Metric label="Clicks" value={initiative.clicks} />
+              </div>
+            </div>
+            <div className="btnOne-bg-gradient rounded-full  p-[1.5px] ">
+              <div className="bg-black rounded-full ">
+                <Metric label="Raised" value={initiative.raised} />
+              </div>
+            </div>
           </div>
 
           {/* CTA */}
-          <div className="btnOne-bg-gradient rounded-[6px] p-px ">
-            <div className="bg-black rounded-[6px] text-center px-6 py-[6px] text-center">
-              <button
-                disabled={!config.enabled}
-                className={cn(
-                  'text-sm font-medium mt-2',
-                  config.enabled
-                    ? 'text-white hover:underline'
-                    : 'text-gray-600 cursor-not-allowed',
-                )}
-              >
-                {config.button}
-              </button>
+          <div className="btnOne-bg-gradient rounded-[6px] p-px">
+            <div className="bg-black rounded-[6px] text-center px-6 py-[6px]">
+              {config.enabled ? (
+                <Link
+                  href={config.link}
+                  className="text-sm font-medium mt-2 text-white hover:underline inline-block"
+                >
+                  {config.button}
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="text-sm font-medium mt-2 text-gray-600 cursor-not-allowed"
+                >
+                  {config.button}
+                </button>
+              )}
             </div>
           </div>
         </CardContent>
@@ -88,7 +108,7 @@ export default function InitiativeCard({
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border border-gray-700 rounded-full px-3 py-1 text-gray-300">
+    <div className="border border-gray-700 rounded-full px-3 py-3  text-gray-300">
       {label}: <span className="text-white">{value}</span>
     </div>
   );

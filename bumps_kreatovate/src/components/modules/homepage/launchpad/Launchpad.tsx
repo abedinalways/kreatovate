@@ -2,10 +2,11 @@ import Btn from "@/components/shared/buttons/Btn";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 import Image from "next/image";
+import Link from "next/link";
 
 const Launchpad = () => {
   return (
-    <div className="relative overflow-hidden font-jakarta" id='about_us' >
+    <div className="relative overflow-hidden font-jakarta" id="about_us">
       <Image
         src="/images/launchpad/ellipse-1.png"
         alt="ellipse 1"
@@ -26,7 +27,7 @@ const Launchpad = () => {
             <SiteBigBadge title="fundraising, reimagined" />
           </div>
           <h1 className="font-bold text-2xl md:text-5xl leading-[120%] mb-3 whitespace-nowrap">
-            The{" "}
+            The{' '}
             <span className="text-gradient-special">Kreatovate Launchpad</span>
           </h1>
           <p className="font-semibold text-base md:text-lg leading-[180%] text-white mb-5 font-jakarta">
@@ -42,8 +43,15 @@ const Launchpad = () => {
             initiatives, complete builds, launch products, and validate
             demand—without friction or gatekeepers.
           </p>
-          <div className="w-fit">
-            <Btn btnText="Explore the Launchpad" isIcon />
+          <div className="w-fit ">
+            <Link
+              href="https://launchpad.kreatovate.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <Btn btnText="Explore the Launchpad" isIcon className="pointer-events-none"/>
+            </Link>
           </div>
         </div>
         <div className="w-full lg:w-1/2">

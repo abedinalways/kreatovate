@@ -46,7 +46,7 @@ const Banner = () => {
     <div
       id="home"
       ref={bannerRef}
-      className="relative min-h-svh md:min-h-screen overflow-hidden pt-14 px-4 mx-auto"
+      className="relative min-h-svh md:min-h-screen overflow-hidden pt-20 px-4 mx-auto"
     >
       <MainBg />
 

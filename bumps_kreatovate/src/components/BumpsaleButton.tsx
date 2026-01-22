@@ -24,7 +24,7 @@ export default function BumpsaleButton() {
         console.error("❌ Script error:", e);
       };
 
-      document.head.appendChild(script); // Try appending to head instead of body
+      document.head.appendChild(script); 
     }, 100);
 
     return () => clearTimeout(timer);
@@ -34,7 +34,7 @@ export default function BumpsaleButton() {
     <div>
       <a
         href="#"
-        className="bumpsale_button"
+        className="bumpsale_button "
         data-bumpsale="uPpDJDrVPbXPq28McoDrNFJf"
         data-bumpsale-text="Buy Bundle Now at _PRICE_"
         onClick={(e) => {

@@ -9,4 +9,5 @@ export interface Initiative {
   views: string;
   clicks: string;
   raised: string;
+  link: string;
 }
