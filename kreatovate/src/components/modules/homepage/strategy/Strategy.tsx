@@ -92,7 +92,7 @@ const Strategy = () => {
     <div
       id="about_us"
       ref={containerRef}
-      className="strategy-section custom-container pt-24 h-[75vh] relative w-full overflow-hidden"
+      className="strategy-section custom-container pt-24 h-[85vh] relative w-full overflow-hidden font-jakarta "
     >
       <div className="absolute top-0 left-0 w-full h-full z-10">
         <Image
@@ -132,7 +132,7 @@ const Strategy = () => {
         </div>
 
         <div className="flex flex-col items-start gap-8 self-end">
-          <p className="text-jakarta font-light text-base lg:text-lg">
+          <p className="text-jakarta font-light text-sm lg:text-[16px] ">
             Turn ideas into measurable results with data-led marketing - AI-{" "}
             <br />
             powered to test and scale what works.
@@ -144,7 +144,7 @@ const Strategy = () => {
             </h4>
 
             <div>
-              <ul className="flex flex-col items-start gap-3">
+              <ul className="flex flex-col items-start gap-3 text-[16px]">
                 <li>
                   <div className="flex items-center gap-2">
                     <Image

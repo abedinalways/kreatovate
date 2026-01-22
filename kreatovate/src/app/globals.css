@@ -150,6 +150,20 @@
   @apply bg-gradient-to-r from-[#E93D3D] to-[#4E30FE];
 }
 
+.gradient-btn {
+  corner-shape: squircle;
+  background:
+    linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
+.shape-squircle {
+  corner-shape: squircle;
+}
 .btnOne-bg-gradient {
   @apply bg-linear-to-r from-[#4E30FE] to-[#E93D3D];
 }

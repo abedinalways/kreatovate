@@ -5,6 +5,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import SectionHead from "@/components/shared/SectionHead";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
+import Btn from "@/components/shared/buttons/Btn";
 
 const Banner = () => {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -59,7 +60,7 @@ const Banner = () => {
     <div
       id="home"
       ref={rootRef}
-      className="relative h-180 lg:h-screen w-full overflow-hidden"
+      className="relative h-180 lg:h-screen w-full overflow-hidden font-jakarta"
     >
       {/* Background layer */}
       <div className="absolute w-full h-full z-10">
@@ -94,7 +95,7 @@ const Banner = () => {
             <SectionHead title="Top consulting platform" />
           </div>
 
-          <h1 className="text-2xl md:text-5xl lg:text-[3.5rem] font-bold leading-7 md:leading-12 lg:leading-16">
+          <h1 className="text-2xl md:text-5xl lg:text-[3.5rem] font-bold leading-7 md:leading-12 lg:leading-16 ">
             KREATOVATE <br />
             Marketing & Consulting
           </h1>
@@ -107,7 +108,7 @@ const Banner = () => {
         </div>
 
         <div className="js-hero-seq w-fit z-40">
-          <ButtonTwo btnText="Get Started Today " link="#contact_us" />
+          <Btn btnText="Get Started Today " link="#contact_us" />
         </div>
       </div>
     </div>
