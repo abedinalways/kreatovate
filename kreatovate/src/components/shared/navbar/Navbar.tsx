@@ -1,4 +1,4 @@
-// components/shared/navbar/Navbar.tsx
+
 "use client";
 
 import {
@@ -79,7 +79,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b border-white/30"
+      className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b border-white/30 font-[roboto]"
     >
       <div className="custom-container flex flex-row items-center justify-between">
         <Logo />
@@ -90,10 +90,10 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <button
-            className="btnOne-bg-gradient  rounded-[12px] p-px"
+            className="btnOne-bg-gradient  shape-squircle   rounded-[32px] p-px"
             onClick={scrollToTarget}
           >
-            <button className="w-[121px] h-[42px] rounded-[10px] bg-black cursor-pointer ">
+            <button className="w-[121px] h-[42px] shape-squircle  rounded-[32px] bg-black cursor-pointer ">
               <span className="text-gradient">Contact Us</span>
             </button>
           </button>
