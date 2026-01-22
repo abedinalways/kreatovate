@@ -54,7 +54,7 @@ export default function Welcome() {
 
               <div className="js-book-text">
                 <ButtonTwo
-                  link="/"
+                  link="/dashboard"
                   btnText="Launchpad  Dashboard"
                   className="px-6 py-4"
                 />

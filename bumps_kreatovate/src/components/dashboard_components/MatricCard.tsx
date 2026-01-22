@@ -44,7 +44,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ metric, index }) => {
   };
 
   return (
-    <div className="btnOne-bg-gradient p-px rounded-[16px]">
+    <div className="btnOne-bg-gradient  p-px rounded-[16px]">
       <Card
         className={`bg-black rounded-[16px] ${getBorderColor(
           index,

@@ -5,10 +5,10 @@ import { initiatives } from '@/data/initiatives';
 
 export default function CurrentInitiatives() {
   return (
-    <section className="mt-16 space-y-6 font-jakarta">
+    <section className="mt-16 space-y-6 font-[inter]">
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-white">Current Initiatives</h2>
+        <h2 className="text-4xl md:text-[48px] font-jakarta font-bold text-white">Current Initiatives</h2>
         <p className="text-gray-400 text-sm mt-1">
           Manage and track your active initiatives in real-time
         </p>
@@ -20,7 +20,7 @@ export default function CurrentInitiatives() {
           <InitiativeCard key={item.id} initiative={item} />
         ))}
 
-        <AddInitiativeCard />
+        {/* <AddInitiativeCard /> */}
       </div>
     </section>
   );

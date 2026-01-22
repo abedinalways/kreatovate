@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Plus_Jakarta_Sans, Roboto } from "next/font/google";
+import { Inter, Open_Sans, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
 import LenisProvider from "@/providers/LenisProvider";
@@ -23,15 +23,20 @@ const openSans = Open_Sans({
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-openSans",
 });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
-  title: "Bumps Kreatovate | Book Funnels & Smart Sales Automation",
+  title: "Launchpad Kreatovate | Book Funnels & Smart Sales Automation",
   description:
-    "Bumps Kreatovate helps authors and entrepreneurs launch high-converting book funnels with Bumpsale integration. Capture leads, automate sales through GoHighLevel CRM, and grow your business with seamless marketing technology.",
+    "Launchpad Kreatovate helps authors and entrepreneurs launch high-converting book funnels with Bumpsale integration. Capture leads, automate sales through GoHighLevel CRM, and grow your business with seamless marketing technology.",
   openGraph: {
-    title: "Bumps Kreatovate | Book Funnels & Smart Sales Automation",
+    title: "Launchpad Kreatovate | Book Funnels & Smart Sales Automation",
     description:
-      "Launch your next bestseller funnel with Bumps Kreatovate — a complete system for selling books, automating lead capture, and syncing with GoHighLevel CRM.",
+      "Launch your next bestseller funnel with Launchpad Kreatovate — a complete system for selling books, automating lead capture, and syncing with GoHighLevel CRM.",
     // url: "https://bumps.kreatovate.com",
     siteName: "Kreatovate",
     // images: [
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   keywords: [
-    "Bumps Kreatovate",
+    "Launchpad Kreatovate",
     "book funnel",
     "Bumpsale integration",
     "GoHighLevel CRM",
@@ -64,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-w-[320px]">
       <body
-        className={`${jakarta.variable} ${roboto.variable} ${openSans.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
+        className={`${jakarta.variable} ${roboto.variable} ${openSans.variable} ${inter.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
         {/* <BumpSaleLoader /> */}
