@@ -1,6 +1,50 @@
-[00:00:01.434] Server  LOG      ✓ Ready in 1063ms
-[00:00:07.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.174] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:01.085] Server  LOG      ✓ Ready in 852ms
+[00:00:05.861] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/robo.png" "received" null
+[00:00:05.862] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/group2.png" "received" null
+[00:00:05.870] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/group1.png" "received" null
+[00:00:06.052] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/bottom-bg.png" "received" null
+[00:00:06.121] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logo3.png" "received" null
+[00:00:06.132] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/aboutus-elips.png" "received" null
+[00:00:06.249] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.369] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/our-blurb.png" "received" null
+[00:00:06.369] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/kinpro.png" "received" null
+[00:00:06.401] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/kinpro2.png" "received" null
+[00:00:06.442] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/kinpro3.png" "received" null
+[00:00:06.459] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/business_card_light.png" "received" null
+[00:00:06.556] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/kinpro4.png" "received" null
+[00:00:06.791] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:16.163] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/banner.png" "received" null
+[00:00:16.263] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:00:16.264] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:00:16.265] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:00:16.369] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:00:16.383] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logo3.png" "received" null
+[00:00:16.386] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:00:16.455] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/vector.png" "received" null
+[00:00:16.462] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.464] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:00:16.709] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:16.709] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.709] Browser WARN    Image with src "/images/vector.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.709] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:38.070] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:38.494] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:14.905] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:15.380] Browser WARN    Image with src "/images/group2.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:01:15.380] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:15.380] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:15.380] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:15.380] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:15.380] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:26.098] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:01:26.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:26.129] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:01:26.130] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:01:26.169] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:01:26.178] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:01:26.218] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:01:26.500] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -42,56 +86,733 @@ It can also happen if the client has a browser extension installed which messes 
                                 >
                     ...
       ...
-        <LoadingBoundary name="(public)/" loading={null}>
-          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-                    <SegmentViewNode type="page" pagePath="(public)/p...">
-                      <SegmentTrieNode>
-                      <Home>
-                        <div className="overflow-h...">
-                          <Banner>
-                            <div id="home" ref={{current:null}} className="relative h...">
-                              <div className="absolute t...">
-                                <video
-                                  autoPlay={true}
-                                  loop={true}
-                                  muted={true}
-                                  playsInline={true}
-+                                 className="w-full h-full object-cover object-center"
--                                 className="w-full h-full object-cover object-center hoverZoomLink"
+
+[00:01:26.500] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:26.500] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:26.500] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:26.500] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:01:35.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:36.056] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:01:36.074] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:01:36.099] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:01:36.183] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:01:36.196] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:01:36.198] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:01:36.443] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:36.443] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:36.443] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:36.443] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:02:03.341] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:02:03.342] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:02:03.356] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:03.371] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:02:03.372] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:02:03.412] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:02:03.422] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:02:03.702] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <PublicLayout>
+      <PublicLayout>
+        <Navbar>
+          ...
+            <div className="lg:hidden">
+              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
+                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
+                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
+                    <SheetTrigger asChild={true}>
+                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
+                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
+                                <button
+                                  data-slot="sheet-trigger"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  aria-label="Open menu"
+                                  type="button"
+                                  aria-haspopup="dialog"
+                                  aria-expanded={false}
++                                 aria-controls="radix-_R_4kndlb_"
+-                                 aria-controls="radix-_R_hkndlb_"
+                                  data-state="closed"
+                                  onClick={function handleEvent}
+                                  ref={function}
                                 >
-                                ...
-                              ...
-                          ...
-                            <div className="py-12 flex...">
-                              <div className="about-imag...">
-                                <div className={"relative..."}>
-                                  <video
-                                    autoPlay={true}
-                                    loop={true}
-                                    muted={true}
-                                    playsInline={true}
-+                                   className="w-full rounded-2xl object-cover"
--                                   className="w-full rounded-2xl object-cover hoverZoomLink"
-                                  >
-                              ...
-                          ...
                     ...
-                  ...
       ...
 
-[00:00:08.174] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:08.174] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:08.174] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:08.174] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:08.174] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:19.737] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.854] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.854] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.854] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.854] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.854] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:00.428] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:03.702] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:03.702] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:03.702] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:03.702] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:02:06.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:06.961] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:02:07.083] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:02:07.084] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:02:07.084] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:02:07.094] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:02:07.135] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:02:07.376] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:07.376] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:07.376] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:07.376] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:03:30.131] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:31.313] Browser WARN    Image with src "/images/group2.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:03:31.438] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:31.438] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:31.438] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:31.438] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:31.438] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:04:56.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:56.589] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse1.png" "received" null
+[00:04:56.613] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/hrline1.png" "received" null
+[00:04:56.613] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse2.png" "received" null
+[00:04:56.614] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:04:56.614] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/line1.png" "received" null
+[00:04:56.660] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/ellipse3.png" "received" null
+[00:04:56.885] Browser WARN    Image with src "/images/ellipse3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:56.885] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:56.885] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:56.885] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:05:00.323] Browser LOG     {}
+[00:06:00.767] Server  LOG      ✓ Compiled in 51ms
+[00:09:27.773] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:29.027] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:29.027] Browser WARN    Image with src "/images/banner.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:09:29.027] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:29.027] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:29.027] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:29.027] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:16:44.428] Server  LOG      ✓ Compiled in 39ms
+[00:16:44.429] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/frame01.png" "received" null
+[00:17:28.962] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:29.029] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/frame01.png" "received" null
+[00:17:30.258] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <PublicLayout>
+      <PublicLayout>
+        <Navbar>
+          ...
+            <div className="lg:hidden">
+              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
+                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
+                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
+                    <SheetTrigger asChild={true}>
+                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
+                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
+                                <button
+                                  data-slot="sheet-trigger"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  aria-label="Open menu"
+                                  type="button"
+                                  aria-haspopup="dialog"
+                                  aria-expanded={false}
++                                 aria-controls="radix-_R_4kndlb_"
+-                                 aria-controls="radix-_R_hkndlb_"
+                                  data-state="closed"
+                                  onClick={function handleEvent}
+                                  ref={function}
+                                >
+                    ...
+      ...
+
+[00:17:30.258] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:17:30.258] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:30.258] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:30.258] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:30.258] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:30.258] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:01.620] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:02.941] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:02.941] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:02.941] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:02.941] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:02.941] Browser WARN    Image with src "/images/hrline1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:21:02.941] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:21:44.125] Server  LOG      ✓ Compiled in 36ms
+[00:23:43.941] Server  LOG      ✓ Compiled in 37ms
+[00:23:47.675] Server  LOG      ✓ Compiled in 31ms
+[00:23:53.887] Server  LOG      ✓ Compiled in 31ms
+[00:24:04.504] Server  LOG      ✓ Compiled in 33ms
+[00:24:11.290] Server  LOG      ✓ Compiled in 31ms
+[00:24:57.786] Server  LOG      ✓ Compiled in 31ms
+[00:26:37.904] Server  LOG      ✓ Compiled in 117ms
+[00:26:41.000] Server  LOG      ✓ Compiled in 20ms
+[00:26:42.067] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .bt
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:43.066] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .btn
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:47.067] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .hero
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:51.066] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .hero-btn
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:52.067] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .hero-btn-
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:55.067] Browser ERROR   ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: /home/abedin/project/terranwilliams/workforce_kreatovate/src/app/globals.css:260:1: Unknown word .hero-btn-bg
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+[00:26:59.007] Server  LOG      ✓ Compiled in 117ms
+[00:27:24.793] Server  LOG      ✓ Compiled in 27ms
+[00:27:30.402] Server  LOG      ✓ Compiled in 26ms
+[00:27:36.281] Server  LOG      ✓ Compiled in 29ms
+[00:27:40.111] Server  LOG      ✓ Compiled in 27ms
+[00:27:43.977] Server  LOG      ✓ Compiled in 29ms
+[00:27:49.526] Server  LOG      ✓ Compiled in 32ms
+[00:27:50.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:27:50.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:27:53.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:27:53.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:27:57.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image 
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:27:57.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image 
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:00.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:00.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:02.066] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src=
+> 75 |           </div>
+     |            ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:03.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src=''
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:03.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src=''
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:05.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src=''
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:05.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src=''
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:12.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' 
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:12.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' 
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:14.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:14.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:15.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt=''
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:15.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt=''
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:20.066] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt='' width={}
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:20.066] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt='' width={}
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:21.893] Server  LOG      ✓ Compiled in 25ms
+[00:28:22.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:74:43
+Parsing ecmascript source code failed
+  72 |           </div>
+  73 |           <div className='hero-btn-bg'>
+> 74 |             <Image src='' alt='' width={} height={}
+     |                                           ^^^^^^
+  75 |           </div>
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+
+Expected '</', got 'height'
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:28:26.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:74:43
+Parsing ecmascript source code failed
+  72 |           </div>
+  73 |           <div className='hero-btn-bg'>
+> 74 |             <Image src='' alt='' width={} height={}/>
+     |                                           ^^^^^^
+  75 |           </div>
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+
+Expected '</', got 'height'
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:29:22.182] Server  LOG      ✓ Compiled in 28ms
+[00:29:23.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:11
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt='' width={64} height={}/>
+> 75 |           </div>
+     |           ^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:29:23.067] Browser ERROR   ./src/components/meet-the-os/Hero.tsx:75:12
+Parsing ecmascript source code failed
+  73 |           <div className='hero-btn-bg'>
+  74 |             <Image src='' alt='' width={64} height={}/>
+> 75 |           </div>
+     |            ^^^^^
+  76 |           {/* HEADING */}
+  77 |           <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+  78 |             <span className="text-gradient">Meet the OS</span>
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/Hero.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:29:27.067] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:29:27.067] Browser ERROR   Image is missing required "src" property: <img>
+[00:29:27.067] Browser ERROR   Image is missing required "src" property: <img>
+[00:29:31.288] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images" "received" null
+[00:29:32.796] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/" "received" null
+[00:29:32.809] Server  LOG      ✓ Compiled in 38ms
+[00:29:37.763] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/icon.png" "received" null
+[00:29:37.765] Server  LOG      ✓ Compiled in 26ms
+[00:30:11.163] Server  LOG      ✓ Compiled in 39ms
+[00:30:17.537] Server  LOG      ✓ Compiled in 35ms
+[00:30:18.747] Server  LOG      ✓ Compiled in 46ms
+[00:30:20.316] Server  LOG      ✓ Compiled in 31ms
+[00:30:23.733] Server  LOG      ✓ Compiled in 31ms
+[00:30:28.157] Server  LOG      ✓ Compiled in 72ms
+[00:30:31.220] Server  LOG      ✓ Compiled in 31ms
+[00:30:32.288] Server  LOG      ✓ Compiled in 28ms
+[00:30:35.342] Server  LOG      ✓ Compiled in 65ms
+[00:30:56.519] Server  LOG      ✓ Compiled in 82ms
+[00:31:00.669] Server  LOG      ✓ Compiled in 69ms
+[00:31:29.556] Server  LOG      ✓ Compiled in 71ms
+[00:31:36.852] Server  LOG      ✓ Compiled in 69ms
+[00:31:38.291] Server  LOG      ✓ Compiled in 61ms
+[00:31:42.399] Server  LOG      ✓ Compiled in 61ms
+[00:31:44.699] Server  LOG      ✓ Compiled in 68ms
+[00:31:48.989] Server  LOG      ✓ Compiled in 28ms
+[00:31:51.312] Server  LOG      ✓ Compiled in 32ms
+[00:31:54.506] Server  LOG      ✓ Compiled in 34ms
+[00:31:57.462] Server  LOG      ✓ Compiled in 28ms
+[00:31:59.126] Server  LOG      ✓ Compiled in 38ms
+[00:32:01.488] Server  LOG      ✓ Compiled in 35ms
+[00:32:04.351] Server  LOG      ✓ Compiled in 28ms
+[00:32:44.437] Server  LOG      ✓ Compiled in 30ms
+[00:33:02.647] Server  LOG      ✓ Compiled in 35ms
+[00:33:02.735] Browser WARN    Image with src "/images/img00.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:33:06.179] Server  LOG      ✓ Compiled in 39ms
