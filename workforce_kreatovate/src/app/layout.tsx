@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
+import { Arimo, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/LenisProvider";
 import Script from "next/script";
@@ -16,6 +16,12 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
+const arimo = Arimo({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-arimo',
+});
+
 export const metadata: Metadata = {
   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
   description:
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jakarta.variable} ${roboto.variable} antialiased bg-[#000] font-jakarta text-white`}
+        className={`${jakarta.variable} ${roboto.variable} ${arimo.variable} antialiased bg-[#000] font-jakarta text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
         <Script
