@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 /* Variants & Theme tokens (top) */
 @custom-variant dark (&:is(.dark *));
@@ -80,7 +80,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* fonts */
-  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
 }
 
 .dark {
@@ -159,7 +159,8 @@
   }
 
   .btn-gradient {
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         180deg,
         rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 0.2) 100%
@@ -174,20 +175,20 @@
     @apply bg-gradient-to-l from-[#E21717] to-[#3700FF] inline-block text-transparent bg-clip-text leading-none pb-[8px];
   }
 
- @layer utilities {
-  .text-gradient {
-    background: linear-gradient(to right, #E21717, #3700FF);
-    -webkit-background-clip: text;
-    background-clip: text;
+  @layer utilities {
+    .text-gradient {
+      background: linear-gradient(to right, #e21717, #3700ff);
+      -webkit-background-clip: text;
+      background-clip: text;
 
-    /* These ensure cross-browser text rendering (Safari/Chrome/Edge/Firefox) */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+      /* These ensure cross-browser text rendering (Safari/Chrome/Edge/Firefox) */
+      color: transparent;
+      -webkit-text-fill-color: transparent;
 
-    /* Helps avoid odd clipping on inline elements in some browsers */
-    display: inline-block;
+      /* Helps avoid odd clipping on inline elements in some browsers */
+      display: inline-block;
+    }
   }
-}
 
   .text-color-gradient-tab {
     @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];
@@ -257,6 +258,40 @@
   );
 }
 
-.hero-btn-bg{
+.hero-btn-bg {
   background: linear-gradient(180deg, #4e30fe 0%, #e93d3d 100%);
+}
+
+.old-card-bg {
+  background: linear-gradient(135deg, #101828 0%, #000 100%);
+}
+.new-card-bg {
+  background: linear-gradient(135deg, rgba(78, 48, 254, 0.6) 0%, #000 100%);
+}
+.legacy-card-bg {
+  background: rgba(233, 61, 61, 0.2);
+}
+.modern-card-bg{
+  background: rgba(78, 48, 254, 0.2);
+}
+
+.modern-card-bg {
+  background: rgba(78, 48, 254, 0.2);
+}
+.old-icon-bg {
+  background: rgba(233, 61, 61, 0.1);
+}
+
+.modern-icon-bg{
+  background: rgba(78, 48, 254, 0.1);
+}
+
+.badge-gradient{
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px); /* Safari support */
+  background: linear-gradient(
+    244deg,
+    rgba(226, 15, 18, 0.4) 0%,
+    rgba(56, 83, 255, 0.4) 100%
+  );
 }
