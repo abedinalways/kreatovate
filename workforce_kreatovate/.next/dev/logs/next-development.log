@@ -1,6 +1,7 @@
-[00:00:01.601] Server  LOG      ✓ Ready in 1181ms
-[00:00:06.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.861] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:00.962] Server  LOG      ✓ Ready in 734ms
+[00:00:05.768] Server  LOG      ○ Compiling / ...
+[00:00:15.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.523] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -13,254 +14,751 @@ It can also happen if the client has a browser extension installed which messes 
 %s%s https://react.dev/link/hydration-mismatch 
 
   ...
-    <PublicLayout>
-      <PublicLayout>
-        <Navbar>
-          ...
-            <div className="lg:hidden">
-              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
-                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
-                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
-                    <SheetTrigger asChild={true}>
-                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
-                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
-                                <button
-                                  data-slot="sheet-trigger"
-                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
-                                  aria-label="Open menu"
-                                  type="button"
-                                  aria-haspopup="dialog"
-                                  aria-expanded={false}
-+                                 aria-controls="radix-_R_4kndlb_"
--                                 aria-controls="radix-_R_hkndlb_"
-                                  data-state="closed"
-                                  onClick={function handleEvent}
-                                  ref={function}
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="(public)/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="(public)/p...">
+                      <SegmentTrieNode>
+                      <Home>
+                        <div className="overflow-h...">
+                          <Banner>
+                            <div id="home" ref={{current:null}} className="relative h...">
+                              <div className="absolute t...">
+                                <video
+                                  autoPlay={true}
+                                  loop={true}
+                                  muted={true}
+                                  playsInline={true}
++                                 className="w-full h-full object-cover object-center"
+-                                 className="w-full h-full object-cover object-center hoverZoomLink"
                                 >
+                                ...
+                              ...
+                          ...
+                            <div className="py-12 flex...">
+                              <div className="about-imag...">
+                                <div className={"relative..."}>
+                                  <video
+                                    autoPlay={true}
+                                    loop={true}
+                                    muted={true}
+                                    playsInline={true}
++                                   className="w-full rounded-2xl object-cover"
+-                                   className="w-full rounded-2xl object-cover hoverZoomLink"
+                                  >
+                              ...
+                          ...
                     ...
+                  ...
       ...
 
-[00:00:06.861] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.861] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.861] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.861] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.861] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:19.893] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.272] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.272] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:00:20.272] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.272] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:20.272] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:14:53.127] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:5
+[00:00:16.523] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.523] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.523] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.523] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:16.523] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:16.523] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:34.095] Browser WARN    Image with src "/images/group2.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:57.261] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:04.980] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:05.301] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:05.301] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:01:05.301] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:05.301] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:05.301] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:16.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.580] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:17.580] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:02:17.580] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:17.580] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:17.580] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:10.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:9
 Parsing ecmascript source code failed
-  13 |       <AIWorkforce />
-  14 |       <Work
-> 15 |     </div>
+  83 |         <div>
+  84 |          <
+> 85 |         </div>
+     |         ^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:10.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:10
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <
+> 85 |         </div>
+     |          ^^^^^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:11.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:9
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Stat
+> 85 |         </div>
+     |         ^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:11.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:10
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Stat
+> 85 |         </div>
+     |          ^^^^^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:13.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:9
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Sta
+> 85 |         </div>
+     |         ^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:13.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:10
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Sta
+> 85 |         </div>
+     |          ^^^^^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:14.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:9
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Star
+> 85 |         </div>
+     |         ^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:14.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:10
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <Star
+> 85 |         </div>
+     |          ^^^^^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:16.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:9
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <StarIc
+> 85 |         </div>
+     |         ^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:16.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:85:10
+Parsing ecmascript source code failed
+  83 |         <div>
+  84 |          <StarIc
+> 85 |         </div>
+     |          ^^^^^
+  86 |       </div>
+  87 |     </div>
+  88 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:19.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:86:9
+Parsing ecmascript source code failed
+  84 |         <div>
+  85 |          <StarIcon
+> 86 |         </div>
+     |         ^
+  87 |       </div>
+  88 |     </div>
+  89 |   );
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:14:19.520] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:86:10
+Parsing ecmascript source code failed
+  84 |         <div>
+  85 |          <StarIcon
+> 86 |         </div>
+     |          ^^^^^
+  87 |       </div>
+  88 |     </div>
+  89 |   );
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[00:22:25.521] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. pcl
+[00:22:34.522] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true cladd cladd true cladd
+[00:22:37.521] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true cl cl true cl
+[00:22:40.521] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true clss clss true clss
+[00:24:06.277] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true c c true c
+[00:38:23.517] Server  LOG      ✓ Compiled in 27ms
+[00:51:17.266] Server  LOG      ✓ Compiled in 118ms
+[00:51:19.481] Server  LOG      ✓ Compiled in 102ms
+[00:52:16.888] Server  LOG      ✓ Compiled in 62ms
+[00:53:18.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:17:5
+Parsing ecmascript source code failed
+  15 |       <WorkforceCard />
+  16 |       <
+> 17 |     </div>
      |     ^
-  16 |   )
-  17 | }
-  18 |
+  18 |   )
+  19 | }
+  20 |
 
 Expression expected
-[00:14:53.127] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:6
+[00:53:18.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:17:6
 Parsing ecmascript source code failed
-  13 |       <AIWorkforce />
-  14 |       <Work
-> 15 |     </div>
+  15 |       <WorkforceCard />
+  16 |       <
+> 17 |     </div>
      |      ^^^^^
-  16 |   )
-  17 | }
-  18 |
+  18 |   )
+  19 | }
+  20 |
 
 Unterminated regexp literal
-[00:14:56.125] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:5
+[00:53:20.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:17:5
 Parsing ecmascript source code failed
-  13 |       <AIWorkforce />
-  14 |       <Workforce
-> 15 |     </div>
+  15 |       <WorkforceCard />
+  16 |       <cORE
+> 17 |     </div>
      |     ^
-  16 |   )
-  17 | }
-  18 |
+  18 |   )
+  19 | }
+  20 |
 
 Expression expected
-[00:14:56.125] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:6
+[00:53:20.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:17:6
 Parsing ecmascript source code failed
-  13 |       <AIWorkforce />
-  14 |       <Workforce
-> 15 |     </div>
+  15 |       <WorkforceCard />
+  16 |       <cORE
+> 17 |     </div>
      |      ^^^^^
-  16 |   )
-  17 | }
-  18 |
+  18 |   )
+  19 | }
+  20 |
 
 Unterminated regexp literal
-[00:14:57.124] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:16:5
+[00:53:21.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:18:5
 Parsing ecmascript source code failed
-  14 |       <AIWorkforce />
-  15 |       <WorkforceCard
-> 16 |     </div>
+  16 |       <WorkforceCard />
+  17 |       <CoreModel
+> 18 |     </div>
      |     ^
-  17 |   )
-  18 | }
-  19 |
+  19 |   )
+  20 | }
+  21 |
 
 Expression expected
-[00:14:57.124] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:16:6
+[00:53:21.520] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:18:6
 Parsing ecmascript source code failed
-  14 |       <AIWorkforce />
-  15 |       <WorkforceCard
-> 16 |     </div>
+  16 |       <WorkforceCard />
+  17 |       <CoreModel
+> 18 |     </div>
      |      ^^^^^
-  17 |   )
-  18 | }
-  19 |
+  19 |   )
+  20 | }
+  21 |
 
 Unterminated regexp literal
-[00:16:58.125] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:62:51
-Parsing ecmascript source code failed
-  60 |
-  61 |                     <p className="font-normal text-xs md:text-sm leading-[180%] text-ring">
-> 62 |                      <Clock10Icon size={}/> {exist.desc}
-     |                                                   ^
-  63 |                     </p>
-  64 |                     <p className="flex gap-2 items-center">
-  65 |                       <StatIcon />{' '}
+[01:08:30.520] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
 
-Expected a semicolon
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:16:58.125] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:62:43
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true cla cla true cla
+[01:26:41.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:42.973] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:26:48.366] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:26:48.573] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:26:48.573] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[01:26:48.573] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:27:17.457] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:27:18.708] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:27:25.429] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:27:25.628] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[01:27:25.628] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:27:25.628] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:31:16.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:19.504] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:31:19.504] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[01:31:19.504] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:49:22.307] Server  LOG      ✓ Compiled in 138ms
+[01:51:25.522] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:24:5
 Parsing ecmascript source code failed
-  60 |
-  61 |                     <p className="font-normal text-xs md:text-sm leading-[180%] text-ring">
-> 62 |                      <Clock10Icon size={}/> {exist.desc}
-     |                                           ^
-  63 |                     </p>
-  64 |                     <p className="flex gap-2 items-center">
-  65 |                       <StatIcon />{' '}
+  22 |       </div>
+  23 |       <
+> 24 |     </div>
+     |     ^
+  25 |   );
+  26 | }
+  27 |
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/components/meet-the-os/CoreModel.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:18:18.130] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. correc
-[00:18:24.125] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. circle
-[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
-[00:18:25.130] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. circleC
-[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
-[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
-[00:18:43.127] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:66:50
+[01:51:25.522] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:24:6
 Parsing ecmascript source code failed
-  64 |                     <hr />
-  65 |                     <p className="flex gap-2 items-center">
-> 66 |                       <CircleCheck size={} />{' '}
-     |                                                  ^
-  67 |                       <span className="text-[#e93d3d] font-[arimo] text-[14px] leading-[143%] font-bold">
-  68 |                         3x faster goal alignment
-  69 |                       </span>
-
-Expected a semicolon
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:18:43.127] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:66:45
-Parsing ecmascript source code failed
-  64 |                     <hr />
-  65 |                     <p className="flex gap-2 items-center">
-> 66 |                       <CircleCheck size={} />{' '}
-     |                                             ^
-  67 |                       <span className="text-[#e93d3d] font-[arimo] text-[14px] leading-[143%] font-bold">
-  68 |                         3x faster goal alignment
-  69 |                       </span>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:19:26.619] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:26.620] Server  ERROR    ⨯ ReferenceError: summ is not defined
-[00:19:27.126] Browser ERROR   {"digest":"488867461","environmentName":"Server","name":"ReferenceError"}
-[00:19:27.126] Browser ERROR   {"digest":"488867461","environmentName":"Server","name":"ReferenceError"}
-[00:19:28.126] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:13:16
-Parsing ecmascript source code failed
-  11 |       title: 'Data Analyst',
-  12 |       desc: 'Processes 10K+ records/hour',
-> 13 |       <summary></summary>
-     |                ^
-  14 |     },
-  15 |     {
-  16 |       id: 2,
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:19:28.126] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:13:17
-Parsing ecmascript source code failed
-  11 |       title: 'Data Analyst',
-  12 |       desc: 'Processes 10K+ records/hour',
-> 13 |       <summary></summary>
-     |                 ^^^^^^^^^
-  14 |     },
-  15 |     {
-  16 |       id: 2,
+  22 |       </div>
+  23 |       <
+> 24 |     </div>
+     |      ^^^^^
+  25 |   );
+  26 | }
+  27 |
 
 Unterminated regexp literal
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/components/meet-the-os/CoreModel.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:19:29.403] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:29.404] Server  ERROR    ⨯ ReferenceError: summ is not defined
-[00:19:49.081] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.081] Server  ERROR    ⨯ ReferenceError: su is not defined
-[00:19:52.142] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:20:16
+[01:51:49.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:24:5
 Parsing ecmascript source code failed
-  18 |       title: 'Customer Support',
-  19 |       desc: 'Handles 500+ queries/day',
-> 20 |       <summary></summary>
-     |                ^
-  21 |     },
-  22 |     {
-  23 |       id: 3,
+  22 |       </div>
+  23 |       <Elip
+> 24 |     </div>
+     |     ^
+  25 |   );
+  26 | }
+  27 |
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/components/meet-the-os/CoreModel.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:19:52.142] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:20:17
+[01:51:49.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:24:6
 Parsing ecmascript source code failed
-  18 |       title: 'Customer Support',
-  19 |       desc: 'Handles 500+ queries/day',
-> 20 |       <summary></summary>
-     |                 ^^^^^^^^^
-  21 |     },
-  22 |     {
-  23 |       id: 3,
+  22 |       </div>
+  23 |       <Elip
+> 24 |     </div>
+     |      ^^^^^
+  25 |   );
+  26 | }
+  27 |
 
 Unterminated regexp literal
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/WorkforceCard.tsx
+    ./src/components/meet-the-os/CoreModel.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:19:53.426] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:53.426] Server  ERROR    ⨯ ReferenceError: summ is not defined
+[01:51:50.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:25:5
+Parsing ecmascript source code failed
+  23 |       </div>
+  24 |       <ElipseIcon
+> 25 |     </div>
+     |     ^
+  26 |   );
+  27 | }
+  28 |
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[01:51:50.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:25:6
+Parsing ecmascript source code failed
+  23 |       </div>
+  24 |       <ElipseIcon
+> 25 |     </div>
+     |      ^^^^^
+  26 |   );
+  27 | }
+  28 |
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[01:51:51.824] Server  LOG      ✓ Compiled in 115ms
+[01:53:18.522] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true cla cla true cla
+[01:57:10.521] Browser ERROR   ./src/components/shared/icons/ElipseIcon.tsx:112:16
+Parsing ecmascript source code failed
+  110 |   </svg>
+  111 | );
+> 112 | export default ;
+      |                ^
+  113 |
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/shared/icons/ElipseIcon.tsx
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[01:57:13.680] Server  ERROR    ⨯ ReferenceError: Elipse is not defined
+[01:57:14.088] Server  ERROR    ⨯ ReferenceError: Elipse is not defined
+[01:57:16.085] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[01:57:16.434] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[01:57:16.845] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[01:57:17.164] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[01:57:17.436] Browser ERROR   uncaughtError: ReferenceError: ElipseIcon is not defined
+[01:57:29.137] Server  LOG      ✓ Compiled in 56ms
+[01:57:45.707] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:46.276] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:46.276] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[01:57:46.276] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:46.276] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:57:46.276] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:03:16.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:17:11
+Parsing ecmascript source code failed
+  15 |
+  16 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+> 17 |          />
+     |           ^
+  18 |       </div>
+  19 |       <div className="flex items-center justify-center py-6">
+  20 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+
+Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:19.293] Server  LOG      ✓ Compiled in 60ms
+[02:03:23.520] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:18:7
+Parsing ecmascript source code failed
+  16 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  17 |          <Circle
+> 18 |       </div>
+     |       ^
+  19 |       <div className="flex items-center justify-center py-6">
+  20 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  21 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:23.520] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:18:8
+Parsing ecmascript source code failed
+  16 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  17 |          <Circle
+> 18 |       </div>
+     |        ^^^^^
+  19 |       <div className="flex items-center justify-center py-6">
+  20 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  21 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:24.522] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:18:7
+Parsing ecmascript source code failed
+  16 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  17 |          <CircleIc
+> 18 |       </div>
+     |       ^
+  19 |       <div className="flex items-center justify-center py-6">
+  20 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  21 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:24.522] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:18:8
+Parsing ecmascript source code failed
+  16 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  17 |          <CircleIc
+> 18 |       </div>
+     |        ^^^^^
+  19 |       <div className="flex items-center justify-center py-6">
+  20 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  21 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:31.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:7
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <CircleIcon
+> 19 |       </div>
+     |       ^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:31.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:8
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <CircleIcon
+> 19 |       </div>
+     |        ^^^^^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:03:33.158] Server  LOG      ✓ Compiled in 60ms
+[02:05:25.523] Browser ERROR   {}
+[02:05:25.523] Browser ERROR   {}
+[02:05:36.520] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:7
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <El
+> 19 |       </div>
+     |       ^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:05:36.520] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:8
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <El
+> 19 |       </div>
+     |        ^^^^^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:05:37.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:7
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <ElipseIcon
+> 19 |       </div>
+     |       ^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:05:37.521] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:8
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4 right-20 opacity-90 rounded-full ">
+  18 |          <ElipseIcon
+> 19 |       </div>
+     |        ^^^^^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:09:33.718] Server  ERROR    ⨯ ReferenceError: ElipseIcom is not defined
+[02:09:34.106] Server  ERROR    ⨯ ReferenceError: ElipseIcom is not defined
+[02:09:34.946] Server  ERROR    ⨯ ReferenceError: ElipseIcom is not defined
+[02:09:35.297] Server  ERROR    ⨯ ReferenceError: ElipseIcom is not defined
+[02:09:35.299] Server  LOG      ✓ Compiled in 0ms
+[02:09:35.770] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[02:09:36.095] Server  ERROR    ⨯ ReferenceError: ElipseIcon is not defined
+[02:09:36.280] Browser ERROR   uncaughtError: ReferenceError: ElipseIcom is not defined
+[02:09:49.157] Server  LOG      ✓ Compiled in 53ms
+[02:10:22.174] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:7
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4  opacity-90 rounded-full  ">
+  18 |          <El
+> 19 |       </div>
+     |       ^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:10:22.174] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:8
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4  opacity-90 rounded-full  ">
+  18 |          <El
+> 19 |       </div>
+     |        ^^^^^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:10:24.477] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:7
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4  opacity-90 rounded-full  ">
+  18 |          <ElipseIcon
+> 19 |       </div>
+     |       ^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:10:24.477] Browser ERROR   ./src/components/meet-the-os/CoreModel.tsx:19:8
+Parsing ecmascript source code failed
+  17 |       <div className="absolute top-4  opacity-90 rounded-full  ">
+  18 |          <ElipseIcon
+> 19 |       </div>
+     |        ^^^^^
+  20 |       <div className="flex items-center justify-center py-6">
+  21 |         <div className="bg-gradient-to-l from-[#3700ff] to-[#e21717] w-[192px] h-[192px] rounded-full p-[2px]">
+  22 |           <div className="bg-black rounded-full w-full h-full flex items-center justify-center">
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/components/meet-the-os/CoreModel.tsx
+    ./src/app/(public)/meet-the-os/page.tsx
+[02:10:27.493] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:10:28.123] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:10:28.123] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[02:10:28.123] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:10:28.123] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:10:28.123] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:21:11.117] Server  LOG      ✓ Compiled in 151ms

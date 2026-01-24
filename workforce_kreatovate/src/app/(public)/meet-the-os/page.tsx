@@ -1,4 +1,5 @@
 import AIWorkforce from '@/components/meet-the-os/AIWorkforce'
+import CoreModel from '@/components/meet-the-os/CoreModel'
 import Hero from '@/components/meet-the-os/Hero'
 import OperatingSystem from '@/components/meet-the-os/OperatingSystem'
 import OrganizationStartSection from '@/components/meet-the-os/OrganizationStartSection'
@@ -12,7 +13,8 @@ export default function MeetTheOsPage() {
       <OrganizationStartSection />
       <OperatingSystem />
       <AIWorkforce />
-      <WorkforceCard/>
+      <WorkforceCard />
+      <CoreModel/>
     </div>
   )
 }
