@@ -1,6 +1,6 @@
-[00:00:00.876] Server  LOG      ✓ Ready in 638ms
-[00:00:16.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.311] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:01.601] Server  LOG      ✓ Ready in 1181ms
+[00:00:06.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.861] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -43,1700 +43,224 @@ It can also happen if the client has a browser extension installed which messes 
                     ...
       ...
 
-[00:00:17.311] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:17.311] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:17.311] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:17.311] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:17.311] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:32.793] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:54.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:55.141] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:55.141] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:55.391] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:55.391] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:55.391] Browser WARN    Image with src "/images/ellipse1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:55.742] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:12:08.395] Server  LOG      ✓ Compiled in 120ms
-[00:13:23.190] Server  LOG      ✓ Compiled in 108ms
-[00:14:13.887] Server  LOG      ✓ Compiled in 108ms
-[00:15:16.976] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:9:5
+[00:00:06.861] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.861] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.861] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.861] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.861] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:19.893] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.272] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:20.272] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:20.272] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:20.272] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:20.272] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:53.127] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:5
 Parsing ecmascript source code failed
-   7 |       <Hero />
-   8 |       <Ora
->  9 |     </div>
+  13 |       <AIWorkforce />
+  14 |       <Work
+> 15 |     </div>
      |     ^
-  10 |   )
-  11 | }
-  12 |
+  16 |   )
+  17 | }
+  18 |
 
 Expression expected
-[00:15:16.976] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:9:6
+[00:14:53.127] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:6
 Parsing ecmascript source code failed
-   7 |       <Hero />
-   8 |       <Ora
->  9 |     </div>
+  13 |       <AIWorkforce />
+  14 |       <Work
+> 15 |     </div>
      |      ^^^^^
-  10 |   )
-  11 | }
-  12 |
+  16 |   )
+  17 | }
+  18 |
 
 Unterminated regexp literal
-[00:15:19.975] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:9:5
+[00:14:56.125] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:5
 Parsing ecmascript source code failed
-   7 |       <Hero />
-   8 |       <Orga
->  9 |     </div>
+  13 |       <AIWorkforce />
+  14 |       <Workforce
+> 15 |     </div>
      |     ^
-  10 |   )
-  11 | }
-  12 |
+  16 |   )
+  17 | }
+  18 |
 
 Expression expected
-[00:15:19.975] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:9:6
+[00:14:56.125] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:15:6
 Parsing ecmascript source code failed
-   7 |       <Hero />
-   8 |       <Orga
->  9 |     </div>
+  13 |       <AIWorkforce />
+  14 |       <Workforce
+> 15 |     </div>
      |      ^^^^^
-  10 |   )
-  11 | }
-  12 |
+  16 |   )
+  17 | }
+  18 |
 
 Unterminated regexp literal
-[00:15:20.974] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:10:5
+[00:14:57.124] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:16:5
 Parsing ecmascript source code failed
-   8 |       <Hero />
-   9 |       <OrganizationStartSection
-> 10 |     </div>
+  14 |       <AIWorkforce />
+  15 |       <WorkforceCard
+> 16 |     </div>
      |     ^
-  11 |   )
-  12 | }
-  13 |
+  17 |   )
+  18 | }
+  19 |
 
 Expression expected
-[00:15:20.974] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:10:6
+[00:14:57.124] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:16:6
 Parsing ecmascript source code failed
-   8 |       <Hero />
-   9 |       <OrganizationStartSection
-> 10 |     </div>
+  14 |       <AIWorkforce />
+  15 |       <WorkforceCard
+> 16 |     </div>
      |      ^^^^^
-  11 |   )
-  12 | }
-  13 |
+  17 |   )
+  18 | }
+  19 |
 
 Unterminated regexp literal
-[00:15:22.706] Server  LOG      ✓ Compiled in 50ms
-[00:19:32.976] Browser ERROR   ./src/app/layout.tsx:21:1
+[00:16:58.125] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:62:51
 Parsing ecmascript source code failed
-  19 | const 
-  20 |
-> 21 | export const metadata: Metadata = {
-     | ^^^^^^
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-  23 |   description:
-  24 |     "Workforce Kreatovate helps businesses automate operations and scale effortlessly with AI-powered employees. Hire, deploy, and manage intelligent virtual team members — all in one place.",
-
-Expected ident
-[00:19:35.975] Browser ERROR   ./src/app/layout.tsx:21:1
-Parsing ecmascript source code failed
-  19 | const 
-  20 |
-> 21 | export const metadata: Metadata = {
-     | ^^^^^^
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-  23 |   description:
-  24 |     "Workforce Kreatovate helps businesses automate operations and scale effortlessly with AI-powered employees. Hire, deploy, and manage intelligent virtual team members — all in one place.",
-
-Expected ident
-[00:19:39.974] Browser ERROR   ./src/app/layout.tsx:19:7
-Parsing ecmascript source code failed
-  17 | });
-  18 |
-> 19 | const Arimo
-     |       ^^^^^
-  20 |
-  21 | export const metadata: Metadata = {
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-
-'const' declarations must be initialized
-[00:19:42.978] Browser ERROR   ./src/app/layout.tsx:19:7
-Parsing ecmascript source code failed
-  17 | });
-  18 |
-> 19 | const arimo
-     |       ^^^^^
-  20 |
-  21 | export const metadata: Metadata = {
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-
-'const' declarations must be initialized
-[00:19:45.975] Browser ERROR   ./src/app/layout.tsx:21:1
-Parsing ecmascript source code failed
-  19 | const arimo=
-  20 |
-> 21 | export const metadata: Metadata = {
-     | ^^^^^^
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-  23 |   description:
-  24 |     "Workforce Kreatovate helps businesses automate operations and scale effortlessly with AI-powered employees. Hire, deploy, and manage intelligent virtual team members — all in one place.",
-
-Expression expected
-[00:19:49.043] Server  LOG      ✓ Compiled in 42ms
-[00:19:49.129] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.131] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.132] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.144] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.220] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.221] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.225] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.227] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.228] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.229] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.229] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.230] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.232] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:49.234] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.235] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.236] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.236] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.237] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.238] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.238] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.239] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.239] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.240] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.240] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.241] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.243] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:49.905] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.905] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.905] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.906] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.907] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.907] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.908] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.908] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.909] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.909] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.909] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.909] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.909] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:49.910] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.911] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.911] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.912] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.913] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.913] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.914] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.914] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.914] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.915] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.915] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.915] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.916] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:49.944] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.944] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.944] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.945] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.945] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.946] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.946] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.946] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.947] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.947] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.947] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.947] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.947] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:49.948] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__68b2de7b._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.948] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.948] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.949] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\node_modules_d8ba4251._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.949] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.950] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\trace\tracer.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.950] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.950] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.951] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.951] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.951] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.952] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:19:49.952] Server  ERROR    ⨯ ReferenceError: Arim is not defined
-[00:19:50.080] Browser ERROR   uncaughtError: ReferenceError: Arim is not defined
-[00:19:51.689] Server  LOG      ✓ Compiled in 38ms
-[00:19:53.977] Browser ERROR   ./src/app/layout.tsx:19:13
-Ecmascript file had an error
-  17 | });
-  18 |
-> 19 | const arimo=Arimo
-     |             ^^^^^
-  20 |
-  21 | export const metadata: Metadata = {
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-
-Font loaders must be called and assigned to a const in the module scope
-[00:19:56.973] Browser ERROR   ./src/app/layout.tsx:21:8
-Parsing ecmascript source code failed
-  19 | const arimo=Arimo({
-  20 |
-> 21 | export const metadata: Metadata = {
-     |        ^^^^^
-  22 |   title: "Workforce Kreatovate | Build Your Smart, Scalable AI Workforce",
-  23 |   description:
-  24 |     "Workforce Kreatovate helps businesses automate operations and scale effortlessly with AI-powered employees. Hire, deploy, and manage intelligent virtual team members — all in one place.",
-
-Unexpected token `const`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
-[00:19:59.812] Server  LOG      ✓ Compiled in 704ms
-[00:20:00.221] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:00.981] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <PublicLayout>
-      <PublicLayout>
-        <Navbar>
-          ...
-            <div className="lg:hidden">
-              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
-                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
-                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
-                    <SheetTrigger asChild={true}>
-                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
-                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
-                                <button
-                                  data-slot="sheet-trigger"
-                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
-                                  aria-label="Open menu"
-                                  type="button"
-                                  aria-haspopup="dialog"
-                                  aria-expanded={false}
-+                                 aria-controls="radix-_R_4kndlb_"
--                                 aria-controls="radix-_R_hkndlb_"
-                                  data-state="closed"
-                                  onClick={function handleEvent}
-                                  ref={function}
-                                >
-                    ...
-      ...
-
-[00:20:00.981] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:00.981] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:20:00.981] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:00.981] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:00.981] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:10.803] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.803] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.878] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.878] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.879] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.879] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.880] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.880] Server  ERROR    ⨯ ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:10.924] Server  LOG      ✓ Compiled in 137ms
-[00:20:11.973] Browser ERROR   ./src/app/layout.tsx
-Module not found: Can't resolve 'next/font/google/target.css'
-Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
-- Execution of resolve failed
-- Execution of resolve_internal failed
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-Error while looking up import map: Unknown weight 800 for font Arimo.
-
-Debug info:
-- Execution of NextFontGoogleReplacer::import_map_result failed
-- Execution of *get_font_css_properties failed
-- Execution of font_options_from_query_map failed
-- Unknown weight 800 for font Arimo.
-  Available weights: 400, 500, 600, 700, variable
-
-https://nextjs.org/docs/messages/module-not-found
-[00:20:16.847] Server  LOG      ✓ Compiled in 224ms
-[00:20:17.281] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:17.975] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:17.975] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:20:17.975] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:17.975] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:17.975] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:21:39.107] Server  LOG      ✓ Compiled in 127ms
-[00:21:43.541] Server  LOG      ✓ Compiled in 25ms
-[00:21:43.973] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:264:1: Unknown word .old-card
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:21:48.556] Server  LOG      ✓ Compiled in 138ms
-[00:21:56.074] Server  LOG      ✓ Compiled in 34ms
-[00:21:56.974] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:267:1: Unknown word .new
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:21:58.976] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:267:1: Unknown word .new-card
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:22:01.972] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:267:1: Unknown word .new-card-bg
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:22:12.240] Server  LOG      ✓ Compiled in 151ms
-[00:23:11.093] Browser WARN    Image with src "/images/ellipse1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:27:14.656] Server  LOG      ✓ Compiled in 128ms
-[00:27:16.458] Server  LOG      ✓ Compiled in 30ms
-[00:27:16.976] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:270:1: Unknown word .le
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:18.973] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:270:1: Unknown word .legac
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:26.973] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:270:1: Unknown word .legacy-card
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:28.976] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:270:1: Unknown word .legacy-card-bg
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:31.223] Server  LOG      ✓ Compiled in 129ms
-[00:27:50.940] Server  LOG      ✓ Compiled in 24ms
-[00:27:51.974] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:273:1: Unknown word .modern-card
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:55.975] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:273:1: Unknown word .modern-card-bg
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:27:57.788] Server  LOG      ✓ Compiled in 129ms
-[00:35:37.800] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:35:37.801] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:35:37.801] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:35:37.802] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:35:38.976] Browser ERROR   {"digest":"4150896640","environmentName":"Server","name":"ReferenceError"}
-[00:35:38.976] Browser ERROR   {"digest":"4150896640","environmentName":"Server","name":"ReferenceError"}
-[00:36:01.072] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:01.072] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:01.073] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:01.073] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:19.963] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:19.963] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:19.964] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:19.964] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:21.462] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:21.463] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:21.463] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:21.463] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:30.166] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:30.167] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:30.167] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:30.167] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:55.755] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:55.755] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:36:55.756] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:36:55.756] Server  ERROR    ⨯ ReferenceError: badgeClassName is not defined
-[00:37:44.493] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:37:45.080] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:37:45.080] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:37:45.080] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:37:45.080] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:37:45.081] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:42:14.752] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__3fca70c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:42:14.753] Server  ERROR    ⨯ ReferenceError: Process is not defined
-[00:42:14.974] Browser ERROR   {"digest":"2454152318","environmentName":"Server","name":"ReferenceError"}
-[00:42:14.974] Browser ERROR   {"digest":"2454152318","environmentName":"Server","name":"ReferenceError"}
-[00:42:54.823] Server  LOG      ✓ Compiled in 22ms
-[00:42:54.973] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:276:1: Unknown word .old
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:42:56.974] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:276:1: Unknown word .old-
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:42:58.974] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:276:1: Unknown word .old-icon
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[00:43:03.457] Server  LOG      ✓ Compiled in 137ms
-[00:43:18.112] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:43:18.693] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:43:18.693] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:43:18.693] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:43:18.693] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:43:18.693] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:52:10.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:25:3
-Parsing ecmascript source code failed
-  23 |   className,
-  24 |   badgeClassName
-> 25 |   oicon
-     |   ^^^^^
-  26 | }: ComparisonCardProps) {
-  27 |   return (
-  28 |     <div className={cn('rounded-[24px] border p-6 backdrop-blur-xl', className)}>
-
-Expected ',', got 'oicon'
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:52:16.976] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:25:3
-Parsing ecmascript source code failed
-  23 |   className,
-  24 |   badgeClassName
-> 25 |   iconClassName,
-     |   ^^^^^^^^^^^^^
-  26 | }: ComparisonCardProps) {
-  27 |   return (
-  28 |     <div className={cn('rounded-[24px] border p-6 backdrop-blur-xl', className)}>
-
-Expected ',', got 'iconClassName'
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:53:09.973] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:41:28
-Parsing ecmascript source code failed
-  39 |         {items.map((item, index) => (
-  40 |           <li key={index} className="flex items-center gap-3 text-sm">
-> 41 |             <span className=>
-     |                            ^^
-  42 |               {item.icon}
-  43 |             </span>
-  44 |             <span>{item.label}</span>
-
-Expected '</', got '=>'
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:53:11.977] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
-
-If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true className className true className
-[00:53:13.974] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:41:28
-Parsing ecmascript source code failed
-  39 |         {items.map((item, index) => (
-  40 |           <li key={index} className="flex items-center gap-3 text-sm">
-> 41 |             <span className=>
-     |                            ^^
-  42 |               {item.icon}
-  43 |             </span>
-  44 |             <span>{item.label}</span>
-
-Expected '</', got '=>'
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:53:14.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:42:20
-Parsing ecmascript source code failed
-  40 |           <li key={index} className="flex items-center gap-3 text-sm">
-  41 |             <span className={}>
-> 42 |               {item.icon}
-     |                    ^
-  43 |             </span>
-  44 |             <span>{item.label}</span>
-  45 |           </li>
+  60 |
+  61 |                     <p className="font-normal text-xs md:text-sm leading-[180%] text-ring">
+> 62 |                      <Clock10Icon size={}/> {exist.desc}
+     |                                                   ^
+  63 |                     </p>
+  64 |                     <p className="flex gap-2 items-center">
+  65 |                       <StatIcon />{' '}
 
 Expected a semicolon
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:53:14.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:41:31
+[00:16:58.125] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:62:43
 Parsing ecmascript source code failed
-  39 |         {items.map((item, index) => (
-  40 |           <li key={index} className="flex items-center gap-3 text-sm">
-> 41 |             <span className={}>
-     |                               ^
-  42 |               {item.icon}
-  43 |             </span>
-  44 |             <span>{item.label}</span>
+  60 |
+  61 |                     <p className="font-normal text-xs md:text-sm leading-[180%] text-ring">
+> 62 |                      <Clock10Icon size={}/> {exist.desc}
+     |                                           ^
+  63 |                     </p>
+  64 |                     <p className="flex gap-2 items-center">
+  65 |                       <StatIcon />{' '}
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:53:35.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:51:20
+[00:18:18.130] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. correc
+[00:18:24.125] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. circle
+[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
+[00:18:25.130] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. circleC
+[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
+[00:18:25.130] Browser ERROR   <%s /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements. circleC
+[00:18:43.127] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:66:50
 Parsing ecmascript source code failed
-  49 |                 iconClassName,
-  50 |             >
-> 51 |               {item.icon}
-     |                    ^
-  52 |             </span>
-  53 |             <span>{item.label}</span>
-  54 |           </li>
+  64 |                     <hr />
+  65 |                     <p className="flex gap-2 items-center">
+> 66 |                       <CircleCheck size={} />{' '}
+     |                                                  ^
+  67 |                       <span className="text-[#e93d3d] font-[arimo] text-[14px] leading-[143%] font-bold">
+  68 |                         3x faster goal alignment
+  69 |                       </span>
 
 Expected a semicolon
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:53:35.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:50:13
+[00:18:43.127] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:66:45
 Parsing ecmascript source code failed
-  48 |                 'flex h-12 w-12 items-center justify-center rounded-[14px]',
-  49 |                 iconClassName,
-> 50 |             >
-     |             ^
-  51 |               {item.icon}
-  52 |             </span>
-  53 |             <span>{item.label}</span>
+  64 |                     <hr />
+  65 |                     <p className="flex gap-2 items-center">
+> 66 |                       <CircleCheck size={} />{' '}
+     |                                             ^
+  67 |                       <span className="text-[#e93d3d] font-[arimo] text-[14px] leading-[143%] font-bold">
+  68 |                         3x faster goal alignment
+  69 |                       </span>
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[00:53:37.974] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:51:20
+[00:19:26.619] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:26.620] Server  ERROR    ⨯ ReferenceError: summ is not defined
+[00:19:27.126] Browser ERROR   {"digest":"488867461","environmentName":"Server","name":"ReferenceError"}
+[00:19:27.126] Browser ERROR   {"digest":"488867461","environmentName":"Server","name":"ReferenceError"}
+[00:19:28.126] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:13:16
 Parsing ecmascript source code failed
-  49 |                 iconClassName
-  50 |             >
-> 51 |               {item.icon}
-     |                    ^
-  52 |             </span>
-  53 |             <span>{item.label}</span>
-  54 |           </li>
-
-Expected a semicolon
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[00:58:27.970] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__84f2e794._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:58:27.971] Server  ERROR    ⨯ ReferenceError: Grap is not defined
-[00:58:28.980] Browser ERROR   {"digest":"1643073264","environmentName":"Server","name":"ReferenceError"}
-[00:58:28.980] Browser ERROR   {"digest":"1643073264","environmentName":"Server","name":"ReferenceError"}
-[00:58:39.549] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:40.126] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <PublicLayout>
-      <PublicLayout>
-        <Navbar>
-          ...
-            <div className="lg:hidden">
-              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
-                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
-                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
-                    <SheetTrigger asChild={true}>
-                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
-                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
-                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
-                                <button
-                                  data-slot="sheet-trigger"
-                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
-                                  aria-label="Open menu"
-                                  type="button"
-                                  aria-haspopup="dialog"
-                                  aria-expanded={false}
-+                                 aria-controls="radix-_R_4kndlb_"
--                                 aria-controls="radix-_R_hkndlb_"
-                                  data-state="closed"
-                                  onClick={function handleEvent}
-                                  ref={function}
-                                >
-                    ...
-      ...
-
-[00:58:40.126] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:40.126] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[00:58:40.126] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:40.126] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:40.126] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:02:10.053] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:02:11.010] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:02:11.010] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:02:11.011] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:02:11.011] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:02:11.011] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:09:26.290] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__93e69655._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:09:26.290] Server  ERROR    ⨯ ReferenceError: back is not defined
-[01:09:26.291] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__93e69655._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:09:26.291] Server  ERROR    ⨯ ReferenceError: back is not defined
-[01:09:26.974] Browser ERROR   {"digest":"371526159","environmentName":"Server","name":"ReferenceError"}
-[01:09:26.974] Browser ERROR   {"digest":"371526159","environmentName":"Server","name":"ReferenceError"}
-[01:09:59.975] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:32:11
-Parsing ecmascript source code failed
-  30 |         background:
-  31 |           
-> 32 |           ',
-     |           ^^
-  33 |       }}
-  34 |       className={cn('rounded-[24px] border p-6 backdrop-blur-xl', className)}
-  35 |     >
-
-Unterminated string constant
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[01:10:02.974] Browser ERROR   ./src/components/shared/cards/ComparisonCard.tsx:32:11
-Parsing ecmascript source code failed
-  30 |         background:
-  31 |           
-> 32 |           "red',
-     |           ^^^^^^
-  33 |       }}
-  34 |       className={cn('rounded-[24px] border p-6 backdrop-blur-xl', className)}
-  35 |     >
-
-Unterminated string constant
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/ComparisonCard.tsx
-    ./src/components/meet-the-os/OrganizationStartSection.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[01:12:33.183] Server  LOG      ✓ Compiled in 145ms
-[01:13:01.012] Server  LOG      ✓ Compiled in 131ms
-[01:14:26.806] Server  LOG      ✓ Compiled in 103ms
-[01:14:28.056] Server  LOG      ✓ Compiled in 109ms
-[01:14:29.706] Server  LOG      ✓ Compiled in 121ms
-[01:16:32.030] Server  LOG      ✓ Compiled in 29ms
-[01:16:32.974] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:285:1: Unknown word .
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:16:35.980] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:285:1: Unknown word .modern
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:16:38.976] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:285:1: Unknown word .modern-icon-bg
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:16:57.953] Server  LOG      ✓ Compiled in 144ms
-[01:20:33.824] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__93e69655._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:20:33.825] Server  ERROR    ⨯ ReferenceError: Brain is not defined
-[01:20:33.973] Browser ERROR   {"digest":"2462204131","environmentName":"Server","name":"ReferenceError"}
-[01:20:33.973] Browser ERROR   {"digest":"2462204131","environmentName":"Server","name":"ReferenceError"}
-[01:22:41.479] Server  LOG      ✓ Compiled in 86ms
-[01:30:48.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:48.662] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:30:48.662] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:30:48.662] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:30:48.662] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:30:48.662] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[01:30:54.977] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:31:17.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:31:18.210] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:31:18.210] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[01:31:18.210] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:31:18.210] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:31:18.210] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:39:10.722] Server  LOG      ✓ Compiled in 157ms
-[01:39:12.556] Server  LOG      ✓ Compiled in 25ms
-[01:39:12.976] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:289:1: Unknown word .bad
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:39:14.972] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:289:1: Unknown word .badge
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:39:19.973] Browser ERROR   ./src/app/globals.css
-Error evaluating Node.js code
-CssSyntaxError: C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\src\app\globals.css:289:1: Unknown word .badge-gradient
-    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
-    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
-    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
-    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
-    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
-    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
-    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
-    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
-    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
-
-Import trace:
-  Client Component Browser:
-    ./src/app/globals.css [Client Component Browser]
-    ./src/app/layout.tsx [Server Component]
-[01:39:45.790] Server  LOG      ✓ Compiled in 149ms
-[01:40:55.974] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:11:5
-Parsing ecmascript source code failed
-   9 |       <OrganizationStartSection />
-  10 |       <Opa
-> 11 |     </div>
-     |     ^
-  12 |   )
-  13 | }
-  14 |
-
-Expression expected
-[01:40:55.974] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:11:6
-Parsing ecmascript source code failed
-   9 |       <OrganizationStartSection />
-  10 |       <Opa
-> 11 |     </div>
-     |      ^^^^^
-  12 |   )
-  13 | }
-  14 |
-
-Unterminated regexp literal
-[01:40:57.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:11:5
-Parsing ecmascript source code failed
-   9 |       <OrganizationStartSection />
-  10 |       <Oper
-> 11 |     </div>
-     |     ^
-  12 |   )
-  13 | }
-  14 |
-
-Expression expected
-[01:40:57.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:11:6
-Parsing ecmascript source code failed
-   9 |       <OrganizationStartSection />
-  10 |       <Oper
-> 11 |     </div>
-     |      ^^^^^
-  12 |   )
-  13 | }
-  14 |
-
-Unterminated regexp literal
-[01:40:59.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:12:5
-Parsing ecmascript source code failed
-  10 |       <OrganizationStartSection />
-  11 |       <OperatingSystem
-> 12 |     </div>
-     |     ^
-  13 |   )
-  14 | }
-  15 |
-
-Expression expected
-[01:40:59.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:12:6
-Parsing ecmascript source code failed
-  10 |       <OrganizationStartSection />
-  11 |       <OperatingSystem
-> 12 |     </div>
-     |      ^^^^^
-  13 |   )
-  14 | }
-  15 |
-
-Unterminated regexp literal
-[01:43:53.844] Server  LOG      ✓ Compiled in 90ms
-[01:51:32.007] Server  LOG      ✓ Compiled in 86ms
-[01:53:38.973] Browser ERROR   ./src/components/meet-the-os/OperatingSystem.tsx:17:5
-Parsing ecmascript source code failed
-  15 |       </p>
-  16 |       <Ope
-> 17 |     </div>
-     |     ^
-  18 |   );
-  19 | }
-  20 |
+  11 |       title: 'Data Analyst',
+  12 |       desc: 'Processes 10K+ records/hour',
+> 13 |       <summary></summary>
+     |                ^
+  14 |     },
+  15 |     {
+  16 |       id: 2,
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/meet-the-os/OperatingSystem.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[01:53:38.973] Browser ERROR   ./src/components/meet-the-os/OperatingSystem.tsx:17:6
+[00:19:28.126] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:13:17
 Parsing ecmascript source code failed
-  15 |       </p>
-  16 |       <Ope
-> 17 |     </div>
-     |      ^^^^^
-  18 |   );
-  19 | }
-  20 |
+  11 |       title: 'Data Analyst',
+  12 |       desc: 'Processes 10K+ records/hour',
+> 13 |       <summary></summary>
+     |                 ^^^^^^^^^
+  14 |     },
+  15 |     {
+  16 |       id: 2,
 
 Unterminated regexp literal
 
 Import trace:
   Server Component:
-    ./src/components/meet-the-os/OperatingSystem.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[01:53:42.973] Browser ERROR   ./src/components/meet-the-os/OperatingSystem.tsx:18:5
+[00:19:29.403] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:29.404] Server  ERROR    ⨯ ReferenceError: summ is not defined
+[00:19:49.081] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:49.081] Server  ERROR    ⨯ ReferenceError: su is not defined
+[00:19:52.142] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:20:16
 Parsing ecmascript source code failed
-  16 |       </p>
-  17 |       <OperatingCard
-> 18 |     </div>
-     |     ^
-  19 |   );
-  20 | }
-  21 |
+  18 |       title: 'Customer Support',
+  19 |       desc: 'Handles 500+ queries/day',
+> 20 |       <summary></summary>
+     |                ^
+  21 |     },
+  22 |     {
+  23 |       id: 3,
 
 Expression expected
 
 Import trace:
   Server Component:
-    ./src/components/meet-the-os/OperatingSystem.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[01:53:42.973] Browser ERROR   ./src/components/meet-the-os/OperatingSystem.tsx:18:6
+[00:19:52.142] Browser ERROR   ./src/components/shared/cards/WorkforceCard.tsx:20:17
 Parsing ecmascript source code failed
-  16 |       </p>
-  17 |       <OperatingCard
-> 18 |     </div>
-     |      ^^^^^
-  19 |   );
-  20 | }
-  21 |
+  18 |       title: 'Customer Support',
+  19 |       desc: 'Handles 500+ queries/day',
+> 20 |       <summary></summary>
+     |                 ^^^^^^^^^
+  21 |     },
+  22 |     {
+  23 |       id: 3,
 
 Unterminated regexp literal
 
 Import trace:
   Server Component:
-    ./src/components/meet-the-os/OperatingSystem.tsx
+    ./src/components/shared/cards/WorkforceCard.tsx
     ./src/app/(public)/meet-the-os/page.tsx
-[01:53:43.923] Server  LOG      ✓ Compiled in 60ms
-[02:00:23.976] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:20:13
-Parsing ecmascript source code failed
-  18 |     {
-  19 |       id: 3,
-> 20 |       icon: ,
-     |             ^
-  21 |       title: 'Repeatable Framework',
-  22 |       desc: 'Anyone can use internally or externally',
-  23 |     },
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:00:25.974] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:20:13
-Parsing ecmascript source code failed
-  18 |     {
-  19 |       id: 3,
-> 20 |       icon: <,
-     |             ^
-  21 |       title: 'Repeatable Framework',
-  22 |       desc: 'Anyone can use internally or externally',
-  23 |     },
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:00:36.973] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:21:20
-Parsing ecmascript source code failed
-  19 |     {
-  20 |       id: 3,
-> 21 |       icon: <Circle,
-     |                    ^
-  22 |       title: 'Repeatable Framework',
-  23 |       desc: 'Anyone can use internally or externally',
-  24 |     },
-
-Unexpected token `,`. Expected jsx identifier
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:00:42.971] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:21:24
-Parsing ecmascript source code failed
-  19 |     {
-  20 |       id: 3,
-> 21 |       icon: <CircleIcon,
-     |                        ^
-  22 |       title: 'Repeatable Framework',
-  23 |       desc: 'Anyone can use internally or externally',
-  24 |     },
-
-Unexpected token `,`. Expected jsx identifier
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:00:44.677] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__44116315._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:00:44.678] Server  ERROR    ⨯ ReferenceError: CircleIcon is not defined
-[02:00:44.978] Browser ERROR   {"digest":"258405221","environmentName":"Server","name":"ReferenceError"}
-[02:00:44.978] Browser ERROR   {"digest":"258405221","environmentName":"Server","name":"ReferenceError"}
-[02:01:01.975] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:16:13
-Parsing ecmascript source code failed
-  14 |     {
-  15 |       id: 2,
-> 16 |       icon: ,
-     |             ^
-  17 |       title: 'Accessible & Transparent',
-  18 |       desc: 'Keep fundraising value-driven',
-  19 |     },
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:01:10.449] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:10.449] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:10.449] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:10.449] Browser WARN    Image with src "" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:14.430] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[02:01:14.449] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[02:01:14.451] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
-[02:01:15.038] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:01:15.404] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:15.405] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:15.405] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:01:15.405] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:15.405] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:15.405] Browser ERROR   Image is missing required "src" property: <img>
-[02:01:15.405] Browser WARN    Image with src "" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:15.405] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:15.405] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[02:01:15.405] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:15.405] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:15.405] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[02:01:36.662] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__370b6c52._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:01:36.663] Server  ERROR    ⨯ ReferenceError: icon is not defined
-[02:01:36.980] Browser ERROR   {"digest":"2652240721","environmentName":"Server","name":"ReferenceError"}
-[02:01:36.980] Browser ERROR   {"digest":"2652240721","environmentName":"Server","name":"ReferenceError"}
-[02:02:34.520] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__370b6c52._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[02:02:34.521] Server  ERROR    ⨯ ReferenceError: icon is not defined
-[02:02:50.229] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:02:50.229] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:02:50.229] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:02:50.229] Browser ERROR   Image is missing required "src" property: <img>
-[02:04:52.702] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/icon" "received" null
-[02:04:53.790] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/icon." "received" null
-[02:24:04.973] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:79:6
-Parsing ecmascript source code failed
-  77 |         </div>
-  78 |       </div>
-> 79 |     </div>
-     |      ^^^^^
-  80 |   );
-  81 | };
-  82 |
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:14.977] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:71:27
-Parsing ecmascript source code failed
-  69 |                         {exist.desc}
-  70 |                       </p>
-> 71 |                       <p><</p>
-     |                           ^
-  72 |                     </div>
-  73 |                   </div>
-  74 |                 </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:14.977] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:71:28
-Parsing ecmascript source code failed
-  69 |                         {exist.desc}
-  70 |                       </p>
-> 71 |                       <p><</p>
-     |                            ^^^
-  72 |                     </div>
-  73 |                   </div>
-  74 |                 </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:17.974] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:71:31
-Parsing ecmascript source code failed
-  69 |                         {exist.desc}
-  70 |                       </p>
-> 71 |                       <p><Stat</p>
-     |                               ^
-  72 |                     </div>
-  73 |                   </div>
-  74 |                 </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:17.974] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:71:32
-Parsing ecmascript source code failed
-  69 |                         {exist.desc}
-  70 |                       </p>
-> 71 |                       <p><Stat</p>
-     |                                ^^^
-  72 |                     </div>
-  73 |                   </div>
-  74 |                 </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:19.976] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:72:35
-Parsing ecmascript source code failed
-  70 |                         {exist.desc}
-  71 |                       </p>
-> 72 |                       <p><StatIcon</p>
-     |                                   ^
-  73 |                     </div>
-  74 |                   </div>
-  75 |                 </div>
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:27:19.976] Browser ERROR   ./src/components/shared/cards/OperatingCard.tsx:72:36
-Parsing ecmascript source code failed
-  70 |                         {exist.desc}
-  71 |                       </p>
-> 72 |                       <p><StatIcon</p>
-     |                                    ^^^
-  73 |                     </div>
-  74 |                   </div>
-  75 |                 </div>
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/shared/cards/OperatingCard.tsx
-    ./src/components/meet-the-os/OperatingSystem.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[02:53:54.956] Server  LOG      ✓ Compiled in 117ms
-[02:55:17.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:14:5
-Parsing ecmascript source code failed
-  12 |       <OperatingSystem />
-  13 |       <AIWorkforce
-> 14 |     </div>
-     |     ^
-  15 |   )
-  16 | }
-  17 |
-
-Expression expected
-[02:55:17.973] Browser ERROR   ./src/app/(public)/meet-the-os/page.tsx:14:6
-Parsing ecmascript source code failed
-  12 |       <OperatingSystem />
-  13 |       <AIWorkforce
-> 14 |     </div>
-     |      ^^^^^
-  15 |   )
-  16 | }
-  17 |
-
-Unterminated regexp literal
-[03:57:31.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:57:32.576] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[03:57:32.576] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[03:57:32.576] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[03:57:32.576] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[04:05:33.055] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:05:34.022] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[04:05:34.022] Browser WARN    Image with src "/images/frame01.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
-[04:05:34.023] Browser WARN    Image with src "/images/line1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[04:05:34.023] Browser WARN    Image with src "/images/ellipse2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[04:05:34.023] Browser WARN    Image with src "/images/ellipse1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[04:08:50.975] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
-
-If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true c c true c
-[04:09:44.975] Browser ERROR   ./src/components/meet-the-os/AIWorkforce.tsx:33:6
-Parsing ecmascript source code failed
-  31 |         </ul>
-  32 |       </div>
-> 33 |     </div>
-     |      ^^^^^
-  34 |   );
-  35 | }
-  36 |
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/meet-the-os/AIWorkforce.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[04:10:40.975] Browser ERROR   ./src/components/meet-the-os/AIWorkforce.tsx:32:5
-Parsing ecmascript source code failed
-  30 |         </ul>
-  31 |       
-> 32 |     </div>
-     |     ^
-  33 |   );
-  34 | }
-  35 |
-
-Expression expected
-
-Import trace:
-  Server Component:
-    ./src/components/meet-the-os/AIWorkforce.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[04:10:40.975] Browser ERROR   ./src/components/meet-the-os/AIWorkforce.tsx:16:22
-Parsing ecmascript source code failed
-  14 |         A unified platform to manage every aspect of your business operations
-  15 |       </p>
-> 16 |       mx-auto mt-10 '>
-     |                      ^
-  17 |           <li className='flex flex-col'>
-  18 |             <h1 className='text-[#e93d3d] font-bold font-[arimo] text-5xl'>87%</h1>
-  19 |             <p>Time Saved</p>
-
-Unexpected token. Did you mean `{'>'}` or `&gt;`?
-
-Import trace:
-  Server Component:
-    ./src/components/meet-the-os/AIWorkforce.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
-[04:10:40.975] Browser ERROR   ./src/components/meet-the-os/AIWorkforce.tsx:32:6
-Parsing ecmascript source code failed
-  30 |         </ul>
-  31 |       
-> 32 |     </div>
-     |      ^^^^^
-  33 |   );
-  34 | }
-  35 |
-
-Unterminated regexp literal
-
-Import trace:
-  Server Component:
-    ./src/components/meet-the-os/AIWorkforce.tsx
-    ./src/app/(public)/meet-the-os/page.tsx
+[00:19:53.426] Server  ERROR   C:\Users\Abedin\Documents\Projects\terranwilliams\workforce_kreatovate\.next\dev\server\chunks\ssr\[root-of-the-server]__26a9c8fc._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:53.426] Server  ERROR    ⨯ ReferenceError: summ is not defined

@@ -14,7 +14,7 @@ export default function AIWorkforce() {
         A unified platform to manage every aspect of your business operations
       </p>
 
-      <div className="flex justify-center w-full mx-auto px-10 md:px-4">
+      <div className="flex justify-center w-full mx-auto px-10">
         <ul className="flex w-full justify-evenly gap-10 md:gap-16 mx-auto mt-10 ">
           <li className="flex flex-col">
             <h1 className="text-[#e93d3d] font-bold font-[arimo] text-5xl">
@@ -34,7 +34,7 @@ export default function AIWorkforce() {
             </h1>
             <p>Operation Hours</p>
           </li>
-          <li></li>
+          
         </ul>
       </div>
     </div>

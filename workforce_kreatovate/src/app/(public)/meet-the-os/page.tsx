@@ -2,6 +2,7 @@ import AIWorkforce from '@/components/meet-the-os/AIWorkforce'
 import Hero from '@/components/meet-the-os/Hero'
 import OperatingSystem from '@/components/meet-the-os/OperatingSystem'
 import OrganizationStartSection from '@/components/meet-the-os/OrganizationStartSection'
+import WorkforceCard from '@/components/shared/cards/WorkforceCard'
 import React from 'react'
 
 export default function MeetTheOsPage() {
@@ -10,7 +11,8 @@ export default function MeetTheOsPage() {
       <Hero />
       <OrganizationStartSection />
       <OperatingSystem />
-      <AIWorkforce/>
+      <AIWorkforce />
+      <WorkforceCard/>
     </div>
   )
 }
