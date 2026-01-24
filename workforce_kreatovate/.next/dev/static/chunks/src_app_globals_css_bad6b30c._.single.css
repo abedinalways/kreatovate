@@ -86,14 +86,9 @@
   :root, :host {
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
-    --color-red-600: #e40014;
-    --color-red-800: #9f0712;
-    --color-amber-500: #f99c00;
     --color-yellow-400: #fac800;
-    --color-blue-800: #193cb8;
     --color-indigo-400: #7d87ff;
     --color-indigo-500: #625fff;
-    --color-indigo-800: #372aac;
     --color-purple-500: #ac4bff;
     --color-purple-600: #9810fa;
     --color-purple-700: #8200da;
@@ -104,7 +99,6 @@
     --color-gray-500: #6a7282;
     --color-gray-700: #364153;
     --color-gray-800: #1e2939;
-    --color-zinc-900: #18181b;
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -170,14 +164,9 @@
     :root, :host {
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
-      --color-red-600: lab(48.4493% 77.4328 61.5452);
-      --color-red-800: lab(33.7174% 55.8993 41.0293);
-      --color-amber-500: lab(72.7183% 31.8672 97.9407);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
-      --color-blue-800: lab(30.2514% 27.7854 -70.2699);
       --color-indigo-400: lab(59.866% 22.4833 -64.4485);
       --color-indigo-500: lab(48.295% 38.3129 -81.9673);
-      --color-indigo-800: lab(26.6645% 37.9804 -68.6402);
       --color-purple-500: lab(52.0183% 66.11 -78.2316);
       --color-purple-600: lab(43.0295% 75.21 -86.5669);
       --color-purple-700: lab(36.1758% 69.8525 -80.0381);
@@ -188,7 +177,6 @@
       --color-gray-500: lab(47.7841% -.393212 -10.0268);
       --color-gray-700: lab(27.1134% -.956401 -12.3224);
       --color-gray-800: lab(16.1051% -1.18239 -11.7533);
-      --color-zinc-900: lab(8.30603% .618212 -2.16573);
     }
   }
 }
@@ -1442,10 +1430,6 @@
     align-items: stretch;
   }
 
-  .justify-around {
-    justify-content: space-around;
-  }
-
   .justify-between {
     justify-content: space-between;
   }
@@ -1596,6 +1580,10 @@
 
   .overflow-y-hidden {
     overflow-y: hidden;
+  }
+
+  .rounded {
+    border-radius: .25rem;
   }
 
   .rounded-2xl {
@@ -1910,10 +1898,6 @@
     background-color: #3853ff0a;
   }
 
-  .bg-amber-500 {
-    background-color: var(--color-amber-500);
-  }
-
   .bg-background {
     background-color: var(--background);
   }
@@ -1962,10 +1946,6 @@
     }
   }
 
-  .bg-blue-800 {
-    background-color: var(--color-blue-800);
-  }
-
   .bg-border {
     background-color: var(--border);
   }
@@ -1988,10 +1968,6 @@
     }
   }
 
-  .bg-indigo-800 {
-    background-color: var(--color-indigo-800);
-  }
-
   .bg-muted {
     background-color: var(--muted);
   }
@@ -2012,14 +1988,6 @@
     .bg-purple-700\/40 {
       background-color: color-mix(in oklab, var(--color-purple-700) 40%, transparent);
     }
-  }
-
-  .bg-red-600 {
-    background-color: var(--color-red-600);
-  }
-
-  .bg-red-800 {
-    background-color: var(--color-red-800);
   }
 
   .bg-secondary {
@@ -2062,10 +2030,6 @@
     .bg-white\/80 {
       background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
     }
-  }
-
-  .bg-zinc-900 {
-    background-color: var(--color-zinc-900);
   }
 
   .bg-linear-to-br {
@@ -2441,10 +2405,6 @@
     padding-block: calc(var(--spacing) * 24);
   }
 
-  .py-25 {
-    padding-block: calc(var(--spacing) * 25);
-  }
-
   .py-\[7px\] {
     padding-block: 7px;
   }
@@ -2619,10 +2579,6 @@
     font-size: 18px;
   }
 
-  .text-\[56px\] {
-    font-size: 56px;
-  }
-
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
@@ -2676,11 +2632,6 @@
   .leading-\[143\%\] {
     --tw-leading: 143%;
     line-height: 143%;
-  }
-
-  .leading-\[149\%\] {
-    --tw-leading: 149%;
-    line-height: 149%;
   }
 
   .leading-\[150\%\] {
@@ -2788,10 +2739,6 @@
 
   .text-\[\#e93d3d\] {
     color: #e93d3d;
-  }
-
-  .text-\[arimo\] {
-    color: arimo;
   }
 
   .text-black {
@@ -4095,12 +4042,6 @@
   @media (min-width: 48rem) {
     .md\:mb-12 {
       margin-bottom: calc(var(--spacing) * 12);
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:block {
-      display: block;
     }
   }
 
