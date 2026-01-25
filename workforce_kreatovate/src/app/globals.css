@@ -304,3 +304,15 @@
     rgba(55, 0, 255, 0.06) 100%
   );
 }
+
+.btnOne-bg-gradient{
+  @apply bg-gradient-to-r from-[#4E30FE] to-[#E93D3D];
+}
+
+.text-gradient {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+}
+.bg-gradient {
+  background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
+}

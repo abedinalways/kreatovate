@@ -2,6 +2,7 @@ import React from 'react';
 import BrainIcon from '../shared/icons/BigBrainIcon';
 import ElipseIcon from '../shared/icons/ElipseIcon';
 import CircleIcon from '../shared/icons/ElipseIcon';
+import ModelCard from '../shared/cards/ModelCard';
 
 export default function CoreModel() {
   return (
@@ -29,6 +30,9 @@ export default function CoreModel() {
         <div className="absolute top-2 right-30  ">
           <ElipseIcon className="w-140 h-140 rounded-full" />
         </div>
+      </div>
+      <div className="flex items-center justify-center">
+        <ModelCard />
       </div>
     </div>
   );
