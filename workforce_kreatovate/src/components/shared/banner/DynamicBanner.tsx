@@ -57,17 +57,17 @@ const DynamicBanner = ({
   return (
     <div ref={rootRef} className="relative w-full h-[75vh] mt-(--nav-height) ">
       <Image
-        src={imageUrl}
+        src="/images/contact_us_banner.png"
         alt="page banner image"
         fill
         priority
-        className="object-cover"
+        className="object-cover bg-yellow-700"
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%)",
+            'linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%)',
         }}
       />
       <div className="absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center gap-4">

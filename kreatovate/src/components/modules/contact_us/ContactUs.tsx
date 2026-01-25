@@ -19,7 +19,7 @@ interface ConsultationFormData {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Contact = () => {
+const ContactUs = () => {
   const [selectedDates, setSelectedDates] = useState<Date[]>([]);
   const [selectedZone, setSelectedZone] = useState("America/New_York");
   const [selectedSlot, setSelectedSlot] = useState<{
@@ -188,4 +188,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

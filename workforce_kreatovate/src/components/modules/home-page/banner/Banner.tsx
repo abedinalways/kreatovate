@@ -63,7 +63,13 @@ const Banner = () => {
 
     return () => ctx.revert();
   }, []);
-
+  
+  const scrollToTarget = () => {
+    document.getElementById('price')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
   return (
     <div
       id="home"
@@ -154,20 +160,24 @@ const Banner = () => {
               className="text-sm md:text-md py-5"
             />
           </div> */}
-          <div className="flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-6 ">
             <div ref={buttonRef} className="cursor-pointer w-fit">
               <ButtonAll
                 btnText="Activate Your Platform"
                 href="#contact_us"
-                className="text-sm md:text-md py-6"
+                className="text-sm md:text-md py-6 h-[52px]"
               />
             </div>
             <div ref={buttonRef} className="cursor-pointer w-fit">
-              <ButtonAllTwo
-                btnText="View Capabilities & Pricing"
-                // href="#contact_us"
-                className="text-sm md:text-md py-5"
-              />
+              <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
+                <button
+                  className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer"
+                  onClick={scrollToTarget}
+                >
+                  <span className="gradient-text px-4 font-semibold">View Capabilities & Pricing</span>
+                </button>
+              </button>
+              {/* btnText="" className=" pointer-events-none" */}
             </div>
           </div>
         </div>

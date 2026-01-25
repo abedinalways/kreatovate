@@ -68,7 +68,10 @@ export const OurBlurbs = () => {
   }, []);
 
   return (
-    <section className="bg-[#0F1016] min-h-screen py-16 px-6 overflow-hidden">
+    <section
+      className="bg-[#0F1016] min-h-screen py-16 px-6 overflow-hidden"
+      id="our_blurbs"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-center mb-4">
           <HeadingButton btnText="Our Blurbs" className="w-33 mx-auto" />
