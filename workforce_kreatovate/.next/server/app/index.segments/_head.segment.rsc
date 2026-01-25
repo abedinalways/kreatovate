@@ -1,8 +1,0 @@
-1:"$Sreact.fragment"
-2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
-4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
-5:"$Sreact.suspense"
-7:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
-0:{"buildId":"E2YA_HzbiS-gsYzTrkTK8","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
-3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:[["$","title","0",{"children":"Workforce Kreatovate | Build Your Smart, Scalable AI Workforce"}],["$","meta","1",{"name":"description","content":"Workforce Kreatovate helps businesses automate operations and scale effortlessly with AI-powered employees. Hire, deploy, and manage intelligent virtual team members — all in one place."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.9ab2ebfe.ico","sizes":"128x128","type":"image/x-icon"}],["$","$L7","3",{}]]

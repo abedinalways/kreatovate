@@ -45,7 +45,7 @@ const Hero = () => {
     <div
       id="home"
       ref={heroRef}
-      className="relative min-h-svh md:min-h-screen overflow-hidden pt-10 px-4 mx-auto"
+      className="relative min-h-svh md:min-h-screen overflow-hidden pt-4 px-4 mx-auto"
     >
       <MainBg />
 
@@ -74,7 +74,7 @@ const Hero = () => {
             <Image src='/images/img00.png' alt='' width={44} height={44}/>
           </div>
           {/* HEADING */}
-          <h1 className="mt-3 text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
+          <h1 className=" text-2xl md:text-4xl lg:text-5xl text-center font-jakarta font-bold">
             <span className="text-gradient">Meet the OS</span>
           </h1>
 

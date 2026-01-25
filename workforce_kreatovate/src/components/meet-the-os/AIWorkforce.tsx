@@ -33,8 +33,7 @@ export default function AIWorkforce() {
               24/7
             </h1>
             <p>Operation Hours</p>
-          </li>
-          
+          </li>    
         </ul>
       </div>
     </div>

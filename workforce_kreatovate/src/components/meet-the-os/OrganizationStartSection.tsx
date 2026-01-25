@@ -17,7 +17,7 @@ import BrainIcon from '../shared/icons/BrainIcon';
 
 export default function OrganizationStartSection() {
   return (
-    <section className="py-24 font-jakarta">
+    <section className="py-24 font-jakarta" id='about_us'>
       <div className="container mx-auto px-4">
         <h2 className="text-center text-4xl md:text-5xl leading-[120%] font-bold mb-16">
           How Organizations Get Started
