@@ -4,9 +4,9 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <Link href="/">
-      <div className="relative w-[180px] sm:w-[251px] md:w-[170px] h-[60px]">
+      <div className="relative ">
         <Image
-          src="/images/logowhitetransparent.png"
+          src="/images/logowhitetransparent88.png"
           alt="logo"
           fill
           className="object-contain"

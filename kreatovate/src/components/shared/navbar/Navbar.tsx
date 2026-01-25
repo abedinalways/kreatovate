@@ -90,7 +90,7 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <button
-            className="btnOne-bg-gradient  shape-squircle   rounded-[32px] p-px"
+            className="btnOne-bg-gradient  shape-squircle   rounded-[32px] p-[2px]"
             onClick={scrollToTarget}
           >
             <button className="w-[121px] h-[42px] shape-squircle  rounded-[32px] bg-black cursor-pointer ">

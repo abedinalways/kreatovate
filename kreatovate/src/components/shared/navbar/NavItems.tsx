@@ -1,103 +1,114 @@
-"use client";
+'use client';
 
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import TransitionLink from "../TransitionLink";
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import TransitionLink from '../TransitionLink';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
-  variant?: "desktop" | "mobile";
-  headerSelector?: string;
+  variant?: 'desktop' | 'mobile';
 };
 
-gsap.registerPlugin(ScrollToPlugin);
+const SECTIONS = [
+  'home',
+  'about_us',
+  'who_we_are',
+  'our_services',
+  'our_development',
+  'our_team',
+  'testimonial',
+];
 
-const normalizeHash = (id: string) => {
-  if (!id) return id;
-  const idx = id.indexOf("#");
-  return idx >= 0 ? id.slice(idx) : id;
-};
-
-const NavItems = ({ variant = "desktop" }: Props) => {
-  const [activeHash, setActiveHash] = useState<string>("#home");
+const NavItems = ({ variant = 'desktop' }: Props) => {
   const pathname = usePathname();
+  const isHome = pathname === '/' || pathname === '';
 
-  const isHome = pathname === "/" || pathname === "";
-
-  const toHomeSection = (hash: string) => (isHome ? hash : `/${hash}`);
+  const [activeSection, setActiveSection] = useState('home');
 
   const items = [
-    { id: isHome ? "#home" : "/", label: "home" },
-    { id: toHomeSection("#about_us"), label: "about us" },
-    { id: toHomeSection("#who_we_are"), label: "who we are" },
-    { id: toHomeSection("#our_services"), label: "our services" },
-    { id: toHomeSection("#our_team"), label: "our team" },
+    { key: 'home', label: 'home' },
+    { key: 'about_us', label: 'about us' },
+    { key: 'who_we_are', label: 'who we are' },
+    { key: 'our_services', label: 'our services' },
+    { key: 'our_team', label: 'our team' },
+    { key: 'our_development', label: 'our development' },
     {
-      id: toHomeSection("https://kreatovate-projects.lovable.app/projects"),
-      label: "our projects",
+      external: true,
+      href: 'https://kreatovate-projects.lovable.app/projects',
+      label: 'our projects',
     },
-    { id: toHomeSection("#testimonial"), label: "testimonial" },
+    { key: 'testimonial', label: 'testimonial' },
   ];
 
-  const handleInstantActive = (id: string) => {
-    if (id.startsWith("#")) setActiveHash(id);
-    else setActiveHash("");
-  };
+ useEffect(() => {
+   if (!isHome) return;
 
-  useEffect(() => {
-    const applyFromHash = () => setActiveHash(window.location.hash || "#home");
-    applyFromHash();
-    window.addEventListener("hashchange", applyFromHash);
-    return () => window.removeEventListener("hashchange", applyFromHash);
-  }, []);
+   const triggers: ScrollTrigger[] = [];
 
-  const isItemActive = (itemId: string) => {
-    const isHash = itemId.startsWith("#") || itemId.includes("/#");
-    if (isHash) return normalizeHash(activeHash) === normalizeHash(itemId);
-    return itemId === pathname;
-  };
+   SECTIONS.forEach(id => {
+     const section = document.getElementById(id);
+     if (!section) return;
 
-  const DesktopList = (
-    <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
-      {items.map((item) => {
-        const active = isItemActive(item.id);
-        return (
-          <li
-            key={item.id}
-            className={`px-4 lg:px-2 py-2 rounded-full transition-all duration-200 ${
-              active ? "bg-[#ED1C24] font-semibold" : "hover:bg-[#ED1C24]/40"
-            }`}
-          >
-            <TransitionLink
-              href={item.id}
-              onClick={() => handleInstantActive(item.id)}
-              className="whitespace-nowrap text-white py-2"
-            >
-              {item.label}
-            </TransitionLink>
-          </li>
-        );
-      })}
-    </ul>
-  );
+     const trigger = ScrollTrigger.create({
+       trigger: section,
+       start: 'top center',
+       end: 'bottom center',
+       onEnter: () => setActiveSection(id),
+       onEnterBack: () => setActiveSection(id),
+     });
 
-  if (variant === "mobile") {
+     triggers.push(trigger);
+   });
+
+   // 🔥 IMPORTANT: force recalculation after images/layout load
+   ScrollTrigger.refresh();
+
+   return () => {
+     triggers.forEach(t => t.kill());
+   };
+ }, [isHome]);
+
+
+  const isActive = (key?: string) => key === activeSection;
+
+  const getHref = (key: string) => (isHome ? `#${key}` : `/#${key}`);
+
+  // ================= DESKTOP =================
+  if (variant === 'desktop') {
     return (
-      <ul className="flex flex-col gap-1 capitalize">
-        {items.map((item) => {
-          const active = isItemActive(item.id);
+      <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
+        {items.map(item => {
+          if ('external' in item && item.href) {
+            return (
+              <li key={item.label} className="px-4 py-2">
+                <TransitionLink
+                  href={item.href}
+                  className="text-white whitespace-nowrap"
+                >
+                  {item.label}
+                </TransitionLink>
+              </li>
+            );
+          }
+
+          const key = item.key;
+          if (!key) return null;
+
+          const active = isActive(key);
+
           return (
-            <li key={item.id}>
+            <li
+              key={key}
+              className={`px-4 py-2 rounded-full transition-all ${
+                active ? 'bg-[#ED1C24] font-semibold' : 'hover:bg-[#ED1C24]/40'
+              }`}
+            >
               <TransitionLink
-                href={item.id}
-                onClick={() => handleInstantActive(item.id)}
-                className={[
-                  "block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap text-white",
-                  active
-                    ? "bg-[#ED1C24] font-semibold"
-                    : "hover:bg-[#ED1C24]/40",
-                ].join(" ")}
+                href={getHref(key)}
+                className="text-white whitespace-nowrap"
               >
                 {item.label}
               </TransitionLink>
@@ -108,7 +119,43 @@ const NavItems = ({ variant = "desktop" }: Props) => {
     );
   }
 
-  return <div>{DesktopList}</div>;
+  // ================= MOBILE =================
+  return (
+    <ul className="flex flex-col gap-1 capitalize">
+      {items.map(item => {
+        if ('external' in item && item.href) {
+          return (
+            <li key={item.label}>
+              <TransitionLink
+                href={item.href}
+                className="block px-4 py-3 text-white rounded-lg"
+              >
+                {item.label}
+              </TransitionLink>
+            </li>
+          );
+        }
+
+        const key = item.key;
+        if (!key) return null;
+
+        const active = isActive(key);
+
+        return (
+          <li key={key}>
+            <TransitionLink
+              href={getHref(key)}
+              className={`block px-4 py-3 rounded-lg text-white transition-colors ${
+                active ? 'bg-[#ED1C24] font-semibold' : 'hover:bg-[#ED1C24]/40'
+              }`}
+            >
+              {item.label}
+            </TransitionLink>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default NavItems;
