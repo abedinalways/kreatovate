@@ -63,13 +63,13 @@ const BusinessCard = ({ data, className }: CardProps) => {
         </div>
       </div>
       <div className="absolute top-20 -right-6 z-40 -rotate-12">
-        <div
+        {/* <div
           className="relative flex items-center justify-center size-36 rounded-full 
     bg-gradient-to-br from-[#B84CFF] via-[#7A2EFF] to-[#4B1B99]
     shadow-[0_0_40px_rgba(184,76,255,0.6)]"
-        >
+        > */}
           {/* inner soft glass layer */}
-          <div
+          {/* <div
             className="size-[118px] rounded-full 
       bg-black/70 backdrop-blur-md
       flex items-center justify-center
@@ -82,8 +82,8 @@ const BusinessCard = ({ data, className }: CardProps) => {
               Coming <br />
               Soon
             </h1>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
   );

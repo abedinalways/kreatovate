@@ -40,12 +40,12 @@ const ButtonAllTwo: FC<ButtonAllProps> = ({
 
   if (href) {
     return (
-      <div className="business-card relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-lg">
+      <div className="business-card  relative bg-gradient-to-r from-[#E21717] to-[#3700FF] p-px rounded-lg">
         <Button
           asChild
           variant={variant}
           size={size}
-          className="rounded-lg px-6 py-6"
+          className="rounded-lg px-6 py-6 pointer-events-none"
           disabled={disabled}
         >
           <Link

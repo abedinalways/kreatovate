@@ -316,3 +316,22 @@
 .bg-gradient {
   background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
 }
+.text_gradient{
+  background: linear-gradient(90deg, #e74a4e 0%, #5b3af8 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #e74a4e 0%, #5b3af8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   display: inline-block;
+}
+
+.social-media-bg {
+  background: linear-gradient(
+    244deg,
+    rgba(226, 15, 18, 0.2) 0%,
+    rgba(56, 83, 255, 0.2) 100%
+  );
+}

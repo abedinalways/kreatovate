@@ -57,7 +57,7 @@ const DynamicBanner = ({
   return (
     <div ref={rootRef} className="relative w-full h-[75vh] mt-(--nav-height) ">
       <Image
-        src={imageUrl}
+        src='/images/contact_us_banner.png'
         alt="page banner image"
         fill
         priority
@@ -74,7 +74,7 @@ const DynamicBanner = ({
         <h1 className="js-db-heading text-5xl font-bold text-center">
           {title} <span className="text-gradient pb-2!">{titleGradient}</span>
         </h1>
-
+         
         <div className="js-db-crumb">
           <PageBreadCrumb />
         </div>

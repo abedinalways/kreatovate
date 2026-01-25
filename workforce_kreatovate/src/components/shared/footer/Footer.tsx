@@ -1,11 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
-import { FaDiscord, FaThreads, FaTiktok } from "react-icons/fa6";
+import Link from 'next/link';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import FooterLogo from '../logo/FooterLogo';
 
-import Logo from "../Logo";
-import { smoothScrollTo } from "@/lib/smoothScroll";
+
 
 const XIcon = () => (
   <svg
@@ -20,18 +19,26 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer
-      id="footer"
-      className="relative w-full text-white overflow-hidden bg-black"
-    >
+    <footer className="relative w-full text-white overflow-hidden bg-gray-900  mx-auto font-jakarta">
+      {/* Background Image */}
+      {/* <div className="absolute inset-0 z-10">
+        <Image
+          src="/images/footer-bg.png"
+          alt="footer background"
+          width={1600}
+          height={461}
+          className="w-full h-full object-cover object-center"
+        />
+      </div> */}
+
       {/* Content */}
-      <div className="relative z-20 py-16 px-6 sm:px-12 md:px-20 lg:px-36">
+      <div className="relative z-20 py-16 px-6 md:px-0 custom-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Logo />
+            <FooterLogo />
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
               Our AI-powered Marketing Platform gives you an affordable
               enterprise digital marketing and advertising solution that does
               all the heavy lifting.
@@ -42,7 +49,7 @@ export default function Footer() {
                 href="https://www.facebook.com/kreatovate/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </Link>
@@ -50,7 +57,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kreatovate?igsh=MWl1Y29rcXJlM3V2bg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </Link>
@@ -58,7 +65,7 @@ export default function Footer() {
                 href="https://x.com/kreatovate?s=21/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <XIcon />
               </Link>
@@ -66,11 +73,11 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/kreatovate-marketing-consultings/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-11 h-11 social-media-bg border border-gray-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
-              <Link
+              {/* <Link
                 href="https://www.threads.com/@kreatovate?igshid=NTc4MTIwNjQ2YQ==/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -93,7 +100,7 @@ export default function Footer() {
                 className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FaTiktok className="w-5 h-5" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -102,18 +109,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="#home"
-                  onClick={(e) => smoothScrollTo(e, "#home")}
-                  className="text-gray-400 hover:text-white"
-                >
+                <Link href="/" className="text-gray-400 hover:text-white">
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   href="#about_us"
-                  onClick={(e) => smoothScrollTo(e, "#about_us")}
                   className="text-gray-400 hover:text-white"
                 >
                   About Us
@@ -121,29 +123,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_solutions"
-                  onClick={(e) => smoothScrollTo(e, "#our_solutions")}
+                  href="#our_blurbs"
                   className="text-gray-400 hover:text-white"
                 >
-                  Our Solutions
+                  Our Blurbs
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#testimonial"
-                  onClick={(e) => smoothScrollTo(e, "#testimonial")}
+                  href="#price"
                   className="text-gray-400 hover:text-white"
                 >
-                  Testimonial
+                  Price
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#contact_us"
-                  onClick={(e) => smoothScrollTo(e, "#contact_us")}
+                  href="/meet-the-os"
                   className="text-gray-400 hover:text-white"
                 >
-                  Contact Us
+                  Meet The OS
                 </Link>
               </li>
             </ul>
@@ -197,7 +196,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/conditions"
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Conditions
@@ -206,7 +205,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/cookies"
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="text-gray-400 hover:text-white"
                 >
                   Cookies
@@ -219,7 +218,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-[rgba(237,28,36,0.2)] mt-10 pt-6">
           <p className="text-center text-gray-500 text-sm">
-            © 2025 — Kreatovate. All rights reserved.
+            © {new Date().getFullYear()} — Kreatovate. All rights reserved.
           </p>
         </div>
       </div>
