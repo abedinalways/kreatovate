@@ -194,3 +194,11 @@
   clip-path: inset(0 0 100% 0);
   filter: blur(6px);
 }
+
+.social-media-bg {
+  background: linear-gradient(
+    244deg,
+    rgba(226, 15, 18, 0.2) 0%,
+    rgba(56, 83, 255, 0.2) 100%
+  );
+}

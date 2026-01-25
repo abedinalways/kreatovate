@@ -35,7 +35,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <FooterLogo />
+            <div>
+              <FooterLogo />
+            </div>
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
               Our AI-Driven Marketing Platform gives you an affordable
@@ -113,7 +115,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about_us" className="text-gray-400 hover:text-white">
+                <Link
+                  href="#about_us"
+                  className="text-gray-400 hover:text-white"
+                >
                   About Us
                 </Link>
               </li>
