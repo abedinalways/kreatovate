@@ -18,16 +18,16 @@ const ButtonTwo = ({
 }: BtnProps) => {
   return (
     <div
-      className={`p-px rounded-[10px] bg-linear-to-r from-[#E93D3D] to-[#4E30FE] cursor-pointer hover:bg-transparent ${className}`}
+      className={`p-px rounded-[12px] btn-bg cursor-pointer hover:bg-transparent ${className}`}
     >
       <Button
         asChild
         variant="ghost"
-        className="w-full rounded-[10px] py-6 px-5 text-base md:text-lg font-medium text-white hover:text-white hover:bg-transparent"
+        className=" rounded-[12px] w-[172px]! h-[56px]! text-base md:text-lg flex items-center font-medium text-white hover:text-white hover:bg-transparent"
       >
         <Link
-          href={link ? link : "#"}
-          onClick={(e) => handleSmoothLink(e, link as string, headerSelector)}
+          href={link ? link : '#'}
+          onClick={e => handleSmoothLink(e, link as string, headerSelector)}
           className="block w-full text-center capitalize"
         >
           {btnText} <MoveRight />

@@ -147,7 +147,7 @@ const OurSolution = () => {
   ];
 
   return (
-    <div className="px-4 md:px-0" id='our_development'>
+    <div className="px-4 md:px-0 font-jakarta" id='our_development'>
       <div className="flex flex-col items-center gap-7 mb-10">
         <div className="w-fit js-solution-text">
           <SectionHead title="Our Developments" />

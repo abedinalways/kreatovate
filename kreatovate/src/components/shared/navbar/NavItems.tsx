@@ -79,7 +79,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
   // ================= DESKTOP =================
   if (variant === 'desktop') {
     return (
-      <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
+      <ul className="flex items-center gap-7 lg:gap-3 capitalize nav-bg p-1 rounded-full">
         {items.map(item => {
           if ('external' in item && item.href) {
             return (
@@ -102,8 +102,10 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
           return (
             <li
               key={key}
-              className={`px-4 py-2 rounded-full transition-all ${
-                active ? 'bg-[#ED1C24] font-semibold' : 'hover:bg-[#ED1C24]/40'
+              className={`px-4 py-2 rounded-[24px] transition-all ${
+                active
+                  ? 'bg-[#ED1C24]/20 border-2 border-red-950 font-semibold'
+                  : 'hover:bg-[#ED1C24]/20'
               }`}
             >
               <TransitionLink

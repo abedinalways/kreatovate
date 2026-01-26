@@ -15,8 +15,8 @@ const SectionHead = ({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 bg-white/10 py-1 px-4 md:px-8 rounded-full mx-auto banner-tagline border border-gray-400",
-        className
+        'flex items-center gap-3 bg-white/10 py-1 px-4 md:px-8 rounded-full mx-auto banner-tagline border border-gray-400',
+        className,
       )}
     >
       <Image
@@ -27,8 +27,8 @@ const SectionHead = ({
       />
       <p
         className={cn(
-          "font-roboto text-sm font-semibold text-color-gradient uppercase text-center pb-0!",
-          titleClassName
+          'font-roboto text-sm font-semibold gradient-text uppercase text-center pb-0!',
+          titleClassName,
         )}
       >
         {title}

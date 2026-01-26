@@ -102,7 +102,7 @@ const Team: React.FC = () => {
       </div>
       <div
         ref={sectionRef}
-        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center font-openSans"
+        className="custom-container px-4 md:px-5 lg:px-12 py-20 flex-col gap-8 justify-center items-center font-jakarta"
       >
         {/* heading */}
         <div className="w-fit mx-auto">

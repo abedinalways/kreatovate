@@ -53,7 +53,7 @@ const AboutUs = () => {
   return (
     <div
       id="about_us"
-      className="text-white pt-5 md:pt-10 lg:pt-16 mx-auto relative isolate bg-[#0F1016]"
+      className="text-white pt-5 md:pt-10 lg:pt-16 mx-auto relative isolate bg-[#0F1016] font-[roboto]"
     >
       <div className="py-12 flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-36 md:px-5 custom-container">
         <div className="about-image w-full lg:w-1/2">
@@ -74,7 +74,7 @@ const AboutUs = () => {
             <SectionHead title="about us" />
           </div>
 
-          <h1 className="text-2xl sm:text-5xl md:text-6xl font-semibold max-w-2xl">
+          <h1 className="text-2xl sm:text-5xl  font-bold leadfing-[120%] font-jakarta">
             Kreatovate <span className="text-color-gradient">Marketing</span>
             <span className="text-color-gradient">& Consulting</span>
           </h1>
@@ -85,7 +85,7 @@ const AboutUs = () => {
           </p>
 
           <div className="flex flex-col gap-4">
-            <h5 className="text-2xl font-medium leading-9">
+            <h5 className="text-2xl font-medium leading-9 font-jakarta">
               The 5 transaction components we build for every client
             </h5>
             <ul className="flex flex-col gap-2">

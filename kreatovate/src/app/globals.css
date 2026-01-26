@@ -202,3 +202,27 @@
     rgba(56, 83, 255, 0.2) 100%
   );
 }
+
+.navbar-background{
+  background: rgba(237, 28, 36, 0.1);
+}
+.nav-bg{
+  background:rgba(255, 255, 255, 0.1)
+}
+.gradient-text {
+  background: linear-gradient(270deg, #f00 0%, #4d61ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-bg{
+  background: linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.WhoWeAre-heading {
+background: linear-gradient(90deg, #e21717 0%, #3700ff 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}

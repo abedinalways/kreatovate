@@ -16,7 +16,7 @@ const logos = [
 ];
 
 const Partners = () => (
-  <section className="bg-[#0b0b0b] py-12 text-center text-white">
+  <section className="bg-[#0b0b0b] py-12 text-center text-white font-jakarta">
     <h2 className="text-3xl md:text-5xl font-bold mb-8">
       Our Trusted <span className="text-gradient">Partners & Vendors</span>
     </h2>
