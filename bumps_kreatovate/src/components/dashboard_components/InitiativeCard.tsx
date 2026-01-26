@@ -4,6 +4,7 @@ import { Initiative } from '@/types/initiative';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import RightIcon from '../shared/icons/RightIcon';
 
 const statusConfig = {
   active: {
@@ -12,6 +13,7 @@ const statusConfig = {
     button: 'Enter Sale →',
     enabled: true,
     link: '/dashboard/our-books',
+    icon: 'text-emerald-400',
   },
   coming: {
     label: 'Coming Soon',
@@ -19,6 +21,7 @@ const statusConfig = {
     button: 'Enter Sale →',
     enabled: false,
     link: '#',
+    icon: 'text-yellow-400',
   },
   closed: {
     label: 'Closed',
@@ -26,6 +29,7 @@ const statusConfig = {
     button: 'Enter Sale →',
     enabled: false,
     link: '#',
+    icon: 'text-red-400',
   },
 };
 
@@ -43,10 +47,11 @@ export default function InitiativeCard({
           {/* Status Badge */}
           <span
             className={cn(
-              'inline-block text-xs px-3 py-1 rounded-full border',
+              'flex items-center gap-2 w-fit text-xs px-3 py-1 rounded-full border',
               config.badge,
             )}
           >
+            <RightIcon className={cn('w-4 h-4', config.icon)} />
             {config.label}
           </span>
 

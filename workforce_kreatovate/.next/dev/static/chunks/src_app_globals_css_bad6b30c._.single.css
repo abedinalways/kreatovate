@@ -91,6 +91,9 @@
   :root, :host {
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
+    --color-red-600: #e40014;
+    --color-red-900: #82181a;
+    --color-red-950: #460809;
     --color-yellow-400: #fac800;
     --color-yellow-700: #a36100;
     --color-indigo-400: #7d87ff;
@@ -172,6 +175,9 @@
     :root, :host {
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
+      --color-red-600: lab(48.4493% 77.4328 61.5452);
+      --color-red-900: lab(28.5139% 44.5539 29.0463);
+      --color-red-950: lab(13.003% 29.04 16.7519);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
       --color-yellow-700: lab(47.8202% 25.2426 66.5015);
       --color-indigo-400: lab(59.866% 22.4833 -64.4485);
@@ -1908,6 +1914,18 @@
     }
   }
 
+  .border-red-600 {
+    border-color: var(--color-red-600);
+  }
+
+  .border-red-900 {
+    border-color: var(--color-red-900);
+  }
+
+  .border-red-950 {
+    border-color: var(--color-red-950);
+  }
+
   .border-transparent {
     border-color: #0000;
   }
@@ -2127,6 +2145,10 @@
     .bg-purple-700\/40 {
       background-color: color-mix(in oklab, var(--color-purple-700) 40%, transparent);
     }
+  }
+
+  .bg-red-950 {
+    background-color: var(--color-red-950);
   }
 
   .bg-secondary {
@@ -5513,6 +5535,14 @@
 
 .social-media-bg {
   background: linear-gradient(244deg, #e20f1233 0%, #3853ff33 100%);
+}
+
+.navbar-background {
+  background: #ed1c241a;
+}
+
+.nav-bg {
+  background: #ffffff1a;
 }
 
 @property --tw-translate-x {

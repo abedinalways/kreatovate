@@ -105,7 +105,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
                   className={[
                     'block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap cursor-pointer',
                     isActive
-                      ? 'bg-[#ED1C24] font-semibold'
+                      ? 'navbar-background border-red-900 font-semibold'
                       : 'hover:bg-[#ED1C24]/60',
                   ].join(' ')}
                 >
@@ -121,16 +121,16 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
 
   return (
     <div>
-      <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/10 p-1 rounded-full">
+      <ul className="flex items-center gap-7 lg:gap-3 capitalize nav-bg p-1 rounded-full">
         {ITEMS.map(item => {
           const isActive = active === item.id;
           return (
             <li
               key={item.id}
               className={[
-                'px-4 lg:px-2 py-1 rounded-full transition-all duration-200',
+                'px-6 lg:px-2 py-[7px] rounded-full transition-all duration-200',
                 isActive
-                  ? 'bg-[#ED1C24] font-semibold'
+                  ? 'bg-red-950 border-2 border-red-900 font-semibold'
                   : 'hover:bg-[#ED1C24]/40',
               ].join(' ')}
             >
