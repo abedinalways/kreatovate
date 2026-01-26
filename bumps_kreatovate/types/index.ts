@@ -7,4 +7,5 @@ export interface BusinessItem {
   button?: string;
   duration?: string;
   availability?: string;
+  Link?: string;
 }
