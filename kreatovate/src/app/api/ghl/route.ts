@@ -1,35 +1,22 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
+import { GHL_BASE_URL, ghlHeaders, requireEnv } from "@/lib/ghl";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
+    const locationId = requireEnv("GHL_LOCATION_ID");
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_GHL_BASE_URL}/contacts/upsert`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${process.env.GHL_API_KEY}`,
-          Version: '2021-07-28',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          locationId: process.env.GHL_LOCATION_ID,
-          ...body,
-        }),
-      }
-    );
+    const response = await fetch(`${GHL_BASE_URL}/contacts/upsert`, {
+      method: "POST",
+      headers: ghlHeaders("2021-07-28"),
+      body: JSON.stringify({ locationId, ...body }),
+    });
 
     const data = await response.json();
 
-    console.log('GHL DATA', data);
-
     if (!response.ok) {
       return NextResponse.json(
-        {
-          error: true,
-          message: data.msg || data.error,
-        },
+        { error: true, message: data?.message || data?.msg || data?.error || "Upsert failed" },
         { status: response.status }
       );
     }
