@@ -61,17 +61,17 @@ const Contact = () => {
     <div
       id="contact_us"
       ref={sectionRef}
-      className="relative py-28 overflow-hidden bg-[lightgray]/10"
+      className="relative py-28 overflow-hidden bg-[lightgray]/10 font-jakarta"
     >
       <Image
-        src="/images/contact2.jpg"
+        src="/images/contact-Us.png"
         alt="contact background"
         fill
-        className="w-screen h-[438px] object-cover object-center mix-blend-luminosity opacity-25"
+        className="w-screen h-[609px] object-fill"
         priority
       />
 
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/20" />
 
       <div className="custom-container grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center relative z-10 px-4">
         {/* Left Section */}

@@ -33,18 +33,18 @@ const BookAppointment = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-[#0F1016] pb-24">
+    <div ref={sectionRef} className="bg-[#0F1016] pb-24 font-jakarta">
       <div className="mx-4">
         <div
           className="custom-container bg-[url('/images/explore.png')]
           bg-cover bg-center bg-no-repeat 
           relative z-10 px-4 md:px-8 py-20 rounded-[20px] h-[350px] flex flex-col justify-center items-center text-center gap-4"
         >
-          <h2 className="js-book-text text-2xl sm:text-5xl md:text-5xl font-semibold max-w-2xl">
+          <h2 className="js-book-text text-2xl md:text-5xl  font-semibold max-w-2xl">
             Book Appointment NOW!
           </h2>
 
-          <p className="js-book-text text-gray-300 max-w-xl text-sm md:text-base">
+          <p className="js-book-text text-gray-300 max-w-xl text-sm md:text-base font-[roboto]">
             Experience how we’re transforming the workforce with AI-powered
             innovation. Dive deeper into our ecosystem.
           </p>

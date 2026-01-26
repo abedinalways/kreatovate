@@ -106,8 +106,8 @@ const WhoWeAre = () => {
             <div className="w-fit">
               <SectionHead title="Who Are We" />
             </div>
-            <h1 className="text-3xl lg:text-5xl font-bold leading-14">
-              Who <span className="text-color-gradient">are We</span>
+            <h1 className="text-3xl lg:text-5xl font-bold leading-14 font-jakarta">
+              Who <span className="WhoWeAre-heading">are We</span>
             </h1>
           </div>
 

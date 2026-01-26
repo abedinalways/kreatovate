@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Feedback = () => {
   return (
-    <div className="relative">
+    <div className="relative font-jakarta">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 z-0">
         <Image
           src="/images/testimonial/testimonial-shadow.png"
