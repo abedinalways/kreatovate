@@ -11,6 +11,7 @@ export const initiatives: Initiative[] = [
     views: '2.4k',
     clicks: '2.4k',
     raised: '$15k',
+    link: '#',
   },
   {
     id: '2',
@@ -21,6 +22,7 @@ export const initiatives: Initiative[] = [
     views: '—',
     clicks: '—',
     raised: '—',
+    link: '#',
   },
   {
     id: '3',
@@ -31,5 +33,6 @@ export const initiatives: Initiative[] = [
     views: '2.4k',
     clicks: '2.4k',
     raised: '$15k',
+    link: '#',
   },
 ];

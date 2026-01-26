@@ -8,6 +8,7 @@ export interface DevelopmentItem {
   desc: string;
   image: string;
   href: string;
+  btnName?: string;
 }
 
 export interface Props {
@@ -69,7 +70,7 @@ const OurDevelopmentCard = ({ data }: Props) => {
                   rel="noopener noreferrer"
                   className="block w-full text-center"
                 >
-                  Learn More
+                  {data?.btnName}
                 </Link>
               </Button>
             </div>

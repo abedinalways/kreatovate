@@ -127,7 +127,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/testimonial"
+                  href="#testimonial"
                   className="text-gray-400 hover:text-white"
                 >
                   Testimonial
@@ -135,7 +135,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="#contact_us"
                   className="text-gray-400 hover:text-white"
                 >
                   Contact Us
