@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function OurBooksPage() {
   return (
-    <div className='py-10'>
+    <div className='py-10 '>
       <TrustedGrowth/>
     </div>
   )

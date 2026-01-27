@@ -70,11 +70,11 @@ export const OurBlurbs = () => {
   return (
     <section
       className="bg-[#0F1016] min-h-screen py-16 px-6 overflow-hidden"
-      id="our_blurbs"
+      id="our_solutions"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-center mb-4">
-          <HeadingButton btnText="Our Blurbs" className="w-33 mx-auto" />
+          <HeadingButton btnText="Our Solutions" className="w-33 mx-auto" />
         </div>
 
         {/* <h1 className="ourblurbs-heading text-3xl md:text-5xl font-bold text-center text-white mb-10 font-jakarta">

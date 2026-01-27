@@ -104,8 +104,8 @@ const Banner = () => {
         />
       </div>
 
-      <div className="relative custom-container w-full h-full z-30">
-        <div className="px-4 md:px-5 flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
+      <div className="relative custom-container w-full h-full z-30 md:mt-0 mt-10">
+        <div className="px-4 md:px-5  flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 left-0 z-20">
           {/* <h1
             ref={headingRef}
             className=" text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6"
@@ -121,7 +121,7 @@ const Banner = () => {
           </h1> */}
           <h1
             ref={headingRef}
-            className="text-xl md:text-4xl lg:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] py-6 max-w-3xl"
+            className="text-3xl md:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] max-w-3xl"
           >
             KINpro.ai The Intelligent CRM & Business Operating System
           </h1>

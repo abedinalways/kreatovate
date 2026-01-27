@@ -26,9 +26,8 @@ const Launchpad = () => {
           <div className="w-fit mb-2">
             <SiteBigBadge title="fundraising, reimagined" />
           </div>
-          <h1 className="font-bold text-2xl md:text-5xl leading-[120%] mb-3 whitespace-nowrap">
-            The{' '}
-            <span className="text-gradient-special">Kreatovate Launchpad</span>
+          <h1 className="font-bold text-4xl text-center md:text-start md:text-5xl leading-[120%] mb-3 md:whitespace-nowrap">
+            The{' '}<span className="text-gradient-special">Kreatovate Launchpad</span>
           </h1>
           <p className="font-semibold text-base md:text-lg leading-[180%] text-white mb-5 font-jakarta">
             The Kreatovate Launchpad is our centralized fundraising and

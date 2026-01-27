@@ -10,7 +10,7 @@ interface CardProps {
 }
 
 const BusinessCard = ({ data, className }: CardProps) => {
-  const { title, price, description } = data;
+  const { title, description } = data;
 
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -50,9 +50,9 @@ const BusinessCard = ({ data, className }: CardProps) => {
           <h1 className=" text-lg md:text-xl font-semibold leading-8">
             {title}
           </h1>
-          <p className="text-[#E21717] text-[1.5rem]  md:text-[1.8rem] font-bold leading-10">
+          {/* <p className="text-[#E21717] text-[1.5rem]  md:text-[1.8rem] font-bold leading-10">
             ${price}
-          </p>
+          </p> */}
         </div>
         <p className="text-sm md:text-md font-normal leading-7 text-[#A5A5AB] truncate whitespace-nowrap overflow-hidden">
           {description}

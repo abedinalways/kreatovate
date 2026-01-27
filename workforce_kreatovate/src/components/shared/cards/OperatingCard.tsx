@@ -29,8 +29,8 @@ const OperatingCard = () => {
   return (
     <div className="relative overflow-hidden font-jakarta" id="our_solutions">
       <Image
-        src="/images/whyWeBuildIt/ellipse2.svg"
-        alt="bg image"
+        src="/images/ellipse2.svg"
+        alt="bg-image"
         width={1446}
         height={998}
         className="absolute -bottom-72 left-1/2 -translate-x-1/2 z-0 object-cover"

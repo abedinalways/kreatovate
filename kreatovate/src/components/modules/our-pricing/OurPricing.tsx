@@ -52,7 +52,7 @@ const OurPricing = () => {
     {
       id: 1,
       title: "ESSENTIALS AUTOMATION",
-      price: "$1000-$1500/mo",
+      // price: "$1000-$1500/mo",
       duration: "(3–6 month minimum)",
       description:
         "A clean foundation for businesses needing automated customer handling. Includes MC2T responsiveness, basic support flows, and light nurture sequences.",
@@ -61,7 +61,7 @@ const OurPricing = () => {
     {
       id: 2,
       title: "LEAD MACHINE",
-      price: "$2500–$4000/mo",
+      // price: "$2500–$4000/mo",
       duration: "(3–6 month minimum)",
       description:
         "Full lead nurturing, booking, and follow-up system run by the internal A1 Workforce. Includes Nurture, Appointment Setter, and Closer Assist modules.",
@@ -70,7 +70,7 @@ const OurPricing = () => {
     {
       id: 3,
       title: "MULTI-CHANNEL SALES ACCELERATOR",
-      price: "$6000–$12000/mo",
+      // price: "$6000–$12000/mo",
       duration: "(6 month minimum)",
       description:
         "We run TikTok/Meta/Google/LinkedIn campaigns and all inbound/outbound workflows. Includes full Closer, multi-channel messaging, reporting, optimization.",
@@ -79,7 +79,7 @@ const OurPricing = () => {
     {
       id: 4,
       title: "ENTERPRISE (CUSTOM)",
-      price: "Custom Quote",
+      // price: "Custom Quote",
       duration: "",
       description:
         "Full takeover of sales, support, nurture, automation, content systems. Built using the full Kreatovate A1 Workforce.",
@@ -90,7 +90,7 @@ const OurPricing = () => {
   return (
     <div
       ref={rootRef}
-      className="relative py-25 px-4 md:px-0 bg-[#0F1016] overflow-hidden font-jakarta"
+      className="relative py-25 px-4 md:px-0 bg-[#0F1016] overflow-hidden font-jakarta" id='our_pricing'
     >
       <div className="absolute inset-0 bg-linear-to-b from-black/50 via-transparent to-black/80 -z-10"></div>
 

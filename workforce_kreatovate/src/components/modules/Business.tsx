@@ -51,19 +51,19 @@ const Business = () => {
     {
       id: 1,
       title: "Closer",
-      price: 2497,
+      // price: 2497,
       description: "Outbound sales employee that calls and closes deals.",
     },
     {
       id: 2,
       title: "Appointment Setter",
-      price: 1497,
+      // price: 1497,
       description: "Schedules and confirms client calls seamlessly..",
     },
     {
       id: 3,
       title: "Lead Nurturer",
-      price: 1497,
+      // price: 1497,
       description: "Warms leads with education and timely follow-ups.",
     },
   ];
@@ -72,13 +72,13 @@ const Business = () => {
     {
       id: 4,
       title: "Missed Call 2 Text (MC2T)",
-      price: 397,
+      // price: 397,
       description: "Warms leads with education and timely follow-ups.",
     },
     {
       id: 5,
       title: "Admin Support",
-      price: 1497,
+      // price: 1497,
       description: "Schedules and confirms client calls seamlessly.",
     },
   ];

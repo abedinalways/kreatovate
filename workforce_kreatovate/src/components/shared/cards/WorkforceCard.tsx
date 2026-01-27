@@ -30,9 +30,9 @@ const WorkforceCard = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden font-jakarta" id="our_solutions">
+    <div className="relative overflow-hidden font-jakarta" >
       <Image
-        src="/images/whyWeBuildIt/ellipse2.svg"
+        src="/images/ellipse2.svg"
         alt="bg image"
         width={1446}
         height={998}
@@ -81,7 +81,9 @@ const WorkforceCard = () => {
           </div>
         </div>
         <div className="flex gap-4  border-l-4 border-red-500 rounded-[14px] my-10 p-6">
-          <StarIcon />
+          <div>
+            <StarIcon />
+          </div>
           <div className="flex flex-col gap-3 ">
             <h2 className="text-2xl font-bold leading-[133%]">
               The Future of Work is Collaborative

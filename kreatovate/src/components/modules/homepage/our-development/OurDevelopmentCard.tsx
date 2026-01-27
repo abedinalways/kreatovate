@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export interface DevelopmentItem {
   id: string;
@@ -17,7 +17,7 @@ export interface Props {
 
 const OurDevelopmentCard = ({ data }: Props) => {
   return (
-    <div className="p-px rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE] last:col-span-2">
+    <div className="p-px rounded-[10px] bg-gradient-to-r from-[#E93D3D] to-[#4E30FE]">
       <div className="rounded-[10px] w-full h-full bg-[#0F1016] text-white overflow-hidden">
         <div className="relative flex flex-col items-center gap-5 p-6 h-full">
           {/* background lights */}

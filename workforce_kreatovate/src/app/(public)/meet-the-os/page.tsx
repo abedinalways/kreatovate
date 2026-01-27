@@ -10,7 +10,7 @@ import React from 'react'
 
 export default function MeetTheOsPage() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Hero />
       <OrganizationStartSection />
       <OperatingSystem />

@@ -90,7 +90,7 @@ const Strategy = () => {
 
   return (
     <div
-      id="about_us"
+      // id="about_us"
       ref={containerRef}
       className="strategy-section custom-container pt-24 h-[85vh] relative w-full overflow-hidden font-jakarta "
     >

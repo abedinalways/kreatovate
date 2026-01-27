@@ -132,12 +132,45 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#testimonial"
+                  href="#our_model"
                   className="text-gray-400 hover:text-white"
                 >
-                  Testimonial
+                  Our Model
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="#our_books"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Our Books
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#process_overview"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Process Overview
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#our_vision"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Our Vision
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/price"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Pricing Plan
+                </Link>
+              </li>
+
               <li>
                 <Link
                   href="/contact-us"
