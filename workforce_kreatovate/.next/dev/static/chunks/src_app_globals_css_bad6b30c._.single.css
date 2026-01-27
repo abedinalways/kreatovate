@@ -91,7 +91,6 @@
   :root, :host {
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
-    --color-red-600: #e40014;
     --color-red-900: #82181a;
     --color-red-950: #460809;
     --color-yellow-400: #fac800;
@@ -175,7 +174,6 @@
     :root, :host {
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
-      --color-red-600: lab(48.4493% 77.4328 61.5452);
       --color-red-900: lab(28.5139% 44.5539 29.0463);
       --color-red-950: lab(13.003% 29.04 16.7519);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
@@ -1651,6 +1649,12 @@
     margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-6 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   :where(.space-y-8 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
@@ -1914,16 +1918,8 @@
     }
   }
 
-  .border-red-600 {
-    border-color: var(--color-red-600);
-  }
-
   .border-red-900 {
     border-color: var(--color-red-900);
-  }
-
-  .border-red-950 {
-    border-color: var(--color-red-950);
   }
 
   .border-transparent {
@@ -2033,10 +2029,6 @@
 
   .bg-\[\#E93D3D\] {
     background-color: #e93d3d;
-  }
-
-  .bg-\[\#ED1C24\] {
-    background-color: #ed1c24;
   }
 
   .bg-\[\#FB2C360D\] {
@@ -2268,10 +2260,6 @@
 
   .bg-\[radial-gradient\(circle\,rgba\(233\,61\,61\,0\.6\)\,transparent_60\%\)\] {
     background-image: radial-gradient(circle, #e93d3d99, #0000 60%);
-  }
-
-  .bg-\[url\(\'\/images\/explore\.png\'\)\] {
-    background-image: url("/images/explore.png");
   }
 
   .bg-\[url\(\'\/images\/frame0001\.png\'\)\] {
@@ -4116,12 +4104,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:px-6 {
-      padding-inline: calc(var(--spacing) * 6);
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:px-36 {
       padding-inline: calc(var(--spacing) * 36);
     }
@@ -4429,6 +4411,14 @@
   }
 
   @media (min-width: 48rem) {
+    :where(.md\:space-y-0 > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+
+  @media (min-width: 48rem) {
     :where(.md\:space-y-12 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
@@ -4529,6 +4519,12 @@
   @media (min-width: 48rem) {
     .md\:text-left {
       text-align: left;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:text-start {
+      text-align: start;
     }
   }
 

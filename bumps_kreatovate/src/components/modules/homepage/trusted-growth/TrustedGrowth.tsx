@@ -37,41 +37,41 @@ const TrustedGrowth = () => {
     return () => ctx.revert();
   }, []);
 
-  // const booksData = [
-  //   {
-  //     id: 1,
-  //     title: "4TH INDUSTRIAL REVOLUTION",
-  //     description:
-  //       "This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...",
-  //     image: "/images/books/book1.png",
-  //     bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
-  //     price: "$2",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "5TH INDUSTRIAL REVOLUTION",
-  //     description:
-  //       "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent.",
-  //     image: "/images/books/book2.png",
-  //     bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "CASH FLOW LEGACY",
-  //     description:
-  //       "This book guides entrepreneurs, investors and families to build financial systems that outlast them – not just for profit today...",
-  //     image: "/images/books/book3.png",
-  //     bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "OWN THE GRID",
-  //     description:
-  //       "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...",
-  //     image: "/images/books/book4.png",
-  //     bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
-  //   },
-  // ];
+  const booksData = [
+    {
+      id: 1,
+      title: "4TH INDUSTRIAL REVOLUTION",
+      description:
+        "This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...",
+      image: "/images/books/book1.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+      price: "$2",
+    },
+    {
+      id: 2,
+      title: "5TH INDUSTRIAL REVOLUTION",
+      description:
+        "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent.",
+      image: "/images/books/book2.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+    },
+    {
+      id: 3,
+      title: "CASH FLOW LEGACY",
+      description:
+        "This book guides entrepreneurs, investors and families to build financial systems that outlast them – not just for profit today...",
+      image: "/images/books/book3.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+    },
+    {
+      id: 4,
+      title: "OWN THE GRID",
+      description:
+        "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...",
+      image: "/images/books/book4.png",
+      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+    },
+  ];
 
   return (
     <div
@@ -100,7 +100,14 @@ const TrustedGrowth = () => {
 
       <div className="">
        
-        <Image width={1236} height={924} alt='' src='/images/books/img.png' className="mx-auto" />
+        {/* <Image width={1236} height={924} alt='' src='/images/books/img.png' className="mx-auto" /> */}
+      </div>
+      <div className="mb-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ">
+          {booksData.map((book) => (
+            <TrustCard key={book.id} description={book.description} image={book.image}/>
+          ))}
+        </ul>
       </div>
       <div className="flex items-center justify-center">
         <BumpsaleButton />

@@ -10,7 +10,7 @@ export default function CoreModel() {
       {/* <div className="absolute top-23 right-10 opacity-90 ">
         <ElipseIcon className="w-140 h-140 rounded-full" />
       </div> */}
-      <h1 className="text-5xl font-bold text-center">
+      <h1 className="text-3xl md:text-5xl  font-bold text-center">
         A.D.O.N.I.S. Core Model
       </h1>
 

@@ -17,8 +17,9 @@ const SECTIONS = [
   'about_us',
   'who_we_are',
   'our_services',
-  'our_development',
+  'our_pricing',
   'our_team',
+  'our_developments',
   'testimonial',
 ];
 
@@ -33,8 +34,9 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     { key: 'about_us', label: 'about us' },
     { key: 'who_we_are', label: 'who we are' },
     { key: 'our_services', label: 'our services' },
+    { key: 'our_pricing', label: 'our pricing' },
     { key: 'our_team', label: 'our team' },
-    { key: 'our_development', label: 'our development' },
+    { key: 'our_developments', label: 'our developments' },
     {
       external: true,
       href: 'https://kreatovate-projects.lovable.app/projects',
@@ -63,7 +65,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
      triggers.push(trigger);
    });
 
-   // 🔥 IMPORTANT: force recalculation after images/layout load
+   
    ScrollTrigger.refresh();
 
    return () => {

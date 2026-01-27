@@ -115,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#about_us"
+                  href="/#about_us"
                   className="text-gray-400 hover:text-white"
                 >
                   About Us
@@ -123,15 +123,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_blurbs"
+                  href="/#our_solutions"
                   className="text-gray-400 hover:text-white"
                 >
-                  Our Blurbs
+                  Our Solutions
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#price"
+                  href="/#price"
                   className="text-gray-400 hover:text-white"
                 >
                   Price

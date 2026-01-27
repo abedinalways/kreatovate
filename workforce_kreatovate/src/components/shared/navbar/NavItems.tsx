@@ -11,15 +11,15 @@ type Props = {
 
 const ITEMS = [
   { id: '/', label: 'home', sectionId: '#home' },
-  { id: '#about_us', label: 'about us', sectionId: '#about_us' },
-  { id: '#our_blurbs', label: 'our blurbs', sectionId: '#our_blurbs' },
-  { id: '#price', label: 'price', sectionId: '#price' },
+  { id: '/#about_us', label: 'about us', sectionId: '#about_us' },
+  { id: '/#our_solutions', label: 'our solutions', sectionId: '#our_solutions' },
+  { id: '/#price', label: 'price', sectionId: '#price' },
   { id: 'meet-the-os', label: 'meet the os', sectionId: '#meet-the-os' },
-  // { id: '#contact_us', label: 'contact us', sectionId: '#contact_us' },
+ 
 ] as const;
 
 const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
-  const [active, setActive] = useState('/');
+  const [active, setActive] = useState('#home');
   const isClickingRef = useRef(false);
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const gsapRef = useRef<any>(null);
@@ -30,7 +30,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
       (acc, item) => {
         // Skip items that don't have valid selectors
         if (item.sectionId) {
-          acc[item.id] = document.querySelector(
+          acc[item.sectionId] = document.querySelector(
             item.sectionId,
           ) as HTMLElement | null;
         }
@@ -39,7 +39,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
       {} as Record<string, HTMLElement | null>,
     );
 
-    setActive(window.location.hash || '/');
+    setActive(window.location.hash || '#home');
 
     (async () => {
       const [{ default: gsap }, { default: ScrollTrigger }] = await Promise.all(
@@ -48,27 +48,29 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
       gsap.registerPlugin(ScrollTrigger);
       gsapRef.current = gsap;
 
-      ITEMS.forEach(({ id, sectionId }) => {
-        const section = sectionsRef.current[id];
+      ITEMS.forEach(({ sectionId }) => {
+        const section = sectionsRef.current[sectionId];
         if (!section) return;
 
-        const st = (ScrollTrigger as any).create({
+        const st = ScrollTrigger.create({
           trigger: section,
           start: 'top center',
           end: 'bottom center',
           onEnter: () => {
             if (!isClickingRef.current) {
-              setActive(id);
+              setActive(sectionId);
             }
           },
           onEnterBack: () => {
             if (!isClickingRef.current) {
-              setActive(id);
+              setActive(sectionId);
             }
           },
         });
+
         triggersRef.current.push(st);
       });
+
     })();
 
     return () => {
@@ -76,54 +78,53 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     };
   }, []);
 
-  const handleNavClick = (e: any, id: string) => {
-    // Immediately set active state
-    setActive(id);
+ const handleNavClick = (e: any, sectionId: string) => {
+   setActive(sectionId);
+   isClickingRef.current = true;
 
-    // Disable ScrollTrigger updates during smooth scroll
-    isClickingRef.current = true;
+   smoothScrollTo(e, sectionId);
 
-    smoothScrollTo(e, id);
+   setTimeout(() => {
+     isClickingRef.current = false;
+   }, 1000);
+ };
 
-    // Re-enable ScrollTrigger after scroll completes
-    setTimeout(() => {
-      isClickingRef.current = false;
-    }, 1000); // Adjust timing based on your smooth scroll duration
-  };
 
-  if (variant === 'mobile') {
-    return (
-      <div>
-        <ul className="flex flex-col gap-1 capitalize">
-          {ITEMS.map(item => {
-            const isActive = active === item.id;
-            return (
-              <li key={item.id}>
-                <Link
-                  href={item.id}
-                  onClick={e => handleNavClick(e, item.id)}
-                  className={[
-                    'block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap cursor-pointer',
-                    isActive
-                      ? 'navbar-background border-red-900 font-semibold'
-                      : 'hover:bg-[#ED1C24]/60',
-                  ].join(' ')}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+ if (variant === 'mobile') {
+   return (
+     <div>
+       <ul className="flex flex-col gap-1 capitalize">
+         {ITEMS.map(item => {
+           const isActive = active === item.sectionId;
+
+           return (
+             <li key={item.id}>
+               <Link
+                 href={item.id}
+                 onClick={e => handleNavClick(e, item.sectionId)}
+                 className={[
+                   'block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap cursor-pointer',
+                   isActive
+                     ? 'navbar-background border-red-900 font-semibold'
+                     : 'hover:bg-[#ED1C24]/60',
+                 ].join(' ')}
+               >
+                 {item.label}
+               </Link>
+             </li>
+           );
+         })}
+       </ul>
+     </div>
+   );
+ }
+
 
   return (
     <div>
       <ul className="flex items-center gap-7 lg:gap-3 capitalize nav-bg p-1 rounded-full">
         {ITEMS.map(item => {
-          const isActive = active === item.id;
+          const isActive = active === item.sectionId;
           return (
             <li
               key={item.id}
@@ -136,7 +137,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
             >
               <Link
                 href={item.id}
-                onClick={e => handleNavClick(e, item.id)}
+                onClick={e => handleNavClick(e, item.sectionId)}
                 className="whitespace-nowrap py-2"
               >
                 {item.label}

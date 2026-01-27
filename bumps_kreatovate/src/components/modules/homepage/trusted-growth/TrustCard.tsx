@@ -2,14 +2,14 @@
 import Image from "next/image";
 
 interface TGProps {
-  title: string;
+  // title: string;
   description: string;
   image: string;
   bumpsaleId?: string;
   price?: string | number;
 }
 
-const TrustCard = ({ title, description, image }: TGProps) => {
+const TrustCard = ({ description, image }: TGProps) => {
   return (
     <div className="relative w-full h-full rounded-xl p-px bg-linear-to-r from-[#E93D3D] to-[#4E30FE]">
       <div className="relative bg-black rounded-xl p-8 flex flex-col gap-4 items-center h-full overflow-hidden">
@@ -31,16 +31,16 @@ const TrustCard = ({ title, description, image }: TGProps) => {
         <div className="relative z-10 flex flex-col items-center gap-4 w-full grow">
           <Image
             src={image}
-            alt={title}
-            width={222}
-            height={186}
-            className="w-full max-w-[222px] object-contain"
+            alt=''
+            width={612}
+            height={512}
+            className="w-full max-w-[331px] object-contain"
           />
 
           <div className="flex flex-col items-center md:items-start gap-3 w-full grow">
-            <h1 className="font-jakarta font-semibold text-sm text-center md:text-left">
+            {/* <h1 className="font-jakarta font-semibold text-sm text-center md:text-left">
               {title}
-            </h1>
+            </h1> */}
 
             <p className="font-roboto text-sm font-normal text-ring text-center md:text-left">
               {description}

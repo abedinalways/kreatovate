@@ -35,7 +35,7 @@ export default function GetStarted() {
     <div
       ref={sectionRef}
       className="pb-24 font-jakarta mx-2 md:mx-0"
-      id="dashboard"
+      // id="dashboard"
     >
       <div className=" custom-container ">
         <div className="btnOne-bg-gradient rounded-[20px] p-px custom-container">

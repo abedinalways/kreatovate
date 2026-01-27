@@ -105,7 +105,7 @@ export default function StatCards() {
   return (
     <div className="space-y-6 mt-40 font-jakarta">
       {/* Header Section */}
-      <div className="flex justify-between items-start">
+      <div className="md:flex  justify-between items-start space-y-4 md:space-y-0 ">
         <div>
           <h2 className="text-4xl md:text-[48px] font-bold text-white text-gradient">
             Launchpad Dashboard
