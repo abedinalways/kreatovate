@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 import FooterLogo from "../logo/FooterLogo";
+import Logo from "../logo/Logo";
 
 const XIcon = () => (
   <svg
@@ -35,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <FooterLogo />
+            <Logo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
               Our AI-Driven Marketing Platform gives you an affordable
@@ -114,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#about_us"
+                  href="/#about_us"
                   className="text-gray-400 hover:text-white"
                 >
                   About Us
@@ -122,7 +123,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_solutions"
+                  href="/#our_solutions"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
@@ -130,7 +131,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#who_we_are"
+                  href="/#who_we_are"
                   className="text-gray-400 hover:text-white"
                 >
                   Who We Are
@@ -138,7 +139,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_services"
+                  href="/#our_services"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Services
@@ -146,7 +147,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_pricing"
+                  href="/#our_pricing"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Pricing
@@ -154,7 +155,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_team"
+                  href="/#our_team"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Team
@@ -162,26 +163,27 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_developments"
+                  href="/#our_developments"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Developments
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="#testimonial"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Testimonial
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="https://projects.kreatovate.com/projects"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#testimonial"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Testimonial
                 </Link>
               </li>
             </ul>

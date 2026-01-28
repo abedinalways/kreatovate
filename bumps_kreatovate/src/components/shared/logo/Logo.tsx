@@ -6,9 +6,10 @@ const Logo = () => {
     <Link href="/">
       <div className="relative ">
         <Image
-          src="/images/logowhitetransparent88.png"
+          src="/images/logo001.png"
           alt="logo"
-          fill
+          width={158} 
+          height={60}
           className="object-contain"
         />
       </div>

@@ -53,7 +53,7 @@ const Navbar = () => {
 
   const handleBtnClick = () => {
     const e = new Event("click");
-    smoothScrollTo(e, "/contact_us");
+    smoothScrollTo(e, "/appointment");
   };
 
   return (
@@ -71,7 +71,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <ButtonAll
             btnText="Book Consultation Now"
-            href="/contact-us"
+            href="/appointment"
             className="md:text-sm py-5"
           />
         </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <ButtonAll
                   btnText="Book Consultation Now"
                   className="w-fit text-sm font-normal "
-                 
+                  href="/appointment"
                   onClick={handleBtnClick}
                 />
               </SheetHeader>

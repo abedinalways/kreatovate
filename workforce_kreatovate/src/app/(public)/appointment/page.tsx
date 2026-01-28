@@ -5,7 +5,7 @@ import Support from "@/components/modules/support/Support";
 import DynamicBanner from "@/components/shared/banner/DynamicBanner";
 import React from "react";
 
-const ContactUsPage = () => {
+const AppointmentPage = () => {
   return (
     <div className="overflow-hidden">
       <DynamicBanner
@@ -19,4 +19,4 @@ const ContactUsPage = () => {
   );
 };
 
-export default ContactUsPage;
+export default AppointmentPage;

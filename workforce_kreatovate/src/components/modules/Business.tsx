@@ -4,6 +4,7 @@ import { BusinessItem } from "../../../types";
 import BusinessCard from "./BusinessCard";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import HeadingButton from "../shared/HeadingButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +85,7 @@ const Business = () => {
   ];
 
   return (
-    <div id="price" ref={rootRef} className="py-12 bg-[#0F1016]">
+    <div id="pricing" ref={rootRef} className="py-12 bg-[#0F1016]">
       <div className="custom-container flex flex-col px-4 gap-6 lg:gap-10">
         <div className="flex flex-col items-center gap-1 md:gap-4">
           {/* <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold">
@@ -94,6 +95,7 @@ const Business = () => {
               Monthly Pricing
             </span>
           </h1> */}
+          <HeadingButton btnText="Pricing" className="w-33 py-0" />
           <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold max-w-xl text-center">
             Pricing Scales by Authority, Not Headcount
           </h1>
@@ -112,7 +114,7 @@ const Business = () => {
 
         {/* GRID 1 */}
         <div className="business-grid grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8">
-          {businessData?.map((data) => (
+          {businessData?.map(data => (
             <div key={data.id} className="business-card">
               <BusinessCard data={data} />
             </div>
@@ -121,7 +123,7 @@ const Business = () => {
 
         {/* GRID 2 */}
         <div className="business-grid grid grid-cols-1 md:grid-cols-2 gap-8">
-          {businessSecondData?.map((data) => (
+          {businessSecondData?.map(data => (
             <div key={data.id} className="business-card">
               <BusinessCard data={data} />
             </div>

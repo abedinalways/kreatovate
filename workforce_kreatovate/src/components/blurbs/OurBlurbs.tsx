@@ -81,7 +81,7 @@ export const OurBlurbs = () => {
           Meet Your <span className="text-gradient">New Workforce</span>
         </h1> */}
         <div className="flex flex-col items-center gap-4 mb-12">
-          <h1 className="ourblurbs-heading text-3xl md:text-5xl font-bold text-center text-white font-jakarta">
+          <h1 className=" text-3xl md:text-5xl font-bold text-center text-white font-jakarta">
             Workforce Intelligence
           </h1>
 

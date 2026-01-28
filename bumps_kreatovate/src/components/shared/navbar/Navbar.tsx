@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import Logo from '../logo/Logo';
+
 import NavItems from './NavItems';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
@@ -17,6 +17,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useState } from 'react';
 import Link from 'next/link';
+import Logo from '../logo/Logo';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -26,7 +27,9 @@ const Navbar = () => {
   return (
     <nav className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b bg-[rgba(0,0,0,0.40)] border-white/30 backdrop-blur-xs font-[roboto]">
       <div className="custom-container flex flex-row items-center justify-between">
-        <Logo />
+        
+          <Logo />
+       
 
         <div className="hidden lg:block">
           <NavItems />

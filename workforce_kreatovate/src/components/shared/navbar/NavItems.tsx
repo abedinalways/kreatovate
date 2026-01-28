@@ -13,7 +13,7 @@ const ITEMS = [
   { id: '/', label: 'home', sectionId: '#home' },
   { id: '/#about_us', label: 'about us', sectionId: '#about_us' },
   { id: '/#our_solutions', label: 'our solutions', sectionId: '#our_solutions' },
-  { id: '/#price', label: 'price', sectionId: '#price' },
+  { id: '/#pricing', label: 'pricing', sectionId: '#pricing' },
   { id: 'meet-the-os', label: 'meet the os', sectionId: '#meet-the-os' },
  
 ] as const;

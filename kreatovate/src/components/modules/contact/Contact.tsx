@@ -67,7 +67,7 @@ const Contact = () => {
         src="/images/contact-Us.png"
         alt="contact background"
         fill
-        className="w-screen h-[609px] object-fill"
+        className="w-screen h-[609px] object-fill "
         priority
       />
 

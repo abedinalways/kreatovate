@@ -1,5 +1,5 @@
-import Contact from "@/components/modules/contact/Contact";
 
+import Contact from "@/components/modules/contact_us/Contact";
 import TeamAll from "@/components/modules/team/TeamAll";
 
 import DynamicBanner from "@/components/shared/banner/DynamicBanner";
@@ -7,14 +7,14 @@ import React from "react";
 
 const TeamPage = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden" id="our_team">
       <DynamicBanner
         imageUrl="/images/service_banner.png"
         title="The People Behind"
         titleGradient="Our Success"
       />
-      <TeamAll/>
-      <Contact />
+      <TeamAll />
+      <Contact/>
     </div>
   );
 };

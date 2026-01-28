@@ -185,7 +185,7 @@ export default function MessageForm({
               <Input
                 type={field.type}
                 placeholder={field.placeholder}
-                className="bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-500 backdrop-blur-md"
+                className="bg-white/10 border h- border-white/20 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-500 backdrop-blur-md"
                 name={formField.name}
                 onBlur={formField.onBlur}
                 onChange={formField.onChange}
@@ -225,7 +225,7 @@ export default function MessageForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-4 bg-gradient-to-r from-pink-500 to-indigo-500 hover:opacity-90 text-white font-medium py-3 rounded-lg flex items-center justify-center transition-all duration-300 w-40"
+            className="mt-4 bg-gradient-to-r from-pink-500 to-indigo-500 hover:opacity-90 text-white font-medium py-3 rounded-lg flex items-center justify-center transition-all duration-300 md:w-40 w-full"
           >
             {isSubmitting ? "Submitting..." : buttonText}
             {showButtonIcon && !isSubmitting && (
