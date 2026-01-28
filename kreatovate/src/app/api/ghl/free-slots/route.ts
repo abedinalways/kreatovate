@@ -1,29 +1,105 @@
+// // LTS version
 // import { NextResponse } from "next/server";
 
 // /**
 //  * GHL Free Slots API
-//  * Endpoint:
-//  *   GET /calendars/{calendarId}/free-slots
 //  *
-//  * Required:
-//  *   - startDate (number, milliseconds)
-//  *   - endDate (number, milliseconds)
-//  *   - timezone (string)
+//  * We expect frontend to send:
+//  * {
+//  *   date: "YYYY-MM-DD",
+//  *   timezone: "America/New_York"
+//  * }
 //  *
-//  * NOT allowed:
-//  *   - locationId
-//  *
-//  * Version:
-//  *   - 2021-04-15
+//  * IMPORTANT:
+//  * - We MUST NOT use Date.toISOString()
+//  * - We MUST NOT introduce UTC day shifting
+//  * - We treat the date as a pure calendar day
 //  */
+
+// type NormalizedSlot = {
+//     startTime: string;
+//     endTime: string;
+// };
+
+// // ---------------- HELPERS ---------------- //
+
+// /**
+//  * Build start/end timestamps (milliseconds)
+//  * for a calendar day WITHOUT timezone shifting.
+//  */
+// function buildDayRange(dateStr: string) {
+//     const [y, m, d] = dateStr.split("-").map(Number);
+
+//     const start = new Date(y, m - 1, d, 0, 0, 0, 0).getTime();
+//     const end = new Date(y, m - 1, d, 23, 59, 59, 999).getTime();
+
+//     return { start, end };
+// }
+
+// /**
+//  * Normalize all possible GHL free-slot shapes into:
+//  * {
+//  *   "YYYY-MM-DD": [{ startTime, endTime }]
+//  * }
+//  *
+//  * GHL may return:
+//  * - string[] (start times only)
+//  * - { slots: string[] }
+//  * - meta keys like traceId
+//  */
+// function normalizeSlots(
+//     raw: any,
+//     slotDurationMinutes = 30
+// ): Record<string, NormalizedSlot[]> {
+//     const out: Record<string, NormalizedSlot[]> = {};
+
+//     if (!raw || typeof raw !== "object") return out;
+
+//     for (const [key, value] of Object.entries(raw)) {
+//         // Only accept YYYY-MM-DD keys
+//         if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) continue;
+
+//         const push = (startISO: string) => {
+//             const start = new Date(startISO);
+//             if (Number.isNaN(start.getTime())) return;
+
+//             const end = new Date(start);
+//             end.setMinutes(end.getMinutes() + slotDurationMinutes);
+
+//             out[key] = out[key] || [];
+//             out[key].push({
+//                 startTime: startISO,
+//                 endTime: end.toISOString(),
+//             });
+//         };
+
+//         // Case 1: array directly
+//         if (Array.isArray(value)) {
+//             value.forEach((v) => typeof v === "string" && push(v));
+//             continue;
+//         }
+
+//         // Case 2: { slots: [...] }
+//         if (value && typeof value === "object" && Array.isArray((value as any).slots)) {
+//             (value as any).slots.forEach((v: any) => {
+//                 if (typeof v === "string") push(v);
+//             });
+//         }
+//     }
+
+//     return out;
+// }
+
+// // ---------------- ROUTE ---------------- //
 
 // export async function POST(req: Request) {
 //     try {
-//         const { dateISO, timezone } = await req.json();
+//         const body = await req.json();
+//         const { date, timezone } = body;
 
-//         if (!dateISO) {
+//         if (!date || typeof date !== "string") {
 //             return NextResponse.json(
-//                 { error: true, message: "dateISO is required" },
+//                 { error: true, message: "date (YYYY-MM-DD) is required" },
 //                 { status: 400 }
 //             );
 //         }
@@ -42,33 +118,13 @@
 
 //         const tz = timezone || "America/New_York";
 
-//         // Build start/end of selected day in milliseconds
-//         const selectedDate = new Date(dateISO);
-
-//         const startDate = new Date(
-//             selectedDate.getFullYear(),
-//             selectedDate.getMonth(),
-//             selectedDate.getDate(),
-//             0,
-//             0,
-//             0,
-//             0
-//         ).getTime();
-
-//         const endDate = new Date(
-//             selectedDate.getFullYear(),
-//             selectedDate.getMonth(),
-//             selectedDate.getDate(),
-//             23,
-//             59,
-//             59,
-//             999
-//         ).getTime();
+//         // Build range WITHOUT UTC shifting
+//         const { start, end } = buildDayRange(date);
 
 //         const url =
 //             `${GHL_BASE_URL}/calendars/${GHL_CALENDAR_ID}/free-slots` +
-//             `?startDate=${startDate}` +
-//             `&endDate=${endDate}` +
+//             `?startDate=${start}` +
+//             `&endDate=${end}` +
 //             `&timezone=${encodeURIComponent(tz)}`;
 
 //         const res = await fetch(url, {
@@ -80,134 +136,131 @@
 //             },
 //         });
 
-//         const data = await res.json();
+//         const raw = await res.json();
 
-//         // 🔎 CRITICAL LOG — DO NOT REMOVE
-//         console.log(
-//             "GHL FREE SLOTS RESPONSE:",
-//             JSON.stringify(data, null, 2)
-//         );
+//         console.log("GHL FREE SLOTS RAW:", JSON.stringify(raw, null, 2));
 
 //         if (!res.ok) {
 //             return NextResponse.json(
 //                 {
 //                     error: true,
-//                     message:
-//                         data?.message ||
-//                         data?.msg ||
-//                         "Failed to fetch free slots",
+//                     message: raw?.message || raw?.msg || "Failed to fetch free slots",
 //                 },
 //                 { status: res.status }
 //             );
 //         }
 
+//         const normalized = normalizeSlots(raw, 30);
+
+//         console.log(
+//             "GHL FREE SLOTS NORMALIZED:",
+//             JSON.stringify(normalized, null, 2)
+//         );
+
 //         return NextResponse.json({
 //             success: true,
-//             slots: data || {},
+//             slots: normalized,
 //         });
 //     } catch (error: any) {
 //         console.error("FREE SLOTS API ERROR:", error);
 //         return NextResponse.json(
-//             {
-//                 error: true,
-//                 message: error.message || "Internal server error",
-//             },
+//             { error: true, message: error.message || "Internal server error" },
 //             { status: 500 }
 //         );
 //     }
 // }
 
 
-//// version 2 bellow is under test
+// version LTS 2 (production)
 import { NextResponse } from "next/server";
 
 /**
- * Normalizes GHL free-slots responses into:
+ * GHL Free Slots API (FINAL, TIMEZONE-SAFE)
+ *
+ * Frontend sends:
  * {
- *   "YYYY-MM-DD": [{ startTime: string, endTime: string }]
+ *   startDate: number, // ms UTC – already timezone-correct
+ *   endDate: number,   // ms UTC – already timezone-correct
+ *   timezone: "America/Chicago"
  * }
  *
- * GHL may return shapes like:
- * 1) { "2026-01-28": ["ISO"] }
- * 2) { "2026-01-28": { slots: ["ISO"] } }
- * 3) { "2026-01-28": { slots: [{ startTime, endTime }, ...] } }
- * 4) plus meta keys like traceId
+ * IMPORTANT:
+ * - Backend MUST NOT compute dates
+ * - Backend MUST NOT use new Date(y,m,d)
+ * - Backend ONLY forwards timestamps to GHL
  */
 
-type NormalSlot = { startTime: string; endTime: string };
+type NormalizedSlot = {
+    startTime: string;
+    endTime: string;
+};
 
-function addMinutes(iso: string, minutes: number) {
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) return "";
-    d.setMinutes(d.getMinutes() + minutes);
-    // Keep offset formatting by returning ISO Z is fine for create?
-    // For GHL create appointment, ISO with offset or Z typically works.
-    // We'll return Z-form; if needed you can keep original offset elsewhere.
-    return d.toISOString();
-}
+/* ---------------- NORMALIZER ---------------- */
 
-function normalizeFreeSlots(
+function normalizeSlots(
     raw: any,
-    defaultDurationMinutes = 30
-): Record<string, NormalSlot[]> {
-    const out: Record<string, NormalSlot[]> = {};
+    slotDurationMinutes = 30
+): Record<string, NormalizedSlot[]> {
+    const out: Record<string, NormalizedSlot[]> = {};
+
     if (!raw || typeof raw !== "object") return out;
 
     for (const [key, value] of Object.entries(raw)) {
-        // Skip meta keys
+        // Only accept YYYY-MM-DD keys
         if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) continue;
 
-        const pushSlot = (startTime: string, endTime?: string) => {
-            if (!startTime || typeof startTime !== "string") return;
-            const end =
-                (endTime && typeof endTime === "string" && endTime) ||
-                addMinutes(startTime, defaultDurationMinutes);
-            if (!end) return;
+        const push = (startISO: string) => {
+            const start = new Date(startISO);
+            if (Number.isNaN(start.getTime())) return;
+
+            const end = new Date(start);
+            end.setMinutes(end.getMinutes() + slotDurationMinutes);
 
             out[key] = out[key] || [];
-            out[key].push({ startTime, endTime: end });
+            out[key].push({
+                startTime: startISO,
+                endTime: end.toISOString(),
+            });
         };
 
-        // Case A: array directly
+        // Case 1: array directly
         if (Array.isArray(value)) {
-            for (const s of value) {
-                if (typeof s === "string") pushSlot(s);
-                else if (s && typeof s === "object") {
-                    const st = (s as any).startTime || (s as any).start;
-                    const et = (s as any).endTime || (s as any).end;
-                    if (typeof st === "string") pushSlot(st, typeof et === "string" ? et : undefined);
-                }
-            }
+            value.forEach((v) => typeof v === "string" && push(v));
             continue;
         }
 
-        // Case B: object with slots array
-        if (value && typeof value === "object") {
-            const slots = (value as any).slots;
-
-            if (Array.isArray(slots)) {
-                for (const s of slots) {
-                    if (typeof s === "string") pushSlot(s);
-                    else if (s && typeof s === "object") {
-                        const st = (s as any).startTime || (s as any).start;
-                        const et = (s as any).endTime || (s as any).end;
-                        if (typeof st === "string") pushSlot(st, typeof et === "string" ? et : undefined);
-                    }
-                }
-            }
+        // Case 2: { slots: [...] }
+        if (
+            value &&
+            typeof value === "object" &&
+            Array.isArray((value as any).slots)
+        ) {
+            (value as any).slots.forEach((v: any) => {
+                if (typeof v === "string") push(v);
+            });
         }
     }
 
     return out;
 }
 
+/* ---------------- ROUTE ---------------- */
+
 export async function POST(req: Request) {
     try {
-        const { dateISO, timezone } = await req.json();
+        const body = await req.json();
+        const { startDate, endDate, timezone } = body;
 
-        if (!dateISO) {
+        // Strict validation
+        if (
+            typeof startDate !== "number" ||
+            typeof endDate !== "number"
+        ) {
             return NextResponse.json(
-                { error: true, message: "dateISO is required" },
+                {
+                    error: true,
+                    message: "startDate and endDate (milliseconds) are required",
+                },
                 { status: 400 }
             );
         }
@@ -224,29 +277,7 @@ export async function POST(req: Request) {
             );
         }
 
-        const tz = timezone || "America/New_York";
-
-        const selectedDate = new Date(dateISO);
-
-        const startDate = new Date(
-            selectedDate.getFullYear(),
-            selectedDate.getMonth(),
-            selectedDate.getDate(),
-            0,
-            0,
-            0,
-            0
-        ).getTime();
-
-        const endDate = new Date(
-            selectedDate.getFullYear(),
-            selectedDate.getMonth(),
-            selectedDate.getDate(),
-            23,
-            59,
-            59,
-            999
-        ).getTime();
+        const tz = timezone || "America/Chicago";
 
         const url =
             `${GHL_BASE_URL}/calendars/${GHL_CALENDAR_ID}/free-slots` +
@@ -271,16 +302,21 @@ export async function POST(req: Request) {
             return NextResponse.json(
                 {
                     error: true,
-                    message: raw?.message || raw?.msg || "Failed to fetch free slots",
+                    message:
+                        raw?.message ||
+                        raw?.msg ||
+                        "Failed to fetch free slots",
                 },
                 { status: res.status }
             );
         }
 
-        // ✅ Normalize to a stable structure for frontend
-        const normalized = normalizeFreeSlots(raw, 30);
+        const normalized = normalizeSlots(raw, 30);
 
-        console.log("GHL FREE SLOTS NORMALIZED:", JSON.stringify(normalized, null, 2));
+        console.log(
+            "GHL FREE SLOTS NORMALIZED:",
+            JSON.stringify(normalized, null, 2)
+        );
 
         return NextResponse.json({
             success: true,
