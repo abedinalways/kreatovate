@@ -1,11 +1,6 @@
 {
   "app": {
-    "[project]/src/app/(public)/contact-us/page": [
-      "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2",
-      "static/media/ce62453a442c7f35-s.p.a9507876.woff2",
-      "static/media/aae5f0be330e13db-s.p.853e26d6.woff2"
-    ],
-    "[project]/src/app/(public)/meet-the-os/page": [
+    "[project]/src/app/(public)/appointment/page": [
       "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2",
       "static/media/ce62453a442c7f35-s.p.a9507876.woff2",
       "static/media/aae5f0be330e13db-s.p.853e26d6.woff2"

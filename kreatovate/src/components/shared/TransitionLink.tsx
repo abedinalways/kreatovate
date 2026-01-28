@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollToPlugin);
 type Props = {
   href: string;
   className?: string;
+  target?: string;
+  rel?: string;
   children: React.ReactNode;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   headerSelector?: string;

@@ -40,6 +40,8 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     {
       external: true,
       href: 'https://kreatovate-projects.lovable.app/projects',
+      target: '_blank',
+      rel: 'noopener noreferrer',
       label: 'our projects',
     },
     { key: 'testimonial', label: 'testimonial' },
@@ -88,6 +90,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
               <li key={item.label} className="px-4 py-2">
                 <TransitionLink
                   href={item.href}
+                  target={item.target}
                   className="text-white whitespace-nowrap"
                 >
                   {item.label}

@@ -131,10 +131,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#price"
+                  href="/#pricing"
                   className="text-gray-400 hover:text-white"
                 >
-                  Price
+                  Pricing
                 </Link>
               </li>
               <li>

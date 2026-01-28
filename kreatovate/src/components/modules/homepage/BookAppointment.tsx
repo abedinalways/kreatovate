@@ -50,7 +50,7 @@ const BookAppointment = () => {
           </p>
 
           <div className="js-book-text">
-            <ButtonTwo link="/contact-us" btnText="Book Now" />
+            <ButtonTwo link="/appointment" btnText="Book Now" />
           </div>
         </div>
       </div>

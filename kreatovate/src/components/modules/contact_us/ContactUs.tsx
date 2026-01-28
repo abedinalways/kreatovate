@@ -142,7 +142,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-[#0F1016]" id="contact_us" ref={sectionRef}>
+    <div className="bg-[#0F1016]"  ref={sectionRef}>
       <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
         {/* LEFT SIDE FORM */}
         <div className="flex flex-col gap-2 items-start" data-animate="image">

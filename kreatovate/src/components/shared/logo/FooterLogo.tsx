@@ -4,11 +4,12 @@ import Link from 'next/link';
 const FooterLogo = () => {
   return (
     <Link href="/">
-      <div className="relative w-[251px] h-[60px]">
+      <div className="relative ">
         <Image
-          src="/images/Footer000.png"
+          src="/images/Footer.png"
           alt="logo"
-          fill
+          width={251}
+          height={60}
           className=""
         />
       </div>

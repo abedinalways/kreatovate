@@ -60,7 +60,7 @@ const Banner = () => {
     <div
       id="home"
       ref={rootRef}
-      className="relative h-180 lg:h-screen w-full overflow-hidden font-jakarta"
+      className="relative h-150 lg:h-screen w-full overflow-hidden font-jakarta"
     >
       {/* Background layer */}
       <div className="absolute w-full h-full z-10">
@@ -89,7 +89,7 @@ const Banner = () => {
       </div>
 
       {/* Content */}
-      <div className="custom-container w-full h-full flex flex-col items-start justify-center gap-4 md:gap-16 z-40 px-2 md:px-6 relative">
+      <div className="custom-container w-full h-full flex flex-col items-start justify-center gap-10 md:gap-16 z-40 px-2 md:px-6 relative">
         <div className="js-hero-seq flex flex-col items-start gap-7 z-40">
           <div className="w-fit">
             <SectionHead title="Top consulting platform" />

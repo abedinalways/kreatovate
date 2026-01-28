@@ -15,8 +15,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import Logo from "../logo/Logo";
 import NavItems from "./NavItems";
-import ButtonOne from "../buttons/ButtonOne";
-import Link from "next/link";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,6 +114,16 @@ const Navbar = () => {
                 <div className="mt-2">
                   {/* Mobile menu */}
                   <NavItems variant="mobile" />
+                  <div className="mt-4">
+                    <button
+                      className="btnOne-bg-gradient  shape-squircle   rounded-[32px] p-[2px]"
+                      onClick={scrollToTarget}
+                    >
+                      <button className="w-[121px] h-[42px] shape-squircle  rounded-[32px] bg-black cursor-pointer ">
+                        <span className="text-gradient">Contact Us</span>
+                      </button>
+                    </button>
+                  </div>
                 </div>
               </SheetHeader>
             </SheetContent>

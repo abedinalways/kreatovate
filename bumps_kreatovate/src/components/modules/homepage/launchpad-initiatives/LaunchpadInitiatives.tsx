@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const LaunchpadInitiatives = () => {
   return (
-    <div className="relative overflow-hidden font-jakarta" id='our_books'>
+    <div className="relative overflow-hidden font-jakarta" id='our_initiatives'>
       <Image
         src="/images/launchpad-initiatives/ellipse.png"
         alt="bg light"

@@ -89,7 +89,7 @@ const Contact = () => {
     <div className="bg-[#0F1016]" id="contact_us">
       <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
         {/* Left side: Form */}
-        <div className="flex flex-col gap-2 items-start about-image">
+        <div className="flex flex-col gap-2 items-start ">
           <p className="text-gradient">[ Book an appointment ]</p>
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
             Ready to Transform <br /> Your{" "}
@@ -106,7 +106,7 @@ const Contact = () => {
         </div>
 
         {/* Right side: Calendar */}
-        <div className="text-white about-text md:pl-10 mt-10 md:mt-0">
+        <div className="text-white md:pl-10 mt-10 md:mt-0">
           <p className="text-gray-200 text-end mb-4">
             Get a free consultation and discover how we can <br />
             optimize your operations

@@ -116,7 +116,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#about_us"
+                  href="/#about_us"
                   className="text-gray-400 hover:text-white"
                 >
                   About Us
@@ -124,7 +124,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_solutions"
+                  href="/#our_solutions"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
@@ -132,7 +132,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_model"
+                  href="/#our_model"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Model
@@ -140,15 +140,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_books"
+                  href="/#our_initiatives"
                   className="text-gray-400 hover:text-white"
                 >
-                  Our Books
+                  Our Initiatives
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#process_overview"
+                  href="/#process_overview"
                   className="text-gray-400 hover:text-white"
                 >
                   Process Overview
@@ -156,7 +156,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#our_vision"
+                  href="/#our_vision"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Vision
