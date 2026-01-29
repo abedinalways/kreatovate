@@ -2,54 +2,57 @@
 
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import Link from 'next/link';
-import { MouseEvent, useCallback, useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { MouseEvent, useCallback, useEffect, useState } from 'react';
+
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 type Props = {
   variant?: 'desktop' | 'mobile';
   headerSelector?: string;
 };
 
+type NavItem = {
+  label: string;
+  href: string;
+  hash?: string;
+};
 
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+const ITEMS: NavItem[] = [
+  { label: 'Home', href: '/', hash: '#home' },
+  { label: 'About Us', href: '/', hash: '#about_us' },
+  { label: 'Our Solutions', href: '/', hash: '#our_solutions' },
+  { label: 'Our Model', href: '/', hash: '#our_model' },
+  { label: 'Dashboard', href: '/dashboard' },
+  { label: 'Our Initiatives', href: '/', hash: '#our_initiatives' },
+  { label: 'Process Overview', href: '/', hash: '#process_overview' },
+  { label: 'Our Vision', href: '/', hash: '#our_vision' },
+  { label: 'Pricing Plan', href: '/price' },
+];
 
 const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
-  const [active, setActive] = useState('#home');
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
+  const [active, setActive] = useState<string>('#home');
 
-  const items = [
-    { id: '/#home', label: 'Home' },
-    { id: '/#about_us', label: 'About Us' },
-    { id: '/#our_solutions', label: 'Our Solutions' },
-    // { id: '#our_services', label: 'Our Services' },
-    { id: '/#our_model', label: 'Our Model' },
-    { id: '/dashboard', label: 'Dashboard' },
-    { id: '/#our_initiatives', label: 'Our Initiatives' },
-    { id: '/#process_overview', label: 'Process Overview' },
-    { id: '/#our_vision', label: 'Our Vision' },
-    { id: '/price', label: 'Pricing Plan' },
-    // { id: '#testimonial', label: 'Testimonial' },
-    // { id: '#our_team', label: 'Our Team' },
-  ];
-
-  //useCallback ensures scrollToHash reference is stable, fixing ESLint warning
+  // 🔹 Smooth scroll helper
   const scrollToHash = useCallback(
     (hash: string) => {
-      if (!hash || !hash.startsWith('#')) return;
+      if (!hash) return;
 
       const target = document.querySelector(hash) as HTMLElement | null;
       if (!target) return;
 
+      const header = document.querySelector(
+        headerSelector,
+      ) as HTMLElement | null;
+
+      const offsetY = (header?.offsetHeight ?? 0) + 8;
+
       setActive(hash);
       history.replaceState(null, '', hash);
-
-      const header = document.querySelector(
-        headerSelector
-      ) as HTMLElement | null;
-      const offsetY = (header?.offsetHeight ?? 0) + 8;
 
       gsap.killTweensOf(window);
       gsap.to(window, {
@@ -58,9 +61,27 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
         scrollTo: { y: target, offsetY, autoKill: true },
       });
     },
-    [headerSelector]
+    [headerSelector],
   );
 
+  // 🔹 Handle click
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, item: NavItem) => {
+    if (!item.hash) {
+      setActive(item.href);
+      return;
+    }
+
+    e.preventDefault();
+
+    if (pathname !== '/') {
+      router.push(`/${item.hash}`);
+      return;
+    }
+
+    scrollToHash(item.hash);
+  };
+
+  // 🔹 Set active on route change
   useEffect(() => {
     if (pathname === '/') {
       setActive(window.location.hash || '#home');
@@ -69,54 +90,33 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     }
   }, [pathname]);
 
-
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    if (!id.startsWith('#')) {
-      setActive(id);
-      return;
-    }
-
-    if (pathname !== '/') {
-      e.preventDefault();
-      router.push(`/${id}`);
-      return;
-    }
-
-    e.preventDefault();
-    scrollToHash(id);
-  };
-  
-
+  // 🔹 ScrollTrigger sync
   useEffect(() => {
     if (pathname !== '/') return;
 
-    items.forEach(item => {
-      if (!item.id.startsWith('#')) return;
+    ITEMS.forEach(item => {
+      if (!item.hash) return;
 
-      const section = document.querySelector(item.id);
+      const section = document.querySelector(item.hash);
       if (!section) return;
 
       ScrollTrigger.create({
         trigger: section,
         start: 'top center',
         end: 'bottom center',
-        onEnter: () => setActive(item.id),
-        onEnterBack: () => setActive(item.id),
+        onEnter: () => setActive(item.hash!),
+        onEnterBack: () => setActive(item.hash!),
       });
     });
 
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, [pathname]);
 
-
+  // 🔹 Apply hash on refresh / direct link
   useEffect(() => {
     const applyFromHash = () => {
       const hash = window.location.hash;
-      if (hash) {
-        scrollToHash(hash);
-      } else {
-        setActive('#home');
-      }
+      if (hash) scrollToHash(hash);
     };
 
     applyFromHash();
@@ -124,59 +124,62 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
     return () => window.removeEventListener('hashchange', applyFromHash);
   }, [scrollToHash]);
 
-  // ✅ Mobile navigation
+  // 🔹 Mobile UI
   if (variant === 'mobile') {
     return (
-      <div>
-        <ul className="flex flex-col gap-1 capitalize">
-          {items.map(item => {
-            const isActive = active === item.id;
-            return (
-              <li key={item.id}>
-                <Link
-                  href={item.id}
-                  onClick={e => handleNavClick(e, item.id)}
-                  className={[
-                    'block w-full rounded-lg px-4 py-3 transition-colors whitespace-nowrap',
-                    isActive
-                      ? 'bg-[#ED1C24] font-semibold'
-                      : 'hover:bg-[#ED1C24]/40',
-                  ].join(' ')}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <ul className="flex flex-col gap-1 capitalize">
+        {ITEMS.map(item => {
+          const isActive = item.hash
+            ? active === item.hash
+            : active === item.href;
+
+          return (
+            <li key={item.label}>
+              <Link
+                href={item.hash ? `${item.href}${item.hash}` : item.href}
+                onClick={e => handleNavClick(e, item)}
+                className={[
+                  'block w-full rounded-lg px-4 py-3 transition-colors',
+                  isActive
+                    ? 'bg-[#ED1C24] font-semibold'
+                    : 'hover:bg-[#ED1C24]/40',
+                ].join(' ')}
+              >
+                {item.label}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 
-  // ✅ Desktop navigation
+  // 🔹 Desktop UI
   return (
-    <div>
-      <ul className="flex items-center gap-7 lg:gap-3 capitalize bg-white/20 p-1 rounded-full">
-        {items.map(item => (
+    <ul className="flex items-center capitalize bg-white/20 p-1 rounded-full ">
+      {ITEMS.map(item => {
+        const isActive = item.hash
+          ? active === item.hash
+          : active === item.href;
+
+        return (
           <li
-            key={item.id}
-            className={`px-4 md:px-2 md:py-1 rounded-full transition-all duration-200 ${
-              active === item.id
-                ? 'bg-[#ED1C24] font-semibold'
-                : 'hover:bg-[#ED1C24]/40'
+            key={item.label}
+            className={`px-4 py-1 text-[16px] rounded-full transition-all ${
+              isActive ? 'bg-[#ED1C24] font-semibold' : 'hover:bg-[#ED1C24]/40'
             }`}
           >
             <Link
-              href={item.id}
-              onClick={e => handleNavClick(e, item.id)}
-              className="whitespace-nowrap py-1"
+              href={item.hash ? `${item.href}${item.hash}` : item.href}
+              onClick={e => handleNavClick(e, item)}
+              className="whitespace-nowrap"
             >
               {item.label}
             </Link>
           </li>
-        ))}
-      </ul>
-    </div>
+        );
+      })}
+    </ul>
   );
 };
 

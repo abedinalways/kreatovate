@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import TransitionLink from '../TransitionLink';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -23,11 +23,25 @@ const SECTIONS = [
   'testimonial',
 ];
 
+const getInitialActive = (pathname: string) => {
+  if (pathname === '/' || pathname === '') return 'home';
+  if (pathname === '/team') return 'our_team';
+  return '';
+};
+
 const NavItems = ({ variant = 'desktop' }: Props) => {
   const pathname = usePathname();
   const isHome = pathname === '/' || pathname === '';
 
-  const [activeSection, setActiveSection] = useState('home');
+  // Derive the active section from pathname - this is the source of truth
+  const activeFromRoute = useMemo(() => getInitialActive(pathname), [pathname]);
+
+  // Track scroll-based active section (only used on home page)
+  const [scrollActiveSection, setScrollActiveSection] = useState('');
+
+  // Determine which active section to use
+  const activeSection =
+    isHome && scrollActiveSection ? scrollActiveSection : activeFromRoute;
 
   const items = [
     { key: 'home', label: 'home' },
@@ -47,40 +61,51 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     { key: 'testimonial', label: 'testimonial' },
   ];
 
- useEffect(() => {
-   if (!isHome) return;
+  /* ======================================================
+     SCROLLTRIGGER (HOME ONLY)
+  ====================================================== */
+  useEffect(() => {
+    if (!isHome) return;
 
-   const triggers: ScrollTrigger[] = [];
+    const triggers: ScrollTrigger[] = [];
 
-   SECTIONS.forEach(id => {
-     const section = document.getElementById(id);
-     if (!section) return;
+    SECTIONS.forEach(id => {
+      const section = document.getElementById(id);
+      if (!section) return;
 
-     const trigger = ScrollTrigger.create({
-       trigger: section,
-       start: 'top center',
-       end: 'bottom center',
-       onEnter: () => setActiveSection(id),
-       onEnterBack: () => setActiveSection(id),
-     });
+      const trigger = ScrollTrigger.create({
+        trigger: section,
+        start: 'top center',
+        end: () => {
+          if (id === 'testimonial') {
+            const contact = document.getElementById('contact_us');
+            return contact ? contact.offsetTop : 'bottom center';
+          }
+          return 'bottom center';
+        },
+        onEnter: () => setScrollActiveSection(id),
+        onEnterBack: () => setScrollActiveSection(id),
+        onLeave: () => {
+          if (id === 'testimonial') {
+            setScrollActiveSection('');
+          }
+        },
+      });
 
-     triggers.push(trigger);
-   });
+      triggers.push(trigger);
+    });
 
-   
-   ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
 
-   return () => {
-     triggers.forEach(t => t.kill());
-   };
- }, [isHome]);
-
+    return () => {
+      triggers.forEach(t => t.kill());
+    };
+  }, [isHome]);
 
   const isActive = (key?: string) => key === activeSection;
-
   const getHref = (key: string) => (isHome ? `#${key}` : `/#${key}`);
 
-  // ================= DESKTOP =================
+  /* ================= DESKTOP ================= */
   if (variant === 'desktop') {
     return (
       <ul className="flex items-center gap-7 lg:gap-3 capitalize nav-bg p-1 rounded-full">
@@ -102,13 +127,11 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
           const key = item.key;
           if (!key) return null;
 
-          const active = isActive(key);
-
           return (
             <li
               key={key}
               className={`px-4 py-2 rounded-[24px] transition-all ${
-                active
+                isActive(key)
                   ? 'bg-[#ED1C24]/20 border-2 border-red-950 font-semibold'
                   : 'hover:bg-[#ED1C24]/20'
               }`}
@@ -126,7 +149,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     );
   }
 
-  // ================= MOBILE =================
+  /* ================= MOBILE ================= */
   return (
     <ul className="flex flex-col gap-1 capitalize">
       {items.map(item => {
@@ -146,14 +169,14 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
         const key = item.key;
         if (!key) return null;
 
-        const active = isActive(key);
-
         return (
           <li key={key}>
             <TransitionLink
               href={getHref(key)}
               className={`block px-4 py-3 rounded-lg text-white transition-colors ${
-                active ? 'bg-[#ED1C24] font-semibold' : 'hover:bg-[#ED1C24]/40'
+                isActive(key)
+                  ? 'bg-[#ED1C24] font-semibold'
+                  : 'hover:bg-[#ED1C24]/40'
               }`}
             >
               {item.label}
