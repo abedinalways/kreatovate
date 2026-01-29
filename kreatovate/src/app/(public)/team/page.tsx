@@ -7,7 +7,7 @@ import React from "react";
 
 const TeamPage = () => {
   return (
-    <div className="overflow-hidden" id="our_team">
+    <div className="overflow-hidden">
       <DynamicBanner
         imageUrl="/images/service_banner.png"
         title="The People Behind"
