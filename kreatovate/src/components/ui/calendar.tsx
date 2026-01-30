@@ -583,7 +583,7 @@ export function Calendar({
     { code: "UTC", label: "UTC (GMT)" },
     { code: "America/New_York", label: "GMT-05:00 America/New_York (EST)" },
     { code: "America/Chicago", label: "GMT-06:00 America/Chicago (CST)" },
-    { code: "America/Denver", label: "GMT-07:00 America/Denver (MST)" },
+    { code: "Asia/Dhaka", label: "GMT+06:00 Asia/Dhaka (GMT)" },
     { code: "America/Los_Angeles", label: "GMT-08:00 America/Los_Angeles (PST)" },
   ];
 
@@ -597,7 +597,6 @@ export function Calendar({
     onSlotChange?.(null);
 
     try {
-      // ✅ compute timezone-correct ms range client-side
       const { startDate, endDate } = computeDayRangeMsInTimeZone(date, tz);
 
       const res = await fetch("/api/ghl/free-slots", {

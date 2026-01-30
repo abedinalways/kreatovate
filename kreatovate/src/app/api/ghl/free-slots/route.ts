@@ -296,7 +296,7 @@ export async function POST(req: Request) {
 
         const raw = await res.json();
 
-        console.log("GHL FREE SLOTS RAW:", JSON.stringify(raw, null, 2));
+        //console.log("GHL FREE SLOTS RAW:", JSON.stringify(raw, null, 2));
 
         if (!res.ok) {
             return NextResponse.json(
@@ -313,17 +313,17 @@ export async function POST(req: Request) {
 
         const normalized = normalizeSlots(raw, 30);
 
-        console.log(
-            "GHL FREE SLOTS NORMALIZED:",
-            JSON.stringify(normalized, null, 2)
-        );
+        // console.log(
+        //     "GHL FREE SLOTS NORMALIZED:",
+        //     JSON.stringify(normalized, null, 2)
+        // );
 
         return NextResponse.json({
             success: true,
             slots: normalized,
         });
     } catch (error: any) {
-        console.error("FREE SLOTS API ERROR:", error);
+        //console.error("FREE SLOTS API ERROR:", error);
         return NextResponse.json(
             { error: true, message: error.message || "Internal server error" },
             { status: 500 }
