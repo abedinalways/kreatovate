@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 import { GHL_BASE_URL, ghlHeaders, requireEnv } from "@/lib/ghl";
 
 function isISOWithOffset(s: string) {
-  // very tolerant check; GHL expects ISO with offset like +05:30 :contentReference[oaicite:6]{index=6}
-  return typeof s === "string" && /T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|Z)$/.test(s);
+  return typeof s === "string" &&
+    /T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/.test(s);
 }
 
 export async function POST(req: Request) {
