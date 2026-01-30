@@ -19,50 +19,14 @@ interface ConsultationFormData {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ContactUs = () => {
-  const [selectedDates, setSelectedDates] = useState<Date[]>([]);
+type Slot = { startTime: string; endTime: string };
+
+const Contact = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedZone, setSelectedZone] = useState("America/New_York");
-  const [selectedSlot, setSelectedSlot] = useState<{
-    start: string;
-    end: string;
-  } | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
 
-  // Scope GSAP animations to this section only
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  // Convert selected dates + slot to appointment objects
-  const prepareAppointments = (
-    dates: Date[],
-    timeZone: string,
-    slot: { start: string; end: string }
-  ) => {
-    return dates.map((date) => {
-      const [sHour] = slot.start.split(":").map(Number);
-      const [eHour] = slot.end.split(":").map(Number);
-
-      const start = new Date(date);
-      start.setHours(sHour, 0, 0, 0);
-
-      const end = new Date(date);
-      end.setHours(eHour, 0, 0, 0);
-
-      // GHL needs “YYYY-MM-DD HH:mm”
-      const format = (d: Date) =>
-        d
-          .toLocaleString("sv-SE", {
-            timeZone,
-            hour12: false,
-          })
-          .replace("T", " ")
-          .slice(0, 16);
-
-      return {
-        startTime: format(start),
-        endTime: format(end),
-        timezone: timeZone,
-      };
-    });
-  };
 
   const getServiceLabel = (val?: string) => {
     const map: any = {
@@ -76,39 +40,32 @@ const ContactUs = () => {
     return map[val || ""] || "Consultation";
   };
 
-  // FORM SUBMISSION
   const handleFormSubmit = async (data: ConsultationFormData) => {
-    if (selectedDates.length === 0) {
-      alert("Please select at least one date.");
+    if (!selectedDate) {
+      alert("Please select a date.");
       return false;
     }
 
-    if (!selectedSlot) {
-      alert("Please select a time slot.");
+    if (!selectedSlot?.startTime) {
+      alert("Please select an available time slot.");
       return false;
     }
-
-    const appointments = prepareAppointments(
-      selectedDates,
-      selectedZone,
-      selectedSlot
-    );
 
     const payload = {
       ...data,
-      locationId: process.env.NEXT_PUBLIC_GHL_LOCATION_ID,
       source: "Website - Consultation Form",
       tags: ["Consultation Request", getServiceLabel(data.service)],
+      timezone: selectedZone,
       customFields: [
         { key: "service", field_value: data.service || "" },
         { key: "message", field_value: data.message || "" },
-        {
-          key: "dates_selected",
-          field_value: selectedDates.map((d) => d.toISOString()).join(", "),
-        },
+        { key: "date_selected", field_value: selectedDate.toISOString() },
         { key: "timezone", field_value: selectedZone },
       ],
-      appointments,
+      appointment: {
+        startTime: selectedSlot.startTime,
+        endTime: selectedSlot.endTime,
+      },
     };
 
     const res = await fetch("/api/book-consultation", {
@@ -120,36 +77,29 @@ const ContactUs = () => {
     const result = await res.json();
 
     if (!res.ok || result.error) {
-      const msg = result.message?.toLowerCase() || "";
-
-      if (msg.includes("slot") && msg.includes("available")) {
-        alert(
-          "❌ This time slot is no longer available. Please choose a different time."
-        );
+      const msg = (result.message || "").toLowerCase();
+      if (msg.includes("slot") || msg.includes("available") || msg.includes("validation")) {
+        alert("❌ This slot is no longer available. Please choose another time.");
       } else {
-        alert("❌ Error: " + result.message);
+        alert("❌ Error: " + (result.message || "Unknown error"));
       }
-
-      return false; // prevent form reset
+      return false;
     }
-    console.log("resss", result);
-    alert("🎉 Appointment booked successfully!");
 
-    // Reset ONLY after success
-    setSelectedDates([]);
+    alert("🎉 Appointment booked successfully!");
+    setSelectedDate(null);
     setSelectedSlot(null);
     return true;
   };
 
   return (
-    <div className="bg-[#0F1016]"  ref={sectionRef}>
+    <div className="bg-[#0F1016]" id="contact_us" ref={sectionRef}>
       <div className="md:flex gap-30 md:py-[100px] custom-container px-4 sm:px-36 md:px-5 justify-center items-start pb-20">
-        {/* LEFT SIDE FORM */}
+        {/* LEFT */}
         <div className="flex flex-col gap-2 items-start" data-animate="image">
           <p className="text-gradient">[ Book an appointment ]</p>
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-            Ready to Transform <br /> Your{" "}
-            <span className="text-gradient">Business</span>?
+            Ready to Transform <br /> Your <span className="text-gradient">Business</span>?
           </h2>
 
           <ConsultationForm
@@ -158,16 +108,14 @@ const ContactUs = () => {
             buttonText="Book A Consultation"
             showButtonIcon={false}
             onSubmit={handleFormSubmit}
-            selectedDates={selectedDates}
+            // keep these if your form uses them (optional)
+            selectedDates={selectedDate ? [selectedDate] : []}
             selectedZone={selectedZone}
           />
         </div>
 
-        {/* RIGHT SIDE CALENDAR */}
-        <div
-          className="text-white md:pl-10 mt-10 md:mt-0 w-full md:w-auto"
-          data-animate="text"
-        >
+        {/* RIGHT */}
+        <div className="text-white md:pl-10 mt-10 md:mt-0 w-full md:w-auto" data-animate="text">
           <p className="text-gray-200 text-end mb-4">
             Get a free consultation and discover how we can <br />
             optimize your operations
@@ -178,9 +126,9 @@ const ContactUs = () => {
           </h2>
 
           <Calendar
-            onDatesChange={setSelectedDates}
+            onDateChange={setSelectedDate}
             onTimeZoneChange={setSelectedZone}
-            onTimeSlotChange={setSelectedSlot}
+            onSlotChange={setSelectedSlot}
           />
         </div>
       </div>
@@ -188,4 +136,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

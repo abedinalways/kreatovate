@@ -1,73 +1,79 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
+import { GHL_BASE_URL, ghlHeaders, requireEnv } from "@/lib/ghl";
 
-const GHL_BASE_URL =
-  process.env.NEXT_PUBLIC_GHL_BASE_URL ||
-  "https://services.leadconnectorhq.com";
-
-const GHL_API_KEY = process.env.GHL_API_KEY;
-const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
-const GHL_CALENDAR_ID = process.env.GHL_CALENDAR_ID;
+function isISOWithOffset(s: string) {
+  return typeof s === "string" &&
+    /T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/.test(s);
+}
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    if (!GHL_API_KEY) throw new Error("GHL_API_KEY is not configured");
-    if (!GHL_LOCATION_ID) throw new Error("GHL_LOCATION_ID is not configured");
-    if (!GHL_CALENDAR_ID)
-      throw new Error(
-        "GHL_CALENDAR_ID is missing — cannot create appointments"
-      );
+    const locationId = requireEnv("GHL_LOCATION_ID");
+    const calendarId = requireEnv("GHL_CALENDAR_ID");
 
-    // Validate form data
+    // Validate basic contact
     if (!body.firstName || !body.lastName || !body.email) {
+      return NextResponse.json(
+        { error: true, message: "firstName, lastName, and email are required" },
+        { status: 400 }
+      );
+    }
+
+    // Validate appointment payload
+    const startTime = body?.appointment?.startTime;
+    const endTime = body?.appointment?.endTime;
+
+    if (!startTime || !endTime) {
+      return NextResponse.json(
+        { error: true, message: "appointment.startTime and appointment.endTime are required" },
+        { status: 400 }
+      );
+    }
+
+    if (!isISOWithOffset(startTime) || !isISOWithOffset(endTime)) {
       return NextResponse.json(
         {
           error: true,
-          message: "firstName, lastName, and email are required",
+          message:
+            "startTime/endTime must be ISO with timezone offset (example: 2021-06-23T03:30:00+05:30).",
         },
         { status: 400 }
       );
     }
 
-    // STEP 1 — CREATE CONTACT FIRST (required for appointment)
+    // STEP 1: upsert contact :contentReference[oaicite:7]{index=7}
     const contactPayload = {
-      locationId: GHL_LOCATION_ID,
+      locationId,
       firstName: body.firstName,
       lastName: body.lastName,
       email: body.email,
       phone: body.phone,
-      companyName: body.companyName,
-      source: "Website - Consultation Form",
+      companyName: body.companyName || body.company,
+      source: body.source || "Website - Consultation Form",
       tags: body.tags || ["Consultation Request"],
       customFields: body.customFields || [],
+      timezone: body.timezone, // optional
     };
 
-    const contactResponse = await fetch(`${GHL_BASE_URL}/contacts/upsert`, {
+    const contactRes = await fetch(`${GHL_BASE_URL}/contacts/upsert`, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${GHL_API_KEY}`,
-        Version: "2021-07-28",
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+      headers: ghlHeaders("2021-07-28"),
       body: JSON.stringify(contactPayload),
     });
 
-    const contactData = await contactResponse.json();
+    const contactData = await contactRes.json();
 
-    if (!contactResponse.ok) {
+    if (!contactRes.ok) {
       return NextResponse.json(
-        {
-          error: true,
-          message: contactData.message || "Contact creation failed",
-        },
-        { status: 400 }
+        { error: true, message: contactData?.message || contactData?.msg || "Contact upsert failed" },
+        { status: contactRes.status }
       );
     }
 
-    const contactId = contactData.contact?.id || contactData.id;
+    const contactId = contactData?.contact?.id || contactData?.id;
 
     if (!contactId) {
       return NextResponse.json(
@@ -76,67 +82,37 @@ export async function POST(req: Request) {
       );
     }
 
-    // STEP 2 — NOW TRY TO CREATE APPOINTMENTS
-    const appointments = body.appointments || [];
-    let failedError: string | null = null;
+    // STEP 2: create appointment :contentReference[oaicite:8]{index=8}
+    const appointmentPayload = {
+      title: `Consultation - ${body.firstName} ${body.lastName}`,
+      calendarId,
+      locationId,
+      contactId,
+      startTime,
+      endTime,
+      appointmentStatus: "confirmed",
+    };
 
-    for (const appointment of appointments) {
-      const appointmentPayload = {
-        title: `Consultation - ${body.firstName} ${body.lastName}`,
-        calendarId: GHL_CALENDAR_ID,
-        locationId: GHL_LOCATION_ID,
-        contactId,
-        startTime: appointment.startTime,
-        endTime: appointment.endTime,
-        timezone: appointment.timezone,
-        appointmentStatus: "confirmed",
-      };
+    const apptRes = await fetch(`${GHL_BASE_URL}/calendars/events/appointments`, {
+      method: "POST",
+      headers: ghlHeaders("2021-04-15"),
+      body: JSON.stringify(appointmentPayload),
+    });
 
-      const res = await fetch(`${GHL_BASE_URL}/calendars/events/appointments`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${GHL_API_KEY}`,
-          Version: "2021-07-28",
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(appointmentPayload),
-      });
+    const apptData = await apptRes.json();
 
-      const resData = await res.json();
-
-      if (!res.ok) {
-        failedError =
-          resData.message || resData.msg || "Failed to create appointment";
-
-        break; // STOP processing more appointments
-      }
-    }
-
-    // ❌ ERROR? DELETE CONTACT + RETURN FAILURE
-    if (failedError) {
-      await fetch(`${GHL_BASE_URL}/contacts/${contactId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${GHL_API_KEY}`,
-          Version: "2021-07-28",
-        },
-      });
-
+    if (!apptRes.ok) {
       return NextResponse.json(
-        {
-          error: true,
-          message: failedError,
-        },
-        { status: 400 }
+        { error: true, message: apptData?.message || apptData?.msg || "Failed to create appointment" },
+        { status: apptRes.status }
       );
     }
 
-    // SUCCESS RESPONSE
     return NextResponse.json({
       success: true,
-      message: "Appointments successfully created.",
+      message: "Appointment successfully created.",
       contactId,
+      appointment: apptData,
     });
   } catch (error: any) {
     console.error("GHL API ERROR:", error);
