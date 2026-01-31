@@ -61,9 +61,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     { key: 'testimonial', label: 'testimonial' },
   ];
 
-  /* ======================================================
-     SCROLLTRIGGER (HOME ONLY)
-  ====================================================== */
+ 
   useEffect(() => {
     if (!isHome) return;
 

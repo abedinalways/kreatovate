@@ -23,11 +23,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const scrollToTarget = () => {
+    document.getElementById('contact_us')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   return (
     <nav className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b bg-[rgba(0,0,0,0.40)] border-white/30 backdrop-blur-xs font-[roboto]">
       <div className="custom-container flex  items-center justify-evenly gap-4 w-full">
-        <div className=' '>
+        <div className=" ">
           <Logo />
         </div>
         <div className="hidden lg:flex justify-center w-full mx-auto">
@@ -36,13 +42,14 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <Link href="/contact-us">
-            <button className="btnOne-bg-gradient shape-squircle rounded-[32px] p-[1.5px] ">
-              <button className="w-[142px] shape-squircle h-[42px] bg-black cursor-pointer rounded-[32px]">
-                <span className="text-gradient">Contact Us</span>
-              </button>
+          <button className="btnOne-bg-gradient shape-squircle rounded-[32px] p-[1.5px] ">
+            <button
+              onClick={scrollToTarget}
+              className="w-[142px] shape-squircle h-[42px] bg-black cursor-pointer rounded-[32px]"
+            >
+              <span className="text-gradient">Contact Us</span>
             </button>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile menu */}
@@ -65,15 +72,16 @@ const Navbar = () => {
 
                 {/* Mobile CTA */}
                 <div className="mt-4 ">
-                  <Link href="/contact-us">
-                    <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
-                      <button className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer ">
-                        <span className="text-gradient text-[18px]">
-                          Contact Us
-                        </span>
-                      </button>
+                  <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
+                    <button
+                      onClick={scrollToTarget}
+                      className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer "
+                    >
+                      <span className="text-gradient text-[18px]">
+                        Contact Us
+                      </span>
                     </button>
-                  </Link>
+                  </button>
                 </div>
               </SheetHeader>
             </SheetContent>
