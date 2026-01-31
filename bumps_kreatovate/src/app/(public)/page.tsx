@@ -10,6 +10,7 @@ import ReadyToLaunch from "@/components/modules/homepage/ready-to-launch/ReadyTo
 import Launchpad from "@/components/modules/homepage/launchpad/Launchpad";
 import TrustedGrowth from "@/components/modules/homepage/trusted-growth/TrustedGrowth";
 import Welcome from "@/components/welcome/Welcome";
+import Contact from "@/components/modules/contact/Contact";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
       <div className="bg-[#0F0F0F]">
         {/* <Explore /> */}
         <ReadyToLaunch />
-        {/* <Contact /> */}
+        <Contact />
         {/* <FAQ /> */}
       </div>
     </div>

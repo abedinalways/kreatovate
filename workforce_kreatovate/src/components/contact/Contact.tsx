@@ -176,11 +176,11 @@ const Contact = () => {
             Let&apos;s Talk – Pick a Time That Works for You
           </h2>
 
-          <Calendar
+          {/* <Calendar
             onDatesChange={setSelectedDates}
             onTimeZoneChange={setSelectedZone}
             onTimeSlotChange={setSelectedSlot}
-          />
+          /> */}
         </div>
       </div>
     </div>

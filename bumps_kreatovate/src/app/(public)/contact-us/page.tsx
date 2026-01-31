@@ -1,5 +1,6 @@
 
 import DynamicBanner from "@/components/banner/DynamicBanner";
+import ContactUs from "@/components/modules/contact_us/ContactUs";
 import Contact from "@/components/modules/contact_us/ContactUs";
 
 
@@ -14,7 +15,7 @@ const ContactUsPage = () => {
         title="Get in"
         titleGradient="Touch"
       />
-      <Contact/>
+      <ContactUs/>
       <Support/>
     </div>
   );

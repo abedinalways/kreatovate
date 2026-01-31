@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-/* ---------------- TYPES ---------------- */
+
 
 type Slot = {
   startTime: string;
@@ -43,10 +43,7 @@ function parseGmtOffsetToMinutes(tzName: string): number {
   return sign * (hours * 60 + mins);
 }
 
-/**
- * Get timezone offset (minutes) for a given timezone on a given date.
- * Uses a "noon UTC" anchor to avoid DST edge transitions at midnight.
- */
+
 function getTimeZoneOffsetMinutes(dateY: number, dateM1: number, dateD: number, timeZone: string) {
   const probe = new Date(Date.UTC(dateY, dateM1, dateD, 12, 0, 0)); // noon UTC
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -139,17 +136,17 @@ export function Calendar({
       }
 
       const map = data?.slots || {};
-      const allSlots: Slot[] = Object.values(map).flat();
+      const allSlots: Slot[] = Object.values(map).flat() as Slot[];
 
       setSlots(allSlots);
 
       if (!allSlots.length) {
         setSlotError("No available slots for this date.");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       if (myId !== requestIdRef.current) return;
       console.error("SLOT LOAD ERROR:", err);
-      setSlotError(err.message || "Unable to load slots.");
+      setSlotError((err instanceof Error ? err.message : String(err)) || "Unable to load slots.");
     } finally {
       if (myId === requestIdRef.current) setLoading(false);
     }

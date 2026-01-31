@@ -1,7 +1,6 @@
-[00:00:01.046] Server  LOG      ✓ Ready in 760ms
-[00:00:04.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.222] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.106] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+[00:00:01.589] Server  LOG      ✓ Ready in 1190ms
+[00:00:09.193] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.638] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
 This will cause a hydration error.%s <button> button 
 
   ...
@@ -35,12 +34,12 @@ This will cause a hydration error.%s <button> button
               ...
             ...
 
-[00:00:05.106] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    Element not found: .ourblurbs-heading
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+[00:00:09.638] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
+[00:00:09.638] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.638] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.638] Browser WARN    Element not found: .ourblurbs-heading
+[00:00:09.638] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.638] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -51,237 +50,52 @@ This will cause a hydration error.%s <button> button
 It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
 https://react.dev/link/hydration-mismatch
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    Element not found: .ourblurbs-heading
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:05.106] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:05.106] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:05.106] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:05.106] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:05.106] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:05.106] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:05.106] Browser WARN    Image with src "/images/Footer000.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:05.106] Browser WARN    Image with src "/images/group2.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+
+  ...
+    <PublicLayout>
+      <PublicLayout>
+        <Navbar>
+          ...
+            <div className="lg:hidden">
+              <Sheet open={false} onOpenChange={function bound dispatchSetState}>
+                <Dialog data-slot="sheet" open={false} onOpenChange={function bound dispatchSetState}>
+                  <DialogProvider scope={undefined} triggerRef={{current:null}} contentRef={{current:null}} ...>
+                    <SheetTrigger asChild={true}>
+                      <DialogTrigger data-slot="sheet-trigger" asChild={true}>
+                        <Primitive.button type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                          <Primitive.button.Slot type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                            <Primitive.button.SlotClone type="button" aria-haspopup="dialog" aria-expanded={false} ...>
+                              <Button variant="ghost" size="icon-lg" aria-label="Open menu" type="button" ...>
+                                <button
+                                  data-slot="sheet-trigger"
+                                  className={"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded..."}
+                                  aria-label="Open menu"
+                                  type="button"
+                                  aria-haspopup="dialog"
+                                  aria-expanded={false}
++                                 aria-controls="radix-_R_4kndlb_"
+-                                 aria-controls="radix-_R_hkndlb_"
+                                  data-state="closed"
+                                  onClick={function handleEvent}
+                                  ref={function}
+                                >
+                    ...
+      ...
+
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    Element not found: .ourblurbs-heading
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    GSAP target  not found. https://gsap.com
+[00:00:09.639] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.639] Browser WARN    Image with src "/images/group1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.639] Browser WARN    Image with src "/images/group2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.639] Browser WARN    Image with src "/images/aboutus-elips.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.639] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:09.639] Browser WARN    Image with src "/images/group2.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:05.222] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
-      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
-        <RedirectBoundary>
-          <RedirectErrorBoundary router={{...}}>
-            <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
-              <SegmentViewNode type="page" pagePath="(public)/p...">
-                <SegmentTrieNode>
-                <Home>
-                  <div className="overflow-h...">
-                    <Banner>
-                      <div id="home" ref={{current:null}} className="relative h...">
-                        <div>
-                        <div className="relative c...">
-                          <div className="px-4 md:px...">
-                            <h1>
-                            <div>
-                            <div className={"flex fle..."}>
-                              <div>
-                              <div ref={{current:null}} className="cursor-poi...">
->                               <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
->                                 <button
->                                   className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer"
->                                   onClick={function scrollToTarget}
->                                 >
-                          ...
-                        ...
-                    ...
-              ...
-            ...
-
-[00:00:05.222] Browser ERROR   uncaughtError: NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
-[00:00:07.123] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
-      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
-        <RedirectBoundary>
-          <RedirectErrorBoundary router={{...}}>
-            <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
-              <SegmentViewNode type="page" pagePath="(public)/p...">
-                <SegmentTrieNode>
-                <Home>
-                  <div className="overflow-h...">
-                    <Banner>
-                      <div id="home" ref={{current:null}} className="relative h...">
-                        <div>
-                        <div className="relative c...">
-                          <div className="px-4 md:px...">
-                            <h1>
-                            <div>
-                            <div className={"flex fle..."}>
-                              <div>
-                              <div ref={{current:null}} className="cursor-poi...">
->                               <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
->                                 <button
->                                   className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer"
->                                   onClick={function scrollToTarget}
->                                 >
-                          ...
-                        ...
-                    ...
-              ...
-            ...
-
-[00:00:07.123] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    Element not found: .ourblurbs-heading
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    Element not found: .ourblurbs-heading
-[00:00:07.123] Browser WARN    GSAP target  not found. https://gsap.com
-[00:00:07.123] Browser WARN    Image with src "/images/logo3.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:07.123] Browser WARN    Image with src "/images/our-blurb.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:07.123] Browser WARN    Image with src "/images/business_card_light.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:07.123] Browser WARN    Image with src "/images/Footer000.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:06.116] Browser WARN    GSAP target .about-image not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .about-image
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .about-text not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .about-text
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .ourblurbs-heading
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .quote-card not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .quote-card
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .js-book-text not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-[00:01:06.116] Browser WARN    GSAP target .bwv1-title not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .bwv1-sub not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .business-card not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .business-grid
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Invalid scope
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .about-image not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .about-image
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .about-text not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .about-text
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .ourblurbs-heading not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .ourblurbs-heading
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .quote-card not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    Element not found: .quote-card
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target .js-book-text not found. https://gsap.com
-[00:01:06.116] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    GSAP target .bwv1-title not found. https://gsap.com
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    GSAP target .bwv1-sub not found. https://gsap.com
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    GSAP target .business-card not found. https://gsap.com
-[00:01:06.117] Browser WARN    Element not found: .business-grid
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser WARN    Invalid scope
-[00:01:06.117] Browser WARN    GSAP target  not found. https://gsap.com
-[00:01:06.117] Browser ERROR   {}
-[00:01:06.117] Browser ERROR   {}
+[00:00:14.744] Browser WARN    Image with src "/images/Footer000.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

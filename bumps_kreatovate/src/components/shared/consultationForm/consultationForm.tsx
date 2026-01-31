@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
+'use client';
 
-import * as React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import * as React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import {
   Form,
   FormControl,
@@ -14,17 +14,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import ButtonAll from "../buttons/ButtonAll";
+} from '@/components/ui/select';
+import ButtonAll from '../buttons/ButtonAll';
 
 export interface ConsultationFormProps {
   title?: string;
@@ -43,64 +43,64 @@ export interface ConsultationFormProps {
 
 const defaultFields = [
   {
-    name: "firstName",
-    label: "First name",
-    type: "text",
+    name: 'firstName',
+    label: 'First name',
+    type: 'text',
     required: true,
     gridCol: 2,
     validation: z.string().min(2),
   },
   {
-    name: "lastName",
-    label: "Last name",
-    type: "text",
+    name: 'lastName',
+    label: 'Last name',
+    type: 'text',
     required: true,
     gridCol: 2,
     validation: z.string().min(2),
   },
   {
-    name: "company",
-    label: "Company / Organization",
-    type: "text",
+    name: 'company',
+    label: 'Company / Organization',
+    type: 'text',
     required: true,
     gridCol: 1,
     validation: z.string().min(2),
   },
   {
-    name: "email",
-    label: "Company email",
-    type: "email",
+    name: 'email',
+    label: 'Company email',
+    type: 'email',
     required: true,
     gridCol: 1,
     validation: z.string().email(),
   },
   {
-    name: "phone",
-    label: "Phone number",
-    type: "tel",
+    name: 'phone',
+    label: 'Phone number',
+    type: 'tel',
     required: false,
     gridCol: 1,
   },
   {
-    name: "service",
-    label: "Which service you want?",
-    type: "select",
+    name: 'service',
+    label: 'Which service you want?',
+    type: 'select',
     required: true,
     gridCol: 1,
     validation: z.string().min(1),
     options: [
-      { value: "digital-marketing", label: "Digital Marketing" },
-      { value: "seo", label: "SEO Services" },
-      { value: "social-media", label: "Social Media Marketing" },
-      { value: "content-creation", label: "Content Creation" },
-      { value: "web-development", label: "Web Development" },
-      { value: "consulting", label: "Business Consulting" },
+      { value: 'digital-marketing', label: 'Digital Marketing' },
+      { value: 'seo', label: 'SEO Services' },
+      { value: 'social-media', label: 'Social Media Marketing' },
+      { value: 'content-creation', label: 'Content Creation' },
+      { value: 'web-development', label: 'Web Development' },
+      { value: 'consulting', label: 'Business Consulting' },
     ],
   },
   {
-    name: "message",
-    label: "Message",
-    type: "textarea",
+    name: 'message',
+    label: 'Message',
+    type: 'textarea',
     gridCol: 2,
     rows: 4,
     validation: z.string().optional(),
@@ -108,21 +108,21 @@ const defaultFields = [
 ];
 
 export function ConsultationForm({
-  title = "Schedule a Free Consultation",
+  title = 'Schedule a Free Consultation',
   subtitle,
   fields = defaultFields,
-  buttonText = "Book a consultation",
+  buttonText = 'Book a consultation',
   showButtonIcon = true,
   showDecorator = true,
   onSubmit,
-  className = "",
+  className = '',
   selectedDates = [],
-  selectedZone = "America/New_York",
+  selectedZone = 'America/New_York',
 }: ConsultationFormProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const schemaShape: any = {};
-  fields.forEach((f) => {
+  fields.forEach(f => {
     if (f.validation) schemaShape[f.name] = f.validation;
     else if (f.required) schemaShape[f.name] = z.string().min(1);
     else schemaShape[f.name] = z.string().optional();
@@ -132,7 +132,7 @@ export function ConsultationForm({
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: fields.reduce((acc: any, f: any) => {
-      acc[f.name] = "";
+      acc[f.name] = '';
       return acc;
     }, {}),
   });
@@ -142,7 +142,7 @@ export function ConsultationForm({
 
     const payload = {
       ...values,
-      selectedDates: selectedDates.map((d) => d.toISOString()),
+      selectedDates: selectedDates.map(d => d.toISOString()),
       timeZone: selectedZone,
     };
 
@@ -163,8 +163,8 @@ export function ConsultationForm({
       render={({ field: f }) => (
         <FormItem
           className={cn(
-            "w-full",
-            field.gridCol === 2 ? "col-span-1 md:col-span-2" : "col-span-1"
+            'w-full',
+            field.gridCol === 2 ? 'col-span-1 md:col-span-2' : 'col-span-1',
           )}
         >
           <FormLabel className="text-white/80">
@@ -173,13 +173,13 @@ export function ConsultationForm({
           </FormLabel>
 
           <FormControl>
-            {field.type === "textarea" ? (
+            {field.type === 'textarea' ? (
               <Textarea
                 rows={field.rows}
                 {...f}
                 className="w-full bg-white/5 border-white/10 text-white mt-1"
               />
-            ) : field.type === "select" ? (
+            ) : field.type === 'select' ? (
               <Select onValueChange={f.onChange} value={f.value}>
                 <SelectTrigger className="w-full bg-white/5 border-white/10 text-white mt-1">
                   <SelectValue placeholder="Select option" />
@@ -213,8 +213,8 @@ export function ConsultationForm({
   return (
     <div
       className={cn(
-        "w-full max-w-md mx-auto p-8 bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl",
-        className
+        'w-full max-w-md mx-auto p-8 bg-linear-to-br from-[#1a0b2e] via-[#16213e] to-[#0f1419] rounded-2xl border border-purple-500/30 shadow-2xl',
+        className,
       )}
     >
       <div className="mb-8">
@@ -272,7 +272,7 @@ export function ConsultationForm({
             disabled={isSubmitting}
             className="w-full mt-4"
           >
-            {isSubmitting ? "Submitting..." : buttonText}
+            {isSubmitting ? 'Submitting...' : buttonText}
             {showButtonIcon && !isSubmitting && (
               <ArrowRight className="w-5 h-5 ml-2" />
             )}

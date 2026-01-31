@@ -94,22 +94,43 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
   useEffect(() => {
     if (pathname !== '/') return;
 
+    const triggers: ScrollTrigger[] = [];
+
     ITEMS.forEach(item => {
       if (!item.hash) return;
 
       const section = document.querySelector(item.hash);
       if (!section) return;
 
-      ScrollTrigger.create({
+      const trigger = ScrollTrigger.create({
         trigger: section,
         start: 'top center',
         end: 'bottom center',
         onEnter: () => setActive(item.hash!),
         onEnterBack: () => setActive(item.hash!),
       });
+
+      triggers.push(trigger);
     });
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+    // 🔹 Add ScrollTrigger for contact_us section to clear active state
+    const contactSection = document.querySelector('#contact_us');
+    if (contactSection) {
+      const contactTrigger = ScrollTrigger.create({
+        trigger: contactSection,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => setActive(''), // Clear active state
+        onEnterBack: () => {
+          // When scrolling back up, set to the last nav item
+          const lastNavItem = ITEMS.filter(item => item.hash).pop();
+          if (lastNavItem?.hash) setActive(lastNavItem.hash);
+        },
+      });
+      triggers.push(contactTrigger);
+    }
+
+    return () => triggers.forEach(t => t.kill());
   }, [pathname]);
 
   // 🔹 Apply hash on refresh / direct link

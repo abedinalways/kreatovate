@@ -49,10 +49,10 @@ function addMinutesPreserveOffset(startISO: string, minutes: number) {
 
 // version 2
 function normalizeSlots(
-    raw: any,
+    raw: Record<string, string[] | { slots: string[] }>,
     slotDurationMinutes = 30
 ): Record<string, { startTime: string; endTime: string }[]> {
-    const out: Record<string, any[]> = {};
+    const out: Record<string, { startTime: string; endTime: string }[]> = {};
 
     if (!raw || typeof raw !== "object") return out;
 
@@ -71,9 +71,9 @@ function normalizeSlots(
         };
 
         if (Array.isArray(value)) {
-            value.forEach((v) => typeof v === "string" && push(v));
-        } else if (value?.slots && Array.isArray(value.slots)) {
-            value.slots.forEach((v: any) => typeof v === "string" && push(v));
+            value.forEach((v: string) => typeof v === "string" && push(v));
+        } else if (typeof value === "object" && value !== null && "slots" in value && Array.isArray((value as { slots: string[] }).slots)) {
+            (value as { slots: string[] }).slots.forEach((v: string) => typeof v === "string" && push(v));
         }
     }
 
@@ -159,10 +159,11 @@ export async function POST(req: Request) {
             success: true,
             slots: normalized,
         });
-    } catch (error: any) {
+    } catch (error: unknown) {
         //console.error("FREE SLOTS API ERROR:", error);
+        const message = error instanceof Error ? error.message : "Internal server error";
         return NextResponse.json(
-            { error: true, message: error.message || "Internal server error" },
+            { error: true, message },
             { status: 500 }
         );
     }
