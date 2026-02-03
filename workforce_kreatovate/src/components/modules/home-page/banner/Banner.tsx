@@ -121,9 +121,9 @@ const Banner = () => {
           </h1> */}
           <h1
             ref={headingRef}
-            className="text-3xl md:text-5xl font-bold leading-[1.25] md:leading-[1.25] lg:leading-[1.25] max-w-3xl"
+            className="text-3xl md:text-[54px] font-bold py-4 leading-[1.25] md:leading-[1.25] lg:leading-[1.25] max-w-4xl"
           >
-            KINpro.ai The Intelligent CRM & Business Operating System
+            KINpro.OS The Intelligent CRM & Business Operating System
           </h1>
           {/* <p
             ref={textRef}
@@ -163,20 +163,23 @@ const Banner = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-6 ">
             <div ref={buttonRef} className="cursor-pointer w-fit">
               <ButtonAll
-                btnText="Activate Your Platform"
-                href="#contact_us"
+                btnText="View Capabilities & Pricing"
+                target="_blank"
+                href="https://beta.kreatovate.com/"
                 className="text-sm md:text-md py-6 h-[52px]"
               />
             </div>
             <div ref={buttonRef} className="cursor-pointer w-fit">
-              <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
+              {/* <button className="btnOne-bg-gradient w-full  rounded-[12px] p-px">
                 <button
                   className="w-full h-[52px] rounded-[12px] bg-black cursor-pointer"
                   onClick={scrollToTarget}
                 >
-                  <span className="gradient-text px-4 font-semibold">View Capabilities & Pricing</span>
+                  <span className="gradient-text px-4 font-semibold">
+                    View Capabilities & Pricing
+                  </span>
                 </button>
-              </button>
+              </button> */}
               {/* btnText="" className=" pointer-events-none" */}
             </div>
           </div>

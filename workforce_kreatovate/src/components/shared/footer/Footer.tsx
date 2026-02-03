@@ -139,7 +139,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/meet-the-os"
+                  href="https://beta.kreatovate.com/"
                   className="text-gray-400 hover:text-white"
                 >
                   Meet The OS

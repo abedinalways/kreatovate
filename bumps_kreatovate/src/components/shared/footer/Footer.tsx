@@ -162,14 +162,14 @@ export default function Footer() {
                   Our Vision
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/price"
                   className="text-gray-400 hover:text-white"
                 >
                   Pricing Plan
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link

@@ -187,7 +187,7 @@ const Team: React.FC = () => {
                                   ? `${p.name} – ${p.title}`
                                   : 'Team member'
                               }
-                              className="w-full h-fit absolute md:top-15 top-6 object-cover transition-transform duration-700 group-hover:scale-100"
+                              className="w-full h-fit absolute md:top-15 top-6 object-cover transition-transform duration-700 group-hover:scale-100 "
                               sizes="(min-width:1280px) 20rem, (min-width:1024px) 18rem, (min-width:640px) 50vw, 100vw"
                             />
                           </div>

@@ -21,7 +21,7 @@ export default function HomePage() {
       <WhoWeAre />
       <BookAppointment />
       <Service />
-      <OurPricing/>
+      {/* <OurPricing/> */}
       <Team />
       <OurSolution />
       <Partners />
