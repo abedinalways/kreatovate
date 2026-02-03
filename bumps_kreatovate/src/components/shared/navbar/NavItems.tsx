@@ -29,7 +29,7 @@ const ITEMS: NavItem[] = [
   { label: 'Our Initiatives', href: '/', hash: '#our_initiatives' },
   { label: 'Process Overview', href: '/', hash: '#process_overview' },
   { label: 'Our Vision', href: '/', hash: '#our_vision' },
-  { label: 'Pricing Plan', href: '/price' },
+  // { label: 'Pricing Plan', href: '/price' },
 ];
 
 const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
@@ -177,7 +177,7 @@ const NavItems = ({ variant = 'desktop', headerSelector = 'nav' }: Props) => {
 
   // 🔹 Desktop UI
   return (
-    <ul className="flex items-center capitalize bg-white/20 p-1 rounded-full ">
+    <ul className="flex items-center capitalize bg-white/20 p-1 rounded-full  h-fit">
       {ITEMS.map(item => {
         const isActive = item.hash
           ? active === item.hash

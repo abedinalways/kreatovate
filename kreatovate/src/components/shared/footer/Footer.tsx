@@ -121,14 +121,14 @@ export default function Footer() {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/#our_solutions"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Solutions
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/#who_we_are"
@@ -145,14 +145,14 @@ export default function Footer() {
                   Our Services
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/#our_pricing"
                   className="text-gray-400 hover:text-white"
                 >
                   Our Pricing
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/#our_team"

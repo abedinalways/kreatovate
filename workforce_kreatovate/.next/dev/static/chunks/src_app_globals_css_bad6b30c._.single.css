@@ -120,6 +120,7 @@
     --container-2xl: 42rem;
     --container-3xl: 48rem;
     --container-4xl: 56rem;
+    --container-5xl: 64rem;
     --container-6xl: 72rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -1293,6 +1294,10 @@
 
   .max-w-4xl\! {
     max-width: var(--container-4xl) !important;
+  }
+
+  .max-w-5xl {
+    max-width: var(--container-5xl);
   }
 
   .max-w-6xl {
@@ -4523,6 +4528,13 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:text-6xl {
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:text-base {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
@@ -4575,6 +4587,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:text-\[54px\] {
+      font-size: 54px;
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:text-\[56px\] {
       font-size: 56px;
     }
@@ -4605,6 +4623,12 @@
     .md\:leading-\[1\.25\] {
       --tw-leading: 1.25;
       line-height: 1.25;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:text-\[54\] {
+      color: 54;
     }
   }
 

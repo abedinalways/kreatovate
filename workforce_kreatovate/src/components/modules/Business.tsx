@@ -96,13 +96,13 @@ const Business = () => {
             </span>
           </h1> */}
           <HeadingButton btnText="Pricing" className="w-33 py-0" />
-          <h1 className="bwv1-title text-2xl tetx-center md:text-4xl font-bold max-w-xl text-center">
+          <h1 className="bwv1-title text-2xl tetx-center md:text-5xl font-bold max-w-3xl text-center">
             Pricing Scales by Authority, Not Headcount
           </h1>
           {/* <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal">
             Lite / Starter Voice Employees
           </p> */}
-          <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal text-center max-w-4xl">
+          <p className="bwv1-sub text-sm md:text-md lg:text-[1rem] leading-7 font-normal text-center max-w-5xl">
             KINpro pricing reflects the decision authority and operational scope
             you want A.D.O.N.I.S. to manage — from execution (Admin) to full
             operational leadership (COO). Core Business OS capabilities (CRM,
@@ -113,22 +113,22 @@ const Business = () => {
         </div>
 
         {/* GRID 1 */}
-        <div className="business-grid grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8">
+        {/* <div className="business-grid grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8">
           {businessData?.map(data => (
             <div key={data.id} className="business-card">
               <BusinessCard data={data} />
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* GRID 2 */}
-        <div className="business-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* <div className="business-grid grid grid-cols-1 md:grid-cols-2 gap-8">
           {businessSecondData?.map(data => (
             <div key={data.id} className="business-card">
               <BusinessCard data={data} />
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* <ButtonAll btnText="View Full Workforce" className="py-6 mx-auto" /> */}
       </div>
