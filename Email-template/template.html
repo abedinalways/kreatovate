@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Kreatovate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      /* background: linear-gradient(180deg, #2d1b4e 0%, #1a0f2e 100%); */
+      min-height: 100vh;
+      color: #ffffff;
+      padding: 2rem;
+      max-width: 640px;
+     
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #2d1b4e 0%, #1a0f2e 100%);
+      padding: 14px;
+    }
+
+    /* Gradient Utilities */
+    .btnOne-bg-gradient {
+      background: linear-gradient(to right, #4E30FE, #E93D3D);
+    }
+
+    .text-gradient {
+      background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-gradient {
+      background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
+      .gradient-div{
+        padding: 2px;
+        border-radius: 10px;
+        
+      }
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      position: relative;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #E93D3D;
+      border-radius: 50%;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-45deg);
+    }
+
+    .logo-icon::after {
+      content: '→';
+      position: absolute;
+      color: #E93D3D;
+      font-size: 18px;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .logo-img{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width: 158px;
+      height: 60px;
+      position: relative;
+    }
+    .logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+    .logo-text {
+      color: #E93D3D;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      margin-bottom: 2rem;
+    }
+
+    .welcome-section h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .welcome-section .brand-name {
+      background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    /* Greeting */
+    .greeting {
+      margin-bottom: 1rem;
+    }
+
+    .greeting h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .greeting p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Visit Button */
+    .visit-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(to right, #4E30FE, #E93D3D);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-bottom: 2.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .visit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(229, 61, 61, 0.3);
+    }
+
+    .visit-button i {
+      font-size: 0.9rem;
+    }
+
+    /* Signature Section */
+    .signature-section {
+      margin-bottom: 2rem;
+    }
+
+    .best-regards {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.25rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, #3700ff 60%, #e21717 20%, #3700ff 30%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(229, 61, 61, 0.3);
+    }
+
+    .contact-card:hover::before {
+      opacity: 0.1;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(to right, #4E30FE, #E93D3D);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-icon i {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+
+    .contact-label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-email {
+      font-size: 1rem;
+      color: #ffffff;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-email a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-email a:hover {
+      background-image: linear-gradient(to left, #e21717 10%, #3700ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      margin-bottom: 2rem;
+    }
+    .flex{
+      display: flex;
+      
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .disclaimer-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .disclaimer-text {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(to right, #4E30FE, #E93D3D);
+      border-color: transparent;
+      transform: translateY(-3px);
+    }
+
+    .social-link i {
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      .welcome-section h1 {
+        font-size: 2rem;
+      }
+
+      .greeting h2 {
+        font-size: 1.3rem;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+
+      .welcome-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .greeting h2 {
+        font-size: 1.2rem;
+      }
+
+      .logo-text {
+        font-size: 1rem;
+      }
+      .flex{
+        display: block;
+      }
+      .visit-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo,
+    .welcome-section,
+    .greeting,
+    .visit-button,
+    .signature-section,
+    .contact-card,
+    .disclaimer,
+    .footer {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .greeting {
+      animation-delay: 0.1s;
+    }
+
+    .visit-button {
+      animation-delay: 0.2s;
+    }
+
+    .signature-section {
+      animation-delay: 0.3s;
+    }
+
+    .contact-card {
+      animation-delay: 0.4s;
+    }
+
+    .disclaimer {
+      animation-delay: 0.5s;
+    }
+
+    .footer {
+      animation-delay: 0.6s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <!-- <div class="logo-icon">
+
+      </div> -->
+      <div class="logo-img">
+        <img src="/images/logo001.png" alt="logo" srcset="">
+      </div>
+      
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+      <h1>
+        Welcome to<br>
+        <span class="brand-name">Kreatovate</span>
+      </h1>
+    </div>
+
+    <!-- Greeting -->
+    <div class="greeting">
+      <h2>Hi Jonathan,</h2>
+      <p>Thanks for reaching out to Kreatovate.
+      
+      Your message came through, and someone from our team will review it shortly. If you’d like to move faster, you can book
+      time directly with us below.
+      
+      We specialize in building unified automated systems, intelligent products, and workforce solutions designed to remove
+      friction and scale responsibly.</p>
+    </div>
+
+    <!-- Visit Button -->
+    <a href="#" class="visit-button">
+      Visit Us <i class="fas fa-arrow-right"></i>
+    </a>
+
+    <!-- Signature Section -->
+   <div class="flex">
+    <div class="signature-section">
+      <div class="best-regards">Best regards,</div>
+      <div class="team-name">Kreatovate Team</div>
+      <div class="tagline">Your Problems, Our Solutions.</div>
+    </div>
+    
+    <!-- Contact Card -->
+     <div class="gradient-div">
+
+       <div class="contact-card">
+         <div class="contact-icon">
+           <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-label">Contact:</div>
+          <div class="contact-email">
+            <a href="mailto:consulting@kreatovate.com">consulting@kreatovate.com</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <div class="disclaimer-title">Disclaimer:</div>
+      <div class="disclaimer-text">
+        This message is for informational purposes only and does not constitute legal, financial, or investment advice.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="copyright">
+        © 2026 - Kreatovate. All rights reserved
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter">
+        <i class="fa-solid fa-x"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
