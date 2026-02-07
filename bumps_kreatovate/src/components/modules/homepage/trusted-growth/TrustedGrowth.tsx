@@ -40,36 +40,36 @@ const TrustedGrowth = () => {
   const booksData = [
     {
       id: 1,
-      title: "4TH INDUSTRIAL REVOLUTION",
+      title: '4TH INDUSTRIAL REVOLUTION',
       description:
-        "This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...",
-      image: "/images/books/book1.png",
-      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
-      price: "$2",
+        'This book takes you into the heart of the digital transformation era: where artificial intelligence, the Internet of Things, big data and connectivity...',
+      image: '/images/books/book1.png',
+      bumpsaleId: 'uPpDJDrVPbXPq28McoDrNFJf',
+      price: '$2',
     },
     {
       id: 2,
-      title: "5TH INDUSTRIAL REVOLUTION",
+      title: '5TH INDUSTRIAL REVOLUTION',
       description:
-        "The next chapter beyond automation and connectivity, this book shows how human values, advanced ethics and collaboration with intelligent.",
-      image: "/images/books/book2.png",
-      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+        'The next chapter beyond automation and connectivity, this book shows how human value, advanced ethics and collaboration with intelligent systems',
+      image: '/images/books/book2.png',
+      bumpsaleId: 'uPpDJDrVPbXPq28McoDrNFJf',
     },
     {
       id: 3,
-      title: "CASH FLOW LEGACY",
+      title: 'CASH FLOW LEGACY',
       description:
-        "This book guides entrepreneurs, investors and families to build financial systems that outlast them – not just for profit today...",
-      image: "/images/books/book3.png",
-      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+        'This book guides entrepreneurs, investors and families to build financial systems that outlast them – not just for profit today...',
+      image: '/images/books/book3.png',
+      bumpsaleId: 'uPpDJDrVPbXPq28McoDrNFJf',
     },
     {
       id: 4,
-      title: "OWN THE GRID",
+      title: 'OWN THE GRID',
       description:
-        "A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...",
-      image: "/images/books/book4.png",
-      bumpsaleId: "uPpDJDrVPbXPq28McoDrNFJf",
+        'A powerful read for those ready to shift how power, energy and infrastructure are owned and run. This book explores how...',
+      image: '/images/books/book4.png',
+      bumpsaleId: 'uPpDJDrVPbXPq28McoDrNFJf',
     },
   ];
 
