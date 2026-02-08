@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 import LenisProvider from "@/providers/LenisProvider";
 import Script from "next/script";
 import BumpSaleLoader from "@/components/BumpSaleLoader";
+import { Toaster } from "@/components/ui/sonner";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -72,6 +73,7 @@ export default function RootLayout({
         className={`${jakarta.variable} ${roboto.variable} ${openSans.variable} ${inter.variable} antialiased min-h-screen flex flex-col bg-black text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
+        <Toaster />
         {/* <BumpSaleLoader /> */}
         {/* <Script
           src="https://widgets.bumpsale.co/button.js"

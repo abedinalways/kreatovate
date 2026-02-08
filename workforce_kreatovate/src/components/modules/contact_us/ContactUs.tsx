@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client';
 
 import { useRef, useState } from 'react';
@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { Calendar } from '@/components/ui/calendar';
 import { ConsultationForm } from '@/components/shared/consultation form/ConsultationForm';
+import { toast } from 'sonner';
 
 interface ConsultationFormData {
   firstName?: string;
@@ -43,12 +44,12 @@ const Contact = () => {
 
   const handleFormSubmit = async (data: ConsultationFormData) => {
     if (!selectedDate) {
-      alert('Please select a date.');
+      toast('Please select a date.');
       return false;
     }
 
     if (!selectedSlot?.startTime) {
-      alert('Please select an available time slot.');
+      toast('Please select an available time slot.');
       return false;
     }
 
@@ -78,22 +79,22 @@ const Contact = () => {
     const result = await res.json();
 
     if (!res.ok || result.error) {
-      const msg = (result.message || '').toLowerCase();
+      const msg = (result.message || '');
       if (
         msg.includes('slot') ||
         msg.includes('available') ||
         msg.includes('validation')
       ) {
-        alert(
+        toast(
           '❌ This slot is no longer available. Please choose another time.',
         );
       } else {
-        alert('❌ Error: ' + (result.message || 'Unknown error'));
+        toast('❌ Error: ' + (result.message || 'Unknown error'));
       }
       return false;
     }
 
-    alert('🎉 Appointment booked successfully!');
+    toast('🎉 Appointment booked successfully!');
     setSelectedDate(null);
     setSelectedSlot(null);
     return true;

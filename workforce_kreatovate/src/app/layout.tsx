@@ -3,6 +3,7 @@ import { Arimo, Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/LenisProvider";
 import Script from "next/script";
+import { Toaster } from "sonner";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         className={`${jakarta.variable} ${roboto.variable} ${arimo.variable} antialiased bg-[#000] font-jakarta text-white`}
       >
         <LenisProvider>{children}</LenisProvider>
+        <Toaster/>
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
