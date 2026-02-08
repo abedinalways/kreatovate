@@ -4528,13 +4528,6 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:text-6xl {
-      font-size: var(--text-6xl);
-      line-height: var(--tw-leading, var(--text-6xl--line-height));
-    }
-  }
-
-  @media (min-width: 48rem) {
     .md\:text-base {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
@@ -4623,12 +4616,6 @@
     .md\:leading-\[1\.25\] {
       --tw-leading: 1.25;
       line-height: 1.25;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-\[54\] {
-      color: 54;
     }
   }
 

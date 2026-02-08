@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 export interface FormFieldConfig {
   name: string;
@@ -142,11 +143,11 @@ export default function MessageForm({
         throw new Error(err.message || 'Failed to submit form');
       }
 
-      alert('Form submitted successfully!');
+      toast('You have submitted the form successfully!!');
       form.reset();
     } catch (error) {
       console.error(error);
-      alert(error instanceof Error ? error.message : 'Something went wrong.');
+      toast(error instanceof Error ? error.message : 'Something went wrong.');
     } finally {
       // ✅ STOP "Submitting..."
       setIsSubmitting(false);
@@ -225,7 +226,7 @@ export default function MessageForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-4 bg-gradient-to-r from-pink-500 to-indigo-500 hover:opacity-90 text-white font-medium py-3 rounded-lg flex items-center justify-center transition-all duration-300 md:w-40 w-full"
+            className="mt-4 bg-gradient-to-r from-pink-500 to-indigo-500 hover:opacity-90 text-white font-medium py-3 rounded-lg flex items-center justify-center transition-all duration-300 md:w-40 w-full cursor-pointer"
           >
             {isSubmitting ? "Submitting..." : buttonText}
             {showButtonIcon && !isSubmitting && (

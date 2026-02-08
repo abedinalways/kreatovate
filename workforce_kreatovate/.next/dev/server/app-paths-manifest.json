@@ -1,4 +1,7 @@
 {
   "/(public)/appointment/page": "app/(public)/appointment/page.js",
-  "/(public)/page": "app/(public)/page.js"
+  "/(public)/page": "app/(public)/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/book-consultation/route": "app/api/book-consultation/route.js",
+  "/api/ghl/free-slots/route": "app/api/ghl/free-slots/route.js"
 }
