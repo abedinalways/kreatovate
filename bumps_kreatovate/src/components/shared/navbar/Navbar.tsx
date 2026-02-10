@@ -11,7 +11,7 @@ import {
 import NavItems from './NavItems';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
-import ButtonOne from '../buttons/ButtonOne';
+// import ButtonOne from '../buttons/ButtonOne';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed inset-x-0 top-0 left-0 w-full py-5 px-4 sm:px-36 md:px-5 z-50 border-b bg-[rgba(0,0,0,0.40)] border-white/30 backdrop-blur-xs font-[roboto]">
-      <div className="custom-container flex  items-center justify-center gap-4 w-full">
+      <div className="custom-container flex  items-center md:justify-center justify-between gap-4 w-full">
         <div className="flex gap-4 ">
           <div className="">
             <FooterLogo/>

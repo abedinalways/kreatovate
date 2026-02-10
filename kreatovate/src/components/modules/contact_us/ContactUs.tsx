@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ConsultationForm } from '@/components/shared/consultationForm/ConsultationForm';
 import { Calendar } from '@/components/ui/calendar';
+import { toast } from 'sonner';
 
 interface ConsultationFormData {
   firstName?: string;
@@ -42,12 +43,12 @@ const Contact = () => {
 
   const handleFormSubmit = async (data: ConsultationFormData) => {
     if (!selectedDate) {
-      alert('Please select a date.');
+      toast('Please select a date.');
       return false;
     }
 
     if (!selectedSlot?.startTime) {
-      alert('Please select an available time slot.');
+      toast('Please select an available time slot.');
       return false;
     }
 
@@ -83,16 +84,16 @@ const Contact = () => {
         msg.includes('available') ||
         msg.includes('validation')
       ) {
-        alert(
+        toast(
           '❌ This slot is no longer available. Please choose another time.',
         );
       } else {
-        alert('❌ Error: ' + (result.message || 'Unknown error'));
+        toast('❌ Error: ' + (result.message || 'Unknown error'));
       }
       return false;
     }
 
-    alert('🎉 Appointment booked successfully!');
+    toast('🎉 Appointment booked successfully!');
     setSelectedDate(null);
     setSelectedSlot(null);
     return true;

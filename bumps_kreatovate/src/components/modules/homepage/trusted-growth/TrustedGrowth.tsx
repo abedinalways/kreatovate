@@ -10,32 +10,32 @@ import Image from "next/image";
 const TrustedGrowth = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".trusted-title > *", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.from(".trusted-title > *", {
+  //       opacity: 0,
+  //       y: 30,
+  //       duration: 1,
+  //       stagger: 0.2,
+  //       ease: "power2.out",
+  //     });
 
-      const cards = gsap.utils.toArray<HTMLElement>(".trust-card");
+  //     const cards = gsap.utils.toArray<HTMLElement>(".trust-card");
 
-      cards.forEach((card, i) => {
-        gsap.to(card, {
-          y: 15,
-          duration: 3 + i * 0.3,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: i * 0.2,
-        });
-      });
-    }, sectionRef);
+  //     cards.forEach((card, i) => {
+  //       gsap.to(card, {
+  //         y: 15,
+  //         duration: 3 + i * 0.3,
+  //         repeat: -1,
+  //         yoyo: true,
+  //         ease: "sine.inOut",
+  //         delay: i * 0.2,
+  //       });
+  //     });
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   const booksData = [
     {

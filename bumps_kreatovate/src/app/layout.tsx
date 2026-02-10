@@ -4,7 +4,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import LenisProvider from "@/providers/LenisProvider";
 import Script from "next/script";
-import BumpSaleLoader from "@/components/BumpSaleLoader";
+// import BumpSaleLoader from "@/components/BumpSaleLoader";
 import { Toaster } from "@/components/ui/sonner";
 
 const jakarta = Plus_Jakarta_Sans({
