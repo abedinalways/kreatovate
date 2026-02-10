@@ -4,44 +4,61 @@ import { useEffect } from "react";
 
 export default function BumpsaleButton() {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (document.querySelector('script[src*="bumpsale.co"]')) {
-        console.log("⚠️ Script already exists");
-        return;
+   
+    const loadBumpsale = () => {
+      if (!document.querySelector('script[src*="bumpsale.co"]')) {
+        const script = document.createElement("script");
+        script.src = "https://widgets.bumpsale.co/button.js";
+        script.async = true;
+      
+        script.onload = () => renderBumpsale();
+        document.head.appendChild(script);
+      } else {
+        
+        renderBumpsale();
       }
+    };
 
-      const script = document.createElement("script");
-      script.src = "https://widgets.bumpsale.co/button.js";
-      script.async = false;
-      script.defer = true;
+  
+    const renderBumpsale = () => {
+      // @ts-ignore
+      if (window.Bumpsale && typeof window.Bumpsale.init === "function") {
+        // @ts-ignore
+        window.Bumpsale.init();
+      } else {
+        
+        document.dispatchEvent(new Event("DOMContentLoaded"));
+      }
+    };
 
-      script.onload = () => {
-        const event = new Event("DOMContentLoaded");
-        document.dispatchEvent(event);
-      };
+   
+    const timeout = setTimeout(loadBumpsale, 300);
 
-      script.onerror = (e) => {
-        console.error("❌ Script error:", e);
-      };
-
-      document.head.appendChild(script); 
-    }, 100);
-
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div>
+    <div className="py-4">
+    
       <a
         href="#"
-        className="bumpsale_button "
-        data-bumpsale="uPpDJDrVPbXPq28McoDrNFJf"
+        className="bumpsale_button"
+        data-bumpsale="Zu7hZQCWBFmkEXCVaHbScvgV"
         data-bumpsale-text="Buy Bundle Now at _PRICE_"
-        onClick={(e) => {
-          console.log("🖱️ Button clicked");
-          console.log("Button element:", e.currentTarget);
+        style={{
+          display: "inline-block",
+          padding: "17px 58px",
+          font: "normal 14px Helvetica, Arial, sans-serif",
+          textAlign: "center",
+          textDecoration: "none",
+          color: "#ffffff",
+          borderRadius: "10px",
+          border: "1px solid #FF0000",
+          background: "#000000",
         }}
-      ></a>
+      >
+        Buy Now...
+      </a>
     </div>
   );
 }
