@@ -38,12 +38,18 @@ export default function Footer() {
           <div className="space-y-4">
             <Logo />
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
-              Our Al powered services, products & solutions give businesses and
-              projects alike the ability to automate tedious tasks, correct
-              inefficiencies, streamline operations while simultaneously
-              lowering overhead costs, ultimately becoming future proof!
-            </p>
+            <div>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-2 ">
+                Our Al powered services, products & solutions give businesses
+                and projects alike the ability to automate tedious tasks,
+                correct inefficiencies, streamline operations while
+                simultaneously lowering overhead costs, ultimately becoming
+                future proof!
+              </p>
+              <span className="italic text-sm text-gradient-special font-semibold">
+                Your Problems, Our Solutions
+              </span>
+            </div>
 
             <div className="flex gap-3 pt-2">
               <Link
