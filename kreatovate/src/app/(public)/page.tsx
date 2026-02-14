@@ -1,3 +1,4 @@
+import LaunchpadInitiatives from "@/components/addBooks/LaunchpadInitiative";
 import Contact from "@/components/modules/contact/Contact";
 import Feedback from "@/components/modules/feedback/Feedback";
 import AboutUs from "@/components/modules/homepage/AboutUs";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Banner />
       <Strategy />
       <AboutUs />
+      <LaunchpadInitiatives/>
       <WhoWeAre />
       <BookAppointment />
       <Service />
