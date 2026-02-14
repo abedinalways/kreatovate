@@ -1,4 +1,5 @@
 import Btn from "@/components/shared/buttons/Btn";
+import ButtonIn from "@/components/shared/buttons/ButtonIn";
 import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 import Image from "next/image";
@@ -24,7 +25,7 @@ const LaunchpadInitiatives = () => {
         </h1>
 
         <p className="font-medium text-lg leading-[180%] text-ring mb-12 max-w-154 text-center">
-          The NextGen 4 - Book Bundle is more than a collection of books - ifr a
+          The NextGen 4 - Book Bundle is more than a collection of books - it&apos;s a
           blueprint for where business, automation, and ownership are heading
           next.
         </p>
@@ -57,7 +58,7 @@ const LaunchpadInitiatives = () => {
             </p>
 
             <div className="w-fit">
-              <Btn btnText="Learn More" isIcon={false} className="w-34! h-14! text-center"/>
+              <ButtonIn btnText="Learn More" isIcon={false} className=" text-center" link="/dashboard/our-books" />
             </div>
           </div>
         </div>

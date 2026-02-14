@@ -39,9 +39,10 @@ export default function Footer() {
             <Logo />
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-[roboto] py-4">
-              Our AI-Driven Marketing Platform gives you an affordable
-              enterprise digital marketing and advertising solution that does
-              all the heavy lifting.
+              Our Al powered services, products & solutions give businesses and
+              projects alike the ability to automate tedious tasks, correct
+              inefficiencies, streamline operations while simultaneously
+              lowering overhead costs, ultimately becoming future proof!
             </p>
 
             <div className="flex gap-3 pt-2">

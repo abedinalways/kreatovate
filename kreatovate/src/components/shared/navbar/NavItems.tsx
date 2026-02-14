@@ -50,7 +50,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
     { key: 'our_services', label: 'our services' },
     // { key: 'our_pricing', label: 'our pricing' },
     { key: 'our_team', label: 'our team' },
-    { key: 'our_developments', label: 'our developments' },
+    // { key: 'our_developments', label: 'our developments' },
     {
       external: true,
       href: 'https://kreatovate-projects.lovable.app/projects',

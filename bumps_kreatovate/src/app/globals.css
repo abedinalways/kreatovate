@@ -176,6 +176,21 @@
   background-repeat: no-repeat;
 }
 
+.gradient-btn {
+  corner-shape: squircle;
+  background:
+    linear-gradient(90deg, #e93d3d 0%, #4e30fe 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
+.shape-squircle {
+  corner-shape: squircle;
+}
+
 .text-color-gradient-tab {
   @apply bg-gradient-to-r from-[#3700FF] via-[#3700FF] to-[#E21717] inline-block text-transparent bg-clip-text leading-none pb-[8px];
 }

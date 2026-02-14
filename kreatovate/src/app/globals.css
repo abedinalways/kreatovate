@@ -226,3 +226,7 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
+
+.text-gradient-special {
+  @apply bg-linear-to-r from-[#FF0000] to-[#6b7cff] inline-block text-transparent bg-clip-text leading-none;
+}

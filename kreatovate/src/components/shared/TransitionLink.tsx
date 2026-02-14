@@ -23,39 +23,47 @@ export default function TransitionLink({
   className,
   children,
   onClick,
+  target,
+  rel,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const isNavigatingRef = React.useRef(false);
 
+  const isExternal =
+    href.startsWith("http") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:");
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e);
     if (e.defaultPrevented) return;
 
-    // In-page hash: smooth scroll
+    
+    if (isExternal || target === "_blank") {
+      return;
+    }
+
     if (href.startsWith("#")) {
       e.preventDefault();
-      const target = document.querySelector(href);
-      if (!target) return;
+      const targetEl = document.querySelector(href);
+      if (!targetEl) return;
 
       gsap.to(window, {
         duration: 0.6,
         ease: "power3.out",
-        scrollTo: { y: target, offsetY: 80, autoKill: true },
+        scrollTo: { y: targetEl, offsetY: 80, autoKill: true },
         onComplete: () => history.replaceState(null, "", href),
       });
       return;
     }
 
-    // Route nav
     if (href.startsWith("/")) {
       e.preventDefault();
 
       const targetPath = href.split("#")[0].replace(/\/+$/, "") || "/";
       const currentPath = (pathname || "/").replace(/\/+$/, "") || "/";
-      if (targetPath === currentPath) {
-        return;
-      }
+      if (targetPath === currentPath) return;
 
       if (isNavigatingRef.current) return;
       isNavigatingRef.current = true;
@@ -67,7 +75,6 @@ export default function TransitionLink({
         ease: "power2.inOut",
         onComplete: () => {
           router.push(href);
-
           isNavigatingRef.current = false;
         },
       });
@@ -75,7 +82,13 @@ export default function TransitionLink({
   };
 
   return (
-    <Link href={href} onClick={handleClick} className={className}>
+    <Link
+      href={href}
+      onClick={handleClick}
+      className={className}
+      target={target}   
+      rel={target === "_blank" ? "noopener noreferrer" : rel} 
+    >
       {children}
     </Link>
   );
