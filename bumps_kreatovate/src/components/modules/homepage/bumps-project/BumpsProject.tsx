@@ -16,7 +16,7 @@ const BumpsProject = () => {
               alt="section image 1"
               width={621} height={480}
               className="object-cover rounded-xl lg:rounded-none"
-              
+
             />
           </div>
           {/* Tagline + Headings */}
@@ -103,9 +103,9 @@ const BumpsProject = () => {
                 </p>
               </div>
 
-              <div className="w-35">
+              {/* <div className="w-35">
                 <ButtonTwo btnText="Buy Now" />
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -114,11 +114,11 @@ const BumpsProject = () => {
             {/* Bottom image */}
             <div className="relative w-full aspect-16/11 sm:aspect-16/10 md:aspect-5/3 lg:w-156 lg:h-100">
               <Image
-                src="/images/bumps-project-2.png"
+                src="/images/bumps-project-2.jpg"
                 alt="section image 2"
-                width={621} height={404}
-                className="absolute top-0 left-0 object-cover rounded-xl lg:rounded-none"
-                
+                fill
+                className="absolute top-0 left-0 object-cover rounded-xl lg:rounded-xl"
+
               />
             </div>
           </div>
