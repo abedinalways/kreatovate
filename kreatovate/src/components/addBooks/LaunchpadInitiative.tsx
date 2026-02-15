@@ -28,14 +28,15 @@ const LaunchpadInitiatives = () => {
           next.
         </p> */}
 
-        <div className="bg-white/20 p-2 md:p-8 rounded-[12px] flex flex-col md:flex-row items-center gap-14">
-          <div className="w-full md:w-1/2">
-            <div className="relative w-full h-[400px]">
+        <div className="bg-white/20 p-2 md:p-8 rounded-[12px] md:flex  items-center gap-14">
+          <div className="w-full md:w-1/2 ">
+            <div className="relative md:w-full md:h-[400px]">
               <Image
                 src="/images/books/img.png"
                 alt="book image"
-                fill
-                className="object-cover rounded-lg"
+                width={800}
+                height={800}
+                className="object-cover rounded-lg md:w-full "
               />
             </div>
           </div>
