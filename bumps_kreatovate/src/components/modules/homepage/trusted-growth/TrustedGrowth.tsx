@@ -6,6 +6,7 @@ import gsap from "gsap";
 import BumpsaleButton from "@/components/BumpsaleButton";
 import SiteBigBadge from "@/components/shared/site-big-badge/SiteBigBadge";
 import Image from "next/image";
+import BookMarketing from "@/components/Marketing/BookMarketing";
 
 const TrustedGrowth = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -111,6 +112,9 @@ const TrustedGrowth = () => {
       </div>
       <div className="flex items-center justify-center">
         <BumpsaleButton />
+      </div>
+      <div>
+        <BookMarketing/>
       </div>
     </div>
   );
