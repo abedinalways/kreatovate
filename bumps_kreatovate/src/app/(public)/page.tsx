@@ -11,18 +11,19 @@ import Launchpad from "@/components/modules/homepage/launchpad/Launchpad";
 import TrustedGrowth from "@/components/modules/homepage/trusted-growth/TrustedGrowth";
 import Welcome from "@/components/welcome/Welcome";
 import Contact from "@/components/modules/contact/Contact";
+import BumpsProject from "@/components/modules/homepage/bumps-project/BumpsProject";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <Banner />
       {/* <Counter /> */}
-      {/* <BumpsProject /> */}
       <Launchpad />
       <WhyWeBuildIt />
       <OurModel />
-      <Welcome/>
+      <Welcome />
       <LaunchpadInitiatives />
+      <BumpsProject />
       {/* <TrustedGrowth /> */}
       <HowItWorks />
       <OurVision />
