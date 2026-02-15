@@ -10,6 +10,13 @@ import ButtonTwo from "@/components/shared/buttons/ButtonTwo";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+
+  const scrollToTarget = () => {
+    document.getElementById('contact_us')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Image: slide in from left
@@ -142,7 +149,12 @@ const AboutUs = () => {
           </div>
 
           <div className="w-fit">
-            <ButtonTwo btnText="Learn More" link='/contact-us'/>
+            <button
+              onClick={scrollToTarget}
+              className="rounded-md gradient-btn px-8 py-4 cursor-pointer"
+            >
+              Learn More
+            </button>
           </div>
         </div>
       </div>

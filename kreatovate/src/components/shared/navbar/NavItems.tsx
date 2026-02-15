@@ -156,6 +156,7 @@ const NavItems = ({ variant = 'desktop' }: Props) => {
             <li key={item.label}>
               <TransitionLink
                 href={item.href}
+                target={item.target}
                 className="block px-4 py-3 text-white rounded-lg"
               >
                 {item.label}
